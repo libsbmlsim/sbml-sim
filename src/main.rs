@@ -28,10 +28,10 @@ fn main() {
       Ok(XmlEvent::StartElement {
         name, attributes, ..
       }) => {
+        // println!("{:?}", name);
         // read tag
         let tag = new_tag();
         tag.borrow_mut().tag = name.local_name;
-        
         // read attributes
         for attribute in attributes {
           tag
@@ -47,7 +47,7 @@ fn main() {
       }
       // for each closing tag
       Ok(XmlEvent::EndElement { name }) => {
-        
+        // println!("{:?}", name);
         // read tag name
         let tag = name.local_name;
         // if this is the last tag in the stack
@@ -61,6 +61,9 @@ fn main() {
           }
         }
       }
+      Ok(XmlEvent::Characters(s)) => {
+        current.borrow_mut().text = String::from(s.trim());
+      }
       Err(e) => {
         println!("Error: {}", e);
       }
@@ -71,9 +74,10 @@ fn main() {
   let root = current;
 
   // print species IDs
+  println!("Species IDs: ");
   let results = helpers::find(Rc::clone(&root), String::from("species"));
   for result in results {
-    println!("{}", result.borrow().attributes.get("id").unwrap());
+    print!("{}  ", result.borrow().attributes.get("id").unwrap());
   }
 
 

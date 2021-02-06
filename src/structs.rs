@@ -5,6 +5,7 @@ use std::cell::RefCell;
 #[derive(Debug)]
 pub struct SBMLTag {
   pub tag: String,
+  pub text: String,
   pub attributes: HashMap<String, String>,
   pub children: Vec<Rc<RefCell<SBMLTag>>>,
 }
@@ -13,6 +14,7 @@ impl SBMLTag {
   pub fn new() -> SBMLTag {
     SBMLTag {
       tag: String::from(""),
+      text: String::from(""),
       attributes: HashMap::new(),
       children: Vec::new()
     }
