@@ -9,14 +9,17 @@ use xml::reader::{EventReader, XmlEvent};
 mod structs;
 use structs::SBMLTag;
 
+mod helpers;
+use helpers::new_tag;
+
 fn main() {
-  let file = File::open("models/BIOMD0000000655_url.xml").unwrap();
+  let file = File::open("models/enzymekinetics.xml").unwrap();
   let file = BufReader::new(file);
 
   let parser = EventReader::new(file);
 
   let mut stack: Vec<Rc<RefCell<SBMLTag>>> = Vec::new();
-  let mut current = Rc::new(RefCell::new(SBMLTag::new()));
+  let mut current = new_tag();
 
   for e in parser {
     match e {
@@ -26,7 +29,7 @@ fn main() {
         name, attributes, ..
       }) => {
         // read tag
-        let tag = Rc::new(RefCell::new(SBMLTag::new()));
+        let tag = new_tag();
         tag.borrow_mut().tag = name.local_name;
         
         // read attributes
@@ -67,6 +70,13 @@ fn main() {
 
   let root = current;
 
-  println!("{:?}", root);
+  // print species IDs
+  let results = helpers::find(Rc::clone(&root), String::from("species"));
+  for result in results {
+    println!("{}", result.borrow().attributes.get("id").unwrap());
+  }
+
 
 }
+
+
