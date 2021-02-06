@@ -1,0 +1,5 @@
+Species IDs: 
+S4  S3  S2  S1  
+
+Math nodes in Reverse Polish notation:
+k1 S1 * S2 S3 * compartmentOne * 

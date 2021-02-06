@@ -1,0 +1,6 @@
+Species IDs: 
+S2  S1  T  X1  X0  
+
+Math nodes in Reverse Polish notation:
+k2 S2 * cell * 
+k1 X0 * cell * 

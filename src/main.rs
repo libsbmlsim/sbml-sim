@@ -85,11 +85,15 @@ fn main() {
     print!("{}  ", result.borrow().attributes.get("id").unwrap());
   }
 
+  // find kinetic laws
+  let kinetic_laws = helpers::find(Rc::clone(&root), String::from("kineticLaw"));
   // find math nodes
   let mut expressions: Vec<Rc<RefCell<MathNode>>> = Vec::new();
-  let math_nodes = helpers::find(Rc::clone(&root), String::from("math"));
-  for expression in math_nodes {
-    expressions.push(parse_expression(expression));
+  for law in kinetic_laws {
+    let math_nodes = helpers::find(Rc::clone(&law), String::from("math"));
+    for expression in math_nodes {
+      expressions.push(parse_expression(expression));
+    }
   }
 
   println!();
