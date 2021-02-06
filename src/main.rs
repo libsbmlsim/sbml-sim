@@ -1,16 +1,20 @@
-use std::rc::Rc;
+use std::cell::RefCell;
+use std::env;
 use std::fs::File;
 use std::io::BufReader;
-use std::cell::RefCell;
+use std::rc::Rc;
 
 use xml;
 use xml::reader::{EventReader, XmlEvent};
 
 mod structs;
+use structs::MathNode;
+use structs::Operator;
 use structs::SBMLTag;
 
 mod helpers;
 use helpers::new_tag;
+use helpers::parse_expression;
 
 fn main() {
   let args: Vec<String> = env::args().collect();
@@ -25,7 +29,6 @@ fn main() {
 
   for e in parser {
     match e {
-
       // for each starting tag
       Ok(XmlEvent::StartElement {
         name, attributes, ..
@@ -82,7 +85,56 @@ fn main() {
     print!("{}  ", result.borrow().attributes.get("id").unwrap());
   }
 
+  // find math nodes
+  let mut expressions: Vec<Rc<RefCell<MathNode>>> = Vec::new();
+  let math_nodes = helpers::find(Rc::clone(&root), String::from("math"));
+  for expression in math_nodes {
+    expressions.push(parse_expression(expression));
+  }
 
+  println!();
+  println!();
+  println!("Math nodes in Reverse Polish notation:");
+  for expression in expressions {
+    print_postfix(expression);
+    println!();
+  }
 }
 
-
+fn print_postfix(expression: Rc<RefCell<MathNode>>) {
+  match &*expression.borrow() {
+    MathNode::Branch { operator, operands } => {
+      let mut count = 0;
+      // print operator after every two operands
+      for operand in operands {
+        match &*operand.borrow() {
+          MathNode::Var(s) => {
+            print!("{} ", s);
+          }
+          MathNode::Branch { .. } => {
+            print_postfix(Rc::clone(operand));
+          }
+        }
+        count += 1;
+        if count == 2 {
+          match operator {
+            Operator::None => {}
+            _ => {
+              print!("{} ", operator)
+            }
+          }
+          count = 0;
+        }
+      }
+      if count == 1 {
+        match operator {
+          Operator::None => {}
+          _ => {
+            print!("{} ", operator)
+          }
+        }
+      }
+    }
+    _ => {}
+  }
+}
