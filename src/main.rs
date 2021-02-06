@@ -9,12 +9,12 @@ use xml::reader::{EventReader, XmlEvent};
 
 mod structs;
 use structs::MathNode;
-use structs::Operator;
 use structs::SBMLTag;
 
 mod helpers;
 use helpers::new_tag;
 use helpers::parse_expression;
+use helpers::print_postfix;
 
 fn main() {
   let args: Vec<String> = env::args().collect();
@@ -98,43 +98,5 @@ fn main() {
   for expression in expressions {
     print_postfix(expression);
     println!();
-  }
-}
-
-fn print_postfix(expression: Rc<RefCell<MathNode>>) {
-  match &*expression.borrow() {
-    MathNode::Branch { operator, operands } => {
-      let mut count = 0;
-      // print operator after every two operands
-      for operand in operands {
-        match &*operand.borrow() {
-          MathNode::Var(s) => {
-            print!("{} ", s);
-          }
-          MathNode::Branch { .. } => {
-            print_postfix(Rc::clone(operand));
-          }
-        }
-        count += 1;
-        if count == 2 {
-          match operator {
-            Operator::None => {}
-            _ => {
-              print!("{} ", operator)
-            }
-          }
-          count = 0;
-        }
-      }
-      if count == 1 {
-        match operator {
-          Operator::None => {}
-          _ => {
-            print!("{} ", operator)
-          }
-        }
-      }
-    }
-    _ => {}
   }
 }
