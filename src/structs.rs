@@ -1,6 +1,7 @@
-use std::collections::HashMap;
-use std::rc::Rc;
 use std::cell::RefCell;
+use std::collections::HashMap;
+use std::fmt;
+use std::rc::Rc;
 
 #[derive(Debug)]
 pub struct SBMLTag {
@@ -28,5 +29,52 @@ impl SBMLTag {
   pub fn add_child(&mut self, child: Rc<RefCell<SBMLTag>>) -> &mut SBMLTag {
     self.children.push(child);
     self
+  }
+}
+
+#[derive(Debug)]
+pub enum MathNode {
+  Var(String),
+  Branch {
+    operator: Operator,
+    operands: Vec<Rc<RefCell<MathNode>>>,
+  },
+}
+
+impl MathNode {
+  pub fn new_var(s: String) -> MathNode {
+    return MathNode::Var(s);
+  }
+}
+
+#[derive(Debug, PartialEq)]
+pub enum Operator {
+  Add,
+  Sub,
+  Mul,
+  Div,
+  None,
+}
+
+impl fmt::Display for Operator {
+  fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+    match self {
+      Operator::Add => {
+        return write!(f, "+");
+      }
+      Operator::Sub => {
+        return write!(f, "-");
+      }
+      Operator::Mul => {
+        return write!(f, "*");
+      }
+      Operator::Div => {
+        return write!(f, "/");
+      }
+      Operator::None => {
+        return write!(f, "");
+      }
+      
+    }
   }
 }
