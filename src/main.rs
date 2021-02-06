@@ -13,7 +13,9 @@ mod helpers;
 use helpers::new_tag;
 
 fn main() {
-  let file = File::open("models/enzymekinetics.xml").unwrap();
+  let args: Vec<String> = env::args().collect();
+  let filename = &args[1];
+  let file = File::open(filename).unwrap();
   let file = BufReader::new(file);
 
   let parser = EventReader::new(file);
