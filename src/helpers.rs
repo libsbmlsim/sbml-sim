@@ -91,9 +91,11 @@ pub fn print_postfix(expression: Rc<RefCell<MathNode>>) {
               print!("{} ", operator)
             }
           }
+          // reset operator counter
           count = 0;
         }
       }
+      // print operator again if reqd
       if count == 1 {
         match operator {
           Operator::None => {}
