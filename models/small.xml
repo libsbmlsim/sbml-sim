@@ -1,7 +1,13 @@
 <sbml>
    <model>
-      <listOfSpecies>
-         <species></species>
-      </listOfSpecies>
+      <listOfReactions>
+         <math>
+            <apply>
+               <times />
+               <ci>ab</ci>
+               <ci>b</ci>
+            </apply>
+         </math>
+      </listOfReactions>
    </model>
 </sbml>
