@@ -1,0 +1,6 @@
+Species IDs: 
+ES  P  S  E  
+
+Math nodes in Reverse Polish notation:
+comp kcat * ES * 
+comp kon E * S * koff ES * - * 
