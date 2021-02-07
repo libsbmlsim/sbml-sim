@@ -6,10 +6,14 @@ use structs::MathNode;
 use structs::Operator;
 use structs::SBMLTag;
 
+// Allocates and returns a new SBML tag
 pub fn new_tag() -> Rc<RefCell<SBMLTag>> {
   return Rc::new(RefCell::new(SBMLTag::new()));
 }
 
+// Input: SBMLTag
+// Searches the given SBMLTag and its children 
+// Returns matches as a vector
 pub fn find(root: Rc<RefCell<SBMLTag>>, tag: String) -> Vec<Rc<RefCell<SBMLTag>>> {
   let mut stack: Vec<Rc<RefCell<SBMLTag>>> = Vec::new();
   let mut results: Vec<Rc<RefCell<SBMLTag>>> = Vec::new();
@@ -27,10 +31,12 @@ pub fn find(root: Rc<RefCell<SBMLTag>>, tag: String) -> Vec<Rc<RefCell<SBMLTag>>
   return results;
 }
 
+// Returns a pointer to a new MathNode Variable
 pub fn new_math_var(s: String) -> Rc<RefCell<MathNode>> {
   return Rc::new(RefCell::new(MathNode::new_var(s)));
 }
 
+// Parses an SBMLTag and returns an equivalent MathNode
 pub fn parse_expression(expr: Rc<RefCell<SBMLTag>>) -> Rc<RefCell<MathNode>> {
   let mut operator = Operator::None;
   let mut operands: Vec<Rc<RefCell<MathNode>>> = Vec::new();
@@ -69,6 +75,8 @@ pub fn parse_expression(expr: Rc<RefCell<SBMLTag>>) -> Rc<RefCell<MathNode>> {
   }
 }
 
+// Input: MathNode
+// Prints the contents in Reverse Polish notation
 pub fn print_postfix(expression: Rc<RefCell<MathNode>>) {
   match &*expression.borrow() {
     MathNode::Branch { operator, operands } => {

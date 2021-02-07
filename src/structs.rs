@@ -3,6 +3,7 @@ use std::collections::HashMap;
 use std::fmt;
 use std::rc::Rc;
 
+// A genetic SBML Tag
 #[derive(Debug)]
 pub struct SBMLTag {
   pub tag: String,
@@ -12,6 +13,7 @@ pub struct SBMLTag {
 }
 
 impl SBMLTag {
+  // returns an empty SBML tag
   pub fn new() -> SBMLTag {
     SBMLTag {
       tag: String::from(""),
@@ -21,17 +23,24 @@ impl SBMLTag {
     }
   }
 
+  // Adds an attribute to an SBML tag
   pub fn add_attr(&mut self, attr: String, value: String) -> &mut SBMLTag {
     self.attributes.insert(attr, value);
     self
   }
 
+  // Adds a child to an SBML tag
   pub fn add_child(&mut self, child: Rc<RefCell<SBMLTag>>) -> &mut SBMLTag {
     self.children.push(child);
     self
   }
 }
 
+// A genetic node in mathematical expressions
+// Types: Variable and Branch
+// Variable: String
+// Branch consists of an operator and a list of 
+// operands, which themselves are MathNodes.
 #[derive(Debug)]
 pub enum MathNode {
   Var(String),
@@ -42,11 +51,14 @@ pub enum MathNode {
 }
 
 impl MathNode {
+  // returns a new MathNode of Variable type
+  // with the given string
   pub fn new_var(s: String) -> MathNode {
     return MathNode::Var(s);
   }
 }
 
+// A genetic mathematical operator
 #[derive(Debug, PartialEq)]
 pub enum Operator {
   Add,
@@ -56,6 +68,7 @@ pub enum Operator {
   None,
 }
 
+// Dictates how to print mathematical operators
 impl fmt::Display for Operator {
   fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
     match self {

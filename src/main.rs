@@ -17,11 +17,13 @@ use helpers::parse_expression;
 use helpers::print_postfix;
 
 fn main() {
+  // read cmd line args
   let args: Vec<String> = env::args().collect();
   let filename = &args[1];
+
+  // read file
   let file = File::open(filename).unwrap();
   let file = BufReader::new(file);
-
   let parser = EventReader::new(file);
 
   let mut stack: Vec<Rc<RefCell<SBMLTag>>> = Vec::new();
@@ -33,7 +35,6 @@ fn main() {
       Ok(XmlEvent::StartElement {
         name, attributes, ..
       }) => {
-        // println!("{:?}", name);
         // read tag
         let tag = new_tag();
         tag.borrow_mut().tag = name.local_name;
@@ -52,7 +53,6 @@ fn main() {
       }
       // for each closing tag
       Ok(XmlEvent::EndElement { name }) => {
-        // println!("{:?}", name);
         // read tag name
         let tag = name.local_name;
         // if this is the last tag in the stack
@@ -66,6 +66,7 @@ fn main() {
           }
         }
       }
+      // read text within tags
       Ok(XmlEvent::Characters(s)) => {
         current.borrow_mut().text = String::from(s.trim());
       }
@@ -91,6 +92,7 @@ fn main() {
   let mut expressions: Vec<Rc<RefCell<MathNode>>> = Vec::new();
   for law in kinetic_laws {
     let math_nodes = helpers::find(Rc::clone(&law), String::from("math"));
+    // parse expressions and store
     for expression in math_nodes {
       expressions.push(parse_expression(expression));
     }
@@ -98,6 +100,8 @@ fn main() {
 
   println!();
   println!();
+  
+  // print expressions
   println!("Math nodes in Reverse Polish notation:");
   for expression in expressions {
     print_postfix(expression);
