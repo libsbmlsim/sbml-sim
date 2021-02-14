@@ -1,47 +1,56 @@
-use std::cell::RefCell;
-use std::rc::Rc;
-
 use crate::structs;
-use structs::MathNode;
-use structs::Operator;
-use structs::SBMLTag;
+use structs::math::MathExp;
+use structs::math::MathIndex;
+use structs::math::MathNode;
+use structs::math::Operator;
+use structs::model::Model;
+use structs::model::TagIndex;
 
-// Allocates and returns a new SBML tag
-pub fn new_tag() -> Rc<RefCell<SBMLTag>> {
-  return Rc::new(RefCell::new(SBMLTag::new()));
-}
+// pub fn print_model(model: &Model, root: Option<TagIndex>) {
+//   match root {
+//     Some(index) => {
+//       println!("{}: {:?}", index, model.tags[index]);
+//       for child in &model.tags[index].children {
+//         print_model(&model, Some(*child));
+//       }
+//     }
+//     None => {}
+//   }
+// }
 
-// Input: SBMLTag
-// Searches the given SBMLTag and its children 
+// Input: Model, TagIndex
+// Searches the given tag and its children
 // Returns matches as a vector
-pub fn find(root: Rc<RefCell<SBMLTag>>, tag: String) -> Vec<Rc<RefCell<SBMLTag>>> {
-  let mut stack: Vec<Rc<RefCell<SBMLTag>>> = Vec::new();
-  let mut results: Vec<Rc<RefCell<SBMLTag>>> = Vec::new();
-  stack.push(Rc::clone(&root));
+pub fn find(model: &Model, root: Option<TagIndex>, tag: String) -> Vec<TagIndex> {
+  if root.is_none() {
+    return Vec::new();
+  }
+
+  // children to be processed 
+  let mut stack: Vec<TagIndex> = Vec::new();
+  // matching tags to be returned
+  let mut results: Vec<TagIndex> = Vec::new();
+  stack.push(root.unwrap());
 
   while !stack.is_empty() {
     let current = stack.pop().unwrap();
-    if current.borrow().tag == tag {
-      results.push(Rc::clone(&current));
+    if *model.get_tag_name(current) == tag {
+      results.push(current);
     }
-    for child in &current.borrow().children {
-      stack.push(Rc::clone(&child));
+    for child in &model.tags[current].children {
+      stack.push(*child);
     }
   }
   return results;
 }
 
-// Returns a pointer to a new MathNode Variable
-pub fn new_math_var(s: String) -> Rc<RefCell<MathNode>> {
-  return Rc::new(RefCell::new(MathNode::new_var(s)));
-}
-
-// Parses an SBMLTag and returns an equivalent MathNode
-pub fn parse_expression(expr: Rc<RefCell<SBMLTag>>) -> Rc<RefCell<MathNode>> {
+// Parses an SBMLTag into a MathExp
+pub fn parse_expression(model: &Model, root: TagIndex, exp: &mut MathExp) -> MathIndex {
+  // store operand and operators
   let mut operator = Operator::None;
-  let mut operands: Vec<Rc<RefCell<MathNode>>> = Vec::new();
-  for child in &expr.borrow().children {
-    match &child.borrow().tag as &str {
+  let mut operands: Vec<MathIndex> = Vec::new();
+  for child in &model.tags[root].children {
+    match model.get_tag_name(*child) as &str {
       "times" => {
         operator = Operator::Mul;
       }
@@ -55,10 +64,13 @@ pub fn parse_expression(expr: Rc<RefCell<SBMLTag>>) -> Rc<RefCell<MathNode>> {
         operator = Operator::Add;
       }
       "apply" => {
-        operands.push(parse_expression(Rc::clone(child)));
+        // store operators in the expression and get their indices
+        let child_exp = parse_expression(model, *child, exp);
+        operands.push(child_exp);
       }
       "ci" => {
-        operands.push(new_math_var(child.borrow().text.clone()));
+        let var_index = exp.get_var(model.get_text(*child));
+        operands.push(var_index);
       }
       _ => {}
     }
@@ -67,52 +79,47 @@ pub fn parse_expression(expr: Rc<RefCell<SBMLTag>>) -> Rc<RefCell<MathNode>> {
   // if there is no operand and only one operator
   // just return that operator
   if operator == Operator::None && operands.len() == 1 {
-    return Rc::clone(&operands[0]);
+    // set root
+    exp.root = operands[0];
+    return operands[0];
   } else {
-    // else return the whole thing
-    let node = MathNode::Branch { operator, operands };
-    return Rc::new(RefCell::new(node));
+    // else create a branch and return it
+    let index = exp.get_branch(operator);
+    for operand in operands {
+      exp.add_operand(index, operand);
+    }
+    // set root of expression
+    // (this is the last step of the function,
+    //  so the first function call with set the 
+    //  root when all other recursive calls are over)
+    exp.root = index;
+    return index;
   }
 }
 
 // Input: MathNode
 // Prints the contents in Reverse Polish notation
-pub fn print_postfix(expression: Rc<RefCell<MathNode>>) {
-  match &*expression.borrow() {
+pub fn print_postfix(expression: &MathExp, root: MathIndex) {
+  match &expression.nodes[root] {
     MathNode::Branch { operator, operands } => {
-      let mut count = 0;
+      // keep track of operands printed
       // print operator after every two operands
+      let mut count = 0;
       for operand in operands {
-        match &*operand.borrow() {
-          MathNode::Var(s) => {
-            print!("{} ", s);
-          }
-          MathNode::Branch { .. } => {
-            print_postfix(Rc::clone(operand));
-          }
-        }
+        print_postfix(expression, *operand);
         count += 1;
         if count == 2 {
-          match operator {
-            Operator::None => {}
-            _ => {
-              print!("{} ", operator)
-            }
-          }
-          // reset operator counter
+          print!("{} ", operator);
           count = 0;
         }
       }
-      // print operator again if reqd
+      // print operator again if required
       if count == 1 {
-        match operator {
-          Operator::None => {}
-          _ => {
-            print!("{} ", operator)
-          }
-        }
+        print!("{} ", operator);
       }
     }
-    _ => {}
+    MathNode::Var(var) => {
+      print!("{} ", var);
+    }
   }
 }
