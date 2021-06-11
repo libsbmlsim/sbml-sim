@@ -1,13 +1,21 @@
 <sbml>
    <model>
       <listOfReactions>
-         <math>
-            <apply>
-               <times />
-               <ci>ab</ci>
-               <ci>b</ci>
-            </apply>
-         </math>
+          <reaction>
+              <kineticLaw>
+                 <math>
+                    <apply>
+                       <times />
+                       <ci>ab</ci>
+                       <ci>b</ci>
+                    </apply>
+                 </math>
+             </kineticLaw>
+         </reaction>
       </listOfReactions>
+      <listOfSpecies>
+          <species name="A"/>
+          <species name="B"/>
+      </listOfSpecies>
    </model>
 </sbml>

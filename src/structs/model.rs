@@ -1,60 +1,128 @@
-use std::collections::HashMap;
+//use std::collections::HashMap;
+
+pub type TagIndex = usize;
+use super::math::*;
+
+//#[derive(Debug)]
+//pub struct TagContainer {
+//pub tags: Vec<Tag>,
+//pub root: TagIndex,
+//}
+
+//impl TagContainer {
+//pub fn new() -> TagContainer {
+//return TagContainer {
+//tags: Vec::new(),
+//root: 0,
+//};
+//}
+
+//pub fn add_tag(&mut self, tag: Tag) -> TagIndex {
+//self.tags.push(tag);
+//return self.tags.len() - 1;
+//}
+//}
+
+#[derive(Debug)]
+pub enum Tag {
+    Model(Model),
+    ListOfSpecies(ListOfSpecies),
+    ListOfReactions(ListOfReactions),
+    Species(Species),
+    Reaction(Reaction),
+    KineticLaw(KineticLaw),
+    Math(Math),
+}
 
 // An SBML Model container
 #[derive(Debug)]
 pub struct Model {
-  pub tags: Vec<Tag>,
-  pub root: TagIndex,
+    pub name: Option<String>,
+    pub list_of_species: Option<TagIndex>,
+    pub list_of_reactions: Option<TagIndex>,
 }
-
-pub type TagIndex = usize;
+impl Model {
+    // returns a new SBML model
+    pub fn new() -> Model {
+        return Model {
+            name: None,
+            list_of_species: None,
+            list_of_reactions: None,
+        };
+    }
+}
 
 #[derive(Debug)]
-pub struct Tag {
-  pub tag: String,
-  pub text: String,
-  pub attributes: HashMap<String, String>,
-  pub children: Vec<TagIndex>,
+pub struct ListOfSpecies {
+    pub species: Vec<TagIndex>,
+    pub parent: Option<TagIndex>,
 }
 
-impl Model {
-  // returns a new SBML model
-  pub fn new() -> Model {
-    return Model {
-      tags: Vec::new(),
-      root: 0,
-    };
-  }
+impl ListOfSpecies {
+    pub fn new() -> Self {
+        return ListOfSpecies {
+            species: Vec::new(),
+            parent: None,
+        };
+    }
+}
 
-  // adds a node to the model and returns its index
-  pub fn add_node(&mut self, tag: String) -> TagIndex {
-    let index = self.tags.len();
-    self.tags.push(Tag {
-      tag: tag,
-      text: String::from(""),
-      attributes: HashMap::new(),
-      children: Vec::new(),
-    });
-    return index;
-  }
+#[derive(Debug)]
+pub struct ListOfReactions {
+    pub reactions: Vec<TagIndex>,
+    pub parent: Option<TagIndex>,
+}
 
-  pub fn add_text(&mut self, tag: TagIndex, text: String) {
-    self.tags[tag].text = text;
-  }
+impl ListOfReactions {
+    pub fn new() -> Self {
+        return ListOfReactions {
+            reactions: Vec::new(),
+            parent: None,
+        };
+    }
+}
 
-  pub fn add_attr(&mut self, tag: TagIndex, attr: String, value: String) {
-    self.tags[tag].attributes.insert(attr, value);
-  }
+#[derive(Debug)]
+pub struct Species {
+    pub name: Option<String>,
+    pub parent: Option<TagIndex>,
+}
 
-  pub fn add_child(&mut self, source: TagIndex, target: TagIndex) {
-    self.tags[source].children.push(target);
-  }
-  
-  pub fn get_tag_name(&self, index: TagIndex) -> &String {
-    return &self.tags[index].tag;
-  }
+impl Species {
+    pub fn new() -> Self {
+        return Species {
+            name: None,
+            parent: None,
+        };
+    }
+}
 
-  pub fn get_text(&self, index: TagIndex) -> &String {
-    return &self.tags[index].text;
-  }
+#[derive(Debug)]
+pub struct Reaction {
+    pub kinetic_law: Option<TagIndex>,
+    pub parent: Option<TagIndex>,
+}
+
+impl Reaction {
+    pub fn new() -> Self {
+        return Reaction {
+            kinetic_law: None,
+            parent: None,
+        };
+    }
+}
+
+#[derive(Debug)]
+pub struct KineticLaw {
+    pub math: Option<TagIndex>,
+    pub parent: Option<TagIndex>,
+}
+
+impl KineticLaw {
+    pub fn new() -> Self {
+        return KineticLaw {
+            math: None,
+            parent: None,
+        };
+    }
 }
