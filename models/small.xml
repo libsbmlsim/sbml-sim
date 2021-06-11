@@ -8,6 +8,9 @@
                <ci>b</ci>
             </apply>
          </math>
-      </listOfReactions>
+     </listOfReactions>
+     <listOfSpecies>
+         <species name="hello"/>
+     </listOfSpecies>
    </model>
 </sbml>
