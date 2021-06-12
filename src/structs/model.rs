@@ -65,6 +65,7 @@ impl ListOfReactions {
 #[derive(Debug)]
 pub struct Species {
     pub name: Option<String>,
+    pub compartment: Option<String>,
     pub parent: Option<TagIndex>,
 }
 
@@ -72,6 +73,7 @@ impl Species {
     pub fn new() -> Self {
         return Species {
             name: None,
+            compartment: None,
             parent: None,
         };
     }
