@@ -6,12 +6,9 @@ use xml;
 use xml::reader::{EventReader, XmlEvent};
 
 mod structs;
+use sbml_simulator::proc_opening;
 use structs::math::*;
 use structs::model::*;
-
-//mod helpers;
-//use helpers::parse_expression;
-//use helpers::print_postfix;
 
 fn main() {
     // read cmd line args
@@ -41,7 +38,6 @@ fn main() {
             }) => {
                 let mut new_tag = None;
                 match name.local_name.as_str() {
-                    // current == -1 if no model added so far
                     "listOfSpecies" => match container[current] {
                         Tag::Model(ref mut model) => {
                             let list_of_species = ListOfSpecies::new();
@@ -99,8 +95,8 @@ fn main() {
                     },
                     "math" => match container[current] {
                         Tag::KineticLaw(ref mut kinetic_law) => {
-                            let math = Math::new();
-                            new_tag = Some(Tag::Math(math));
+                            let math = MathTag::new_root();
+                            new_tag = Some(Tag::MathTag(math));
                             current = container_len;
                             kinetic_law.math = Some(current.clone());
                             stack.push(current.clone());
@@ -108,11 +104,16 @@ fn main() {
                         _ => {}
                     },
                     "apply" => match container[current] {
-                        Tag::Math(ref mut math) => {
-                            let apply = Apply::new();
-                            new_tag = Some(Tag::Math(math));
+                        Tag::MathTag(ref mut math_tag) => {
+                            let apply = MathTag::new_apply();
+                            new_tag = Some(Tag::MathTag(apply));
                             current = container_len;
-                            kinetic_law.math = Some(current.clone());
+                            match math_tag.node {
+                                MathNode::Root(ref mut root) => {
+                                    root.push(current.clone());
+                                }
+                                _ => {}
+                            }
                             stack.push(current.clone());
                         }
                         _ => {}
@@ -126,84 +127,67 @@ fn main() {
                     }
                     None => {}
                 }
-                // read tag
-                //let tag = model.add_node(String::from(name.local_name));
-                //// read attributes
-                //for attribute in attributes {
-                //model.add_attr(tag, attribute.name.local_name, attribute.value);
-                //}
-                //// append to current tag and advance
-                //model.add_child(current, tag);
-                //current = tag;
-                //// push to stack
-                //stack.push(tag);
             }
             // for each closing tag
-            Ok(XmlEvent::EndElement { name }) => {
-                match name.local_name.as_str() {
-                    "listOfSpecies" => match container[current] {
-                        Tag::ListOfSpecies(ref mut list_of_species) => {
-                            stack.pop();
-                            current = stack.last().unwrap().to_owned();
-                            list_of_species.parent = Some(current.clone());
-                        }
-                        _ => {}
-                    },
-                    "listOfReactions" => match container[current] {
-                        Tag::ListOfReactions(ref mut list_of_reactions) => {
-                            stack.pop();
-                            current = stack.last().unwrap().to_owned();
-                            list_of_reactions.parent = Some(current.clone());
-                        }
-                        _ => {}
-                    },
-                    "species" => match container[current] {
-                        Tag::Species(ref mut species) => {
-                            stack.pop();
-                            current = stack.last().unwrap().to_owned();
-                            species.parent = Some(current.clone());
-                        }
-                        _ => {}
-                    },
-                    "reaction" => match container[current] {
-                        Tag::Reaction(ref mut reaction) => {
-                            stack.pop();
-                            current = stack.last().unwrap().to_owned();
-                            reaction.parent = Some(current.clone());
-                        }
-                        _ => {}
-                    },
-                    "kineticLaw" => match container[current] {
-                        Tag::KineticLaw(ref mut kinetic_law) => {
-                            stack.pop();
-                            current = stack.last().unwrap().to_owned();
-                            kinetic_law.parent = Some(current.clone());
-                        }
-                        _ => {}
-                    },
-                    "math" => match container[current] {
-                        Tag::Math(ref mut math) => {
-                            stack.pop();
-                            current = stack.last().unwrap().to_owned();
-                            math.parent = Some(current.clone());
-                        }
-                        _ => {}
-                    },
+            Ok(XmlEvent::EndElement { name }) => match name.local_name.as_str() {
+                "listOfSpecies" => match container[current] {
+                    Tag::ListOfSpecies(ref mut list_of_species) => {
+                        stack.pop();
+                        current = stack.last().unwrap().to_owned();
+                        list_of_species.parent = Some(current.clone());
+                    }
                     _ => {}
-                }
-                // read tag name
-                //let tag = name.local_name;
-                //// if this is the last tag in the stack
-                //if *model.get_tag_name(current) == tag {
-                //// pop out and advance
-                //if stack.len() > 1 {
-                //stack.pop();
-                //current = stack[stack.len() - 1];
-                //} else if stack.len() > 0 {
-                //stack.pop();
-                //}
-                //}
-            }
+                },
+                "listOfReactions" => match container[current] {
+                    Tag::ListOfReactions(ref mut list_of_reactions) => {
+                        stack.pop();
+                        current = stack.last().unwrap().to_owned();
+                        list_of_reactions.parent = Some(current.clone());
+                    }
+                    _ => {}
+                },
+                "species" => match container[current] {
+                    Tag::Species(ref mut species) => {
+                        stack.pop();
+                        current = stack.last().unwrap().to_owned();
+                        species.parent = Some(current.clone());
+                    }
+                    _ => {}
+                },
+                "reaction" => match container[current] {
+                    Tag::Reaction(ref mut reaction) => {
+                        stack.pop();
+                        current = stack.last().unwrap().to_owned();
+                        reaction.parent = Some(current.clone());
+                    }
+                    _ => {}
+                },
+                "kineticLaw" => match container[current] {
+                    Tag::KineticLaw(ref mut kinetic_law) => {
+                        stack.pop();
+                        current = stack.last().unwrap().to_owned();
+                        kinetic_law.parent = Some(current.clone());
+                    }
+                    _ => {}
+                },
+                "math" => match container[current] {
+                    Tag::MathTag(ref mut math_tag) => {
+                        stack.pop();
+                        current = stack.last().unwrap().to_owned();
+                        math_tag.parent = Some(current.clone());
+                    }
+                    _ => {}
+                },
+                "apply" => match container[current] {
+                    Tag::MathTag(ref mut math_tag) => {
+                        stack.pop();
+                        current = stack.last().unwrap().to_owned();
+                        math_tag.parent = Some(current.clone());
+                    }
+                    _ => {}
+                },
+                _ => {}
+            },
             // read text within tags
             Ok(XmlEvent::Characters(s)) => {
                 //model.add_text(current, String::from(s.trim()));
@@ -220,36 +204,4 @@ fn main() {
     }
     println!("{:?}", stack);
     println!("{:?}", current);
-    //model.root = current;
-    //let root = model.root;
-
-    //// print species IDs
-    //println!("Species IDs: ");
-    //let results = helpers::find(&model, Some(root), String::from("species"));
-    //for result in results {
-    //print!("{}  ", model.tags[result].attributes.get("id").unwrap());
-    //}
-    //println!();
-
-    //// find kinetic laws
-    //let kinetic_laws = helpers::find(&model, Some(root), String::from("kineticLaw"));
-    //// find math nodes
-    //let mut expressions: Vec<MathExp> = Vec::new();
-    //for law in kinetic_laws {
-    //let math_nodes = helpers::find(&model, Some(law), String::from("math"));
-    //// parse expressions and store
-    //for expression in math_nodes {
-    //let mut parsed_expr = MathExp::new();
-    //parse_expression(&model, expression, &mut parsed_expr);
-    //expressions.push(parsed_expr);
-    //}
-    //}
-
-    //println!();
-    //// print expressions
-    //println!("Math nodes in Reverse Polish notation:");
-    //for expression in expressions {
-    //print_postfix(&expression, expression.root);
-    //println!();
-    //}
 }

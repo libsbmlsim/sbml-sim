@@ -3,26 +3,6 @@
 pub type TagIndex = usize;
 use super::math::*;
 
-//#[derive(Debug)]
-//pub struct TagContainer {
-//pub tags: Vec<Tag>,
-//pub root: TagIndex,
-//}
-
-//impl TagContainer {
-//pub fn new() -> TagContainer {
-//return TagContainer {
-//tags: Vec::new(),
-//root: 0,
-//};
-//}
-
-//pub fn add_tag(&mut self, tag: Tag) -> TagIndex {
-//self.tags.push(tag);
-//return self.tags.len() - 1;
-//}
-//}
-
 #[derive(Debug)]
 pub enum Tag {
     Model(Model),
@@ -31,7 +11,7 @@ pub enum Tag {
     Species(Species),
     Reaction(Reaction),
     KineticLaw(KineticLaw),
-    Math(Math),
+    MathTag(MathTag),
 }
 
 // An SBML Model container
