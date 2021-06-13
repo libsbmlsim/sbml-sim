@@ -5,6 +5,22 @@ use super::model::TagIndex;
 #[derive(Debug)]
 pub struct MathTag {
     pub node: MathNode,
+    // possible parents:
+    //     FunctionDefinition
+    //     InitialAssignment
+    //     KineticLaw
+    //
+    //     // Not needed for now
+    //     Rule
+    //         AlgebraicRule
+    //         AssignmentRule
+    //         RateRule
+    //     Constraints
+    //     Event
+    //         Trigger
+    //         Priority
+    //         Delay
+    //         EventAssignment
     pub parent: Option<TagIndex>,
 }
 
