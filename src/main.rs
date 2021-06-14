@@ -1,10 +1,9 @@
 use std::env;
-use std::fs::File;
-use std::io::BufReader;
+use std::str;
 
-use xml;
-use xml::reader::{EventReader, XmlEvent};
-#[allow(unused_variables)]
+use quick_xml::events::Event;
+use quick_xml::Reader;
+
 mod structs;
 use sbml_simulator::{attach, close, push};
 use structs::math::*;
@@ -17,9 +16,12 @@ fn main() {
     let filename = &args[1];
 
     // read file
-    let file = File::open(filename).unwrap();
-    let file = BufReader::new(file);
-    let parser = EventReader::new(file);
+    //let file = File::open().unwrap();
+    let mut reader = Reader::from_file(filename).expect("File error.");
+    reader.trim_text(true);
+    reader.expand_empty_elements(true);
+    let mut buf = Vec::new();
+    let mut txt = Vec::new();
 
     let mut stack: Vec<TagIndex> = Vec::new();
     let mut container = Vec::new();
@@ -32,22 +34,23 @@ fn main() {
     stack.push(current);
     println!("{:?}", current);
 
-    for e in parser {
-        match e {
+    loop {
+        match reader.read_event(&mut buf) {
             // for each starting tag
-            Ok(XmlEvent::StartElement {
-                name, attributes, ..
-            }) => {
+            Ok(Event::Start(ref e)) => {
                 let mut new_tag = None;
-                match name.local_name.as_str() {
-                    "listOfSpecies" => attach!(ListOfSpecies to Model),
-                    "listOfReactions" => attach!(ListOfReactions to Model),
-                    "species" => {
-                        push!(Species with name as String, compartment as String into ListOfSpecies)
+                match e.name() {
+                    b"listOfSpecies" => attach!(ListOfSpecies to Model),
+                    b"listOfReactions" => attach!(ListOfReactions to Model),
+                    b"species" => {
+                        push!(Species with 
+                                name as String, 
+                                compartment as String 
+                            into ListOfSpecies)
                     }
-                    "reaction" => push!(Reaction into ListOfReactions),
-                    "kineticLaw" => attach!(KineticLaw to Reaction),
-                    "math" => match container[current] {
+                    b"reaction" => push!(Reaction into ListOfReactions),
+                    b"kineticLaw" => attach!(KineticLaw to Reaction),
+                    b"math" => match container[current] {
                         Tag::KineticLaw(ref mut kinetic_law) => {
                             let math = MathTag::new_root();
                             new_tag = Some(Tag::MathTag(math));
@@ -73,7 +76,7 @@ fn main() {
                     //_ => {}
                     //}
                     _ => {
-                        println!("Tag not parsed: {}", name.local_name);
+                        println!("Tag not parsed: {}", str::from_utf8(e.name()).unwrap());
                     }
                 }
                 match new_tag {
@@ -85,13 +88,13 @@ fn main() {
                 }
             }
             // for each closing tag
-            Ok(XmlEvent::EndElement { name }) => match name.local_name.as_str() {
-                "listOfSpecies" => close![ListOfSpecies],
-                "listOfReactions" => close![ListOfReactions],
-                "species" => close![Species],
-                "reaction" => close![Reaction],
-                "kineticLaw" => close![KineticLaw],
-                "math" => close![MathTag],
+            Ok(Event::End(ref e)) => match e.name() {
+                b"listOfSpecies" => close![ListOfSpecies],
+                b"listOfReactions" => close![ListOfReactions],
+                b"species" => close![Species],
+                b"reaction" => close![Reaction],
+                b"kineticLaw" => close![KineticLaw],
+                b"math" => close![MathTag],
                 //"math" => match container[current] {
                 //Tag::MathTag(ref mut math_tag) => {
                 //stack.pop();
@@ -110,17 +113,13 @@ fn main() {
                 //},
                 _ => {}
             },
-            // read text within tags
-            Ok(XmlEvent::Characters(s)) => {
-                //model.add_text(current, String::from(s.trim()));
-            }
-            Err(e) => {
-                println!("Error: {}", e);
-            }
-            _ => {}
+            // unescape and decode the text event using the reader encoding
+            Ok(Event::Text(e)) => txt.push(e.unescape_and_decode(&reader).unwrap()),
+            Ok(Event::Eof) => break, // exits the loop when reaching end of file
+            Err(e) => panic!("Error at position {}: {:?}", reader.buffer_position(), e),
+            _ => (), // There are several other `Event`s we do not consider here
         }
     }
-
     for item in container {
         println!("{:?}", item);
     }

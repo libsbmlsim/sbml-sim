@@ -4,7 +4,7 @@ use proc_macro2::Span;
 use quote::quote;
 use syn::parse::{Parse, ParseStream};
 use syn::punctuated::Punctuated;
-use syn::{parse_macro_input, ExprCast, Ident, Result, Token, Type};
+use syn::{parse_macro_input, Ident, Result, Token, Type};
 
 mod kw {
     syn::custom_keyword!(to);
@@ -98,14 +98,20 @@ pub fn push(input: TokenStream) -> TokenStream {
                 // instantiate object of the tag that was found
                 let mut #parent_field_ident = #tag::new();
                 // parse any attributes, keeping their types in mind
+                let attributes = e.attributes().map(|a| a.unwrap()).collect::<Vec<_>>();
+                println!("{:?}", attributes);
                 for attribute in attributes {
-                    match attribute.name.local_name.as_str() {
+                    let key = str::from_utf8(attribute.key).unwrap();
+                    let value = attribute.unescape_and_decode_value(&reader).unwrap();
+                    match key {
                         #(#attr_str => {
-                            #parent_field_ident.#attr_idents = Some(attribute.value.parse::<#attr_types>().expect("Incorrect type"));
+                            #parent_field_ident.#attr_idents =
+                                Some(value.parse::<#attr_types>().expect("Incorrect type"));
                         })*
                         _ => {}
                     }
                 }
+
                 // create Tag enum object
                 new_tag = Some(Tag::#tag(#parent_field_ident));
                 // update current pointer (which is really an int)
