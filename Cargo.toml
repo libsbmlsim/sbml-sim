@@ -1,6 +1,6 @@
 [package]
 name = "sbml-sim"
-version = "0.1.1-alpha.1"
+version = "0.1.1-alpha.2"
 authors = ["Pranav Ballaney <ballaneypranav@gmail.com>"]
 edition = "2018"
 description = "Simulator for SBML models."
