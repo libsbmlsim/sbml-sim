@@ -1,3 +1,7 @@
+use sbml_rs;
+
 fn main() {
-    println!("Hello")
+    let filename = "models/small.xml";
+    let model = sbml_rs::parse(filename);
+    println!("{:?}", model);
 }
