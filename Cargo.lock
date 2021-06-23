@@ -101,7 +101,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "sbml_simulator"
+name = "sbml-sim"
 version = "0.1.0"
 dependencies = [
  "sbml-rs",
