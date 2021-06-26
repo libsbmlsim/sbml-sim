@@ -104,6 +104,7 @@ dependencies = [
 name = "sbml-sim"
 version = "0.1.1-alpha.2"
 dependencies = [
+ "mathml-rs",
  "sbml-rs",
 ]
 
