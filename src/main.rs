@@ -19,7 +19,11 @@ fn main() {
     }
 
     let mut hm: HashMap<String, f64> = HashMap::new();
-    hm.insert("hello".into(), 55.0);
+    hm.insert("compartment".into(), 5.0);
+    hm.insert("k1".into(), 5.0);
+    hm.insert("k2".into(), 5.0);
+    hm.insert("S1".into(), 6.0);
+    hm.insert("S2".into(), 6.0);
 
     // Evaluate math nodes
     for tag in &model {
