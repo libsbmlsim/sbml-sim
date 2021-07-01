@@ -14,7 +14,7 @@ fn main() {
         .expect("Please provide the filename of an SBML model as a command line argument.")
         .to_owned();
     let model = sbml_rs::parse(&filename).expect("Couldn't parse model.");
-    for tag in &model {
+    for tag in &model.nodes {
         print!("{}", tag);
     }
 
@@ -26,12 +26,9 @@ fn main() {
     hm.insert("S2".into(), 6.0);
 
     // Evaluate math nodes
-    for tag in &model {
-        match tag {
-            Tag::MathTag(math_tag) => {
-                println!("{}", evaluate_node(&math_tag.nodes, 0, &hm).unwrap())
-            }
-            _ => {}
+    for tag in &model.nodes {
+        if let Tag::MathTag(math_tag) = tag {
+            println!("{}", evaluate_node(&math_tag.nodes, 0, &hm).unwrap());
         }
     }
 }
