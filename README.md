@@ -8,13 +8,14 @@ git clone https://github.com/ballaneypranav/sbml-sim
 git clone https://github.com/ballaneypranav/sbml-rs
 git clone https://github.com/ballaneypranav/mathml-rs
 cd sbml-sim
-cargo run
+cargo run [path to model]
 ```
 
-As of now, this can only evaluate an AST with the +, -, * and / operations.
+As of now, only Euler method has been implemented.
 To try it out, run 
 ```
 cargo run [path to model]
 ```
 
-If there are variables in your AST, their values must be specified through a hashmap in the main function.
+This runs the Euler integrator for 5 seconds with a step size of 0.05.
+
