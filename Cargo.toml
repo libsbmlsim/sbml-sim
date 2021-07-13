@@ -13,4 +13,5 @@ readme = "README.md"
 [dependencies]
 sbml-rs = { path = "../sbml-rs/sbml-rs", version = "0.1.1-alpha.3" }#, version = "0.1.1-alpha" }
 mathml-rs = { path = "../mathml-rs/mathml-rs" }#, version = "0.1.1-alpha" }
+clap = "2.33.3"
 

@@ -4,30 +4,72 @@ use sbml_rs;
 //use sbml_rs::TagIndex;
 use std::env;
 mod integrators;
-use integrators::euler::*;
+use integrators::main::*;
+mod structs;
+extern crate clap;
+use clap::{App, Arg, SubCommand};
 
 fn main() {
-    let mut args = env::args();
-    let filename = args
-        .nth(1)
-        .expect("Please provide the filename of an SBML model as a command line argument.")
-        .to_owned();
-    let model = sbml_rs::parse(&filename).expect("Couldn't parse model.");
-    let time = 5.0;
-    let step_size = 0.05;
+    let matches = App::new("SBML Simulator in Rust")
+        .version("1.0")
+        .author("Pranav Ballaney <ballaneypranav@gmail.com>")
+        .about("A simulator for SBML models.")
+        .arg(
+            Arg::with_name("INPUT")
+                .help("Sets the input file to use")
+                .required(true)
+                .index(1),
+        )
+        .arg(
+            Arg::with_name("TIME")
+                .help("Simulation duration in seconds")
+                .required(true),
+        )
+        .arg(
+            Arg::with_name("STEPS")
+                .help("Number of steps for numerical integration")
+                .required(true),
+        )
+        .arg(
+            Arg::with_name("v")
+                .short("v")
+                .multiple(true)
+                .help("Sets the level of verbosity"),
+        )
+        .get_matches();
 
-    let result = euler_integrator(&model, time, step_size).unwrap();
+    // Vary the output based on how many times the user used the "verbose" flag
+    // (i.e. 'myprog -v -v -v' or 'myprog -vvv' vs 'myprog -v'
+    match matches.occurrences_of("v") {
+        0 => {}
+        1 => println!("Some verbose info"),
+        2 => println!("Tons of verbose info"),
+        3 | _ => println!("Don't be crazy"),
+    }
+
+    // Calling .unwrap() is safe here because "INPUT" is required (if "INPUT" wasn't
+    // required we could have used an 'if let' to conditionally get the value)
+    let filename = matches.value_of("INPUT").unwrap();
+    let time = matches.value_of("TIME").unwrap().parse::<f64>().unwrap();
+    let steps = matches.value_of("STEPS").unwrap().parse::<i32>().unwrap();
+    println!("Using input file: {}", filename);
+    println!("{} seconds with {} steps.", time, steps);
+
+    let step_size = time / (steps as f64);
+
+    let model = sbml_rs::parse(&filename).expect("Couldn't parse model.");
+    let result = integrate(&model, time, step_size).unwrap();
 
     print!("t\t");
     for sp in &model.species() {
-        print!("{}\t\t", sp.id.as_ref().unwrap());
+        print!("{}\t\t\t", sp.id.as_ref().unwrap());
     }
     println!();
-    for iteration in result.iter().step_by(2) {
-        let mut t = iteration.get("t").unwrap();
+    for iteration in result.iter().step_by(1) {
+        let t = iteration.get("t").unwrap();
         print!("{:.2}\t", t);
         for sp in &model.species() {
-            print!("{:.7}\t", iteration.get(sp.id.as_ref().unwrap()).unwrap());
+            print!("{:.15}\t", iteration.get(sp.id.as_ref().unwrap()).unwrap());
         }
         println!();
     }
