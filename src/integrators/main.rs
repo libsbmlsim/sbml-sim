@@ -17,44 +17,29 @@ pub fn integrate(
 
     // get initial assignments from the model
     let mut assignments = model.assignments();
+    //dbg!(&assignments);
 
     // get list of species IDs
     let species = model.species();
 
     // store first result as initial values
-    let mut initial_results = HashMap::new();
+    let mut initial_results = assignments.clone();
     initial_results.insert("t".to_string(), 0.0);
-    for sp in &species {
-        if let Some(id) = &sp.id {
-            initial_results.insert(id.to_string(), assignments.get(id).unwrap().to_owned());
-        }
-    }
     results.push(initial_results);
 
     let derivatives = get_derivatives(model);
 
     for t in 1..(steps + 1) {
-        let mut iteration_result: HashMap<String, f64> = HashMap::new();
+        let mut iteration_result = results.last().unwrap().clone();
         iteration_result.insert("t".to_string(), (t as f64) * step_size);
-        //dbg!(t);
-        //
+
         let deltas = runge_kutta_4(&derivatives, &assignments, step_size)?;
+        //let deltas = euler(&derivatives, &assignments, step_size)?;
 
-        for sp in &species {
-            let species_id = sp.id.as_ref().unwrap().to_owned();
-            let current_value = assignments.get(&species_id).unwrap().to_owned();
-            // add current value to iteration_results
-            iteration_result.insert(species_id.to_string(), current_value);
-
-            // don't update results if boundary_condition is true for species
-            if sp.boundary_condition.unwrap() {
-                continue;
-            }
-            let delta = deltas.get(&species_id).unwrap().to_owned();
-            //let delta = euler(derivative, &assignments, step_size)?;
+        for (key, value) in deltas.iter() {
             iteration_result
-                .entry(species_id.to_string())
-                .and_modify(|e| *e += delta);
+                .entry(key.to_string())
+                .and_modify(|e| *e += value);
         }
 
         for (key, val) in iteration_result.iter() {
@@ -64,9 +49,25 @@ pub fn integrate(
                 assignments.insert(key.to_string(), val.to_owned());
             }
         }
+        //dbg!(&iteration_result);
         results.push(iteration_result);
     }
-    Ok(results)
+
+    let mut result_amounts: Vec<HashMap<String, f64>> = Vec::new();
+    for timestep in &results {
+        let mut result_amounts_current = timestep.clone();
+        for sp in &species {
+            let compartment = sp.compartment.as_ref().unwrap();
+            let species_id = sp.id.as_ref().unwrap();
+            let sp_amount = timestep.get(species_id).unwrap();
+            let compartment_size = timestep.get(compartment).unwrap();
+            let concentration = sp_amount * compartment_size;
+            result_amounts_current.insert(species_id.to_owned(), concentration);
+        }
+        result_amounts.push(result_amounts_current);
+    }
+
+    Ok(result_amounts)
 }
 
 fn get_derivatives(model: &Model) -> HashMap<String, Derivative> {
@@ -87,8 +88,13 @@ fn get_derivatives(model: &Model) -> HashMap<String, Derivative> {
     let rxn_matrix = model.reaction_matrix();
 
     let mut derivatives: HashMap<String, Derivative> = HashMap::new();
-    for sp in &species {
+    for sp in species {
+        if let Some(true) = sp.boundary_condition {
+            continue;
+        }
+
         let species_id = sp.id.as_ref().unwrap().to_owned();
+        let compartment_size = sp.compartment_size(model).unwrap();
 
         for rxn_id in &reaction_ids {
             let kinetic_law = all_kinetic_laws.get(rxn_id).unwrap().to_owned();
@@ -97,14 +103,14 @@ fn get_derivatives(model: &Model) -> HashMap<String, Derivative> {
                 Some(SpeciesStatus::Reactant(stoich)) => {
                     derivatives
                         .entry(species_id.clone())
-                        .or_insert(Derivative::default())
-                        .push(-stoich, kinetic_law.clone());
+                        .or_insert(Derivative::new(compartment_size))
+                        .add_term(-stoich, kinetic_law.clone());
                 }
                 Some(SpeciesStatus::Product(stoich)) => {
                     derivatives
                         .entry(species_id.clone())
-                        .or_insert(Derivative::default())
-                        .push(*stoich, kinetic_law.clone());
+                        .or_insert(Derivative::new(compartment_size))
+                        .add_term(*stoich, kinetic_law.clone());
                 }
                 _ => {}
             }

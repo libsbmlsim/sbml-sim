@@ -5,13 +5,21 @@ use std::{
     fmt::{Display, Formatter},
 };
 
-#[derive(Debug, Default)]
+#[derive(Debug)]
 pub struct Derivative {
     terms: Vec<(f64, MathTag)>,
+    compartment: f64,
 }
 
 impl Derivative {
-    pub fn push(&mut self, coefficient: f64, math_tag: MathTag) {
+    pub fn new(compartment: f64) -> Self {
+        Derivative {
+            terms: Vec::new(),
+            compartment,
+        }
+    }
+
+    pub fn add_term(&mut self, coefficient: f64, math_tag: MathTag) {
         self.terms.push((coefficient, math_tag));
     }
 
@@ -20,6 +28,7 @@ impl Derivative {
         for term in &self.terms {
             result += term.0 * evaluate_node(&term.1.nodes, 0, assignments)?;
         }
+        result /= self.compartment;
         Ok(result)
     }
 }

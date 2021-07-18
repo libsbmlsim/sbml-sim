@@ -55,7 +55,8 @@ fn main() {
     println!("Using input file: {}", filename);
     println!("{} seconds with {} steps.", time, steps);
 
-    let step_size = time / (steps as f64);
+    let step_size = time / (steps as f64) / 4096.0;
+    //let step_size = time / (steps as f64);
 
     let model = sbml_rs::parse(&filename).expect("Couldn't parse model.");
     let result = integrate(&model, time, step_size).unwrap();
@@ -65,7 +66,7 @@ fn main() {
         print!("{}\t\t\t", sp.id.as_ref().unwrap());
     }
     println!();
-    for iteration in result.iter().step_by(1) {
+    for iteration in result.iter().step_by(4096) {
         let t = iteration.get("t").unwrap();
         print!("{:.2}\t", t);
         for sp in &model.species() {
