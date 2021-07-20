@@ -1,9 +1,11 @@
 use super::super::structs::derivative::Derivative;
+use mathml_rs::MathNode;
 use std::collections::HashMap;
 
 pub fn runge_kutta_4(
     derivatives: &HashMap<String, Derivative>,
     assignments: &HashMap<String, f64>,
+    functions: &HashMap<String, Vec<MathNode>>,
     step_size: f64,
 ) -> Result<HashMap<String, f64>, String> {
     //
@@ -12,7 +14,7 @@ pub fn runge_kutta_4(
     let mut k2_assignments = assignments.clone();
     for species_id in derivatives.keys() {
         let derivative = derivatives.get(species_id).unwrap();
-        let derivative_value = derivative.evaluate(assignments)?;
+        let derivative_value = derivative.evaluate(assignments, functions)?;
         let k1_current = step_size * derivative_value;
         k1.insert(species_id.to_string(), k1_current);
 
@@ -25,7 +27,7 @@ pub fn runge_kutta_4(
     let mut k3_assignments = assignments.clone();
     for species_id in derivatives.keys() {
         let derivative = derivatives.get(species_id).unwrap();
-        let derivative_value = derivative.evaluate(&k2_assignments)?;
+        let derivative_value = derivative.evaluate(&k2_assignments, functions)?;
         let k2_current = step_size * derivative_value;
         k2.insert(species_id.to_string(), k2_current);
 
@@ -38,7 +40,7 @@ pub fn runge_kutta_4(
     let mut k4_assignments = assignments.clone();
     for species_id in derivatives.keys() {
         let derivative = derivatives.get(species_id).unwrap();
-        let derivative_value = derivative.evaluate(&k3_assignments)?;
+        let derivative_value = derivative.evaluate(&k3_assignments, functions)?;
         let k3_current = step_size * derivative_value;
         k3.insert(species_id.to_string(), k3_current);
 
@@ -50,7 +52,7 @@ pub fn runge_kutta_4(
     let mut k4: HashMap<String, f64> = HashMap::new();
     for species_id in derivatives.keys() {
         let derivative = derivatives.get(species_id).unwrap();
-        let derivative_value = derivative.evaluate(&k4_assignments)?;
+        let derivative_value = derivative.evaluate(&k4_assignments, functions)?;
         let k4_current = step_size * derivative_value;
         k4.insert(species_id.to_string(), k4_current);
     }

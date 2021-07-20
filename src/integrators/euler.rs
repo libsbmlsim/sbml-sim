@@ -1,9 +1,11 @@
 use super::super::structs::derivative::Derivative;
+use mathml_rs::MathNode;
 use std::collections::HashMap;
 
 pub fn euler(
     derivatives: &HashMap<String, Derivative>,
     assignments: &HashMap<String, f64>,
+    functions: &HashMap<String, Vec<MathNode>>,
     step_size: f64,
 ) -> Result<HashMap<String, f64>, String> {
     //
@@ -12,7 +14,7 @@ pub fn euler(
         //dbg!(species_id);
         let derivative = derivatives.get(species_id).unwrap();
         //println!("{}", derivative);
-        let derivative_value = derivative.evaluate(assignments)?;
+        let derivative_value = derivative.evaluate(assignments, functions)?;
         //dbg!(derivative_value);
         let delta = step_size * derivative_value;
         //dbg!(delta);

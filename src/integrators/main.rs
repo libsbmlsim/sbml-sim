@@ -17,6 +17,7 @@ pub fn integrate(
 
     // get initial assignments from the model
     let mut assignments = model.assignments();
+    let functions = model.function_definition_tags();
     //dbg!(&assignments);
 
     // get list of species IDs
@@ -33,7 +34,7 @@ pub fn integrate(
         let mut iteration_result = results.last().unwrap().clone();
         iteration_result.insert("t".to_string(), (t as f64) * step_size);
 
-        let deltas = runge_kutta_4(&derivatives, &assignments, step_size)?;
+        let deltas = runge_kutta_4(&derivatives, &assignments, &functions, step_size)?;
         //let deltas = euler(&derivatives, &assignments, step_size)?;
 
         for (key, value) in deltas.iter() {

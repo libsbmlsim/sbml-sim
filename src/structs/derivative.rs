@@ -1,4 +1,4 @@
-use mathml_rs::evaluate_node;
+use mathml_rs::{evaluate_node, MathNode};
 use sbml_rs::MathTag;
 use std::{
     collections::HashMap,
@@ -23,10 +23,15 @@ impl Derivative {
         self.terms.push((coefficient, math_tag));
     }
 
-    pub fn evaluate(&self, assignments: &HashMap<String, f64>) -> Result<f64, String> {
+    pub fn evaluate(
+        &self,
+        assignments: &HashMap<String, f64>,
+        functions: &HashMap<String, Vec<MathNode>>,
+    ) -> Result<f64, String> {
         let mut result = 0.0;
         for term in &self.terms {
-            result += term.0 * evaluate_node(&term.1.nodes, 0, assignments)?;
+            //println!("Evaluating derivative");
+            result += term.0 * evaluate_node(&term.1.nodes, 0, assignments, functions)?;
         }
         result /= self.compartment;
         Ok(result)
