@@ -1,8 +1,6 @@
-//use super::euler::euler;
-use super::super::structs::derivative::Derivative;
-use super::euler::euler;
+use super::super::structs::derivative::{Derivative, DerivativeTerm};
 use super::runge_kutta::runge_kutta_4;
-use sbml_rs::{MathTag, Model, SpeciesStatus};
+use sbml_rs::{Model, SpeciesStatus};
 use std::collections::HashMap;
 
 pub fn integrate(
@@ -17,6 +15,7 @@ pub fn integrate(
 
     // get initial assignments from the model
     let mut assignments = model.assignments();
+    let local_parameters = model.local_parameters();
     let functions = model.function_definition_tags();
     //dbg!(&assignments);
 
@@ -31,10 +30,20 @@ pub fn integrate(
     let derivatives = get_derivatives(model);
 
     for t in 1..(steps + 1) {
+        // evaluate assignment rules
+
+        // create result object for this iteration
         let mut iteration_result = results.last().unwrap().clone();
         iteration_result.insert("t".to_string(), (t as f64) * step_size);
 
-        let deltas = runge_kutta_4(&derivatives, &assignments, &functions, step_size)?;
+        // run numerical integrator
+        let deltas = runge_kutta_4(
+            &derivatives,
+            &assignments,
+            &local_parameters,
+            &functions,
+            step_size,
+        )?;
         //let deltas = euler(&derivatives, &assignments, step_size)?;
 
         for (key, value) in deltas.iter() {
@@ -99,21 +108,24 @@ fn get_derivatives(model: &Model) -> HashMap<String, Derivative> {
 
         for rxn_id in &reaction_ids {
             let kinetic_law = all_kinetic_laws.get(rxn_id).unwrap().to_owned();
+            let mut coefficient = None;
             // simulation step
             match rxn_matrix.get(&(species_id.to_string(), rxn_id.to_string())) {
                 Some(SpeciesStatus::Reactant(stoich)) => {
-                    derivatives
-                        .entry(species_id.clone())
-                        .or_insert(Derivative::new(compartment_size))
-                        .add_term(-stoich, kinetic_law.clone());
+                    coefficient = Some(-stoich);
                 }
                 Some(SpeciesStatus::Product(stoich)) => {
-                    derivatives
-                        .entry(species_id.clone())
-                        .or_insert(Derivative::new(compartment_size))
-                        .add_term(*stoich, kinetic_law.clone());
+                    coefficient = Some(*stoich);
                 }
                 _ => {}
+            }
+
+            if let Some(value) = coefficient {
+                let derivative_term = DerivativeTerm::new(value, kinetic_law, rxn_id.to_string());
+                derivatives
+                    .entry(species_id.clone())
+                    .or_insert_with(|| Derivative::new(compartment_size))
+                    .add_term(derivative_term);
             }
         }
     }

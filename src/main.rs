@@ -1,13 +1,8 @@
-//use mathml_rs::Op;
-use sbml_rs;
-//use sbml_rs::MathNode;
-//use sbml_rs::TagIndex;
-use std::env;
 mod integrators;
 use integrators::main::*;
 mod structs;
 extern crate clap;
-use clap::{App, Arg, SubCommand};
+use clap::{App, Arg};
 
 fn main() {
     let matches = App::new("SBML Simulator in Rust")
@@ -44,7 +39,7 @@ fn main() {
         0 => {}
         1 => println!("Some verbose info"),
         2 => println!("Tons of verbose info"),
-        3 | _ => println!("Don't be crazy"),
+        _ => println!("Don't be crazy"),
     }
 
     // Calling .unwrap() is safe here because "INPUT" is required (if "INPUT" wasn't
