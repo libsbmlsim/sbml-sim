@@ -63,9 +63,9 @@ fn main() {
     println!();
     for iteration in result.iter().step_by(4096) {
         let t = iteration.get("t").unwrap();
-        print!("{:.2}\t", t);
+        print!("{:.4}\t", t);
         for sp in &model.species() {
-            print!("{:.15}\t", iteration.get(sp.id.as_ref().unwrap()).unwrap());
+            print!("{:.20}\t", iteration.get(sp.id.as_ref().unwrap()).unwrap());
         }
         println!();
     }

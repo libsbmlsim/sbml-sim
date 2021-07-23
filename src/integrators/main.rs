@@ -1,5 +1,6 @@
 use super::super::structs::derivative::{Derivative, DerivativeTerm};
 use super::runge_kutta::runge_kutta_4;
+use mathml_rs::{evaluate_node, MathNode};
 use sbml_rs::{Model, SpeciesStatus};
 use std::collections::HashMap;
 
@@ -16,9 +17,9 @@ pub fn integrate(
     // get initial assignments from the model
     let mut assignments = model.assignments();
     let local_parameters = model.local_parameters();
-    let functions = model.function_definition_tags();
-    //dbg!(&assignments);
-
+    let functions = model.function_definition_math();
+    let assignment_rules = model.assignment_rule_math();
+    assignments = evaluate_rules(&assignment_rules, &mut assignments, &functions);
     // get list of species IDs
     let species = model.species();
 
@@ -30,12 +31,6 @@ pub fn integrate(
     let derivatives = get_derivatives(model);
 
     for t in 1..(steps + 1) {
-        // evaluate assignment rules
-
-        // create result object for this iteration
-        let mut iteration_result = results.last().unwrap().clone();
-        iteration_result.insert("t".to_string(), (t as f64) * step_size);
-
         // run numerical integrator
         let deltas = runge_kutta_4(
             &derivatives,
@@ -46,20 +41,15 @@ pub fn integrate(
         )?;
         //let deltas = euler(&derivatives, &assignments, step_size)?;
 
-        for (key, value) in deltas.iter() {
-            iteration_result
-                .entry(key.to_string())
-                .and_modify(|e| *e += value);
+        for (key, val) in deltas.iter() {
+            assignments.entry(key.to_string()).and_modify(|e| *e += val);
         }
+        //  // evaluate assignment rules
+        assignments = evaluate_rules(&assignment_rules, &mut assignments, &functions);
+        // create result object for this iteration
+        let mut iteration_result = assignments.clone();
+        iteration_result.insert("t".to_string(), (t as f64) * step_size);
 
-        for (key, val) in iteration_result.iter() {
-            if key == "t" {
-                continue;
-            } else {
-                assignments.insert(key.to_string(), val.to_owned());
-            }
-        }
-        //dbg!(&iteration_result);
         results.push(iteration_result);
     }
 
@@ -69,10 +59,11 @@ pub fn integrate(
         for sp in &species {
             let compartment = sp.compartment.as_ref().unwrap();
             let species_id = sp.id.as_ref().unwrap();
-            let sp_amount = timestep.get(species_id).unwrap();
-            let compartment_size = timestep.get(compartment).unwrap();
-            let concentration = sp_amount * compartment_size;
-            result_amounts_current.insert(species_id.to_owned(), concentration);
+            if let Some(sp_amount) = timestep.get(species_id) {
+                let compartment_size = timestep.get(compartment).unwrap();
+                let concentration = sp_amount * compartment_size;
+                result_amounts_current.insert(species_id.to_owned(), concentration);
+            }
         }
         result_amounts.push(result_amounts_current);
     }
@@ -130,4 +121,18 @@ fn get_derivatives(model: &Model) -> HashMap<String, Derivative> {
         }
     }
     derivatives
+}
+
+pub fn evaluate_rules(
+    rules: &HashMap<String, Vec<MathNode>>,
+    assignments: &mut HashMap<String, f64>,
+    functions: &HashMap<String, Vec<MathNode>>,
+) -> HashMap<String, f64> {
+    for (variable, math) in rules {
+        if let Ok(value) = evaluate_node(math, 0, assignments, functions) {
+            assignments.insert(variable.to_string(), value);
+        }
+    }
+
+    assignments.clone()
 }
