@@ -26,6 +26,16 @@ fn main() {
                 .required(true),
         )
         .arg(
+            Arg::with_name("RELATIVE_TOLERANCE")
+                .help("Relative error tolerance")
+                .required(true),
+        )
+        .arg(
+            Arg::with_name("ABSOLUTE_TOLERANCE")
+                .help("Absolute error tolerance")
+                .required(true),
+        )
+        .arg(
             Arg::with_name("v")
                 .short("v")
                 .multiple(true)
@@ -47,25 +57,34 @@ fn main() {
     let filename = matches.value_of("INPUT").unwrap();
     let time = matches.value_of("TIME").unwrap().parse::<f64>().unwrap();
     let steps = matches.value_of("STEPS").unwrap().parse::<i32>().unwrap();
+    let rtol = matches
+        .value_of("RELATIVE_TOLERANCE")
+        .unwrap()
+        .parse::<f64>()
+        .unwrap();
+    let atol = matches
+        .value_of("ABSOLUTE_TOLERANCE")
+        .unwrap()
+        .parse::<f64>()
+        .unwrap();
     println!("Using input file: {}", filename);
     println!("{} seconds with {} steps.", time, steps);
 
-    let step_size = time / (steps as f64) / 4096.0;
-    //let step_size = time / (steps as f64);
-
+    //let step_size = time / (steps as f64) / 4096.0;
+    let step_size = time / (steps as f64);
     let model = sbml_rs::parse(&filename).expect("Couldn't parse model.");
-    let result = integrate(&model, time, step_size).unwrap();
+    let result = integrate(&model, time, steps, step_size, rtol, atol).unwrap();
 
-    print!("t\t");
+    print!("t       \t");
     for sp in &model.species() {
         print!("{}\t\t\t", sp.id.as_ref().unwrap());
     }
     println!();
-    for iteration in result.iter().step_by(4096) {
+    for iteration in result.iter().step_by(1) {
         let t = iteration.get("t").unwrap();
-        print!("{:.4}\t", t);
+        print!("{:.6}\t", t);
         for sp in &model.species() {
-            print!("{:.20}\t", iteration.get(sp.id.as_ref().unwrap()).unwrap());
+            print!("{:.16}\t", iteration.get(sp.id.as_ref().unwrap()).unwrap());
         }
         println!();
     }
