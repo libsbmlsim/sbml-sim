@@ -12,6 +12,7 @@ pub fn integrate(
     init_step_size: f64,
     rtol: f64,
     atol: f64,
+    DEBUG: bool,
 ) -> Result<Vec<HashMap<String, f64>>, String> {
     // number of steps let steps = (time / step_size).ceil() as i32;
     // vector to store results
@@ -49,9 +50,11 @@ pub fn integrate(
     //let min_step_size = f64::EPSILON * 25.0;
 
     while duration - t > f64::EPSILON {
-        //println!();
-        //println!("Integrating from {} to {}", t, t + current_step_size);
-        //println!("Calling rkf45 with dt = {}", current_step_size);
+        if DEBUG {
+            println!();
+            println!("Integrating from {} to {}", t, t + current_step_size);
+            println!("Calling rkf45 with dt = {}", current_step_size);
+        }
         let (deltas, used_step_size, mut next_step_size) = runge_kutta_fehlberg_45(
             &derivatives,
             &assignments,
@@ -60,13 +63,16 @@ pub fn integrate(
             current_step_size,
             rtol,
             atol,
+            DEBUG,
             false,
         )?;
         if current_step_size != used_step_size {
             //println!("Tried {}, used {}", current_step_size, used_step_size);
         }
         current_step_size = used_step_size;
-        //println!("Integrated from t = {} to {}", t, t + &current_step_size);
+        if DEBUG {
+            println!("Integrated from t = {} to {}", t, t + &current_step_size);
+        }
         //dbg!(t_next_result);
         // if the step size wasn't reduced and there's a valid step_size_cache,
         // try to use that in the next step
@@ -76,10 +82,12 @@ pub fn integrate(
                 if next_step_size < cached_step_size_value {
                     //dbg!(cached_step_size_value);
                     next_step_size = cached_step_size_value;
-                    //println!(
-                    //"Will use cached step size of {} for next step",
-                    //next_step_size
-                    //);
+                    if DEBUG {
+                        println!(
+                            "Will use cached step size of {} for next step",
+                            next_step_size
+                        );
+                    }
                 }
                 // but reset cache regardless
                 cached_step_size = None;
@@ -96,7 +104,9 @@ pub fn integrate(
         // see if we reached a result_point in this iteration
         // if we did, increment t_next_result and store results
         if t_next_result - (t + current_step_size) < f64::EPSILON {
-            //println!("Reached t = {}, storing results", t + current_step_size);
+            if DEBUG {
+                println!("Reached t = {}, storing results", t + current_step_size);
+            }
             t_next_result += result_interval;
             if t_next_result > duration {
                 t_next_result = duration;
@@ -121,18 +131,23 @@ pub fn integrate(
             //println!("saved {} in the cache", cached_step_size.unwrap());
         }
         current_step_size = next_step_size;
-        //println!(
-        //"Next step will be from t = {} to {} with step size {}",
-        //t,
-        //t + current_step_size,
-        //current_step_size
-        //);
+        if DEBUG {
+            println!(
+                "Next step will be from t = {} to {} with step size {}",
+                t,
+                t + current_step_size,
+                current_step_size
+            );
+        }
 
-        //let mut input_string = String::new();
-        //stdin()
-        //.read_line(&mut input_string)
-        //.ok()
-        //.expect("Failed to read line");
+        if DEBUG {
+            println!("Press return to continue.");
+            let mut input_string = String::new();
+            stdin()
+                .read_line(&mut input_string)
+                .ok()
+                .expect("Failed to read line");
+        }
     }
 
     let mut result_amounts: Vec<HashMap<String, f64>> = Vec::new();

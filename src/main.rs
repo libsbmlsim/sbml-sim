@@ -41,6 +41,11 @@ fn main() {
                 .multiple(true)
                 .help("Sets the level of verbosity"),
         )
+        .arg(
+            Arg::with_name("debug")
+                .short("d")
+                .help("Print debug information"),
+        )
         .get_matches();
 
     // Vary the output based on how many times the user used the "verbose" flag
@@ -70,10 +75,12 @@ fn main() {
     println!("Using input file: {}", filename);
     println!("{} seconds with {} steps.", time, steps);
 
+    let DEBUG = matches.is_present("debug");
+
     //let step_size = time / (steps as f64) / 4096.0;
     let step_size = time / (steps as f64);
     let model = sbml_rs::parse(&filename).expect("Couldn't parse model.");
-    let result = integrate(&model, time, steps, step_size, rtol, atol).unwrap();
+    let result = integrate(&model, time, steps, step_size, rtol, atol, DEBUG).unwrap();
 
     print!("t       \t");
     for sp in &model.species() {

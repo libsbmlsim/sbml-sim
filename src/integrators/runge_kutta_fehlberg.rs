@@ -11,6 +11,7 @@ pub fn runge_kutta_fehlberg_45(
     step_size: f64,
     rtol: f64,
     atol: f64,
+    debug: bool,
     prev_step_failed: bool,
 ) -> Result<(HashMap<String, f64>, f64, f64), String> {
     // COEFFICIENTS
@@ -201,15 +202,20 @@ pub fn runge_kutta_fehlberg_45(
     for (species_id, delta) in &deltas {
         if let Some(original_value) = assignments.get(species_id) {
             if let Some(local_error) = local_errors.get(species_id) {
-                let error_tolerance =
-                    rtol * f64::max(*original_value, original_value + delta) + atol;
-                //println!("species_id = {:?}", species_id);
-                //println!("original_value = {:?}", original_value);
-                //println!("final_value = {:?}", original_value + delta);
-                //println!("local_error = {:?}", local_error);
-                //println!("error_tolerance = {:?}", error_tolerance);
+                let final_value = original_value + delta;
+                let error_tolerance = rtol * f64::max(*original_value, final_value) + atol;
                 let error_factor = step_size * local_error / error_tolerance;
-                //println!("error_factor = {:?}", error_factor);
+                if debug {
+                    println!("species_id = {:?}", species_id);
+                    println!("original_value = {:?}", original_value);
+                    println!("final_value = {:?}", final_value);
+                    //println!("max_value = {:?}", f64::max(*original_value, final_value));
+                    //println!("rtol = {:?}", rtol);
+                    //println!("atol = {:?}", atol);
+                    println!("error_tolerance = {:?}", error_tolerance);
+                    println!("local_error = {:?}", local_error);
+                    println!("error_factor = {:?}", error_factor);
+                }
 
                 max_error_factor = f64::max(max_error_factor, error_factor);
             }
@@ -218,15 +224,20 @@ pub fn runge_kutta_fehlberg_45(
 
     let mut step_change_factor = 0.9 * 0.84 * (max_error_factor).powf(-0.25);
 
-    //println!("max_err_factor = {:?}", max_error_factor);
-    //println!("step_change_factor = {:?}", step_change_factor);
+    if debug {
+        println!("max_err_factor = {:?}", max_error_factor);
+        println!("step_change_factor = {:?}", step_change_factor);
+    }
     if max_error_factor < 1.0 {
-        //println!("Error acceptable");
+        if debug {
+            println!("Error acceptable");
+        }
         // Increase step size if possible
         // If the previous step failed, increase is not allowed
         if prev_step_failed {
-            //println!("Not changing step size");
-            //println!("returning");
+            if debug {
+                println!("Not changing step size");
+            }
             Ok((deltas, step_size, step_size))
         } else {
             // Calculate next step size
@@ -239,15 +250,19 @@ pub fn runge_kutta_fehlberg_45(
                 step_change_factor = 1.0;
             }
 
-            //println!(
-            //"Increasing step size by a factor of {} to {}",
-            //step_change_factor,
-            //step_size * step_change_factor
-            //);
+            if debug {
+                println!(
+                    "Increasing step size by a factor of {} to {}",
+                    step_change_factor,
+                    step_size * step_change_factor
+                );
+            }
             Ok((deltas, step_size, step_size * step_change_factor))
         }
     } else {
-        //println!("Current step failed, reducing step size");
+        if debug {
+            println!("Current step failed, reducing step size");
+        }
         // Calculate next step size
         // Limit decrease to a factor of 0.1
         if step_change_factor < 0.1 {
@@ -257,10 +272,12 @@ pub fn runge_kutta_fehlberg_45(
         if step_change_factor > 1.0 {
             step_change_factor = 1.0;
         }
-        //println!(
-        //"Calling rkf45 again with step_size = {}",
-        //step_size * step_change_factor
-        //);
+        if debug {
+            println!(
+                "Calling rkf45 again with step_size = {}",
+                step_size * step_change_factor
+            );
+        }
         //println!("{:?}", assignments);
         runge_kutta_fehlberg_45(
             derivatives,
@@ -270,6 +287,7 @@ pub fn runge_kutta_fehlberg_45(
             step_size * step_change_factor,
             rtol,
             atol,
+            debug,
             true,
         )
     }
