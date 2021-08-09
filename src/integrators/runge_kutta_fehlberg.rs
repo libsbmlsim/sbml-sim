@@ -1,13 +1,9 @@
-use super::super::structs::derivative::Derivative;
-use mathml_rs::MathNode;
-use sbml_rs::structs::species;
 use std::collections::HashMap;
 
+use crate::structs::bindings::Bindings;
+
 pub fn runge_kutta_fehlberg_45(
-    derivatives: &HashMap<String, Derivative>,
-    assignments: &HashMap<String, f64>,
-    local_parameters: &HashMap<String, HashMap<String, f64>>,
-    functions: &HashMap<String, Vec<MathNode>>,
+    bindings: &Bindings,
     step_size: f64,
     rtol: f64,
     atol: f64,
@@ -59,132 +55,152 @@ pub fn runge_kutta_fehlberg_45(
     //println!("{:?}", assignments);
     //}
 
+    let original_bindings = bindings.values();
     let mut k: HashMap<String, Vec<f64>> = HashMap::new();
 
     // K1
-    for (species_id, derivative) in derivatives {
-        k.insert(species_id.clone(), Vec::new());
-        let derivative_value = derivative.evaluate(assignments, local_parameters, functions)?;
-        let k1 = step_size * derivative_value;
-        k.entry(species_id.clone()).and_modify(|v| v.push(k1));
+    let k1_assignments = HashMap::<String, f64>::new();
+    for (dependent_variable, ODE) in &bindings.ODEs {
+        k.insert(dependent_variable.clone(), Vec::new());
+        let ode_value = ODE.evaluate(&k1_assignments, bindings)?;
+        let k1 = step_size * ode_value;
+        k.entry(dependent_variable.clone())
+            .and_modify(|v| v.push(k1));
     }
 
     // Prepare assignments for k2 according to
     // k2 = h * f( x + a2 * h, y + b21 * k1 )
     // k2_assignment = y + b21 * k1
-    let mut k2_assignments = assignments.clone();
-    for (species_id, k_current) in &k {
+    let mut k2_assignments: HashMap<String, f64> = HashMap::new();
+    for (dependent_variable, k_current) in &k {
         let k1 = k_current[0];
-        k2_assignments
-            .entry(species_id.to_owned())
-            .and_modify(|v| *v += k1 * b21);
+        if let Some(original_value) = original_bindings.get(dependent_variable) {
+            k2_assignments.insert(dependent_variable.to_owned(), original_value + k1 * b21);
+        }
     }
 
     // Calculate k2 values
-    for (species_id, derivative) in derivatives {
-        let derivative_value = derivative.evaluate(&k2_assignments, local_parameters, functions)?;
-        let k2 = step_size * derivative_value;
+    for (dependent_variable, ODE) in &bindings.ODEs {
+        let ode_value = ODE.evaluate(&k2_assignments, bindings)?;
+        let k2 = step_size * ode_value;
         // k2 = h * f( x + a2 * h, y + b21 * k1 )
-        k.entry(species_id.clone()).and_modify(|v| v.push(k2));
+        k.entry(dependent_variable.clone())
+            .and_modify(|v| v.push(k2));
     }
 
     // Prepare assignments for k3 according to
     // k3 = h * f( x + a3 * h, y + b31 * k1 + b32 * k2 )
     // k3_assignment = y + b31 * k1 + b32 * k2
-    let mut k3_assignments = assignments.clone();
-    for (species_id, k_current) in &k {
+    let mut k3_assignments = HashMap::<String, f64>::new();
+    for (dependent_variable, k_current) in &k {
         let k1 = k_current[0];
         let k2 = k_current[1];
-        k3_assignments
-            .entry(species_id.to_owned())
-            .and_modify(|v| *v += k1 * b31 + k2 * b32);
+        if let Some(original_value) = original_bindings.get(dependent_variable) {
+            k3_assignments.insert(
+                dependent_variable.to_owned(),
+                original_value + k1 * b31 + k2 * b32,
+            );
+        }
     }
 
     // Calculate k3 values
-    for (species_id, derivative) in derivatives {
-        let derivative_value = derivative.evaluate(&k3_assignments, local_parameters, functions)?;
-        let k3 = step_size * derivative_value;
-        k.entry(species_id.clone()).and_modify(|v| v.push(k3));
+    for (dependent_variable, ODE) in &bindings.ODEs {
+        let ode_value = ODE.evaluate(&k3_assignments, bindings)?;
+        let k3 = step_size * ode_value;
+        k.entry(dependent_variable.clone())
+            .and_modify(|v| v.push(k3));
     }
 
     // Prepare assignments for k4 according to
     // k4 = h * f( x + a4 * h, y + b41 * k1 + b42 * k2 + b43 * k3 )
     // k4_assignment = y + b41 * k1 + b42 * k2 + b43 * k3
-    let mut k4_assignments = assignments.clone();
-    for (species_id, k_current) in &k {
+    let mut k4_assignments = HashMap::<String, f64>::new();
+    for (dependent_variable, k_current) in &k {
         let k1 = k_current[0];
         let k2 = k_current[1];
         let k3 = k_current[2];
-        k4_assignments
-            .entry(species_id.to_owned())
-            .and_modify(|v| *v += k1 * b41 + k2 * b42 + k3 * b43);
+        if let Some(original_value) = original_bindings.get(dependent_variable) {
+            k4_assignments.insert(
+                dependent_variable.to_owned(),
+                original_value + k1 * b41 + k2 * b42 + k3 * b43,
+            );
+        }
     }
 
     // Calculate k4 values
-    for (species_id, derivative) in derivatives {
-        let derivative_value = derivative.evaluate(&k4_assignments, local_parameters, functions)?;
-        let k4 = step_size * derivative_value;
-        k.entry(species_id.clone()).and_modify(|v| v.push(k4));
+    for (dependent_variable, ODE) in &bindings.ODEs {
+        let ode_value = ODE.evaluate(&k4_assignments, bindings)?;
+        let k4 = step_size * ode_value;
+        k.entry(dependent_variable.clone())
+            .and_modify(|v| v.push(k4));
     }
 
     // Prepare assignments for k5 according to
     // k5 = h * f( x + a5 * h, y + b51 * k1 + b52 * k2 + b53 * k3 + b54 * k4 )
     // k5_assignment = y + b51 * k1 + b52 * k2 + b53 * k3 + b54 * k4
-    let mut k5_assignments = assignments.clone();
-    for (species_id, k_current) in &k {
+    let mut k5_assignments = HashMap::<String, f64>::new();
+    for (dependent_variable, k_current) in &k {
         let k1 = k_current[0];
         let k2 = k_current[1];
         let k3 = k_current[2];
         let k4 = k_current[3];
-        k5_assignments
-            .entry(species_id.to_owned())
-            .and_modify(|v| *v += k1 * b51 + k2 * b52 + k3 * b53 + k4 * b54);
+        if let Some(original_value) = original_bindings.get(dependent_variable) {
+            k5_assignments.insert(
+                dependent_variable.to_owned(),
+                original_value + k1 * b51 + k2 * b52 + k3 * b53 + k4 * b54,
+            );
+        }
     }
 
     // Calculate k5 values
-    for (species_id, derivative) in derivatives {
-        let derivative_value = derivative.evaluate(&k4_assignments, local_parameters, functions)?;
-        let k5 = step_size * derivative_value;
-        k.entry(species_id.clone()).and_modify(|v| v.push(k5));
+    for (dependent_variable, ODE) in &bindings.ODEs {
+        let ode_value = ODE.evaluate(&k4_assignments, bindings)?;
+        let k5 = step_size * ode_value;
+        k.entry(dependent_variable.clone())
+            .and_modify(|v| v.push(k5));
     }
 
     // Prepare assignments for k6 according to
     // k6 = h * f( x + a6 * h, y + b61 * k1 + b62 * k2 + b63 * k3 + b64 * k4 + b65 * k5 )
     // k6_assignment = y + b61 * k1 + b62 * k2 + b63 * k3 + b64 * k4 + b65 * k5
-    let mut k6_assignments = assignments.clone();
-    for (species_id, k_current) in &k {
+    let mut k6_assignments = HashMap::<String, f64>::new();
+    for (dependent_variable, k_current) in &k {
         let k1 = k_current[0];
         let k2 = k_current[1];
         let k3 = k_current[2];
         let k4 = k_current[3];
         let k5 = k_current[4];
-        k6_assignments
-            .entry(species_id.to_owned())
-            .and_modify(|v| *v += k1 * b61 + k2 * b62 + k3 * b63 + k4 * b64 + k5 * b65);
+        if let Some(original_value) = original_bindings.get(dependent_variable) {
+            k6_assignments.insert(
+                dependent_variable.to_owned(),
+                original_value + k1 * b61 + k2 * b62 + k3 * b63 + k4 * b64 + k5 * b65,
+            );
+        }
     }
 
     // Calculate k6 values
-    for (species_id, derivative) in derivatives {
-        let derivative_value = derivative.evaluate(&k4_assignments, local_parameters, functions)?;
+    for (dependent_variable, ODE) in &bindings.ODEs {
+        let derivative_value = ODE.evaluate(&k4_assignments, bindings)?;
         let k6 = step_size * derivative_value;
-        k.entry(species_id.clone()).and_modify(|v| v.push(k6));
+        k.entry(dependent_variable.clone())
+            .and_modify(|v| v.push(k6));
     }
 
     // Calculate final changes to derivatives
     let mut deltas: HashMap<String, f64> = HashMap::new();
-    for (species_id, k_current) in &k {
+    for (dependent_variable, k_current) in &k {
         let k1 = k_current[0];
         let k3 = k_current[2];
         let k4 = k_current[3];
         let k5 = k_current[4];
 
         let delta = c1 * k1 + c3 * k3 + c4 * k4 + c5 * k5;
-        deltas.insert(species_id.to_owned(), delta);
+        deltas.insert(dependent_variable.to_owned(), delta);
     }
 
     // Calculate local error for each equation
     let mut local_errors: HashMap<String, f64> = HashMap::new();
-    for (species_id, k_current) in &k {
+    for (dependent_variable, k_current) in &k {
         let k1 = k_current[0];
         let k3 = k_current[2];
         let k4 = k_current[3];
@@ -192,26 +208,23 @@ pub fn runge_kutta_fehlberg_45(
         let k6 = k_current[5];
 
         let local_error = (r1 * k1 + r3 * k3 + r4 * k4 + r5 * k5 + r6 * k6).abs();
-        local_errors.insert(species_id.clone(), local_error);
+        local_errors.insert(dependent_variable.clone(), local_error);
     }
 
     // Estimate error
     // Error factor is the local error over for an equation
     // over the error tolerance for that equation
     let mut max_error_factor = 0.0;
-    for (species_id, delta) in &deltas {
-        if let Some(original_value) = assignments.get(species_id) {
-            if let Some(local_error) = local_errors.get(species_id) {
+    for (dependent_variable, delta) in &deltas {
+        if let Some(original_value) = original_bindings.get(dependent_variable) {
+            if let Some(local_error) = local_errors.get(dependent_variable) {
                 let final_value = original_value + delta;
                 let error_tolerance = rtol * f64::max(*original_value, final_value) + atol;
                 let error_factor = step_size * local_error / error_tolerance;
                 if debug {
-                    println!("species_id = {:?}", species_id);
+                    println!("species_id = {:?}", dependent_variable);
                     println!("original_value = {:?}", original_value);
                     println!("final_value = {:?}", final_value);
-                    //println!("max_value = {:?}", f64::max(*original_value, final_value));
-                    //println!("rtol = {:?}", rtol);
-                    //println!("atol = {:?}", atol);
                     println!("error_tolerance = {:?}", error_tolerance);
                     println!("local_error = {:?}", local_error);
                     println!("error_factor = {:?}", error_factor);
@@ -280,10 +293,7 @@ pub fn runge_kutta_fehlberg_45(
         }
         //println!("{:?}", assignments);
         runge_kutta_fehlberg_45(
-            derivatives,
-            assignments,
-            local_parameters,
-            functions,
+            bindings,
             step_size * step_change_factor,
             rtol,
             atol,

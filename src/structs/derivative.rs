@@ -1,71 +1,61 @@
 use mathml_rs::{evaluate_node, MathNode};
-use sbml_rs::MathTag;
-use std::{
-    collections::HashMap,
-    fmt::{Display, Formatter},
-};
+use std::collections::HashMap;
 
-#[derive(Debug)]
-pub struct Derivative {
-    terms: Vec<DerivativeTerm>,
-    compartment_size: f64,
+use super::bindings::Bindings;
+
+#[derive(Debug, Clone)]
+pub struct ODE {
+    terms: Vec<ODETerm>,
+    factor: f64,
 }
 
-impl Derivative {
-    pub fn new(compartment_size: f64) -> Self {
-        Derivative {
+impl ODE {
+    pub fn new(factor: f64) -> Self {
+        ODE {
             terms: Vec::new(),
-            compartment_size,
+            factor,
         }
     }
 
-    pub fn add_term(&mut self, term: DerivativeTerm) {
+    pub fn add_term(&mut self, term: ODETerm) {
         self.terms.push(term);
     }
 
     pub fn evaluate(
         &self,
-        assignments: &HashMap<String, f64>,
-        local_parameters: &HashMap<String, HashMap<String, f64>>,
-        functions: &HashMap<String, Vec<MathNode>>,
+        updated_assignments: &HashMap<String, f64>,
+        bindings: &Bindings,
     ) -> Result<f64, String> {
         let mut result = 0.0;
+        let mut assignments: HashMap<String, f64> = bindings.values();
+        for (key, value) in updated_assignments {
+            assignments.insert(key.clone(), *value);
+        }
         for term in &self.terms {
-            let mut rxn_assignments: HashMap<String, f64> = assignments.clone();
-            if let Some(local_param_hm) = local_parameters.get(&term.rxn_id) {
-                for (key, value) in local_param_hm {
-                    rxn_assignments.insert(key.clone(), *value);
+            let mut rxn_assignments = assignments.clone();
+            if let Some(reaction) = bindings.reactions.get(&term.rxn_id) {
+                for (key, value) in reaction.local_parameter_values() {
+                    rxn_assignments.insert(key, value);
                 }
             }
-            result +=
-                term.coefficient * evaluate_node(&term.math.nodes, 0, &rxn_assignments, functions)?;
+            result += term.coefficient
+                * evaluate_node(&term.math, 0, &rxn_assignments, &bindings.functions)?;
         }
-        result /= self.compartment_size;
+        result *= self.factor;
         Ok(result)
     }
 }
 
-impl Display for Derivative {
-    fn fmt(&self, f: &mut Formatter) -> std::fmt::Result {
-        for term in &self.terms {
-            write!(f, "{} * ", term.coefficient)?;
-            write!(f, "{}", &term.math)?;
-            write!(f, "{}", &term.rxn_id)?;
-        }
-        Ok(())
-    }
-}
-
-#[derive(Debug)]
-pub struct DerivativeTerm {
+#[derive(Debug, Clone)]
+pub struct ODETerm {
     coefficient: f64,
-    math: MathTag,
+    math: Vec<MathNode>,
     rxn_id: String,
 }
 
-impl DerivativeTerm {
-    pub fn new(coefficient: f64, math: MathTag, rxn_id: String) -> Self {
-        DerivativeTerm {
+impl ODETerm {
+    pub fn new(coefficient: f64, math: Vec<MathNode>, rxn_id: String) -> Self {
+        ODETerm {
             coefficient,
             math,
             rxn_id,

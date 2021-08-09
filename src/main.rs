@@ -1,6 +1,15 @@
 mod integrators;
 use integrators::main::*;
-mod structs;
+pub mod structs;
+pub use structs::assignment_rule::*;
+pub use structs::compartment::*;
+pub use structs::derivative::*;
+pub use structs::function::*;
+pub use structs::initial_assignment::*;
+pub use structs::local_parameter::*;
+pub use structs::parameter::*;
+pub use structs::reaction::*;
+pub use structs::species::*;
 extern crate clap;
 use clap::{App, Arg};
 
@@ -91,7 +100,12 @@ fn main() {
         let t = iteration.get("t").unwrap();
         print!("{:.6}\t", t);
         for sp in &model.species() {
-            print!("{:.16}\t", iteration.get(sp.id.as_ref().unwrap()).unwrap());
+            print!(
+                "{:.20}\t",
+                iteration
+                    .get(sp.id.as_ref().expect("Species ID not found"))
+                    .expect("No data for species")
+            );
         }
         println!();
     }
