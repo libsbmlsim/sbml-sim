@@ -5,13 +5,15 @@ use super::bindings::Bindings;
 
 #[derive(Debug, Clone)]
 pub struct ODE {
+    pub id: String,
     terms: Vec<ODETerm>,
     factor: f64,
 }
 
 impl ODE {
-    pub fn new(factor: f64) -> Self {
+    pub fn new(id: String, factor: f64) -> Self {
         ODE {
+            id,
             terms: Vec::new(),
             factor,
         }

@@ -60,13 +60,15 @@ pub fn runge_kutta_fehlberg_45(
 
     // K1
     let k1_assignments = HashMap::<String, f64>::new();
-    for (dependent_variable, ODE) in &bindings.ODEs {
+    for ODE in &bindings.ODEs {
+        let dependent_variable = &ODE.id;
         k.insert(dependent_variable.clone(), Vec::new());
         let ode_value = ODE.evaluate(&k1_assignments, bindings)?;
         let k1 = step_size * ode_value;
         k.entry(dependent_variable.clone())
             .and_modify(|v| v.push(k1));
     }
+    drop(k1_assignments);
 
     // Prepare assignments for k2 according to
     // k2 = h * f( x + a2 * h, y + b21 * k1 )
@@ -80,13 +82,15 @@ pub fn runge_kutta_fehlberg_45(
     }
 
     // Calculate k2 values
-    for (dependent_variable, ODE) in &bindings.ODEs {
+    for ODE in &bindings.ODEs {
+        let dependent_variable = &ODE.id;
         let ode_value = ODE.evaluate(&k2_assignments, bindings)?;
         let k2 = step_size * ode_value;
         // k2 = h * f( x + a2 * h, y + b21 * k1 )
         k.entry(dependent_variable.clone())
             .and_modify(|v| v.push(k2));
     }
+    drop(k2_assignments);
 
     // Prepare assignments for k3 according to
     // k3 = h * f( x + a3 * h, y + b31 * k1 + b32 * k2 )
@@ -104,12 +108,14 @@ pub fn runge_kutta_fehlberg_45(
     }
 
     // Calculate k3 values
-    for (dependent_variable, ODE) in &bindings.ODEs {
+    for ODE in &bindings.ODEs {
+        let dependent_variable = &ODE.id;
         let ode_value = ODE.evaluate(&k3_assignments, bindings)?;
         let k3 = step_size * ode_value;
         k.entry(dependent_variable.clone())
             .and_modify(|v| v.push(k3));
     }
+    drop(k3_assignments);
 
     // Prepare assignments for k4 according to
     // k4 = h * f( x + a4 * h, y + b41 * k1 + b42 * k2 + b43 * k3 )
@@ -128,12 +134,14 @@ pub fn runge_kutta_fehlberg_45(
     }
 
     // Calculate k4 values
-    for (dependent_variable, ODE) in &bindings.ODEs {
+    for ODE in &bindings.ODEs {
+        let dependent_variable = &ODE.id;
         let ode_value = ODE.evaluate(&k4_assignments, bindings)?;
         let k4 = step_size * ode_value;
         k.entry(dependent_variable.clone())
             .and_modify(|v| v.push(k4));
     }
+    drop(k4_assignments);
 
     // Prepare assignments for k5 according to
     // k5 = h * f( x + a5 * h, y + b51 * k1 + b52 * k2 + b53 * k3 + b54 * k4 )
@@ -153,12 +161,14 @@ pub fn runge_kutta_fehlberg_45(
     }
 
     // Calculate k5 values
-    for (dependent_variable, ODE) in &bindings.ODEs {
-        let ode_value = ODE.evaluate(&k4_assignments, bindings)?;
+    for ODE in &bindings.ODEs {
+        let dependent_variable = &ODE.id;
+        let ode_value = ODE.evaluate(&k5_assignments, bindings)?;
         let k5 = step_size * ode_value;
         k.entry(dependent_variable.clone())
             .and_modify(|v| v.push(k5));
     }
+    drop(k5_assignments);
 
     // Prepare assignments for k6 according to
     // k6 = h * f( x + a6 * h, y + b61 * k1 + b62 * k2 + b63 * k3 + b64 * k4 + b65 * k5 )
@@ -179,12 +189,14 @@ pub fn runge_kutta_fehlberg_45(
     }
 
     // Calculate k6 values
-    for (dependent_variable, ODE) in &bindings.ODEs {
-        let derivative_value = ODE.evaluate(&k4_assignments, bindings)?;
+    for ODE in &bindings.ODEs {
+        let dependent_variable = &ODE.id;
+        let derivative_value = ODE.evaluate(&k6_assignments, bindings)?;
         let k6 = step_size * derivative_value;
         k.entry(dependent_variable.clone())
             .and_modify(|v| v.push(k6));
     }
+    drop(k6_assignments);
 
     // Calculate final changes to derivatives
     let mut deltas: HashMap<String, f64> = HashMap::new();

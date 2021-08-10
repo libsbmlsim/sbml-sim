@@ -4,10 +4,10 @@ pub mod structs;
 pub use structs::assignment_rule::*;
 pub use structs::compartment::*;
 pub use structs::derivative::*;
-pub use structs::function::*;
 pub use structs::initial_assignment::*;
 pub use structs::local_parameter::*;
 pub use structs::parameter::*;
+pub use structs::rate_rule::*;
 pub use structs::reaction::*;
 pub use structs::species::*;
 extern crate clap;
@@ -37,12 +37,19 @@ fn main() {
         .arg(
             Arg::with_name("RELATIVE_TOLERANCE")
                 .help("Relative error tolerance")
-                .required(true),
+                .required(false)
+                .default_value("1e-10"),
         )
         .arg(
             Arg::with_name("ABSOLUTE_TOLERANCE")
                 .help("Absolute error tolerance")
-                .required(true),
+                .required(false)
+                .default_value("1e-16"),
+        )
+        .arg(
+            Arg::with_name("amounts")
+                .short("a")
+                .help("Print amounts instead of concentrations"),
         )
         .arg(
             Arg::with_name("v")
@@ -83,29 +90,43 @@ fn main() {
         .unwrap();
     println!("Using input file: {}", filename);
     println!("{} seconds with {} steps.", time, steps);
+    //println!("atol: {}, rtol: {}", atol, rtol);
 
     let DEBUG = matches.is_present("debug");
+    let print_amounts = matches.is_present("amounts");
 
     //let step_size = time / (steps as f64) / 4096.0;
     let step_size = time / (steps as f64);
     let model = sbml_rs::parse(&filename).expect("Couldn't parse model.");
-    let result = integrate(&model, time, steps, step_size, rtol, atol, DEBUG).unwrap();
+    let result = integrate(
+        &model,
+        time,
+        steps,
+        step_size,
+        rtol,
+        atol,
+        print_amounts,
+        DEBUG,
+    )
+    .unwrap();
 
     print!("t       \t");
-    for sp in &model.species() {
-        print!("{}\t\t\t", sp.id.as_ref().unwrap());
+    let mut headings = Vec::<String>::new();
+    for heading in result.iter().nth(1).unwrap().keys() {
+        if heading != "t" {
+            headings.push(heading.clone());
+        }
+    }
+    headings.sort();
+    for heading in &headings {
+        print!("{:24}", heading);
     }
     println!();
     for iteration in result.iter().step_by(1) {
         let t = iteration.get("t").unwrap();
         print!("{:.6}\t", t);
-        for sp in &model.species() {
-            print!(
-                "{:.20}\t",
-                iteration
-                    .get(sp.id.as_ref().expect("Species ID not found"))
-                    .expect("No data for species")
-            );
+        for heading in &headings {
+            print!("{:.20}\t", iteration.get(heading).unwrap());
         }
         println!();
     }

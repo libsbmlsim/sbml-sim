@@ -12,6 +12,7 @@ pub fn integrate(
     init_step_size: f64,
     rtol: f64,
     atol: f64,
+    print_amounts: bool,
     DEBUG: bool,
 ) -> Result<Vec<HashMap<String, f64>>, String> {
     // number of steps let steps = (time / step_size).ceil() as i32;
@@ -19,9 +20,10 @@ pub fn integrate(
     let mut results = Vec::new();
 
     let mut bindings = Bindings::from(&model);
+    //dbg!(&bindings);
 
     // store first result as initial values
-    let mut initial_results = bindings.values();
+    let mut initial_results = bindings.results(print_amounts);
     initial_results.insert("t".to_string(), 0.0);
     results.push(initial_results);
 
@@ -88,9 +90,11 @@ pub fn integrate(
             }
             t_next_result = (t_next_result * 1000000.0).round() / 1000000.0;
             // create result object for this iteration
-            let mut iteration_result = bindings.values();
+            let mut iteration_result = bindings.results(print_amounts);
             iteration_result.insert("t".to_string(), t + current_step_size);
 
+            //dbg!(iteration_result);
+            //panic!();
             results.push(iteration_result);
         }
 
@@ -121,19 +125,6 @@ pub fn integrate(
                 .expect("Failed to read line");
         }
     }
-    let mut result_amounts: Vec<HashMap<String, f64>> = Vec::new();
-    for timestep in &results {
-        let mut result_amounts_current = timestep.clone();
-        for (id, sp) in &bindings.species {
-            let compartment = &sp.compartment;
-            if let Some(concentration) = timestep.get(id) {
-                let compartment_size = timestep.get(compartment).unwrap();
-                let sp_amount = concentration * compartment_size;
-                result_amounts_current.insert(id.to_owned(), sp_amount);
-            }
-        }
-        result_amounts.push(result_amounts_current);
-    }
 
-    Ok(result_amounts)
+    Ok(results)
 }

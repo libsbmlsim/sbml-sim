@@ -3,8 +3,8 @@ use sbml_rs::Model;
 use sbml_rs::{self, SpeciesStatus};
 
 use crate::{
-    AssignmentRule, Compartment, InitialAssignment, ODETerm, Parameter, Reaction, Species,
-    UnboundCompartment, UnboundParameter, UnboundSpecies, ODE,
+    AssignmentRule, Compartment, InitialAssignment, ODETerm, Parameter, RateRule, Reaction,
+    Species, UnboundCompartment, UnboundParameter, UnboundSpecies, ODE,
 };
 use std::collections::HashMap;
 
@@ -22,7 +22,8 @@ pub struct Bindings {
     pub reactions: HashMap<String, Reaction>,
     pub initial_assignments: HashMap<String, InitialAssignment>,
     pub assignment_rules: HashMap<String, AssignmentRule>,
-    pub ODEs: HashMap<String, ODE>,
+    pub rate_rules: HashMap<String, RateRule>,
+    pub ODEs: Vec<ODE>,
 }
 
 impl Bindings {
@@ -38,7 +39,8 @@ impl Bindings {
             initial_assignments: HashMap::new(),
             reactions: HashMap::new(),
             assignment_rules: HashMap::new(),
-            ODEs: HashMap::new(),
+            rate_rules: HashMap::new(),
+            ODEs: Vec::new(),
         }
     }
 
@@ -54,6 +56,7 @@ impl Bindings {
         bindings.parse_reactions(model);
         bindings.parse_assignment_rules(model);
         bindings.evaluate_assignment_rules();
+        bindings.parse_rate_rules(model);
         bindings.parse_ODEs(model);
 
         bindings
@@ -63,7 +66,7 @@ impl Bindings {
         let mut hm: HashMap<String, f64> = HashMap::new();
 
         for (id, compartment) in &self.compartments {
-            hm.insert(id.clone(), compartment.size);
+            hm.insert(id.clone(), compartment.size());
         }
         for (id, parameter) in &self.parameters {
             hm.insert(id.clone(), parameter.value);
@@ -75,6 +78,27 @@ impl Bindings {
         hm
     }
 
+    pub fn results(&self, print_amounts: bool) -> HashMap<String, f64> {
+        let mut hm: HashMap<String, f64> = HashMap::new();
+
+        for (id, compartment) in &self.compartments {
+            hm.insert(id.clone(), compartment.size());
+        }
+        for (id, parameter) in &self.parameters {
+            hm.insert(id.clone(), parameter.value);
+        }
+        for (id, species) in &self.species {
+            if print_amounts {
+                hm.insert(id.clone(), species.amount());
+            } else {
+                hm.insert(id.clone(), species.concentration());
+            }
+        }
+
+        hm
+    }
+
+    #[allow(non_snake_case)]
     pub fn parse_compartments(&mut self, model: &Model) {
         // Compartments
         for compartment in model.compartments() {
@@ -141,13 +165,16 @@ impl Bindings {
             if let Some(compartment) = self.compartments.get(compartment_id) {
                 // InitialAmount is optional
                 if let Some(amount) = &species.initial_amount {
-                    let bound_species = Species::from_amount(&species, *amount, compartment.size);
+                    let bound_species = Species::from_amount(&species, *amount, compartment.size());
                     self.species.insert(id.clone(), bound_species);
                 // InitialConc is also optional
                 } else if let Some(concentration) = &species.initial_concentration {
                     if let Some(compartment) = self.compartments.get(compartment_id) {
-                        let bound_species =
-                            Species::from_concentration(&species, *concentration, compartment.size);
+                        let bound_species = Species::from_concentration(
+                            &species,
+                            *concentration,
+                            compartment.size(),
+                        );
                         self.species.insert(id.clone(), bound_species);
                     }
                 } else {
@@ -161,44 +188,49 @@ impl Bindings {
         }
     }
 
+    pub fn update_compartment_size(&mut self, compartment_id: &String, size: f64) {
+        if let Some(compartment) = self.compartments.get_mut(compartment_id) {
+            compartment.update_size(size);
+        }
+        for (_, species) in &mut self.species {
+            if species.compartment == compartment_id.to_owned() {
+                species.update_compartment_size(size);
+            }
+        }
+    }
+
+    pub fn update_compartment_size_by(&mut self, compartment_id: &String, delta: f64) {
+        if let Some(compartment) = self.compartments.get_mut(compartment_id) {
+            compartment.update_size_by(delta);
+            let size = compartment.size();
+            for (_, species) in &mut self.species {
+                if species.compartment == compartment_id.to_owned() {
+                    species.update_compartment_size(size);
+                }
+            }
+        }
+    }
+
     pub fn evaluate_initial_assignments(&mut self) {
-        let mut values = self.values();
-        for (symbol, initial_assignment) in &self.initial_assignments {
+        let initial_assignments = self.initial_assignments.clone();
+        for (symbol, initial_assignment) in initial_assignments {
+            let mut values = self.values();
             if let Ok(value) = evaluate_node(&initial_assignment.math, 0, &values, &self.functions)
             {
                 // Update value
                 values.insert(symbol.clone(), value);
 
                 // Bound compartment being reassigned
-                if self.compartments.get(symbol).is_some() {
-                    // Update value
-                    self.compartments
-                        .entry(symbol.clone())
-                        .and_modify(|c| c.size = value);
-                    // Since a compartment size has changed,
-                    // concentrations of all contained species has to be updated
-                    for (id, species) in &mut self.species {
-                        if &species.compartment == id {
-                            species.update_compartment_size(value);
-                            values.insert(id.clone(), species.concentration());
-                        }
-                    }
+                if self.compartments.get(&symbol).is_some() {
+                    self.update_compartment_size(&symbol, value);
                 }
 
                 // Unbound compartment
-                if let Some(unbound_compartment) = self.unbound_compartments.get(symbol) {
+                if let Some(unbound_compartment) = self.unbound_compartments.get(&symbol) {
                     let bound_compartment = unbound_compartment.to_bound(value);
                     self.compartments.insert(symbol.clone(), bound_compartment);
-                    self.unbound_compartments.remove(symbol);
-                    // Since a compartment size has changed,
-                    // concentrations of all contained species has to be updated
-                    for (id, species) in &mut self.species {
-                        if &species.compartment == id {
-                            species.update_compartment_size(value);
-                            values.insert(id.clone(), species.concentration());
-                        }
-                    }
-                    // And it might be possible to assign values to some unbound species now
+                    self.unbound_compartments.remove(&symbol);
+                    // It might be possible to assign values to some unbound species now
                     let mut bound_species_ids = Vec::new();
                     for (id, species) in &self.unbound_species {
                         if &species.compartment == id {
@@ -215,23 +247,23 @@ impl Bindings {
                 }
 
                 // Parameter
-                if self.parameters.get(symbol).is_some() {
+                if self.parameters.get(&symbol).is_some() {
                     self.parameters
                         .entry(symbol.clone())
                         .and_modify(|c| c.value = value);
                 }
 
                 // Unbound parameter
-                if let Some(unbound_parameter) = self.unbound_parameters.get(symbol) {
+                if let Some(unbound_parameter) = self.unbound_parameters.get(&symbol) {
                     let bound_parameter = unbound_parameter.to_bound(value);
                     self.parameters.insert(symbol.clone(), bound_parameter);
-                    self.unbound_parameters.remove(symbol);
+                    self.unbound_parameters.remove(&symbol);
                 }
 
                 // Species being reassigned
-                if let Some(species) = self.species.get_mut(symbol) {
+                if let Some(species) = self.species.get_mut(&symbol) {
                     let compartment = &species.compartment;
-                    let compartment_size = self.compartments.get(compartment).unwrap().size;
+                    let compartment_size = self.compartments.get(compartment).unwrap().size();
                     if !species.has_only_substance_units {
                         species.update_concentration(value, compartment_size);
                     } else {
@@ -243,12 +275,12 @@ impl Bindings {
                 // For now, assuming that the compartment size is known by now
                 // This will have to change later because compartments can also be
                 // assigned by algebraic rules etc. which are not supported right now
-                if let Some(unbound_species) = self.unbound_species.get(symbol) {
+                if let Some(unbound_species) = self.unbound_species.get(&symbol) {
                     let size = self
                         .compartments
                         .get(&unbound_species.compartment)
                         .expect("Compartment size not found.")
-                        .size;
+                        .size();
                     let species;
                     if !unbound_species.has_only_substance_units {
                         let concentration = value;
@@ -275,6 +307,17 @@ impl Bindings {
                 );
             } else {
                 panic!("AssignmentRule must be associated with a variable.");
+            }
+        }
+    }
+
+    pub fn parse_rate_rules(&mut self, model: &Model) {
+        for rate_rule in model.rate_rules() {
+            if let Some(variable) = &rate_rule.variable {
+                self.rate_rules
+                    .insert(variable.clone(), RateRule::from(&rate_rule, model));
+            } else {
+                panic!("RateRule must be associated with a variable.");
             }
         }
     }
@@ -307,38 +350,29 @@ impl Bindings {
 
     pub fn evaluate_assignment_rules(&mut self) {
         let mut values = self.values();
-        for (variable, rule) in &self.assignment_rules {
+        let assignment_rules = self.assignment_rules.clone();
+        for (variable, rule) in assignment_rules {
             if let Ok(value) = evaluate_node(&rule.math, 0, &values, &self.functions) {
                 // Update value
                 values.insert(variable.clone(), value);
 
                 // Bound compartment being reassigned
-                if self.compartments.get(variable).is_some() {
+                if self.compartments.get(&variable).is_some() {
                     // Update value
-                    self.compartments
-                        .entry(variable.clone())
-                        .and_modify(|c| c.size = value);
-                    // Since a compartment size has changed,
-                    // concentrations of all contained species has to be updated
-                    for (id, species) in &mut self.species {
-                        if &species.compartment == id {
-                            species.update_compartment_size(value);
-                            values.insert(id.clone(), species.concentration());
-                        }
-                    }
+                    self.update_compartment_size(&variable, value);
                 }
 
                 // Parameter
-                if self.parameters.get(variable).is_some() {
+                if self.parameters.get(&variable).is_some() {
                     self.parameters
                         .entry(variable.clone())
                         .and_modify(|c| c.value = value);
                 }
 
                 // Species being reassigned
-                if let Some(species) = self.species.get_mut(variable) {
+                if let Some(species) = self.species.get_mut(&variable) {
                     let compartment = &species.compartment;
-                    let compartment_size = self.compartments.get(compartment).unwrap().size;
+                    let compartment_size = self.compartments.get(compartment).unwrap().size();
                     if !species.has_only_substance_units {
                         species.update_concentration(value, compartment_size);
                         values.insert(species.id.clone(), species.concentration());
@@ -351,12 +385,12 @@ impl Bindings {
                 // For now, assuming that the compartment size is known by now
                 // This will have to change later because compartments can also be
                 // assigned by algebraic rules etc. which are not supported right now
-                if let Some(unbound_species) = self.unbound_species.get(variable) {
+                if let Some(unbound_species) = self.unbound_species.get(&variable) {
                     let size = self
                         .compartments
                         .get(&unbound_species.compartment)
                         .expect("Compartment size not found.")
-                        .size;
+                        .size();
                     let species;
                     if !unbound_species.has_only_substance_units {
                         let concentration = value;
@@ -401,8 +435,10 @@ impl Bindings {
             }
 
             let compartment = &species.compartment;
-            let compartment_size = self.compartments.get(compartment).unwrap().size;
+            let compartment_size = self.compartments.get(compartment).unwrap().size();
+            let mut ode = ODE::new(species_id.clone(), 1.0 / compartment_size);
 
+            let mut term_count = 0;
             for (rxn_id, reaction) in &self.reactions {
                 let mut coefficient = None;
                 // simulation step
@@ -419,21 +455,36 @@ impl Bindings {
                 if let Some(value) = coefficient {
                     let ode_term =
                         ODETerm::new(value, reaction.kinetic_law.clone(), rxn_id.to_string());
-                    self.ODEs
-                        .entry(species_id.clone())
-                        .or_insert_with(|| ODE::new(1.0 / compartment_size))
-                        .add_term(ode_term);
+                    ode.add_term(ode_term);
+                    term_count += 1;
                 }
             }
+
+            if term_count > 0 {
+                self.ODEs.push(ode);
+            }
+        }
+        // Rate rules
+        for (variable, rule) in &self.rate_rules {
+            let ode_term = ODETerm::new(1.0, rule.math.clone(), "None".to_string());
+            let mut ode = ODE::new(variable.clone(), 1.0);
+            ode.add_term(ode_term);
+            self.ODEs.push(ode);
         }
     }
 
     pub fn update_delta(&mut self, key: &String, delta: f64) {
         if let Some(species) = self.species.get_mut(key) {
             let compartment = &species.compartment;
-            let compartment_size = self.compartments.get(compartment).unwrap().size;
+            let compartment_size = self.compartments.get(compartment).unwrap().size();
             let conc = species.concentration();
             species.update_concentration(conc + delta, compartment_size);
+        } else if let Some(parameter) = self.parameters.get_mut(key) {
+            parameter.value += delta;
+        } else if self.compartments.get(key).is_some() {
+            self.update_compartment_size_by(key, delta);
+        } else {
+            panic!("Invalid key {}", key);
         }
         // TODO for other types
     }
