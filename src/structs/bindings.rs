@@ -72,7 +72,7 @@ impl Bindings {
             hm.insert(id.clone(), parameter.value);
         }
         for (id, species) in &self.species {
-            hm.insert(id.clone(), species.concentration());
+            hm.insert(id.clone(), species.amount());
         }
 
         hm
@@ -205,7 +205,14 @@ impl Bindings {
             let size = compartment.size();
             for (_, species) in &mut self.species {
                 if species.compartment == compartment_id.to_owned() {
+                    //let conc = species.concentration();
                     species.update_compartment_size(size);
+                    //println!(
+                    //"changed conc of {} from {} to {}",
+                    //species.id,
+                    //conc,
+                    //species.concentration()
+                    //);
                 }
             }
         }
@@ -435,8 +442,8 @@ impl Bindings {
             }
 
             let compartment = &species.compartment;
-            let compartment_size = self.compartments.get(compartment).unwrap().size();
-            let mut ode = ODE::new(species_id.clone(), 1.0 / compartment_size);
+            //let mut ode = ODE::new(species_id.clone(), Some(compartment.clone()));
+            let mut ode = ODE::new(species_id.clone(), None);
 
             let mut term_count = 0;
             for (rxn_id, reaction) in &self.reactions {
@@ -467,7 +474,7 @@ impl Bindings {
         // Rate rules
         for (variable, rule) in &self.rate_rules {
             let ode_term = ODETerm::new(1.0, rule.math.clone(), "None".to_string());
-            let mut ode = ODE::new(variable.clone(), 1.0);
+            let mut ode = ODE::new(variable.clone(), None);
             ode.add_term(ode_term);
             self.ODEs.push(ode);
         }
@@ -477,11 +484,29 @@ impl Bindings {
         if let Some(species) = self.species.get_mut(key) {
             let compartment = &species.compartment;
             let compartment_size = self.compartments.get(compartment).unwrap().size();
-            let conc = species.concentration();
-            species.update_concentration(conc + delta, compartment_size);
+            //if species.has_only_substance_units {
+            let amount = species.amount();
+            species.update_amount(amount + delta, compartment_size);
+            //println!(
+            //"changed amount of {} from {} to {}",
+            //key,
+            //amount,
+            //species.amount()
+            //);
+            //} else {
+            //let conc = species.concentration();
+            //species.update_concentration(conc + delta, compartment_size);
+            ////println!(
+            ////"changed conc of {} from {} to {}",
+            ////key,
+            ////conc,
+            ////species.concentration()
+            ////);
+            //}
         } else if let Some(parameter) = self.parameters.get_mut(key) {
             parameter.value += delta;
         } else if self.compartments.get(key).is_some() {
+            // this function also updates species concentrations
             self.update_compartment_size_by(key, delta);
         } else {
             panic!("Invalid key {}", key);

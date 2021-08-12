@@ -97,7 +97,8 @@ fn main() {
 
     //let step_size = time / (steps as f64) / 4096.0;
     let step_size = time / (steps as f64);
-    let model = sbml_rs::parse(&filename).expect("Couldn't parse model.");
+    //let model = sbml_rs::parse(&filename).expect("Couldn't parse model.");
+    let model = sbml_rs::parse_with_converted_species(&filename).expect("Couldn't parse model.");
     let result = integrate(
         &model,
         time,

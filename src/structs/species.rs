@@ -150,4 +150,9 @@ impl Species {
         self.amount = amount;
         self.concentration = amount / size;
     }
+
+    pub fn update_amount_by(&mut self, delta: f64, size: f64) {
+        self.amount += delta;
+        self.concentration = self.amount / size;
+    }
 }
