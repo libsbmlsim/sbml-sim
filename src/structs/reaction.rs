@@ -63,7 +63,7 @@ impl Reaction {
 
     pub fn parse_reactants(&mut self, reaction: &sbml_rs::Reaction, model: &Model) {
         for reactant in &reaction.reactants(model) {
-            if let Some(id) = &reactant.id {
+            if let Some(id) = &reactant.species {
                 match SpeciesReference::from(&reactant) {
                     Ok(bound_reactant) => {
                         self.reactants.insert(id.clone(), bound_reactant);
@@ -78,7 +78,7 @@ impl Reaction {
 
     pub fn parse_products(&mut self, reaction: &sbml_rs::Reaction, model: &Model) {
         for product in &reaction.products(model) {
-            if let Some(id) = &product.id {
+            if let Some(id) = &product.species {
                 match SpeciesReference::from(&product) {
                     Ok(bound_product) => {
                         self.products.insert(id.clone(), bound_product);
@@ -125,7 +125,7 @@ impl Reaction {
 
 #[derive(Debug, Clone)]
 pub struct UnboundSpeciesReference {
-    pub id: String,
+    pub id: Option<String>,
     pub constant: bool,
     pub species: String,
     pub sbo_term: Option<String>,
@@ -133,11 +133,10 @@ pub struct UnboundSpeciesReference {
 
 impl UnboundSpeciesReference {
     pub fn from(sp_ref: &sbml_rs::SpeciesReference) -> Self {
-        let id = sp_ref
-            .id
-            .as_ref()
-            .expect("No ID on SpeciesReference.")
-            .to_owned();
+        let mut id = None;
+        if let Some(value) = &sp_ref.id {
+            id = Some(value.to_owned());
+        }
         let constant = sp_ref
             .constant
             .expect("Constant attribute is mandatory on SpeciesReferences.");
@@ -171,7 +170,7 @@ impl UnboundSpeciesReference {
 
 #[derive(Clone, Debug)]
 pub struct SpeciesReference {
-    pub id: String,
+    pub id: Option<String>,
     pub stoichiometry: f64,
     pub constant: bool,
     pub species: String,

@@ -7,15 +7,15 @@ use super::bindings::Bindings;
 pub struct ODE {
     pub id: String,
     terms: Vec<ODETerm>,
-    compartment: Option<String>,
+    //compartment: Option<String>,
 }
 
 impl ODE {
-    pub fn new(id: String, compartment: Option<String>) -> Self {
+    pub fn new(id: String) -> Self {
         ODE {
             id,
             terms: Vec::new(),
-            compartment,
+            //compartment,
         }
     }
 
@@ -44,11 +44,11 @@ impl ODE {
             result += term.coefficient
                 * evaluate_node(&term.math, 0, &rxn_assignments, &bindings.functions)?;
         }
-        if let Some(compartment_var) = &self.compartment {
-            let compartment = assignments.get(compartment_var).expect("Factor not found.");
-            result = result / compartment;
-            //println!("divided by compartment {}", compartment);
-        }
+        //if let Some(compartment_var) = &self.compartment {
+        //let compartment = assignments.get(compartment_var).expect("Factor not found.");
+        //result = result / compartment;
+        ////println!("divided by compartment {}", compartment);
+        //}
         Ok(result)
     }
 }

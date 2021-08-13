@@ -56,6 +56,7 @@ impl Bindings {
         bindings.parse_reactions(model);
         bindings.parse_assignment_rules(model);
         bindings.evaluate_assignment_rules();
+        bindings.recheck_species();
         bindings.parse_rate_rules(model);
         bindings.parse_ODEs(model);
 
@@ -240,7 +241,7 @@ impl Bindings {
                     // It might be possible to assign values to some unbound species now
                     let mut bound_species_ids = Vec::new();
                     for (id, species) in &self.unbound_species {
-                        if &species.compartment == id {
+                        if species.compartment == symbol {
                             if let Ok(bound_species) = species.to_bound_with_size(value) {
                                 values.insert(id.clone(), bound_species.concentration());
                                 self.species.insert(id.clone(), bound_species);
@@ -302,6 +303,22 @@ impl Bindings {
                     self.species.insert(symbol.clone(), species);
                 }
             }
+        }
+    }
+
+    pub fn recheck_species(&mut self) {
+        // It might be possible to assign values to some unbound species now
+        let mut bound_species_ids = Vec::new();
+        for (species_id, species) in &self.unbound_species {
+            if let Some(compartment) = self.compartments.get(&species.compartment) {
+                if let Ok(bound_species) = species.to_bound_with_size(compartment.size()) {
+                    self.species.insert(species_id.clone(), bound_species);
+                    bound_species_ids.push(species_id.clone());
+                }
+            }
+        }
+        for id in bound_species_ids {
+            self.unbound_species.remove(&id);
         }
     }
 
@@ -369,11 +386,26 @@ impl Bindings {
                     self.update_compartment_size(&variable, value);
                 }
 
+                // Unbound compartment
+                if let Some(unbound_compartment) = self.unbound_compartments.get(&variable) {
+                    let bound_compartment = unbound_compartment.to_bound(value);
+                    self.compartments
+                        .insert(variable.clone(), bound_compartment);
+                    self.unbound_compartments.remove(&variable);
+                }
+
                 // Parameter
                 if self.parameters.get(&variable).is_some() {
                     self.parameters
                         .entry(variable.clone())
                         .and_modify(|c| c.value = value);
+                }
+
+                // Unbound parameter
+                if let Some(unbound_parameter) = self.unbound_parameters.get(&variable) {
+                    let bound_parameter = unbound_parameter.to_bound(value);
+                    self.parameters.insert(variable.clone(), bound_parameter);
+                    self.unbound_parameters.remove(&variable);
                 }
 
                 // Species being reassigned
@@ -441,29 +473,34 @@ impl Bindings {
                 continue;
             }
 
-            let compartment = &species.compartment;
+            //let compartment = &species.compartment;
             //let mut ode = ODE::new(species_id.clone(), Some(compartment.clone()));
-            let mut ode = ODE::new(species_id.clone(), None);
+            let mut ode = ODE::new(species_id.clone());
 
             let mut term_count = 0;
             for (rxn_id, reaction) in &self.reactions {
-                let mut coefficient = None;
                 // simulation step
-                match rxn_matrix.get(&(species_id.to_string(), rxn_id.to_string())) {
-                    Some(SpeciesStatus::Reactant(stoich)) => {
-                        coefficient = Some(-stoich);
+                let sp_statuses = rxn_matrix
+                    .get(&(species_id.to_string(), rxn_id.to_string()))
+                    .expect("Rxn matric");
+                for status in sp_statuses {
+                    let mut coefficient = None;
+                    match status {
+                        SpeciesStatus::Reactant(stoich) => {
+                            coefficient = Some(-stoich);
+                        }
+                        SpeciesStatus::Product(stoich) => {
+                            coefficient = Some(*stoich);
+                        }
+                        _ => {}
                     }
-                    Some(SpeciesStatus::Product(stoich)) => {
-                        coefficient = Some(*stoich);
-                    }
-                    _ => {}
-                }
 
-                if let Some(value) = coefficient {
-                    let ode_term =
-                        ODETerm::new(value, reaction.kinetic_law.clone(), rxn_id.to_string());
-                    ode.add_term(ode_term);
-                    term_count += 1;
+                    if let Some(value) = coefficient {
+                        let ode_term =
+                            ODETerm::new(value, reaction.kinetic_law.clone(), rxn_id.to_string());
+                        ode.add_term(ode_term);
+                        term_count += 1;
+                    }
                 }
             }
 
@@ -474,7 +511,7 @@ impl Bindings {
         // Rate rules
         for (variable, rule) in &self.rate_rules {
             let ode_term = ODETerm::new(1.0, rule.math.clone(), "None".to_string());
-            let mut ode = ODE::new(variable.clone(), None);
+            let mut ode = ODE::new(variable.clone());
             ode.add_term(ode_term);
             self.ODEs.push(ode);
         }
