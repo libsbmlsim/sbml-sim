@@ -20,9 +20,9 @@ pub struct Bindings {
     pub unbound_species: HashMap<String, UnboundSpecies>,
     pub functions: HashMap<String, Vec<MathNode>>,
     pub reactions: HashMap<String, Reaction>,
-    pub initial_assignments: HashMap<String, InitialAssignment>,
-    pub assignment_rules: HashMap<String, AssignmentRule>,
-    pub rate_rules: HashMap<String, RateRule>,
+    pub initial_assignments: Vec<InitialAssignment>,
+    pub assignment_rules: Vec<AssignmentRule>,
+    pub rate_rules: Vec<RateRule>,
     pub ODEs: Vec<ODE>,
 }
 
@@ -36,10 +36,10 @@ impl Bindings {
             species: HashMap::new(),
             unbound_species: HashMap::new(),
             functions: HashMap::new(),
-            initial_assignments: HashMap::new(),
+            initial_assignments: Vec::new(),
             reactions: HashMap::new(),
-            assignment_rules: HashMap::new(),
-            rate_rules: HashMap::new(),
+            assignment_rules: Vec::new(),
+            rate_rules: Vec::new(),
             ODEs: Vec::new(),
         }
     }
@@ -60,6 +60,7 @@ impl Bindings {
         bindings.parse_rate_rules(model);
         bindings.parse_ODEs(model);
 
+        //dbg!(&bindings);
         bindings
     }
 
@@ -137,10 +138,8 @@ impl Bindings {
     pub fn parse_initial_assignments(&mut self, model: &Model) {
         for initial_assignment in model.initial_assignments() {
             if let Some(symbol) = &initial_assignment.symbol {
-                self.initial_assignments.insert(
-                    symbol.clone(),
-                    InitialAssignment::from(&initial_assignment, model),
-                );
+                self.initial_assignments
+                    .push(InitialAssignment::from(&initial_assignment, model));
             } else {
                 panic!("InitialAssignments must be associated with a symbol.");
             }
@@ -221,7 +220,8 @@ impl Bindings {
 
     pub fn evaluate_initial_assignments(&mut self) {
         let initial_assignments = self.initial_assignments.clone();
-        for (symbol, initial_assignment) in initial_assignments {
+        for initial_assignment in initial_assignments {
+            let symbol = initial_assignment.symbol;
             let mut values = self.values();
             if let Ok(value) = evaluate_node(&initial_assignment.math, 0, &values, &self.functions)
             {
@@ -325,10 +325,8 @@ impl Bindings {
     pub fn parse_assignment_rules(&mut self, model: &Model) {
         for assignment_rule in model.assignment_rules() {
             if let Some(variable) = &assignment_rule.variable {
-                self.assignment_rules.insert(
-                    variable.clone(),
-                    AssignmentRule::from(&assignment_rule, model),
-                );
+                self.assignment_rules
+                    .push(AssignmentRule::from(&assignment_rule, model));
             } else {
                 panic!("AssignmentRule must be associated with a variable.");
             }
@@ -338,8 +336,7 @@ impl Bindings {
     pub fn parse_rate_rules(&mut self, model: &Model) {
         for rate_rule in model.rate_rules() {
             if let Some(variable) = &rate_rule.variable {
-                self.rate_rules
-                    .insert(variable.clone(), RateRule::from(&rate_rule, model));
+                self.rate_rules.push(RateRule::from(&rate_rule, model));
             } else {
                 panic!("RateRule must be associated with a variable.");
             }
@@ -366,98 +363,229 @@ impl Bindings {
 
     pub fn assignment_rules_math(&self) -> HashMap<String, Vec<MathNode>> {
         let mut hm: HashMap<String, Vec<MathNode>> = HashMap::new();
-        for (variable, assignment_rule) in &self.assignment_rules {
-            hm.insert(variable.clone(), assignment_rule.math.clone());
+        for assignment_rule in &self.assignment_rules {
+            hm.insert(
+                assignment_rule.variable.clone(),
+                assignment_rule.math.clone(),
+            );
         }
         hm
     }
 
+    // Calculates values of dependent variables by evaluating assignment rules
+    // and updates the provided Bindings object
     pub fn evaluate_assignment_rules(&mut self) {
         let mut values = self.values();
         let assignment_rules = self.assignment_rules.clone();
-        for (variable, rule) in assignment_rules {
-            if let Ok(value) = evaluate_node(&rule.math, 0, &values, &self.functions) {
-                // Update value
-                values.insert(variable.clone(), value);
-
-                // Bound compartment being reassigned
-                if self.compartments.get(&variable).is_some() {
+        for rule in assignment_rules {
+            let variable = rule.variable;
+            match evaluate_node(&rule.math, 0, &values, &self.functions) {
+                Ok(value) => {
                     // Update value
-                    self.update_compartment_size(&variable, value);
-                }
+                    values.insert(variable.clone(), value);
 
-                // Unbound compartment
-                if let Some(unbound_compartment) = self.unbound_compartments.get(&variable) {
-                    let bound_compartment = unbound_compartment.to_bound(value);
-                    self.compartments
-                        .insert(variable.clone(), bound_compartment);
-                    self.unbound_compartments.remove(&variable);
-                }
+                    // Bound compartment being reassigned
+                    if self.compartments.get(&variable).is_some() {
+                        // Update value
+                        self.update_compartment_size(&variable, value);
+                    }
 
-                // Parameter
-                if self.parameters.get(&variable).is_some() {
-                    self.parameters
-                        .entry(variable.clone())
-                        .and_modify(|c| c.value = value);
-                }
+                    // Unbound compartment
+                    if let Some(unbound_compartment) = self.unbound_compartments.get(&variable) {
+                        let bound_compartment = unbound_compartment.to_bound(value);
+                        self.compartments
+                            .insert(variable.clone(), bound_compartment);
+                        self.unbound_compartments.remove(&variable);
+                    }
 
-                // Unbound parameter
-                if let Some(unbound_parameter) = self.unbound_parameters.get(&variable) {
-                    let bound_parameter = unbound_parameter.to_bound(value);
-                    self.parameters.insert(variable.clone(), bound_parameter);
-                    self.unbound_parameters.remove(&variable);
-                }
+                    // Parameter
+                    if self.parameters.get(&variable).is_some() {
+                        self.parameters
+                            .entry(variable.clone())
+                            .and_modify(|c| c.value = value);
+                    }
 
-                // Species being reassigned
-                if let Some(species) = self.species.get_mut(&variable) {
-                    let compartment = &species.compartment;
-                    let compartment_size = self.compartments.get(compartment).unwrap().size();
-                    if !species.has_only_substance_units {
-                        species.update_concentration(value, compartment_size);
-                        values.insert(species.id.clone(), species.concentration());
-                    } else {
-                        species.update_amount(value, compartment_size);
-                        values.insert(species.id.clone(), species.concentration());
+                    // Unbound parameter
+                    if let Some(unbound_parameter) = self.unbound_parameters.get(&variable) {
+                        let bound_parameter = unbound_parameter.to_bound(value);
+                        self.parameters.insert(variable.clone(), bound_parameter);
+                        self.unbound_parameters.remove(&variable);
+                    }
+
+                    // Species being reassigned
+                    if let Some(species) = self.species.get_mut(&variable) {
+                        let compartment = &species.compartment;
+                        let compartment_size = self.compartments.get(compartment).unwrap().size();
+                        // TODO: THIS IS PROBABLY WRONG
+                        if !species.has_only_substance_units {
+                            //println!(
+                            //"Updated {} from {} to {}",
+                            //&species.id,
+                            //species.concentration(),
+                            //value
+                            //);
+                            species.update_concentration(value, compartment_size);
+                            values.insert(species.id.clone(), species.concentration());
+                        } else {
+                            species.update_amount(value, compartment_size);
+                            values.insert(species.id.clone(), species.concentration());
+                        }
+                    }
+
+                    // For now, assuming that the compartment size is known by now
+                    // This will have to change later because compartments can also be
+                    // assigned by algebraic rules etc. which are not supported right now
+                    if let Some(unbound_species) = self.unbound_species.get(&variable) {
+                        let size = self
+                            .compartments
+                            .get(&unbound_species.compartment)
+                            .expect("Compartment size not found.")
+                            .size();
+                        let species;
+                        if !unbound_species.has_only_substance_units {
+                            let concentration = value;
+                            let amount = concentration * size;
+                            species = unbound_species.to_bound(amount, concentration);
+                        } else {
+                            let amount = value;
+                            let concentration = amount / size;
+                            species = unbound_species.to_bound(amount, concentration);
+                            values.insert(variable.clone(), species.concentration());
+                        }
+                        //println!("Set {} to {}", &species.id, species.amount());
+                        self.species.insert(variable.clone(), species);
+                    }
+
+                    // SpeciesReferences
+                    for (_, reaction) in &mut self.reactions {
+                        // Bound reactants being reassigned
+                        reaction
+                            .reactants
+                            .entry(variable.clone())
+                            .and_modify(|reactant| reactant.stoichiometry = value);
+                        reaction
+                            .products
+                            .entry(variable.clone())
+                            .and_modify(|product| product.stoichiometry = value);
                     }
                 }
-
-                // For now, assuming that the compartment size is known by now
-                // This will have to change later because compartments can also be
-                // assigned by algebraic rules etc. which are not supported right now
-                if let Some(unbound_species) = self.unbound_species.get(&variable) {
-                    let size = self
-                        .compartments
-                        .get(&unbound_species.compartment)
-                        .expect("Compartment size not found.")
-                        .size();
-                    let species;
-                    if !unbound_species.has_only_substance_units {
-                        let concentration = value;
-                        let amount = concentration * size;
-                        species = unbound_species.to_bound(amount, concentration);
-                    } else {
-                        let amount = value;
-                        let concentration = amount / size;
-                        species = unbound_species.to_bound(amount, concentration);
-                        values.insert(variable.clone(), species.concentration());
-                    }
-                    self.species.insert(variable.clone(), species);
-                }
-
-                // SpeciesReferences
-                for (_, reaction) in &mut self.reactions {
-                    // Bound reactants being reassigned
-                    reaction
-                        .reactants
-                        .entry(variable.clone())
-                        .and_modify(|reactant| reactant.stoichiometry = value);
-                    reaction
-                        .products
-                        .entry(variable.clone())
-                        .and_modify(|product| product.stoichiometry = value);
-                }
+                Err(error) => panic!("{}", error),
             }
         }
+    }
+
+    // Calculates values of dependent variables by evaluating their assignment rules.
+    // Prioritizes supplied assignments over assignments in the Bindings object.
+    // Does not change the original Bindings object,
+    // just returns a new assignment hashmap.
+    pub fn emulate_assignment_rules(
+        &self,
+        assignments: &HashMap<String, f64>,
+    ) -> HashMap<String, f64> {
+        // priorities provided assignments over Bindings
+        let mut values = self.values();
+        for (key, value) in assignments {
+            values.insert(key.clone(), *value);
+        }
+
+        let assignment_rules = self.assignment_rules.clone();
+        for rule in assignment_rules {
+            let variable = rule.variable;
+            match evaluate_node(&rule.math, 0, &values, &self.functions) {
+                Ok(value) => {
+                    // Update value
+                    values.insert(variable.clone(), value);
+
+                    // Bound compartment being reassigned
+                    //if self.compartments.get(&variable).is_some() {
+                    //// Update value
+                    //self.update_compartment_size(&variable, value);
+                    //}
+
+                    // Unbound compartment
+                    //if let Some(unbound_compartment) = self.unbound_compartments.get(&variable) {
+                    //let bound_compartment = unbound_compartment.to_bound(value);
+                    //self.compartments
+                    //.insert(variable.clone(), bound_compartment);
+                    //self.unbound_compartments.remove(&variable);
+                    //}
+
+                    // Parameter
+                    //if self.parameters.get(&variable).is_some() {
+                    //self.parameters
+                    //.entry(variable.clone())
+                    //.and_modify(|c| c.value = value);
+                    //}
+
+                    // Unbound parameter
+                    //if let Some(unbound_parameter) = self.unbound_parameters.get(&variable) {
+                    //let bound_parameter = unbound_parameter.to_bound(value);
+                    //self.parameters.insert(variable.clone(), bound_parameter);
+                    //self.unbound_parameters.remove(&variable);
+                    //}
+
+                    // Species being reassigned
+                    if let Some(species) = self.species.get(&variable) {
+                        let compartment = &species.compartment;
+                        //let compartment_size = self.compartments.get(compartment).unwrap().size();
+                        // TODO: THIS IS PROBABLY WRONG
+                        //if !species.has_only_substance_units {
+                        //println!(
+                        //"Updated {} from {} to {}",
+                        //&species.id,
+                        //species.concentration(),
+                        //value
+                        //);
+                        //species.update_concentration(value, compartment_size);
+                        //values.insert(species.id.clone(), species.concentration());
+                        //} else {
+                        //species.update_amount(value, compartment_size);
+                        //values.insert(species.id.clone(), species.concentration());
+                        //}
+                        values.insert(species.id.clone(), value);
+                    }
+
+                    // For now, assuming that the compartment size is known by now
+                    // This will have to change later because compartments can also be
+                    // assigned by algebraic rules etc. which are not supported right now
+                    //if let Some(unbound_species) = self.unbound_species.get(&variable) {
+                    //let size = self
+                    //.compartments
+                    //.get(&unbound_species.compartment)
+                    //.expect("Compartment size not found.")
+                    //.size();
+                    //let species;
+                    //if !unbound_species.has_only_substance_units {
+                    //let concentration = value;
+                    //let amount = concentration * size;
+                    //species = unbound_species.to_bound(amount, concentration);
+                    //} else {
+                    //let amount = value;
+                    //let concentration = amount / size;
+                    //species = unbound_species.to_bound(amount, concentration);
+                    //values.insert(variable.clone(), species.concentration());
+                    //}
+                    //println!("Set {} to {}", &species.id, species.amount());
+                    //self.species.insert(variable.clone(), species);
+                    //}
+
+                    // SpeciesReferences
+                    //for (_, reaction) in &mut self.reactions {
+                    //// Bound reactants being reassigned
+                    //reaction
+                    //.reactants
+                    //.entry(variable.clone())
+                    //.and_modify(|reactant| reactant.stoichiometry = value);
+                    //reaction
+                    //.products
+                    //.entry(variable.clone())
+                    //.and_modify(|product| product.stoichiometry = value);
+                    //}
+                }
+                Err(error) => panic!("{}", error),
+            }
+        }
+        values
     }
 
     #[allow(non_snake_case)]
@@ -509,9 +637,9 @@ impl Bindings {
             }
         }
         // Rate rules
-        for (variable, rule) in &self.rate_rules {
+        for rule in &self.rate_rules {
             let ode_term = ODETerm::new(1.0, rule.math.clone(), "None".to_string());
-            let mut ode = ODE::new(variable.clone());
+            let mut ode = ODE::new(rule.variable.clone());
             ode.add_term(ode_term);
             self.ODEs.push(ode);
         }
@@ -525,21 +653,11 @@ impl Bindings {
             let amount = species.amount();
             species.update_amount(amount + delta, compartment_size);
             //println!(
-            //"changed amount of {} from {} to {}",
-            //key,
+            //"Updated {} from {} to {}",
+            //species.id,
             //amount,
             //species.amount()
             //);
-            //} else {
-            //let conc = species.concentration();
-            //species.update_concentration(conc + delta, compartment_size);
-            ////println!(
-            ////"changed conc of {} from {} to {}",
-            ////key,
-            ////conc,
-            ////species.concentration()
-            ////);
-            //}
         } else if let Some(parameter) = self.parameters.get_mut(key) {
             parameter.value += delta;
         } else if self.compartments.get(key).is_some() {

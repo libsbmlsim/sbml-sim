@@ -81,6 +81,10 @@ pub fn runge_kutta_fehlberg_45(
         }
     }
 
+    for (key, val) in bindings.emulate_assignment_rules(&k2_assignments) {
+        k2_assignments.insert(key, val);
+    }
+
     // Calculate k2 values
     for ODE in &bindings.ODEs {
         let dependent_variable = &ODE.id;
@@ -107,6 +111,10 @@ pub fn runge_kutta_fehlberg_45(
         }
     }
 
+    for (key, val) in bindings.emulate_assignment_rules(&k3_assignments) {
+        k3_assignments.insert(key, val);
+    }
+
     // Calculate k3 values
     for ODE in &bindings.ODEs {
         let dependent_variable = &ODE.id;
@@ -131,6 +139,10 @@ pub fn runge_kutta_fehlberg_45(
                 original_value + k1 * b41 + k2 * b42 + k3 * b43,
             );
         }
+    }
+
+    for (key, val) in bindings.emulate_assignment_rules(&k4_assignments) {
+        k4_assignments.insert(key, val);
     }
 
     // Calculate k4 values
@@ -160,6 +172,10 @@ pub fn runge_kutta_fehlberg_45(
         }
     }
 
+    for (key, val) in bindings.emulate_assignment_rules(&k5_assignments) {
+        k5_assignments.insert(key, val);
+    }
+
     // Calculate k5 values
     for ODE in &bindings.ODEs {
         let dependent_variable = &ODE.id;
@@ -186,6 +202,10 @@ pub fn runge_kutta_fehlberg_45(
                 original_value + k1 * b61 + k2 * b62 + k3 * b63 + k4 * b64 + k5 * b65,
             );
         }
+    }
+
+    for (key, val) in bindings.emulate_assignment_rules(&k6_assignments) {
+        k6_assignments.insert(key, val);
     }
 
     // Calculate k6 values
