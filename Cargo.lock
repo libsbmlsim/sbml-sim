@@ -294,7 +294,7 @@ dependencies = [
 
 [[package]]
 name = "sbml-sim"
-version = "0.1.1-alpha.2"
+version = "0.1.1"
 dependencies = [
  "clap",
  "mathml-rs",
