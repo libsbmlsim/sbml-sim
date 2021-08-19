@@ -1,0 +1,2182 @@
+00001 PASS  passed=1, failed=0, percent=100%
+00002 PASS  passed=2, failed=0, percent=100%
+00003 PASS  passed=3, failed=0, percent=100%
+00004 PASS  passed=4, failed=0, percent=100%
+00005 PASS  passed=5, failed=0, percent=100%
+00006 PASS  passed=6, failed=0, percent=100%
+00007 PASS  passed=7, failed=0, percent=100%
+00008 PASS  passed=8, failed=0, percent=100%
+00009 PASS  passed=9, failed=0, percent=100%
+00010 PASS  passed=10, failed=0, percent=100%
+00011 PASS  passed=11, failed=0, percent=100%
+00012 PASS  passed=12, failed=0, percent=100%
+00013 PASS  passed=13, failed=0, percent=100%
+00014 PASS  passed=14, failed=0, percent=100%
+00015 PASS  passed=15, failed=0, percent=100%
+00016 PASS  passed=16, failed=0, percent=100%
+00017 PASS  passed=17, failed=0, percent=100%
+00018 PASS  passed=18, failed=0, percent=100%
+00019 PASS  passed=19, failed=0, percent=100%
+00020 PASS  passed=20, failed=0, percent=100%
+00021 PASS  passed=21, failed=0, percent=100%
+00022 PASS  passed=22, failed=0, percent=100%
+00023 PASS  passed=23, failed=0, percent=100%
+00024 PASS  passed=24, failed=0, percent=100%
+00025 PASS  passed=25, failed=0, percent=100%
+00026 SKIPPED because EventNoDelay not implemented
+00027 PASS  passed=26, failed=0, percent=100%
+00028 PASS  passed=27, failed=0, percent=100%
+00029 PASS  passed=28, failed=0, percent=100%
+00030 PASS  passed=29, failed=0, percent=100%
+00031 PASS  passed=30, failed=0, percent=100%
+00032 PASS  passed=31, failed=0, percent=100%
+00033 PASS  passed=32, failed=0, percent=100%
+00034 PASS  passed=33, failed=0, percent=100%
+00035 PASS  passed=34, failed=0, percent=100%
+00036 PASS  passed=35, failed=0, percent=100%
+00037 PASS  passed=36, failed=0, percent=100%
+00038 PASS  passed=37, failed=0, percent=100%
+00039 SKIPPED because AlgebraicRule not implemented
+00040 SKIPPED because AlgebraicRule not implemented
+00041 SKIPPED because EventNoDelay not implemented
+00042 PASS  passed=38, failed=0, percent=100%
+00043 PASS  passed=39, failed=0, percent=100%
+00044 PASS  passed=40, failed=0, percent=100%
+00045 PASS  passed=41, failed=0, percent=100%
+00046 PASS  passed=42, failed=0, percent=100%
+00047 PASS  passed=43, failed=0, percent=100%
+00048 PASS  passed=44, failed=0, percent=100%
+00049 PASS  passed=45, failed=0, percent=100%
+00050 PASS  passed=46, failed=0, percent=100%
+00051 PASS  passed=47, failed=0, percent=100%
+00052 PASS  passed=48, failed=0, percent=100%
+00053 PASS  passed=49, failed=0, percent=100%
+00054 PASS  passed=50, failed=0, percent=100%
+00055 PASS  passed=51, failed=0, percent=100%
+00056 PASS  passed=52, failed=0, percent=100%
+00057 PASS  passed=53, failed=0, percent=100%
+00058 PASS  passed=54, failed=0, percent=100%
+00059 SKIPPED because v3.2 model not present
+00060 PASS  passed=55, failed=0, percent=100%
+00061 PASS  passed=56, failed=0, percent=100%
+00062 PASS  passed=57, failed=0, percent=100%
+00063 PASS  passed=58, failed=0, percent=100%
+00064 PASS  passed=59, failed=0, percent=100%
+00065 PASS  passed=60, failed=0, percent=100%
+00066 PASS  passed=61, failed=0, percent=100%
+00067 PASS  passed=62, failed=0, percent=100%
+00068 SKIPPED because v3.2 model not present
+00069 SKIPPED because v3.2 model not present
+00070 SKIPPED because v3.2 model not present
+00071 SKIPPED because EventWithDelay not implemented
+00072 SKIPPED because EventWithDelay not implemented
+00073 SKIPPED because EventWithDelay not implemented
+00074 SKIPPED because EventNoDelay not implemented
+00075 PASS  passed=63, failed=0, percent=100%
+00076 PASS  passed=64, failed=0, percent=100%
+00077 PASS  passed=65, failed=0, percent=100%
+00078 PASS  passed=66, failed=0, percent=100%
+00079 PASS  passed=67, failed=0, percent=100%
+00080 PASS  passed=68, failed=0, percent=100%
+00081 PASS  passed=69, failed=0, percent=100%
+00082 PASS  passed=70, failed=0, percent=100%
+00083 PASS  passed=71, failed=0, percent=100%
+00084 PASS  passed=72, failed=0, percent=100%
+00085 PASS  passed=73, failed=0, percent=100%
+00086 PASS  passed=74, failed=0, percent=100%
+00087 PASS  passed=75, failed=0, percent=100%
+00088 PASS  passed=76, failed=0, percent=100%
+00089 PASS  passed=77, failed=0, percent=100%
+00090 PASS  passed=78, failed=0, percent=100%
+00091 PASS  passed=79, failed=0, percent=100%
+00092 PASS  passed=80, failed=0, percent=100%
+00093 PASS  passed=81, failed=0, percent=100%
+00094 PASS  passed=82, failed=0, percent=100%
+00095 PASS  passed=83, failed=0, percent=100%
+00096 PASS  passed=84, failed=0, percent=100%
+00097 PASS  passed=85, failed=0, percent=100%
+00098 PASS  passed=86, failed=0, percent=100%
+00099 PASS  passed=87, failed=0, percent=100%
+00100 PASS  passed=88, failed=0, percent=100%
+00101 PASS  passed=89, failed=0, percent=100%
+00102 PASS  passed=90, failed=0, percent=100%
+00103 PASS  passed=91, failed=0, percent=100%
+00104 PASS  passed=92, failed=0, percent=100%
+00105 PASS  passed=93, failed=0, percent=100%
+00106 PASS  passed=94, failed=0, percent=100%
+00107 PASS  passed=95, failed=0, percent=100%
+00108 PASS  passed=96, failed=0, percent=100%
+00109 PASS  passed=97, failed=0, percent=100%
+00110 PASS  passed=98, failed=0, percent=100%
+00111 PASS  passed=99, failed=0, percent=100%
+00112 PASS  passed=100, failed=0, percent=100%
+00113 PASS  passed=101, failed=0, percent=100%
+00114 PASS  passed=102, failed=0, percent=100%
+00115 PASS  passed=103, failed=0, percent=100%
+00116 PASS  passed=104, failed=0, percent=100%
+00117 PASS  passed=105, failed=0, percent=100%
+00118 PASS  passed=106, failed=0, percent=100%
+00119 PASS  passed=107, failed=0, percent=100%
+00120 PASS  passed=108, failed=0, percent=100%
+00121 PASS  passed=109, failed=0, percent=100%
+00122 PASS  passed=110, failed=0, percent=100%
+00123 PASS  passed=111, failed=0, percent=100%
+00124 PASS  passed=112, failed=0, percent=100%
+00125 PASS  passed=113, failed=0, percent=100%
+00126 PASS  passed=114, failed=0, percent=100%
+00127 PASS  passed=115, failed=0, percent=100%
+00128 PASS  passed=116, failed=0, percent=100%
+00129 SKIPPED because v3.2 model not present
+00130 SKIPPED because v3.2 model not present
+00131 SKIPPED because v3.2 model not present
+00132 PASS  passed=117, failed=0, percent=100%
+00133 PASS  passed=118, failed=0, percent=100%
+00134 SKIPPED because v3.2 model not present
+00135 PASS  passed=119, failed=0, percent=100%
+00136 PASS  passed=120, failed=0, percent=100%
+00137 PASS  passed=121, failed=0, percent=100%
+00138 PASS  passed=122, failed=0, percent=100%
+00139 PASS  passed=123, failed=0, percent=100%
+00140 PASS  passed=124, failed=0, percent=100%
+00141 PASS  passed=125, failed=0, percent=100%
+00142 PASS  passed=126, failed=0, percent=100%
+00143 PASS  passed=127, failed=0, percent=100%
+00144 PASS  passed=128, failed=0, percent=100%
+00145 PASS  passed=129, failed=0, percent=100%
+00146 PASS  passed=130, failed=0, percent=100%
+00147 PASS  passed=131, failed=0, percent=100%
+00148 PASS  passed=132, failed=0, percent=100%
+00149 PASS  passed=133, failed=0, percent=100%
+00150 PASS  passed=134, failed=0, percent=100%
+00151 PASS  passed=135, failed=0, percent=100%
+00152 PASS  passed=136, failed=0, percent=100%
+00153 PASS  passed=137, failed=0, percent=100%
+00154 PASS  passed=138, failed=0, percent=100%
+00155 PASS  passed=139, failed=0, percent=100%
+00156 PASS  passed=140, failed=0, percent=100%
+00157 PASS  passed=141, failed=0, percent=100%
+00158 PASS  passed=142, failed=0, percent=100%
+00159 PASS  passed=143, failed=0, percent=100%
+00160 PASS  passed=144, failed=0, percent=100%
+00161 PASS  passed=145, failed=0, percent=100%
+00162 PASS  passed=146, failed=0, percent=100%
+00163 PASS  passed=147, failed=0, percent=100%
+00164 PASS  passed=148, failed=0, percent=100%
+00165 PASS  passed=149, failed=0, percent=100%
+00166 PASS  passed=150, failed=0, percent=100%
+00167 PASS  passed=151, failed=0, percent=100%
+00168 PASS  passed=152, failed=0, percent=100%
+00169 PASS  passed=153, failed=0, percent=100%
+00170 PASS  passed=154, failed=0, percent=100%
+00171 PASS  passed=155, failed=0, percent=100%
+00172 SKIPPED because EventNoDelay not implemented
+00173 PASS  passed=156, failed=0, percent=100%
+00174 PASS  passed=157, failed=0, percent=100%
+00175 PASS  passed=158, failed=0, percent=100%
+00176 PASS  passed=159, failed=0, percent=100%
+00177 PASS  passed=160, failed=0, percent=100%
+00178 PASS  passed=161, failed=0, percent=100%
+00179 PASS  passed=162, failed=0, percent=100%
+00180 PASS  passed=163, failed=0, percent=100%
+00181 PASS  passed=164, failed=0, percent=100%
+00182 SKIPPED because AlgebraicRule not implemented
+00183 PASS  passed=165, failed=0, percent=100%
+00184 SKIPPED because AlgebraicRule not implemented
+00185 PASS  passed=166, failed=0, percent=100%
+00186 PASS  passed=167, failed=0, percent=100%
+00187 PASS  passed=168, failed=0, percent=100%
+00188 PASS  passed=169, failed=0, percent=100%
+00189 PASS  passed=170, failed=0, percent=100%
+00190 PASS  passed=171, failed=0, percent=100%
+00191 PASS  passed=172, failed=0, percent=100%
+00192 PASS  passed=173, failed=0, percent=100%
+00193 PASS  passed=174, failed=0, percent=100%
+00194 PASS  passed=175, failed=0, percent=100%
+00195 PASS  passed=176, failed=0, percent=100%
+00196 PASS  passed=177, failed=0, percent=100%
+00197 PASS  passed=178, failed=0, percent=100%
+00198 PASS  passed=179, failed=0, percent=100%
+00199 PASS  passed=180, failed=0, percent=100%
+00200 PASS  passed=181, failed=0, percent=100%
+00201 PASS  passed=182, failed=0, percent=100%
+00202 PASS  passed=183, failed=0, percent=100%
+00203 PASS  passed=184, failed=0, percent=100%
+00204 PASS  passed=185, failed=0, percent=100%
+00205 PASS  passed=186, failed=0, percent=100%
+00206 PASS  passed=187, failed=0, percent=100%
+00207 PASS  passed=188, failed=0, percent=100%
+00208 PASS  passed=189, failed=0, percent=100%
+00209 PASS  passed=190, failed=0, percent=100%
+00210 PASS  passed=191, failed=0, percent=100%
+00211 PASS  passed=192, failed=0, percent=100%
+00212 PASS  passed=193, failed=0, percent=100%
+00213 PASS  passed=194, failed=0, percent=100%
+00214 PASS  passed=195, failed=0, percent=100%
+00215 PASS  passed=196, failed=0, percent=100%
+00216 PASS  passed=197, failed=0, percent=100%
+00217 PASS  passed=198, failed=0, percent=100%
+00218 PASS  passed=199, failed=0, percent=100%
+00219 PASS  passed=200, failed=0, percent=100%
+00220 PASS  passed=201, failed=0, percent=100%
+00221 PASS  passed=202, failed=0, percent=100%
+00222 PASS  passed=203, failed=0, percent=100%
+00223 PASS  passed=204, failed=0, percent=100%
+00224 PASS  passed=205, failed=0, percent=100%
+00225 PASS  passed=206, failed=0, percent=100%
+00226 PASS  passed=207, failed=0, percent=100%
+00227 PASS  passed=208, failed=0, percent=100%
+00228 PASS  passed=209, failed=0, percent=100%
+00229 PASS  passed=210, failed=0, percent=100%
+00230 PASS  passed=211, failed=0, percent=100%
+00231 PASS  passed=212, failed=0, percent=100%
+00232 PASS  passed=213, failed=0, percent=100%
+00233 PASS  passed=214, failed=0, percent=100%
+00234 PASS  passed=215, failed=0, percent=100%
+00235 PASS  passed=216, failed=0, percent=100%
+00236 PASS  passed=217, failed=0, percent=100%
+00237 PASS  passed=218, failed=0, percent=100%
+00238 PASS  passed=219, failed=0, percent=100%
+00239 PASS  passed=220, failed=0, percent=100%
+00240 PASS  passed=221, failed=0, percent=100%
+00241 PASS  passed=222, failed=0, percent=100%
+00242 PASS  passed=223, failed=0, percent=100%
+00243 PASS  passed=224, failed=0, percent=100%
+00244 PASS  passed=225, failed=0, percent=100%
+00245 PASS  passed=226, failed=0, percent=100%
+00246 PASS  passed=227, failed=0, percent=100%
+00247 PASS  passed=228, failed=0, percent=100%
+00248 PASS  passed=229, failed=0, percent=100%
+00249 PASS  passed=230, failed=0, percent=100%
+00250 PASS  passed=231, failed=0, percent=100%
+00251 PASS  passed=232, failed=0, percent=100%
+00252 PASS  passed=233, failed=0, percent=100%
+00253 PASS  passed=234, failed=0, percent=100%
+00254 PASS  passed=235, failed=0, percent=100%
+00255 PASS  passed=236, failed=0, percent=100%
+00256 PASS  passed=237, failed=0, percent=100%
+00257 PASS  passed=238, failed=0, percent=100%
+00258 PASS  passed=239, failed=0, percent=100%
+00259 PASS  passed=240, failed=0, percent=100%
+00260 PASS  passed=241, failed=0, percent=100%
+00261 PASS  passed=242, failed=0, percent=100%
+00262 PASS  passed=243, failed=0, percent=100%
+00263 PASS  passed=244, failed=0, percent=100%
+00264 PASS  passed=245, failed=0, percent=100%
+00265 PASS  passed=246, failed=0, percent=100%
+00266 PASS  passed=247, failed=0, percent=100%
+00267 PASS  passed=248, failed=0, percent=100%
+00268 PASS  passed=249, failed=0, percent=100%
+00269 PASS  passed=250, failed=0, percent=100%
+00270 PASS  passed=251, failed=0, percent=100%
+00271 PASS  passed=252, failed=0, percent=100%
+00272 PASS  passed=253, failed=0, percent=100%
+00273 PASS  passed=254, failed=0, percent=100%
+00274 PASS  passed=255, failed=0, percent=100%
+00275 PASS  passed=256, failed=0, percent=100%
+00276 PASS  passed=257, failed=0, percent=100%
+00277 PASS  passed=258, failed=0, percent=100%
+00278 PASS  passed=259, failed=0, percent=100%
+00279 PASS  passed=260, failed=0, percent=100%
+00280 PASS  passed=261, failed=0, percent=100%
+00281 PASS  passed=262, failed=0, percent=100%
+00282 PASS  passed=263, failed=0, percent=100%
+00283 PASS  passed=264, failed=0, percent=100%
+00284 PASS  passed=265, failed=0, percent=100%
+00285 PASS  passed=266, failed=0, percent=100%
+00286 PASS  passed=267, failed=0, percent=100%
+00287 PASS  passed=268, failed=0, percent=100%
+00288 PASS  passed=269, failed=0, percent=100%
+00289 PASS  passed=270, failed=0, percent=100%
+00290 PASS  passed=271, failed=0, percent=100%
+00291 PASS  passed=272, failed=0, percent=100%
+00292 PASS  passed=273, failed=0, percent=100%
+00293 PASS  passed=274, failed=0, percent=100%
+00294 PASS  passed=275, failed=0, percent=100%
+00295 PASS  passed=276, failed=0, percent=100%
+00296 PASS  passed=277, failed=0, percent=100%
+00297 PASS  passed=278, failed=0, percent=100%
+00298 PASS  passed=279, failed=0, percent=100%
+00299 PASS  passed=280, failed=0, percent=100%
+00300 PASS  passed=281, failed=0, percent=100%
+00301 PASS  passed=282, failed=0, percent=100%
+00302 PASS  passed=283, failed=0, percent=100%
+00303 PASS  passed=284, failed=0, percent=100%
+00304 PASS  passed=285, failed=0, percent=100%
+00305 PASS  passed=286, failed=0, percent=100%
+00306 PASS  passed=287, failed=0, percent=100%
+00307 PASS  passed=288, failed=0, percent=100%
+00308 PASS  passed=289, failed=0, percent=100%
+00309 PASS  passed=290, failed=0, percent=100%
+00310 PASS  passed=291, failed=0, percent=100%
+00311 PASS  passed=292, failed=0, percent=100%
+00312 PASS  passed=293, failed=0, percent=100%
+00313 PASS  passed=294, failed=0, percent=100%
+00314 PASS  passed=295, failed=0, percent=100%
+00315 PASS  passed=296, failed=0, percent=100%
+00316 PASS  passed=297, failed=0, percent=100%
+00317 PASS  passed=298, failed=0, percent=100%
+00318 PASS  passed=299, failed=0, percent=100%
+00319 PASS  passed=300, failed=0, percent=100%
+00320 PASS  passed=301, failed=0, percent=100%
+00321 PASS  passed=302, failed=0, percent=100%
+00322 PASS  passed=303, failed=0, percent=100%
+00323 PASS  passed=304, failed=0, percent=100%
+00324 PASS  passed=305, failed=0, percent=100%
+00325 PASS  passed=306, failed=0, percent=100%
+00326 PASS  passed=307, failed=0, percent=100%
+00327 PASS  passed=308, failed=0, percent=100%
+00328 PASS  passed=309, failed=0, percent=100%
+00329 PASS  passed=310, failed=0, percent=100%
+00330 PASS  passed=311, failed=0, percent=100%
+00331 PASS  passed=312, failed=0, percent=100%
+00332 PASS  passed=313, failed=0, percent=100%
+00333 PASS  passed=314, failed=0, percent=100%
+00334 PASS  passed=315, failed=0, percent=100%
+00335 PASS  passed=316, failed=0, percent=100%
+00336 PASS  passed=317, failed=0, percent=100%
+00337 PASS  passed=318, failed=0, percent=100%
+00338 PASS  passed=319, failed=0, percent=100%
+00339 PASS  passed=320, failed=0, percent=100%
+00340 PASS  passed=321, failed=0, percent=100%
+00341 PASS  passed=322, failed=0, percent=100%
+00342 PASS  passed=323, failed=0, percent=100%
+00343 PASS  passed=324, failed=0, percent=100%
+00344 PASS  passed=325, failed=0, percent=100%
+00345 PASS  passed=326, failed=0, percent=100%
+00346 PASS  passed=327, failed=0, percent=100%
+00347 PASS  passed=328, failed=0, percent=100%
+00348 SKIPPED because EventNoDelay not implemented
+00349 SKIPPED because EventNoDelay not implemented
+00350 SKIPPED because EventNoDelay not implemented
+00351 SKIPPED because EventNoDelay not implemented
+00352 SKIPPED because EventNoDelay not implemented
+00353 SKIPPED because EventNoDelay not implemented
+00354 SKIPPED because EventNoDelay not implemented
+00355 SKIPPED because EventNoDelay not implemented
+00356 SKIPPED because EventNoDelay not implemented
+00357 SKIPPED because EventNoDelay not implemented
+00358 SKIPPED because EventNoDelay not implemented
+00359 SKIPPED because EventNoDelay not implemented
+00360 SKIPPED because EventNoDelay not implemented
+00361 SKIPPED because EventNoDelay not implemented
+00362 SKIPPED because EventNoDelay not implemented
+00363 SKIPPED because EventNoDelay not implemented
+00364 SKIPPED because EventNoDelay not implemented
+00365 SKIPPED because EventNoDelay not implemented
+00366 SKIPPED because EventNoDelay not implemented
+00367 SKIPPED because EventNoDelay not implemented
+00368 SKIPPED because EventNoDelay not implemented
+00369 SKIPPED because EventNoDelay not implemented
+00370 SKIPPED because EventNoDelay not implemented
+00371 SKIPPED because EventNoDelay not implemented
+00372 SKIPPED because EventNoDelay not implemented
+00373 SKIPPED because EventNoDelay not implemented
+00374 SKIPPED because EventNoDelay not implemented
+00375 SKIPPED because EventNoDelay not implemented
+00376 SKIPPED because EventNoDelay not implemented
+00377 SKIPPED because EventNoDelay not implemented
+00378 SKIPPED because EventNoDelay not implemented
+00379 SKIPPED because EventNoDelay not implemented
+00380 SKIPPED because EventNoDelay not implemented
+00381 SKIPPED because EventNoDelay not implemented
+00382 SKIPPED because EventNoDelay not implemented
+00383 SKIPPED because EventNoDelay not implemented
+00384 SKIPPED because EventNoDelay not implemented
+00385 SKIPPED because EventNoDelay not implemented
+00386 SKIPPED because EventNoDelay not implemented
+00387 SKIPPED because EventNoDelay not implemented
+00388 SKIPPED because v3.2 model not present
+00389 SKIPPED because EventNoDelay not implemented
+00390 SKIPPED because EventNoDelay not implemented
+00391 SKIPPED because v3.2 model not present
+00392 SKIPPED because EventNoDelay not implemented
+00393 SKIPPED because EventNoDelay not implemented
+00394 SKIPPED because v3.2 model not present
+00395 SKIPPED because EventNoDelay not implemented
+00396 SKIPPED because EventNoDelay not implemented
+00397 SKIPPED because EventNoDelay not implemented
+00398 SKIPPED because EventNoDelay not implemented
+00399 SKIPPED because EventNoDelay not implemented
+00400 SKIPPED because EventNoDelay not implemented
+00401 SKIPPED because EventNoDelay not implemented
+00402 SKIPPED because EventNoDelay not implemented
+00403 SKIPPED because EventNoDelay not implemented
+00404 SKIPPED because EventNoDelay not implemented
+00405 SKIPPED because EventWithDelay not implemented
+00406 SKIPPED because EventWithDelay not implemented
+00407 SKIPPED because EventWithDelay not implemented
+00408 SKIPPED because EventWithDelay not implemented
+00409 SKIPPED because EventWithDelay not implemented
+00410 SKIPPED because EventWithDelay not implemented
+00411 SKIPPED because EventWithDelay not implemented
+00412 SKIPPED because EventWithDelay not implemented
+00413 SKIPPED because EventWithDelay not implemented
+00414 SKIPPED because EventWithDelay not implemented
+00415 SKIPPED because EventWithDelay not implemented
+00416 SKIPPED because EventWithDelay not implemented
+00417 SKIPPED because EventWithDelay not implemented
+00418 SKIPPED because EventWithDelay not implemented
+00419 SKIPPED because EventWithDelay not implemented
+00420 SKIPPED because EventWithDelay not implemented
+00421 SKIPPED because EventWithDelay not implemented
+00422 SKIPPED because EventWithDelay not implemented
+00423 SKIPPED because EventWithDelay not implemented
+00424 SKIPPED because EventWithDelay not implemented
+00425 SKIPPED because EventWithDelay not implemented
+00426 SKIPPED because EventWithDelay not implemented
+00427 SKIPPED because EventWithDelay not implemented
+00428 SKIPPED because EventWithDelay not implemented
+00429 SKIPPED because EventWithDelay not implemented
+00430 SKIPPED because EventWithDelay not implemented
+00431 SKIPPED because EventWithDelay not implemented
+00432 SKIPPED because EventWithDelay not implemented
+00433 SKIPPED because EventWithDelay not implemented
+00434 SKIPPED because EventWithDelay not implemented
+00435 SKIPPED because EventWithDelay not implemented
+00436 SKIPPED because EventWithDelay not implemented
+00437 SKIPPED because EventWithDelay not implemented
+00438 SKIPPED because EventWithDelay not implemented
+00439 SKIPPED because EventWithDelay not implemented
+00440 SKIPPED because EventWithDelay not implemented
+00441 SKIPPED because EventWithDelay not implemented
+00442 SKIPPED because EventWithDelay not implemented
+00443 SKIPPED because EventWithDelay not implemented
+00444 SKIPPED because EventWithDelay not implemented
+00445 SKIPPED because v3.2 model not present
+00446 SKIPPED because EventWithDelay not implemented
+00447 SKIPPED because EventWithDelay not implemented
+00448 SKIPPED because v3.2 model not present
+00449 SKIPPED because EventWithDelay not implemented
+00450 SKIPPED because EventWithDelay not implemented
+00451 SKIPPED because v3.2 model not present
+00452 SKIPPED because EventWithDelay not implemented
+00453 SKIPPED because EventWithDelay not implemented
+00454 SKIPPED because EventWithDelay not implemented
+00455 SKIPPED because EventWithDelay not implemented
+00456 SKIPPED because EventWithDelay not implemented
+00457 SKIPPED because EventWithDelay not implemented
+00458 SKIPPED because EventWithDelay not implemented
+00459 SKIPPED because EventWithDelay not implemented
+00460 SKIPPED because EventWithDelay not implemented
+00461 SKIPPED because EventWithDelay not implemented
+00462 PASS  passed=329, failed=0, percent=100%
+00463 PASS  passed=330, failed=0, percent=100%
+00464 PASS  passed=331, failed=0, percent=100%
+00465 PASS  passed=332, failed=0, percent=100%
+00466 PASS  passed=333, failed=0, percent=100%
+00467 PASS  passed=334, failed=0, percent=100%
+00468 PASS  passed=335, failed=0, percent=100%
+00469 PASS  passed=336, failed=0, percent=100%
+00470 PASS  passed=337, failed=0, percent=100%
+00471 PASS  passed=338, failed=0, percent=100%
+00472 PASS  passed=339, failed=0, percent=100%
+00473 PASS  passed=340, failed=0, percent=100%
+00474 PASS  passed=341, failed=0, percent=100%
+00475 PASS  passed=342, failed=0, percent=100%
+00476 PASS  passed=343, failed=0, percent=100%
+00477 PASS  passed=344, failed=0, percent=100%
+00478 PASS  passed=345, failed=0, percent=100%
+00479 PASS  passed=346, failed=0, percent=100%
+00480 PASS  passed=347, failed=0, percent=100%
+00481 PASS  passed=348, failed=0, percent=100%
+00482 PASS  passed=349, failed=0, percent=100%
+00483 PASS  passed=350, failed=0, percent=100%
+00484 PASS  passed=351, failed=0, percent=100%
+00485 PASS  passed=352, failed=0, percent=100%
+00486 PASS  passed=353, failed=0, percent=100%
+00487 PASS  passed=354, failed=0, percent=100%
+00488 PASS  passed=355, failed=0, percent=100%
+00489 PASS  passed=356, failed=0, percent=100%
+00490 PASS  passed=357, failed=0, percent=100%
+00491 PASS  passed=358, failed=0, percent=100%
+00492 PASS  passed=359, failed=0, percent=100%
+00493 PASS  passed=360, failed=0, percent=100%
+00494 PASS  passed=361, failed=0, percent=100%
+00495 PASS  passed=362, failed=0, percent=100%
+00496 PASS  passed=363, failed=0, percent=100%
+00497 PASS  passed=364, failed=0, percent=100%
+00498 PASS  passed=365, failed=0, percent=100%
+00499 PASS  passed=366, failed=0, percent=100%
+00500 PASS  passed=367, failed=0, percent=100%
+00501 PASS  passed=368, failed=0, percent=100%
+00502 PASS  passed=369, failed=0, percent=100%
+00503 PASS  passed=370, failed=0, percent=100%
+00504 PASS  passed=371, failed=0, percent=100%
+00505 PASS  passed=372, failed=0, percent=100%
+00506 PASS  passed=373, failed=0, percent=100%
+00507 PASS  passed=374, failed=0, percent=100%
+00508 PASS  passed=375, failed=0, percent=100%
+00509 PASS  passed=376, failed=0, percent=100%
+00510 PASS  passed=377, failed=0, percent=100%
+00511 PASS  passed=378, failed=0, percent=100%
+00512 PASS  passed=379, failed=0, percent=100%
+00513 PASS  passed=380, failed=0, percent=100%
+00514 PASS  passed=381, failed=0, percent=100%
+00515 PASS  passed=382, failed=0, percent=100%
+00516 SKIPPED because v3.2 model not present
+00517 SKIPPED because v3.2 model not present
+00518 SKIPPED because v3.2 model not present
+00519 SKIPPED because v3.2 model not present
+00520 SKIPPED because v3.2 model not present
+00521 SKIPPED because v3.2 model not present
+00522 PASS  passed=383, failed=0, percent=100%
+00523 PASS  passed=384, failed=0, percent=100%
+00524 PASS  passed=385, failed=0, percent=100%
+00525 PASS  passed=386, failed=0, percent=100%
+00526 PASS  passed=387, failed=0, percent=100%
+00527 PASS  passed=388, failed=0, percent=100%
+00528 PASS  passed=389, failed=0, percent=100%
+00529 PASS  passed=390, failed=0, percent=100%
+00530 PASS  passed=391, failed=0, percent=100%
+00531 SKIPPED because AlgebraicRule not implemented
+00532 SKIPPED because AlgebraicRule not implemented
+00533 SKIPPED because AlgebraicRule not implemented
+00534 SKIPPED because AlgebraicRule not implemented
+00535 SKIPPED because AlgebraicRule not implemented
+00536 SKIPPED because AlgebraicRule not implemented
+00537 SKIPPED because AlgebraicRule not implemented
+00538 SKIPPED because AlgebraicRule not implemented
+00539 SKIPPED because AlgebraicRule not implemented
+00540 SKIPPED because AlgebraicRule not implemented
+00541 SKIPPED because AlgebraicRule not implemented
+00542 SKIPPED because AlgebraicRule not implemented
+00543 SKIPPED because AlgebraicRule not implemented
+00544 SKIPPED because AlgebraicRule not implemented
+00545 SKIPPED because AlgebraicRule not implemented
+00546 SKIPPED because AlgebraicRule not implemented
+00547 SKIPPED because AlgebraicRule not implemented
+00548 SKIPPED because AlgebraicRule not implemented
+00549 SKIPPED because AlgebraicRule not implemented
+00550 SKIPPED because AlgebraicRule not implemented
+00551 SKIPPED because AlgebraicRule not implemented
+00552 SKIPPED because AlgebraicRule not implemented
+00553 SKIPPED because AlgebraicRule not implemented
+00554 SKIPPED because AlgebraicRule not implemented
+00555 SKIPPED because AlgebraicRule not implemented
+00556 SKIPPED because AlgebraicRule not implemented
+00557 SKIPPED because AlgebraicRule not implemented
+00558 SKIPPED because AlgebraicRule not implemented
+00559 SKIPPED because AlgebraicRule not implemented
+00560 SKIPPED because AlgebraicRule not implemented
+00561 SKIPPED because v3.2 model not present
+00562 SKIPPED because v3.2 model not present
+00563 SKIPPED because v3.2 model not present
+00564 SKIPPED because v3.2 model not present
+00565 SKIPPED because AlgebraicRule not implemented
+00566 SKIPPED because AlgebraicRule not implemented
+00567 SKIPPED because AlgebraicRule not implemented
+00568 SKIPPED because AlgebraicRule not implemented
+00569 SKIPPED because AlgebraicRule not implemented
+00570 SKIPPED because AlgebraicRule not implemented
+00571 SKIPPED because AlgebraicRule not implemented
+00572 SKIPPED because AlgebraicRule not implemented
+00573 SKIPPED because AlgebraicRule not implemented
+00574 SKIPPED because AlgebraicRule not implemented
+00575 SKIPPED because AlgebraicRule not implemented
+00576 SKIPPED because AlgebraicRule not implemented
+00577 PASS  passed=392, failed=0, percent=100%
+00578 PASS  passed=393, failed=0, percent=100%
+00579 PASS  passed=394, failed=0, percent=100%
+00580 PASS  passed=395, failed=0, percent=100%
+00581 PASS  passed=396, failed=0, percent=100%
+00582 PASS  passed=397, failed=0, percent=100%
+00583 PASS  passed=398, failed=0, percent=100%
+00584 PASS  passed=399, failed=0, percent=100%
+00585 PASS  passed=400, failed=0, percent=100%
+00586 PASS  passed=401, failed=0, percent=100%
+00587 PASS  passed=402, failed=0, percent=100%
+00588 PASS  passed=403, failed=0, percent=100%
+00589 PASS  passed=404, failed=0, percent=100%
+00590 PASS  passed=405, failed=0, percent=100%
+00591 PASS  passed=406, failed=0, percent=100%
+00592 PASS  passed=407, failed=0, percent=100%
+00593 PASS  passed=408, failed=0, percent=100%
+00594 PASS  passed=409, failed=0, percent=100%
+00595 PASS  passed=410, failed=0, percent=100%
+00596 PASS  passed=411, failed=0, percent=100%
+00597 SKIPPED because v3.2 model not present
+00598 PASS  passed=412, failed=0, percent=100%
+00599 PASS  passed=413, failed=0, percent=100%
+00600 PASS  passed=414, failed=0, percent=100%
+00601 PASS  passed=415, failed=0, percent=100%
+00602 PASS  passed=416, failed=0, percent=100%
+00603 PASS  passed=417, failed=0, percent=100%
+00604 PASS  passed=418, failed=0, percent=100%
+00605 PASS  passed=419, failed=0, percent=100%
+00606 PASS  passed=420, failed=0, percent=100%
+00607 PASS  passed=421, failed=0, percent=100%
+00608 PASS  passed=422, failed=0, percent=100%
+00609 SKIPPED because v3.2 model not present
+00610 SKIPPED because v3.2 model not present
+00611 PASS  passed=423, failed=0, percent=100%
+00612 PASS  passed=424, failed=0, percent=100%
+00613 SKIPPED because AlgebraicRule not implemented
+00614 SKIPPED because AlgebraicRule not implemented
+00615 SKIPPED because AlgebraicRule not implemented
+00616 PASS  passed=425, failed=0, percent=100%
+00617 PASS  passed=426, failed=0, percent=100%
+00618 PASS  passed=427, failed=0, percent=100%
+00619 SKIPPED because EventNoDelay not implemented
+00620 SKIPPED because EventNoDelay not implemented
+00621 SKIPPED because EventNoDelay not implemented
+00622 SKIPPED because EventWithDelay not implemented
+00623 SKIPPED because EventWithDelay not implemented
+00624 SKIPPED because EventWithDelay not implemented
+00625 PASS  passed=428, failed=0, percent=100%
+00626 PASS  passed=429, failed=0, percent=100%
+00627 PASS  passed=430, failed=0, percent=100%
+00628 SKIPPED because AlgebraicRule not implemented
+00629 SKIPPED because AlgebraicRule not implemented
+00630 SKIPPED because AlgebraicRule not implemented
+00631 PASS  passed=431, failed=0, percent=100%
+00632 PASS  passed=432, failed=0, percent=100%
+00633 PASS  passed=433, failed=0, percent=100%
+00634 SKIPPED because EventNoDelay not implemented
+00635 SKIPPED because EventNoDelay not implemented
+00636 SKIPPED because EventNoDelay not implemented
+00637 SKIPPED because EventWithDelay not implemented
+00638 SKIPPED because EventWithDelay not implemented
+00639 SKIPPED because EventWithDelay not implemented
+00640 PASS  passed=434, failed=0, percent=100%
+00641 PASS  passed=435, failed=0, percent=100%
+00642 PASS  passed=436, failed=0, percent=100%
+00643 PASS  passed=437, failed=0, percent=100%
+00644 PASS  passed=438, failed=0, percent=100%
+00645 PASS  passed=439, failed=0, percent=100%
+00646 SKIPPED because EventNoDelay not implemented
+00647 SKIPPED because EventNoDelay not implemented
+00648 SKIPPED because EventNoDelay not implemented
+00649 SKIPPED because EventWithDelay not implemented
+00650 SKIPPED because EventWithDelay not implemented
+00651 SKIPPED because EventWithDelay not implemented
+00652 SKIPPED because EventNoDelay not implemented
+00653 SKIPPED because EventNoDelay not implemented
+00654 SKIPPED because EventNoDelay not implemented
+00655 SKIPPED because EventWithDelay not implemented
+00656 SKIPPED because EventWithDelay not implemented
+00657 SKIPPED because EventWithDelay not implemented
+00658 SKIPPED because AlgebraicRule not implemented
+00659 SKIPPED because AlgebraicRule not implemented
+00660 SKIPPED because AlgebraicRule not implemented
+00661 SKIPPED because EventNoDelay not implemented
+00662 SKIPPED because EventNoDelay not implemented
+00663 SKIPPED because EventNoDelay not implemented
+00664 SKIPPED because EventWithDelay not implemented
+00665 SKIPPED because EventWithDelay not implemented
+00666 SKIPPED because EventWithDelay not implemented
+00667 PASS  passed=440, failed=0, percent=100%
+00668 PASS  passed=441, failed=0, percent=100%
+00669 FAIL
+{'componentTags': ['Compartment', 'Species', 'Reaction', 'Parameter', 'FunctionDefinition', 'AssignmentRule'], 'testTags': ['Amount', 'NonUnityCompart
+ment'], 'levels': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=441, failed=1, percent=99%
+00670 PASS  passed=442, failed=1, percent=99%
+00671 PASS  passed=443, failed=1, percent=99%
+00672 PASS  passed=444, failed=1, percent=99%
+00673 SKIPPED because AlgebraicRule not implemented
+00674 SKIPPED because AlgebraicRule not implemented
+00675 SKIPPED because AlgebraicRule not implemented
+00676 PASS  passed=445, failed=1, percent=99%
+00677 PASS  passed=446, failed=1, percent=99%
+00678 PASS  passed=447, failed=1, percent=99%
+00679 SKIPPED because EventNoDelay not implemented
+00680 SKIPPED because EventNoDelay not implemented
+00681 SKIPPED because EventNoDelay not implemented
+00682 SKIPPED because EventWithDelay not implemented
+00683 SKIPPED because EventWithDelay not implemented
+00684 SKIPPED because EventWithDelay not implemented
+00685 PASS  passed=448, failed=1, percent=99%
+00686 PASS  passed=449, failed=1, percent=99%
+00687 SKIPPED because AlgebraicRule not implemented
+00688 PASS  passed=450, failed=1, percent=99%
+00689 SKIPPED because EventNoDelay not implemented
+00690 SKIPPED because EventWithDelay not implemented
+00691 PASS  passed=451, failed=1, percent=99%
+00692 PASS  passed=452, failed=1, percent=99%
+00693 PASS  passed=453, failed=1, percent=99%
+00694 PASS  passed=454, failed=1, percent=99%
+00695 SKIPPED because AlgebraicRule not implemented
+00696 SKIPPED because AlgebraicRule not implemented
+00697 PASS  passed=455, failed=1, percent=99%
+00698 PASS  passed=456, failed=1, percent=99%
+00699 SKIPPED because EventNoDelay not implemented
+00700 SKIPPED because EventNoDelay not implemented
+00701 SKIPPED because EventWithDelay not implemented
+00702 SKIPPED because EventWithDelay not implemented
+00703 PASS  passed=457, failed=1, percent=99%
+00704 PASS  passed=458, failed=1, percent=99%
+00705 SKIPPED because AlgebraicRule not implemented
+00706 PASS  passed=459, failed=1, percent=99%
+00707 SKIPPED because EventNoDelay not implemented
+00708 SKIPPED because EventWithDelay not implemented
+00709 PASS  passed=460, failed=1, percent=99%
+00710 PASS  passed=461, failed=1, percent=99%
+00711 PASS  passed=462, failed=1, percent=99%
+00712 PASS  passed=463, failed=1, percent=99%
+00713 PASS  passed=464, failed=1, percent=99%
+00714 PASS  passed=465, failed=1, percent=99%
+00715 PASS  passed=466, failed=1, percent=99%
+00716 PASS  passed=467, failed=1, percent=99%
+00717 PASS  passed=468, failed=1, percent=99%
+00718 PASS  passed=469, failed=1, percent=99%
+00719 PASS  passed=470, failed=1, percent=99%
+00720 PASS  passed=471, failed=1, percent=99%
+00721 PASS  passed=472, failed=1, percent=99%
+00722 PASS  passed=473, failed=1, percent=99%
+00723 SKIPPED because EventNoDelay not implemented
+00724 SKIPPED because EventWithDelay not implemented
+00725 SKIPPED because v3.2 model not present
+00726 SKIPPED because v3.2 model not present
+00727 SKIPPED because v3.2 model not present
+00728 SKIPPED because v3.2 model not present
+00729 SKIPPED because v3.2 model not present
+00730 SKIPPED because v3.2 model not present
+00731 SKIPPED because v3.2 model not present
+00732 PASS  passed=474, failed=1, percent=99%
+00733 PASS  passed=475, failed=1, percent=99%
+00734 PASS  passed=476, failed=1, percent=99%
+00735 PASS  passed=477, failed=1, percent=99%
+00736 SKIPPED because EventNoDelay not implemented
+00737 SKIPPED because EventWithDelay not implemented
+00738 PASS  passed=478, failed=1, percent=99%
+00739 FAIL
+{'componentTags': ['Compartment', 'Species', 'Reaction', 'Parameter', 'FunctionDefinition', 'AssignmentRule'], 'testTags': ['Concentration', 'NonUnity
+Compartment'], 'levels': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=478, failed=2, percent=99%
+00740 PASS  passed=479, failed=2, percent=99%
+00741 PASS  passed=480, failed=2, percent=99%
+00742 PASS  passed=481, failed=2, percent=99%
+00743 SKIPPED because EventNoDelay not implemented
+00744 SKIPPED because EventNoDelay not implemented
+00745 SKIPPED because EventNoDelay not implemented
+00746 SKIPPED because EventNoDelay not implemented
+00747 SKIPPED because EventNoDelay not implemented
+00748 SKIPPED because EventNoDelay not implemented
+00749 SKIPPED because EventNoDelay not implemented
+00750 SKIPPED because EventNoDelay not implemented
+00751 SKIPPED because EventNoDelay not implemented
+00752 SKIPPED because EventNoDelay not implemented
+00753 SKIPPED because EventNoDelay not implemented
+00754 SKIPPED because EventNoDelay not implemented
+00755 SKIPPED because EventNoDelay not implemented
+00756 SKIPPED because EventNoDelay not implemented
+00757 SKIPPED because EventNoDelay not implemented
+00758 SKIPPED because EventNoDelay not implemented
+00759 SKIPPED because EventNoDelay not implemented
+00760 SKIPPED because EventNoDelay not implemented
+00761 SKIPPED because EventNoDelay not implemented
+00762 SKIPPED because EventNoDelay not implemented
+00763 SKIPPED because EventWithDelay not implemented
+00764 SKIPPED because EventWithDelay not implemented
+00765 SKIPPED because EventWithDelay not implemented
+00766 SKIPPED because EventWithDelay not implemented
+00767 SKIPPED because EventWithDelay not implemented
+00768 SKIPPED because EventWithDelay not implemented
+00769 SKIPPED because EventWithDelay not implemented
+00770 SKIPPED because EventWithDelay not implemented
+00771 SKIPPED because EventWithDelay not implemented
+00772 SKIPPED because EventWithDelay not implemented
+00773 SKIPPED because EventWithDelay not implemented
+00774 SKIPPED because EventNoDelay not implemented
+00775 SKIPPED because EventNoDelay not implemented
+00776 SKIPPED because EventNoDelay not implemented
+00777 SKIPPED because EventWithDelay not implemented
+00778 SKIPPED because EventWithDelay not implemented
+00779 SKIPPED because EventWithDelay not implemented
+00780 SKIPPED because EventWithDelay not implemented
+00781 FAIL
+{'componentTags': ['Compartment', 'Species', 'Reaction', 'Parameter', 'InitialAssignment'], 'testTags': ['Concentration', 'NonUnityCompartment', 'Init
+ialValueReassigned'], 'levels': ['2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=481, failed=3, percent=99%
+00782 PASS  passed=482, failed=3, percent=99%
+00783 PASS  passed=483, failed=3, percent=99%
+00784 PASS  passed=484, failed=3, percent=99%
+00785 FAIL
+{'componentTags': ['Compartment', 'Species', 'Reaction', 'Parameter', 'InitialAssignment'], 'testTags': ['Concentration', 'NonUnityCompartment', 'Init
+ialValueReassigned'], 'levels': ['2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=484, failed=4, percent=99%
+00786 PASS  passed=485, failed=4, percent=99%
+00787 PASS  passed=486, failed=4, percent=99%
+00788 PASS  passed=487, failed=4, percent=99%
+00789 SKIPPED because EventNoDelay not implemented
+00790 SKIPPED because EventNoDelay not implemented
+00791 SKIPPED because EventNoDelay not implemented
+00792 PASS  passed=488, failed=4, percent=99%
+00793 PASS  passed=489, failed=4, percent=99%
+00794 FAIL
+{'componentTags': ['Compartment', 'Species', 'Reaction', 'Parameter', 'InitialAssignment'], 'testTags': ['Concentration', 'InitialValueReassigned'], '
+levels': ['2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=489, failed=5, percent=98%
+00795 PASS  passed=490, failed=5, percent=98%
+00796 PASS  passed=491, failed=5, percent=98%
+00797 PASS  passed=492, failed=5, percent=98%
+00798 PASS  passed=493, failed=5, percent=98%
+00799 PASS  passed=494, failed=5, percent=98%
+00800 PASS  passed=495, failed=5, percent=99%
+00801 PASS  passed=496, failed=5, percent=99%
+00802 PASS  passed=497, failed=5, percent=99%
+00803 PASS  passed=498, failed=5, percent=99%
+00804 PASS  passed=499, failed=5, percent=99%
+00805 PASS  passed=500, failed=5, percent=99%
+00806 PASS  passed=501, failed=5, percent=99%
+00807 PASS  passed=502, failed=5, percent=99%
+00808 PASS  passed=503, failed=5, percent=99%
+00809 PASS  passed=504, failed=5, percent=99%
+00810 PASS  passed=505, failed=5, percent=99%
+00811 PASS  passed=506, failed=5, percent=99%
+00812 PASS  passed=507, failed=5, percent=99%
+00813 PASS  passed=508, failed=5, percent=99%
+00814 PASS  passed=509, failed=5, percent=99%
+00815 PASS  passed=510, failed=5, percent=99%
+00816 PASS  passed=511, failed=5, percent=99%
+00817 PASS  passed=512, failed=5, percent=99%
+00818 PASS  passed=513, failed=5, percent=99%
+00819 PASS  passed=514, failed=5, percent=99%
+00820 PASS  passed=515, failed=5, percent=99%
+00821 PASS  passed=516, failed=5, percent=99%
+00822 PASS  passed=517, failed=5, percent=99%
+00823 PASS  passed=518, failed=5, percent=99%
+00824 PASS  passed=519, failed=5, percent=99%
+00825 PASS  passed=520, failed=5, percent=99%
+00826 PASS  passed=521, failed=5, percent=99%
+00827 SKIPPED because v3.2 model not present
+00828 SKIPPED because v3.2 model not present
+00829 SKIPPED because v3.2 model not present
+00830 PASS  passed=522, failed=5, percent=99%
+00831 PASS  passed=523, failed=5, percent=99%
+00832 PASS  passed=524, failed=5, percent=99%
+00833 PASS  passed=525, failed=5, percent=99%
+00834 PASS  passed=526, failed=5, percent=99%
+00835 PASS  passed=527, failed=5, percent=99%
+00836 PASS  passed=528, failed=5, percent=99%
+00837 PASS  passed=529, failed=5, percent=99%
+00838 PASS  passed=530, failed=5, percent=99%
+00839 PASS  passed=531, failed=5, percent=99%
+00840 PASS  passed=532, failed=5, percent=99%
+00841 PASS  passed=533, failed=5, percent=99%
+00842 PASS  passed=534, failed=5, percent=99%
+00843 PASS  passed=535, failed=5, percent=99%
+00844 SKIPPED because AlgebraicRule not implemented
+00845 SKIPPED because EventNoDelay not implemented
+00846 SKIPPED because EventNoDelay not implemented
+00847 SKIPPED because EventNoDelay not implemented
+00848 SKIPPED because EventWithDelay not implemented
+00849 SKIPPED because EventWithDelay not implemented
+00850 SKIPPED because EventWithDelay not implemented
+00851 SKIPPED because CSymbolTime not implemented
+00852 SKIPPED because CSymbolTime not implemented
+00853 SKIPPED because CSymbolTime not implemented
+00854 SKIPPED because CSymbolTime not implemented
+00855 SKIPPED because CSymbolTime not implemented
+00856 SKIPPED because CSymbolTime not implemented
+00857 SKIPPED because CSymbolTime not implemented
+00858 SKIPPED because CSymbolTime not implemented
+00859 SKIPPED because CSymbolTime not implemented
+00860 SKIPPED because CSymbolTime not implemented
+00861 SKIPPED because CSymbolTime not implemented
+00862 SKIPPED because CSymbolTime not implemented
+00863 SKIPPED because CSymbolTime not implemented
+00864 SKIPPED because CSymbolTime not implemented
+00865 SKIPPED because CSymbolTime not implemented
+00866 SKIPPED because CSymbolTime not implemented
+00867 SKIPPED because CSymbolTime not implemented
+00868 SKIPPED because CSymbolTime not implemented
+00869 SKIPPED because CSymbolTime not implemented
+00870 SKIPPED because v3.2 model not present
+00871 SKIPPED because v3.2 model not present
+00872 SKIPPED because v3.2 model not present
+00873 SKIPPED because v3.2 model not present
+00874 SKIPPED because v3.2 model not present
+00875 SKIPPED because v3.2 model not present
+00876 SKIPPED because AlgebraicRule not implemented
+00877 SKIPPED because CSymbolTime not implemented
+00878 SKIPPED because CSymbolTime not implemented
+00879 SKIPPED because CSymbolTime not implemented
+00880 SKIPPED because CSymbolTime not implemented
+00881 SKIPPED because CSymbolTime not implemented
+00882 SKIPPED because CSymbolTime not implemented
+00883 SKIPPED because EventNoDelay not implemented
+00884 SKIPPED because EventNoDelay not implemented
+00885 SKIPPED because EventNoDelay not implemented
+00886 SKIPPED because EventWithDelay not implemented
+00887 SKIPPED because EventNoDelay not implemented
+00888 SKIPPED because CSymbolTime not implemented
+00889 SKIPPED because CSymbolTime not implemented
+00890 SKIPPED because CSymbolTime not implemented
+00891 SKIPPED because CSymbolTime not implemented
+00892 SKIPPED because CSymbolTime not implemented
+00893 SKIPPED because CSymbolTime not implemented
+00894 SKIPPED because CSymbolTime not implemented
+00895 SKIPPED because CSymbolTime not implemented
+00896 SKIPPED because CSymbolTime not implemented
+00897 SKIPPED because CSymbolTime not implemented
+00898 SKIPPED because v3.2 model not present
+00899 SKIPPED because v3.2 model not present
+00900 SKIPPED because v3.2 model not present
+00901 PASS  passed=536, failed=5, percent=99%
+00902 PASS  passed=537, failed=5, percent=99%
+00903 PASS  passed=538, failed=5, percent=99%
+00904 PASS  passed=539, failed=5, percent=99%
+00905 PASS  passed=540, failed=5, percent=99%
+00906 PASS  passed=541, failed=5, percent=99%
+00907 PASS  passed=542, failed=5, percent=99%
+00908 PASS  passed=543, failed=5, percent=99%
+00909 PASS  passed=544, failed=5, percent=99%
+00910 PASS  passed=545, failed=5, percent=99%
+00911 PASS  passed=546, failed=5, percent=99%
+00912 PASS  passed=547, failed=5, percent=99%
+00913 PASS  passed=548, failed=5, percent=99%
+00914 PASS  passed=549, failed=5, percent=99%
+00915 PASS  passed=550, failed=5, percent=99%
+00916 PASS  passed=551, failed=5, percent=99%
+00917 PASS  passed=552, failed=5, percent=99%
+00918 PASS  passed=553, failed=5, percent=99%
+00919 PASS  passed=554, failed=5, percent=99%
+00920 PASS  passed=555, failed=5, percent=99%
+00921 PASS  passed=556, failed=5, percent=99%
+00922 PASS  passed=557, failed=5, percent=99%
+00923 PASS  passed=558, failed=5, percent=99%
+00924 PASS  passed=559, failed=5, percent=99%
+00925 PASS  passed=560, failed=5, percent=99%
+00926 PASS  passed=561, failed=5, percent=99%
+00927 PASS  passed=562, failed=5, percent=99%
+00928 SKIPPED because EventNoDelay not implemented
+00929 SKIPPED because EventNoDelay not implemented
+00930 SKIPPED because EventNoDelay not implemented
+00931 SKIPPED because EventNoDelay not implemented
+00932 SKIPPED because EventWithDelay not implemented
+00933 SKIPPED because EventWithDelay not implemented
+00934 SKIPPED because EventNoDelay not implemented
+00935 SKIPPED because EventNoDelay not implemented
+00936 SKIPPED because EventWithDelay not implemented
+00937 SKIPPED because CSymbolTime not implemented
+00938 SKIPPED because CSymbolTime not implemented
+00939 SKIPPED because CSymbolDelay not implemented
+00940 SKIPPED because CSymbolTime not implemented
+00941 SKIPPED because CSymbolTime not implemented
+00942 SKIPPED because CSymbolTime not implemented
+00943 SKIPPED because CSymbolTime not implemented
+00944 SKIPPED because EventNoDelay not implemented
+00945 SKIPPED because EventNoDelay not implemented
+00946 SKIPPED because EventNoDelay not implemented
+00947 SKIPPED because EventNoDelay not implemented
+00948 SKIPPED because EventNoDelay not implemented
+00949 FAIL
+{'componentTags': ['Parameter'], 'testTags': [], 'levels': ['1.2', '2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=562, failed=6, percent=98%
+00950 FAIL
+{'componentTags': ['InitialAssignment', 'Parameter'], 'testTags': ['InitialValueReassigned'], 'levels': ['2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'p
+ackagesPresent': []}
+  passed=562, failed=7, percent=98%
+00951 FAIL
+{'componentTags': ['Parameter'], 'testTags': [], 'levels': ['1.2', '2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=562, failed=8, percent=98%
+00952 SKIPPED because EventNoDelay not implemented
+00953 SKIPPED because EventNoDelay not implemented
+00954 FAIL
+{'componentTags': ['AssignmentRule', 'Parameter'], 'testTags': ['InitialValueReassigned', 'UncommonMathML'], 'levels': ['1.2', '2.1', '2.2', '2.3', '2
+.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=562, failed=9, percent=98%
+00955 SKIPPED because CSymbolTime not implemented
+00956 FAIL
+{'componentTags': ['InitialAssignment', 'Parameter'], 'testTags': ['InitialValueReassigned', 'UncommonMathML'], 'levels': ['2.2', '2.3', '2.4', '2.5',
+ '3.1', '3.2'], 'packagesPresent': []}
+  passed=562, failed=10, percent=98%
+00957 FAIL
+{'componentTags': ['AssignmentRule', 'Parameter'], 'testTags': ['NonConstantParameter', 'InitialValueReassigned', 'UncommonMathML'], 'levels': ['2.1',
+ '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=562, failed=11, percent=98%
+00958 FAIL
+{'componentTags': ['InitialAssignment', 'Parameter'], 'testTags': ['InitialValueReassigned', 'UncommonMathML'], 'levels': ['2.2', '2.3', '2.4', '2.5',
+ '3.1', '3.2'], 'packagesPresent': []}
+  passed=562, failed=12, percent=97%
+00959 SKIPPED because CSymbolTime not implemented
+00960 SKIPPED because CSymbolAvogadro not implemented
+00961 SKIPPED because CSymbolAvogadro not implemented
+00962 SKIPPED because EventNoDelay not implemented
+00963 SKIPPED because EventNoDelay not implemented
+00964 SKIPPED because EventNoDelay not implemented
+00965 SKIPPED because EventNoDelay not implemented
+00966 SKIPPED because EventNoDelay not implemented
+00967 SKIPPED because EventNoDelay not implemented
+00968 SKIPPED because v3.2 model not present
+00969 PASS  passed=563, failed=12, percent=97%
+00970 FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'Parameter', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedConstantStoichiometry', 'NonU
+nityStoichiometry', 'InitialValueReassigned'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=563, failed=13, percent=97%
+00971 PASS  passed=564, failed=13, percent=97%
+00972 SKIPPED because EventNoDelay not implemented
+00973 SKIPPED because v3.2 model not present
+00974 FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'InitialAssignment', 'Parameter', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'Init
+ialValueReassigned', 'NonConstantParameter', 'SpeciesReferenceInMath'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=564, failed=14, percent=97%
+00975 SKIPPED because ConversionFactors not implemented
+00976 SKIPPED because ConversionFactors not implemented
+00977 SKIPPED because ConversionFactors not implemented
+00978 SKIPPED because EventNoDelay not implemented
+00979 SKIPPED because EventNoDelay not implemented
+00980 SKIPPED because EventWithDelay not implemented
+00981 SKIPPED because CSymbolTime not implemented
+00982 SKIPPED because CSymbolTime not implemented
+00983 SKIPPED because AlgebraicRule not implemented
+00984 SKIPPED because EventNoDelay not implemented
+00985 SKIPPED because CSymbolDelay not implemented
+00986 SKIPPED because v3.2 model not present
+00987 SKIPPED because v3.2 model not present
+00988 SKIPPED because v3.2 model not present
+00989 SKIPPED because v3.2 model not present
+00990 SKIPPED because v3.2 model not present
+00991 SKIPPED because v3.2 model not present
+00992 SKIPPED because v3.2 model not present
+00993 SKIPPED because v3.2 model not present
+00994 SKIPPED because v3.2 model not present
+00995 SKIPPED because EventNoDelay not implemented
+00996 SKIPPED because EventNoDelay not implemented
+00997 SKIPPED because EventNoDelay not implemented
+00998 PASS  passed=565, failed=14, percent=97%
+00999 PASS  passed=566, failed=14, percent=97%
+01000 SKIPPED because EventNoDelay not implemented
+01001 PASS  passed=567, failed=14, percent=97%
+01002 PASS  passed=568, failed=14, percent=97%
+01003 PASS  passed=569, failed=14, percent=97%
+01004 PASS  passed=570, failed=14, percent=97%
+01005 PASS  passed=571, failed=14, percent=97%
+01006 PASS  passed=572, failed=14, percent=97%
+01007 PASS  passed=573, failed=14, percent=97%
+01008 FAIL
+{'componentTags': ['Compartment', 'Species', 'Reaction', 'Parameter', 'RateRule'], 'testTags': ['Amount', 'HasOnlySubstanceUnits', 'NonUnityCompartmen
+t'], 'levels': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=573, failed=15, percent=97%
+01009 PASS  passed=574, failed=15, percent=97%
+01010 PASS  passed=575, failed=15, percent=97%
+01011 PASS  passed=576, failed=15, percent=97%
+01012 PASS  passed=577, failed=15, percent=97%
+01013 PASS  passed=578, failed=15, percent=97%
+01014 PASS  passed=579, failed=15, percent=97%
+01015 PASS  passed=580, failed=15, percent=97%
+01016 FAIL
+{'componentTags': ['Compartment', 'Species', 'Reaction', 'Parameter', 'RateRule'], 'testTags': ['Amount', 'HasOnlySubstanceUnits', 'NonUnityCompartmen
+t'], 'levels': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=580, failed=16, percent=97%
+01017 FAIL
+{'componentTags': ['Compartment', 'Species', 'Reaction', 'Parameter', 'RateRule'], 'testTags': ['Amount', 'HasOnlySubstanceUnits', 'NonUnityCompartmen
+t'], 'levels': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=580, failed=17, percent=97%
+01018 PASS  passed=581, failed=17, percent=97%
+01019 PASS  passed=582, failed=17, percent=97%
+01020 PASS  passed=583, failed=17, percent=97%
+01021 PASS  passed=584, failed=17, percent=97%
+01022 PASS  passed=585, failed=17, percent=97%
+01023 PASS  passed=586, failed=17, percent=97%
+01024 PASS  passed=587, failed=17, percent=97%
+01025 PASS  passed=588, failed=17, percent=97%
+01026 PASS  passed=589, failed=17, percent=97%
+01027 SKIPPED because v3.2 model not present
+01028 SKIPPED because v3.2 model not present
+01029 SKIPPED because v3.2 model not present
+01030 PASS  passed=590, failed=17, percent=97%
+01031 PASS  passed=591, failed=17, percent=97%
+01032 PASS  passed=592, failed=17, percent=97%
+01033 PASS  passed=593, failed=17, percent=97%
+01034 PASS  passed=594, failed=17, percent=97%
+01035 PASS  passed=595, failed=17, percent=97%
+01036 PASS  passed=596, failed=17, percent=97%
+01037 PASS  passed=597, failed=17, percent=97%
+01038 PASS  passed=598, failed=17, percent=97%
+01039 PASS  passed=599, failed=17, percent=97%
+01040 PASS  passed=600, failed=17, percent=97%
+01041 PASS  passed=601, failed=17, percent=97%
+01042 PASS  passed=602, failed=17, percent=97%
+01043 PASS  passed=603, failed=17, percent=97%
+01044 SKIPPED because AlgebraicRule not implemented
+01045 SKIPPED because EventNoDelay not implemented
+01046 SKIPPED because EventNoDelay not implemented
+01047 SKIPPED because EventNoDelay not implemented
+01048 SKIPPED because EventWithDelay not implemented
+01049 SKIPPED because EventWithDelay not implemented
+01050 SKIPPED because EventWithDelay not implemented
+01051 SKIPPED because v3.2 model not present
+01052 SKIPPED because v3.2 model not present
+01053 SKIPPED because v3.2 model not present
+01054 SKIPPED because AlgebraicRule not implemented
+01055 PASS  passed=604, failed=17, percent=97%
+01056 PASS  passed=605, failed=17, percent=97%
+01057 PASS  passed=606, failed=17, percent=97%
+01058 PASS  passed=607, failed=17, percent=97%
+01059 PASS  passed=608, failed=17, percent=97%
+01060 PASS  passed=609, failed=17, percent=97%
+01061 PASS  passed=610, failed=17, percent=97%
+01062 PASS  passed=611, failed=17, percent=97%
+01063 PASS  passed=612, failed=17, percent=97%
+01064 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter'], 'testTags': ['InitialValueReassigned', 'Amount', 'Reversib
+leReaction', 'AssignedConstantStoichiometry', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=18, percent=97%
+01065 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter'], 'testTags': ['InitialValueReassigned', 'Amount', 'Assigned
+ConstantStoichiometry', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=19, percent=96%
+01066 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter'], 'testTags': ['InitialValueReassigned', 'Amount', 'Assigned
+ConstantStoichiometry', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=20, percent=96%
+01067 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter'], 'testTags': ['InitialValueReassigned', 'Amount', 'Assigned
+ConstantStoichiometry', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=21, percent=96%
+01068 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter', 'FunctionDefinition'], 'testTags': ['InitialValueReassigned
+', 'Amount', 'AssignedConstantStoichiometry', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=22, percent=96%
+01069 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter', 'FunctionDefinition'], 'testTags': ['InitialValueReassigned
+', 'Amount', 'AssignedConstantStoichiometry', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=23, percent=96%
+01070 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter', 'FunctionDefinition'], 'testTags': ['InitialValueReassigned
+', 'Amount', 'AssignedConstantStoichiometry', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=24, percent=96%
+01071 SKIPPED because EventNoDelay not implemented
+01072 SKIPPED because EventNoDelay not implemented
+01073 SKIPPED because EventNoDelay not implemented
+01074 SKIPPED because EventWithDelay not implemented
+01075 SKIPPED because EventWithDelay not implemented
+01076 SKIPPED because EventWithDelay not implemented
+01077 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter'], 'testTags': ['InitialValueReassigned', 'Amount', 'Assigned
+ConstantStoichiometry', 'NonUnityStoichiometry', 'InitialValueReassigned'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=25, percent=96%
+01078 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter'], 'testTags': ['InitialValueReassigned', 'Amount', 'Assigned
+ConstantStoichiometry', 'NonUnityStoichiometry', 'InitialValueReassigned'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=26, percent=95%
+01079 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter'], 'testTags': ['InitialValueReassigned', 'Amount', 'Assigned
+ConstantStoichiometry', 'NonUnityStoichiometry', 'InitialValueReassigned'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=27, percent=95%
+01080 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter'], 'testTags': ['InitialValueReassigned', 'Amount', 'Assigned
+ConstantStoichiometry', 'NonUnityStoichiometry', 'InitialValueReassigned'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=28, percent=95%
+01081 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter'], 'testTags': ['InitialValueReassigned', 'Amount', 'Assigned
+ConstantStoichiometry', 'NonUnityStoichiometry', 'InitialValueReassigned'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=29, percent=95%
+01082 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter'], 'testTags': ['InitialValueReassigned', 'Amount', 'Assigned
+ConstantStoichiometry', 'NonUnityStoichiometry', 'InitialValueReassigned'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=30, percent=95%
+01083 SKIPPED because AlgebraicRule not implemented
+01084 SKIPPED because AlgebraicRule not implemented
+01085 SKIPPED because AlgebraicRule not implemented
+01086 SKIPPED because AlgebraicRule not implemented
+01087 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter', 'AssignmentRule'], 'testTags': ['InitialValueReassigned', '
+Amount', 'AssignedConstantStoichiometry', 'NonUnityStoichiometry', 'InitialValueReassigned'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=31, percent=95%
+01088 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter', 'AssignmentRule'], 'testTags': ['InitialValueReassigned', '
+Amount', 'AssignedConstantStoichiometry', 'NonUnityStoichiometry', 'InitialValueReassigned'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=32, percent=95%
+01089 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter', 'RateRule'], 'testTags': ['InitialValueReassigned', 'Amount
+', 'AssignedConstantStoichiometry', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=33, percent=94%
+01090 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter', 'RateRule'], 'testTags': ['InitialValueReassigned', 'Amount
+', 'AssignedConstantStoichiometry', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=34, percent=94%
+01091 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter', 'FunctionDefinition', 'RateRule'], 'testTags': ['InitialVal
+ueReassigned', 'Amount', 'AssignedConstantStoichiometry', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=35, percent=94%
+01092 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter', 'RateRule', 'AssignmentRule'], 'testTags': ['InitialValueRe
+assigned', 'Amount', 'AssignedConstantStoichiometry', 'NonUnityStoichiometry', 'InitialValueReassigned'], 'levels': ['3.1', '3.2'], 'packagesPresent':
+ []}
+  passed=612, failed=36, percent=94%
+01093 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter', 'RateRule'], 'testTags': ['InitialValueReassigned', 'Amount
+', 'AssignedConstantStoichiometry', 'NonUnityStoichiometry', 'InitialValueReassigned'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=37, percent=94%
+01094 SKIPPED because EventNoDelay not implemented
+01095 SKIPPED because EventWithDelay not implemented
+01096 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter'], 'testTags': ['InitialValueReassigned', 'Amount', 'Assigned
+ConstantStoichiometry', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=38, percent=94%
+01097 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter'], 'testTags': ['InitialValueReassigned', 'Amount', 'Assigned
+ConstantStoichiometry', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=39, percent=94%
+01098 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter'], 'testTags': ['InitialValueReassigned', 'Amount', 'Assigned
+ConstantStoichiometry', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=40, percent=93%
+01099 SKIPPED because CSymbolTime not implemented
+01100 SKIPPED because CSymbolTime not implemented
+01101 SKIPPED because CSymbolTime not implemented
+01102 FAIL
+{'componentTags': ['Compartment', 'InitialAssignment', 'Parameter', 'Reaction', 'Species'], 'testTags': ['InitialValueReassigned', 'Amount', 'Assigned
+ConstantStoichiometry', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=41, percent=93%
+01103 FAIL
+{'componentTags': ['Compartment', 'Parameter', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedVariableStoichiometry', 'NonUnitySt
+oichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=612, failed=42, percent=93%
+01104 PASS  passed=613, failed=42, percent=93%
+01105 FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'Parameter', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedVariableStoichiom
+etry', 'NonUnityStoichiometry', 'NonConstantParameter', 'InitialValueReassigned'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=613, failed=43, percent=93%
+01106 SKIPPED because EventNoDelay not implemented
+01107 FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'Parameter', 'Reaction', 'Species'], 'testTags': ['InitialValueReassigned', 'Amount', 'AssignedVar
+iableStoichiometry', 'NonUnityStoichiometry', 'NonConstantParameter', 'HasOnlySubstanceUnits'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=613, failed=44, percent=93%
+01108 SKIPPED because AlgebraicRule not implemented
+01109 SKIPPED because CSymbolTime not implemented
+01110 FAIL
+{'componentTags': ['Compartment', 'Species', 'Reaction', 'Parameter', 'InitialAssignment'], 'testTags': ['InitialValueReassigned', 'Amount', 'Reversib
+leReaction', 'AssignedConstantStoichiometry', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=613, failed=45, percent=93%
+01111 FAIL
+{'componentTags': ['InitialAssignment', 'Compartment', 'Species', 'Reaction', 'Parameter'], 'testTags': ['InitialValueReassigned', 'Amount', 'Reversib
+leReaction', 'AssignedConstantStoichiometry', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=613, failed=46, percent=93%
+01112 PASS  passed=614, failed=46, percent=93%
+01113 PASS  passed=615, failed=46, percent=93%
+01114 PASS  passed=616, failed=46, percent=93%
+01115 PASS  passed=617, failed=46, percent=93%
+01116 PASS  passed=618, failed=46, percent=93%
+01117 PASS  passed=619, failed=46, percent=93%
+01118 PASS  passed=620, failed=46, percent=93%
+01119 SKIPPED because EventWithDelay not implemented
+01120 SKIPPED because EventWithDelay not implemented
+01121 SKIPPED because ConversionFactors not implemented
+01122 libSBMLsim doesn't pass this test FAIL
+{'componentTags': ['Compartment', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'BoundaryCondition', 'NonConstantCompartment', 'NonUnityC
+ompartment'], 'levels': ['1.2', '2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=620, failed=47, percent=92%
+01123 libSBMLsim doesn't pass this test FAIL
+{'componentTags': ['Compartment', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'BoundaryCondition', 'HasOnlySubstanceUnits', 'NonConstan
+tCompartment', 'NonUnityCompartment'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=620, failed=48, percent=92%
+01124 SKIPPED because packages present: ['comp']
+01125 SKIPPED because packages present: ['comp']
+01126 SKIPPED because packages present: ['comp']
+01127 SKIPPED because packages present: ['comp']
+01128 SKIPPED because packages present: ['comp']
+01129 SKIPPED because packages present: ['comp']
+01130 SKIPPED because packages present: ['comp']
+01131 SKIPPED because packages present: ['comp']
+01132 SKIPPED because packages present: ['comp']
+01133 SKIPPED because packages present: ['comp']
+01134 SKIPPED because packages present: ['comp']
+01135 SKIPPED because packages present: ['comp']
+01136 SKIPPED because packages present: ['comp']
+01137 SKIPPED because packages present: ['comp']
+01138 SKIPPED because packages present: ['comp']
+01139 SKIPPED because packages present: ['comp']
+01140 SKIPPED because packages present: ['comp']
+01141 SKIPPED because packages present: ['comp']
+01142 SKIPPED because packages present: ['comp']
+01143 SKIPPED because packages present: ['comp']
+01144 SKIPPED because packages present: ['comp']
+01145 SKIPPED because packages present: ['comp']
+01146 SKIPPED because packages present: ['comp']
+01147 SKIPPED because packages present: ['comp']
+01148 SKIPPED because packages present: ['comp']
+01149 SKIPPED because packages present: ['comp']
+01150 SKIPPED because packages present: ['comp']
+01151 SKIPPED because packages present: ['comp']
+01152 SKIPPED because packages present: ['comp']
+01153 SKIPPED because packages present: ['comp']
+01154 SKIPPED because packages present: ['comp']
+01155 SKIPPED because packages present: ['comp']
+01156 SKIPPED because packages present: ['comp']
+01157 SKIPPED because packages present: ['comp']
+01158 SKIPPED because packages present: ['comp']
+01159 SKIPPED because packages present: ['comp']
+01160 SKIPPED because packages present: ['comp']
+01161 SKIPPED because packages present: ['comp']
+01162 SKIPPED because packages present: ['comp']
+01163 SKIPPED because packages present: ['comp']
+01164 SKIPPED because packages present: ['comp']
+01165 SKIPPED because packages present: ['comp']
+01166 SKIPPED because packages present: ['comp']
+01167 SKIPPED because packages present: ['comp']
+01168 SKIPPED because packages present: ['comp']
+01169 SKIPPED because packages present: ['comp']
+01170 SKIPPED because packages present: ['comp']
+01171 SKIPPED because packages present: ['comp']
+01172 SKIPPED because packages present: ['comp']
+01173 SKIPPED because packages present: ['comp']
+01174 SKIPPED because packages present: ['comp']
+01175 SKIPPED because packages present: ['comp']
+01176 SKIPPED because packages present: ['comp']
+01177 SKIPPED because packages present: ['comp']
+01178 SKIPPED because packages present: ['comp']
+01179 SKIPPED because packages present: ['comp']
+01180 SKIPPED because packages present: ['comp']
+01181 SKIPPED because packages present: ['comp']
+01182 SKIPPED because packages present: ['comp']
+01183 SKIPPED because packages present: ['comp']
+01184 PASS  passed=621, failed=48, percent=92%
+01185 PASS  passed=622, failed=48, percent=92%
+01186 SKIPPED because packages present: ['fbc', 'fbc_v1']
+01187 SKIPPED because packages present: ['fbc', 'fbc_v1']
+01188 SKIPPED because packages present: ['fbc', 'fbc_v1']
+01189 SKIPPED because packages present: ['fbc', 'fbc_v1']
+01190 SKIPPED because packages present: ['fbc', 'fbc_v1']
+01191 SKIPPED because packages present: ['fbc', 'fbc_v1']
+01192 SKIPPED because packages present: ['fbc', 'fbc_v1']
+01193 SKIPPED because packages present: ['fbc', 'fbc_v1']
+01194 SKIPPED because packages present: ['fbc', 'fbc_v1']
+01195 SKIPPED because packages present: ['fbc', 'fbc_v1']
+01196 SKIPPED because packages present: ['fbc', 'fbc_v1']
+01197 PASS  passed=623, failed=48, percent=92%
+01198 libSBMLsim doesn't pass this test FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'Parameter', 'RateRule', 'Species'], 'testTags': ['Amount', 'BoundaryCondition', 'InitialValueReas
+signed', 'NonConstantCompartment', 'NonConstantParameter', 'NonUnityCompartment', 'VolumeConcentrationRates'], 'levels': ['1.2', '2.1', '2.2', '2.3',
+'2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=623, failed=49, percent=92%
+01199 FAIL
+{'componentTags': ['AssignmentRule', 'Parameter', 'RateRule'], 'testTags': ['InitialValueReassigned', 'NonConstantParameter', 'UncommonMathML'], 'leve
+ls': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=623, failed=50, percent=92%
+01200 FAIL
+{'componentTags': ['AssignmentRule', 'Parameter', 'RateRule'], 'testTags': ['InitialValueReassigned', 'NonConstantParameter', 'UncommonMathML'], 'leve
+ls': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=623, failed=51, percent=92%
+01201 FAIL
+{'componentTags': ['AssignmentRule', 'Parameter', 'RateRule'], 'testTags': ['InitialValueReassigned', 'NonConstantParameter', 'UncommonMathML'], 'leve
+ls': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=623, failed=52, percent=92%
+01202 FAIL
+{'componentTags': ['AssignmentRule', 'Parameter', 'RateRule'], 'testTags': ['InitialValueReassigned', 'NonConstantParameter', 'UncommonMathML'], 'leve
+ls': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=623, failed=53, percent=92%
+01203 FAIL
+{'componentTags': ['AssignmentRule', 'Parameter', 'RateRule'], 'testTags': ['InitialValueReassigned', 'NonConstantParameter', 'UncommonMathML'], 'leve
+ls': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=623, failed=54, percent=92%
+01204 FAIL
+{'componentTags': ['AssignmentRule', 'Parameter', 'RateRule'], 'testTags': ['InitialValueReassigned', 'NonConstantParameter', 'UncommonMathML'], 'leve
+ls': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=623, failed=55, percent=91%
+01205 PASS  passed=624, failed=55, percent=91%
+01206 PASS  passed=625, failed=55, percent=91%
+01207 PASS  passed=626, failed=55, percent=91%
+01208 libSBMLsim doesn't pass this test FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'Parameter', 'RateRule', 'Species'], 'testTags': ['Amount', 'BoundaryCondition', 'InitialValueReas
+signed', 'NonConstantCompartment', 'NonConstantParameter', 'NonUnityCompartment', 'VolumeConcentrationRates'], 'levels': ['1.2', '2.1', '2.2', '2.3',
+'2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=626, failed=56, percent=91%
+01209 PASS  passed=627, failed=56, percent=91%
+01210 FAIL
+{'componentTags': ['AssignmentRule', 'Parameter'], 'testTags': ['InitialValueReassigned', 'UncommonMathML'], 'levels': ['2.1', '2.2', '2.3', '2.4', '2
+.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=627, failed=57, percent=91%
+01211 SKIPPED because EventNoDelay not implemented
+01212 SKIPPED because EventNoDelay not implemented
+01213 SKIPPED because EventWithDelay not implemented
+01214 SKIPPED because EventNoDelay not implemented
+01215 FAIL
+{'componentTags': ['Parameter', 'RateRule'], 'testTags': ['NonConstantParameter'], 'levels': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packa
+gesPresent': []}
+  passed=627, failed=58, percent=91%
+01216 FAIL
+{'componentTags': ['AssignmentRule', 'Parameter'], 'testTags': ['InitialValueReassigned', 'UncommonMathML'], 'levels': ['2.1', '2.2', '2.3', '2.4', '2
+.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=627, failed=59, percent=91%
+01217 FAIL
+{'componentTags': ['AssignmentRule', 'InitialAssignment', 'Parameter'], 'testTags': ['InitialValueReassigned'], 'levels': ['2.2', '2.3', '2.4', '2.5',
+ '3.1', '3.2'], 'packagesPresent': []}
+  passed=627, failed=60, percent=91%
+01218 FAIL
+{'componentTags': ['AssignmentRule', 'InitialAssignment', 'Parameter'], 'testTags': ['InitialValueReassigned'], 'levels': ['2.2', '2.3', '2.4', '2.5',
+ '3.1', '3.2'], 'packagesPresent': []}
+  passed=627, failed=61, percent=91%
+01219 FAIL
+{'componentTags': ['Compartment', 'RateRule', 'Species'], 'testTags': ['Amount', 'BoundaryCondition', 'HasOnlySubstanceUnits', 'NonUnityCompartment'],
+ 'levels': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=627, failed=62, percent=91%
+01220 FAIL
+{'componentTags': ['Compartment', 'RateRule', 'Species'], 'testTags': ['Amount', 'BoundaryCondition', 'HasOnlySubstanceUnits', 'NonUnityCompartment'],
+ 'levels': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=627, failed=63, percent=90%
+01221 FAIL
+{'componentTags': ['Compartment', 'RateRule', 'Species'], 'testTags': ['Amount', 'BoundaryCondition', 'HasOnlySubstanceUnits', 'NonConstantCompartment
+', 'NonUnityCompartment'], 'levels': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=627, failed=64, percent=90%
+01222 SKIPPED because EventNoDelay not implemented
+01223 SKIPPED because CSymbolTime not implemented
+01224 PASS  passed=628, failed=64, percent=90%
+01225 FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'Parameter', 'Reaction', 'Species'], 'testTags': ['Amount', 'InitialValueReassigned'], 'levels': [
+'2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=628, failed=65, percent=90%
+01226 FAIL
+{'componentTags': ['Compartment', 'Parameter', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'NonConstantParameter'], 'levels': ['2.1', '
+2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=628, failed=66, percent=90%
+01227 SKIPPED because EventNoDelay not implemented
+01228 SKIPPED because EventNoDelay not implemented
+01229 SKIPPED because EventNoDelay not implemented
+01230 SKIPPED because EventWithDelay not implemented
+01231 FAIL
+{'componentTags': ['Compartment', 'Parameter', 'Reaction', 'Species'], 'testTags': ['Amount'], 'levels': ['2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], '
+packagesPresent': []}
+  passed=628, failed=67, percent=90%
+01232 PASS  passed=629, failed=67, percent=90%
+01233 PASS  passed=630, failed=67, percent=90%
+01234 PASS  passed=631, failed=67, percent=90%
+01235 PASS  passed=632, failed=67, percent=90%
+01236 PASS  passed=633, failed=67, percent=90%
+01237 SKIPPED because EventNoDelay not implemented
+01238 SKIPPED because EventNoDelay not implemented
+01239 SKIPPED because EventNoDelay not implemented
+01240 SKIPPED because EventNoDelay not implemented
+01241 SKIPPED because EventWithDelay not implemented
+01242 SKIPPED because EventNoDelay not implemented
+01243 SKIPPED because EventNoDelay not implemented
+01244 SKIPPED because AlgebraicRule not implemented
+01245 PASS  passed=634, failed=67, percent=90%
+01246 PASS  passed=635, failed=67, percent=90%
+01247 FAIL
+{'componentTags': ['Parameter'], 'testTags': ['NoMathML'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=635, failed=68, percent=90%
+01248 SKIPPED because CSymbolRateOf not implemented
+01249 SKIPPED because CSymbolRateOf not implemented
+01250 SKIPPED because CSymbolRateOf not implemented
+01251 SKIPPED because CSymbolRateOf not implemented
+01252 SKIPPED because CSymbolRateOf not implemented
+01253 SKIPPED because CSymbolRateOf not implemented
+01254 SKIPPED because CSymbolRateOf not implemented
+01255 SKIPPED because CSymbolRateOf not implemented
+01256 SKIPPED because CSymbolRateOf not implemented
+01257 SKIPPED because CSymbolRateOf not implemented
+01258 SKIPPED because CSymbolRateOf not implemented
+01259 SKIPPED because CSymbolRateOf not implemented
+01260 SKIPPED because EventNoDelay not implemented
+01261 SKIPPED because EventNoDelay not implemented
+01262 SKIPPED because EventNoDelay not implemented
+01263 SKIPPED because EventWithDelay not implemented
+01264 SKIPPED because CSymbolRateOf not implemented
+01265 SKIPPED because CSymbolRateOf not implemented
+01266 SKIPPED because EventNoDelay not implemented
+01267 SKIPPED because EventNoDelay not implemented
+01268 SKIPPED because EventWithDelay not implemented
+01269 SKIPPED because EventWithDelay not implemented
+01270 SKIPPED because EventWithDelay not implemented
+01271 FAIL
+{'componentTags': ['FunctionDefinition', 'Parameter'], 'testTags': ['NoMathML'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=635, failed=69, percent=90%
+01272 FAIL
+{'componentTags': ['InitialAssignment', 'Parameter'], 'testTags': ['InitialValueReassigned', 'L3v2MathML'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=635, failed=70, percent=90%
+01273 FAIL
+{'componentTags': ['InitialAssignment', 'Parameter'], 'testTags': ['InitialValueReassigned', 'L3v2MathML'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=635, failed=71, percent=89%
+01274 FAIL
+{'componentTags': ['InitialAssignment', 'Parameter'], 'testTags': ['InitialValueReassigned', 'L3v2MathML'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=635, failed=72, percent=89%
+01275 FAIL
+{'componentTags': ['InitialAssignment', 'Parameter'], 'testTags': ['InitialValueReassigned', 'L3v2MathML'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=635, failed=73, percent=89%
+01276 FAIL
+{'componentTags': ['InitialAssignment', 'Parameter'], 'testTags': ['InitialValueReassigned', 'L3v2MathML'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=635, failed=74, percent=89%
+01277 SKIPPED because CSymbolTime not implemented
+01278 SKIPPED because CSymbolTime not implemented
+01279 SKIPPED because CSymbolTime not implemented
+01280 SKIPPED because CSymbolTime not implemented
+01281 SKIPPED because CSymbolTime not implemented
+01282 PASS  passed=636, failed=74, percent=89%
+01283 FAIL
+{'componentTags': ['InitialAssignment', 'Parameter'], 'testTags': ['BoolNumericSwap', 'InitialValueReassigned'], 'levels': ['3.2'], 'packagesPresent':
+ []}
+  passed=636, failed=75, percent=89%
+01284 SKIPPED because EventNoDelay not implemented
+01285 SKIPPED because EventNoDelay not implemented
+01286 SKIPPED because EventNoDelay not implemented
+01287 SKIPPED because EventWithDelay not implemented
+01288 FAIL
+{'componentTags': ['Compartment', 'Reaction', 'Species'], 'testTags': ['Amount', 'BoolNumericSwap'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=636, failed=76, percent=89%
+01289 PASS  passed=637, failed=76, percent=89%
+01290 FAIL
+{'componentTags': ['Parameter', 'RateRule'], 'testTags': ['BoolNumericSwap', 'NonConstantParameter'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=637, failed=77, percent=89%
+01291 FAIL
+{'componentTags': ['AssignmentRule', 'Parameter'], 'testTags': ['BoolNumericSwap', 'InitialValueReassigned'], 'levels': ['3.2'], 'packagesPresent': []
+}
+  passed=637, failed=78, percent=89%
+01292 SKIPPED because AlgebraicRule not implemented
+01293 SKIPPED because EventNoDelay not implemented
+01294 SKIPPED because EventNoDelay not implemented
+01295 SKIPPED because EventWithDelay not implemented
+01296 SKIPPED because CSymbolRateOf not implemented
+01297 SKIPPED because EventNoDelay not implemented
+01298 SKIPPED because EventNoDelay not implemented
+01299 SKIPPED because EventWithDelay not implemented
+01300 PASS  passed=638, failed=78, percent=89%
+01301 FAIL
+{'componentTags': ['AssignmentRule', 'Parameter', 'Reaction'], 'testTags': ['InitialValueReassigned'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=638, failed=79, percent=88%
+01302 FAIL
+{'componentTags': ['Parameter', 'RateRule', 'Reaction'], 'testTags': ['NonConstantParameter'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=638, failed=80, percent=88%
+01303 SKIPPED because EventNoDelay not implemented
+01304 SKIPPED because EventNoDelay not implemented
+01305 SKIPPED because EventWithDelay not implemented
+01306 SKIPPED because CSymbolTime not implemented
+01307 PASS  passed=639, failed=80, percent=88%
+01308 FAIL
+{'componentTags': ['Compartment', 'RateRule', 'Species'], 'testTags': ['Concentration', 'HasOnlySubstanceUnits', 'NonUnityCompartment'], 'levels': ['2
+.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=639, failed=81, percent=88%
+01309 PASS  passed=640, failed=81, percent=88%
+01310 PASS  passed=641, failed=81, percent=88%
+01311 PASS  passed=642, failed=81, percent=88%
+01312 PASS  passed=643, failed=81, percent=88%
+01313 PASS  passed=644, failed=81, percent=88%
+01314 PASS  passed=645, failed=81, percent=88%
+01315 PASS  passed=646, failed=81, percent=88%
+01316 SKIPPED because CSymbolAvogadro not implemented
+01317 SKIPPED because CSymbolTime not implemented
+01318 SKIPPED because CSymbolTime not implemented
+01319 SKIPPED because CSymbolTime not implemented
+01320 SKIPPED because CSymbolDelay not implemented
+01321 SKIPPED because CSymbolRateOf not implemented
+01322 SKIPPED because CSymbolRateOf not implemented
+01323 SKIPPED because CSymbolAvogadro not implemented
+01324 SKIPPED because EventWithDelay not implemented
+01325 SKIPPED because EventWithDelay not implemented
+01326 SKIPPED because EventWithDelay not implemented
+01327 SKIPPED because EventWithDelay not implemented
+01328 SKIPPED because EventNoDelay not implemented
+01329 SKIPPED because EventNoDelay not implemented
+01330 SKIPPED because EventNoDelay not implemented
+01331 SKIPPED because EventNoDelay not implemented
+01332 SKIPPED because EventNoDelay not implemented
+01333 SKIPPED because EventNoDelay not implemented
+01334 SKIPPED because EventNoDelay not implemented
+01335 SKIPPED because EventWithDelay not implemented
+01336 SKIPPED because EventNoDelay not implemented
+01337 SKIPPED because EventNoDelay not implemented
+01338 libSBMLsim doesn't pass this test FAIL
+{'componentTags': ['Compartment', 'Parameter', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'NonConstantParameter', 'ReversibleReaction'
+], 'levels': ['1.2', '2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=646, failed=82, percent=88%
+01339 libSBMLsim doesn't pass this test FAIL
+{'componentTags': ['Compartment', 'Parameter', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'NonConstantParameter', 'ReversibleReaction'
+], 'levels': ['1.2', '2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=646, failed=83, percent=88%
+01340 SKIPPED because EventNoDelay not implemented
+01341 PASS  passed=647, failed=83, percent=88%
+01342 PASS  passed=648, failed=83, percent=88%
+01343 SKIPPED because CSymbolTime not implemented
+01344 SKIPPED because packages present: ['comp']
+01345 SKIPPED because packages present: ['comp']
+01346 SKIPPED because packages present: ['comp']
+01347 SKIPPED because packages present: ['comp']
+01348 SKIPPED because packages present: ['comp']
+01349 SKIPPED because packages present: ['comp']
+01350 SKIPPED because packages present: ['comp']
+01351 SKIPPED because packages present: ['comp']
+01352 SKIPPED because packages present: ['comp']
+01353 SKIPPED because packages present: ['comp']
+01354 SKIPPED because packages present: ['comp']
+01355 SKIPPED because packages present: ['comp']
+01356 SKIPPED because packages present: ['comp']
+01357 SKIPPED because packages present: ['comp']
+01358 SKIPPED because packages present: ['comp']
+01359 SKIPPED because packages present: ['comp']
+01360 SKIPPED because packages present: ['comp']
+01361 SKIPPED because packages present: ['comp']
+01362 SKIPPED because packages present: ['comp']
+01363 SKIPPED because packages present: ['comp']
+01364 SKIPPED because packages present: ['comp']
+01365 SKIPPED because packages present: ['comp']
+01366 SKIPPED because packages present: ['comp']
+01367 SKIPPED because packages present: ['comp']
+01368 SKIPPED because packages present: ['comp']
+01369 SKIPPED because packages present: ['comp']
+01370 SKIPPED because packages present: ['comp']
+01371 SKIPPED because packages present: ['comp']
+01372 SKIPPED because packages present: ['comp']
+01373 SKIPPED because packages present: ['comp']
+01374 SKIPPED because packages present: ['comp']
+01375 SKIPPED because packages present: ['comp']
+01376 SKIPPED because packages present: ['comp']
+01377 SKIPPED because packages present: ['comp']
+01378 SKIPPED because packages present: ['comp']
+01379 SKIPPED because packages present: ['comp']
+01380 SKIPPED because packages present: ['comp']
+01381 SKIPPED because packages present: ['comp']
+01382 SKIPPED because packages present: ['comp']
+01383 SKIPPED because packages present: ['comp']
+01384 SKIPPED because packages present: ['comp']
+01385 SKIPPED because packages present: ['comp']
+01386 SKIPPED because packages present: ['comp']
+01387 SKIPPED because packages present: ['comp']
+01388 SKIPPED because packages present: ['comp']
+01389 SKIPPED because packages present: ['comp']
+01390 SKIPPED because packages present: ['comp']
+01391 SKIPPED because packages present: ['comp']
+01392 SKIPPED because packages present: ['comp']
+01393 SKIPPED because packages present: ['comp']
+01394 SKIPPED because packages present: ['comp']
+01395 FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'Parameter', 'Reaction', 'Species'], 'testTags': ['Amount', 'InitialValueReassigned', 'NonConstant
+Parameter'], 'levels': ['2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=648, failed=84, percent=88%
+01396 SKIPPED because v3.2 model not present
+01397 SKIPPED because v3.2 model not present
+01398 SKIPPED because v3.2 model not present
+01399 SKIPPED because v3.2 model not present
+01400 SKIPPED because CSymbolDelay not implemented
+01401 SKIPPED because CSymbolDelay not implemented
+01402 SKIPPED because ConversionFactors not implemented
+01403 SKIPPED because ConversionFactors not implemented
+01404 SKIPPED because ConversionFactors not implemented
+01405 SKIPPED because ConversionFactors not implemented
+01406 SKIPPED because ConversionFactors not implemented
+01407 SKIPPED because ConversionFactors not implemented
+01408 SKIPPED because ConversionFactors not implemented
+01409 SKIPPED because ConversionFactors not implemented
+01410 SKIPPED because ConversionFactors not implemented
+01411 SKIPPED because CSymbolDelay not implemented
+01412 SKIPPED because CSymbolDelay not implemented
+01413 SKIPPED because CSymbolDelay not implemented
+01414 SKIPPED because CSymbolDelay not implemented
+01415 SKIPPED because CSymbolDelay not implemented
+01416 SKIPPED because CSymbolDelay not implemented
+01417 SKIPPED because CSymbolDelay not implemented
+01418 SKIPPED because CSymbolDelay not implemented
+01419 SKIPPED because CSymbolDelay not implemented
+01420 PASS  passed=649, failed=84, percent=88%
+01421 PASS  passed=650, failed=84, percent=88%
+01422 PASS  passed=651, failed=84, percent=88%
+01423 PASS  passed=652, failed=84, percent=88%
+01424 PASS  passed=653, failed=84, percent=88%
+01425 PASS  passed=654, failed=84, percent=88%
+01426 PASS  passed=655, failed=84, percent=88%
+01427 PASS  passed=656, failed=84, percent=88%
+01428 PASS  passed=657, failed=84, percent=88%
+01429 PASS  passed=658, failed=84, percent=88%
+01430 PASS  passed=659, failed=84, percent=88%
+01431 PASS  passed=660, failed=84, percent=88%
+01432 PASS  passed=661, failed=84, percent=88%
+01433 PASS  passed=662, failed=84, percent=88%
+01434 PASS  passed=663, failed=84, percent=88%
+01435 SKIPPED because v3.2 model not present
+01436 PASS  passed=664, failed=84, percent=88%
+01437 SKIPPED because v3.2 model not present
+01438 PASS  passed=665, failed=84, percent=88%
+01439 SKIPPED because v3.2 model not present
+01440 PASS  passed=666, failed=84, percent=88%
+01441 SKIPPED because v3.2 model not present
+01442 PASS  passed=667, failed=84, percent=88%
+01443 SKIPPED because v3.2 model not present
+01444 SKIPPED because EventNoDelay not implemented
+01445 SKIPPED because EventNoDelay not implemented
+01446 SKIPPED because EventNoDelay not implemented
+01447 SKIPPED because EventNoDelay not implemented
+01448 SKIPPED because EventNoDelay not implemented
+01449 FAIL
+{'componentTags': ['Compartment', 'InitialAssignment', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedVariableStoichiometry', 'In
+itialValueReassigned', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=667, failed=85, percent=88%
+01450 FAIL
+{'componentTags': ['Compartment', 'InitialAssignment', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedVariableStoichiometry', 'In
+itialValueReassigned', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=667, failed=86, percent=88%
+01451 FAIL
+{'componentTags': ['Compartment', 'InitialAssignment', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedVariableStoichiometry', 'In
+itialValueReassigned', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=667, failed=87, percent=88%
+01452 FAIL
+{'componentTags': ['Compartment', 'InitialAssignment', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedVariableStoichiometry', 'In
+itialValueReassigned', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=667, failed=88, percent=88%
+01453 FAIL
+{'componentTags': ['Compartment', 'InitialAssignment', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedVariableStoichiometry', 'In
+itialValueReassigned', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=667, failed=89, percent=88%
+01454 SKIPPED because CSymbolDelay not implemented
+01455 SKIPPED because CSymbolRateOf not implemented
+01456 SKIPPED because CSymbolRateOf not implemented
+01457 SKIPPED because CSymbolRateOf not implemented
+01458 SKIPPED because CSymbolRateOf not implemented
+01459 SKIPPED because CSymbolRateOf not implemented
+01460 SKIPPED because CSymbolRateOf not implemented
+01461 SKIPPED because CSymbolRateOf not implemented
+01462 SKIPPED because CSymbolRateOf not implemented
+01463 SKIPPED because CSymbolRateOf not implemented
+01464 libSBMLsim doesn't pass this test FAIL
+{'componentTags': ['Compartment', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedVariableStoichiometry', 'NoMathML', 'NonUnitySto
+ichiometry'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=667, failed=90, percent=88%
+01465 libSBMLsim doesn't pass this test FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedConstantStoichiometry', 'InitialValueReass
+igned', 'NoMathML', 'NonUnityStoichiometry'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=667, failed=91, percent=87%
+01466 SKIPPED because EventNoDelay not implemented
+01467 SKIPPED because packages present: ['comp']
+01468 SKIPPED because packages present: ['comp']
+01469 SKIPPED because packages present: ['comp']
+01470 SKIPPED because packages present: ['comp']
+01471 SKIPPED because packages present: ['comp']
+01472 SKIPPED because packages present: ['comp']
+01473 SKIPPED because packages present: ['comp']
+01474 SKIPPED because packages present: ['comp']
+01475 SKIPPED because packages present: ['comp']
+01476 SKIPPED because packages present: ['comp']
+01477 SKIPPED because packages present: ['comp']
+01478 libSBMLsim doesn't pass this test FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'FunctionDefinition', 'Parameter', 'RateRule', 'Species'], 'testTags': ['Amount', 'BoundaryConditi
+on', 'InitialValueReassigned', 'NonConstantCompartment', 'NonConstantParameter', 'NonUnityCompartment', 'VolumeConcentrationRates'], 'levels': ['2.1',
+ '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=667, failed=92, percent=87%
+01479 SKIPPED because AlgebraicRule not implemented
+01480 SKIPPED because CSymbolDelay not implemented
+01481 SKIPPED because v3.2 model not present
+01482 SKIPPED because AlgebraicRule not implemented
+01483 SKIPPED because AlgebraicRule not implemented
+01484 SKIPPED because ConversionFactors not implemented
+01485 FAIL
+{'componentTags': ['AssignmentRule', 'FunctionDefinition', 'Parameter'], 'testTags': ['InitialValueReassigned', 'UncommonMathML'], 'levels': ['2.1', '
+2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=667, failed=93, percent=87%
+01486 FAIL
+{'componentTags': ['AssignmentRule', 'FunctionDefinition', 'Parameter'], 'testTags': ['InitialValueReassigned', 'NonConstantParameter', 'UncommonMathM
+L'], 'levels': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=667, failed=94, percent=87%
+01487 SKIPPED because CSymbolTime not implemented
+01488 SKIPPED because CSymbolTime not implemented
+01489 PASS  passed=668, failed=94, percent=87%
+01490 FAIL
+{'componentTags': ['AssignmentRule', 'FunctionDefinition', 'Parameter'], 'testTags': ['InitialValueReassigned'], 'levels': ['2.1', '2.2', '2.3', '2.4'
+, '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=668, failed=95, percent=87%
+01491 FAIL
+{'componentTags': ['AssignmentRule', 'FunctionDefinition', 'Parameter'], 'testTags': ['InitialValueReassigned'], 'levels': ['2.1', '2.2', '2.3', '2.4'
+, '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=668, failed=96, percent=87%
+01492 FAIL
+{'componentTags': ['AssignmentRule', 'FunctionDefinition', 'Parameter', 'RateRule'], 'testTags': ['InitialValueReassigned', 'NonConstantParameter'], '
+levels': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=668, failed=97, percent=87%
+01493 FAIL
+{'componentTags': ['AssignmentRule', 'FunctionDefinition', 'Parameter', 'RateRule'], 'testTags': ['InitialValueReassigned', 'NonConstantParameter'], '
+levels': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=668, failed=98, percent=87%
+01494 PASS  passed=669, failed=98, percent=87%
+01495 SKIPPED because CSymbolTime not implemented
+01496 SKIPPED because CSymbolTime not implemented
+01497 SKIPPED because CSymbolTime not implemented
+01498 FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'InitialAssignment', 'Parameter', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'Assi
+gnedConstantStoichiometry', 'BoundaryCondition', 'InitialValueReassigned', 'NonConstantCompartment', 'NonConstantParameter', 'NonUnityCompartment', 'N
+onUnityStoichiometry', 'SpeciesReferenceInMath', 'VolumeConcentrationRates'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=669, failed=99, percent=87%
+01499 SKIPPED because ConversionFactors not implemented
+01500 SKIPPED because ConversionFactors not implemented
+01501 SKIPPED because ConversionFactors not implemented
+01502 SKIPPED because AlgebraicRule not implemented
+01503 SKIPPED because AlgebraicRule not implemented
+01504 SKIPPED because EventNoDelay not implemented
+01505 SKIPPED because EventNoDelay not implemented
+01506 SKIPPED because EventNoDelay not implemented
+01507 SKIPPED because EventWithDelay not implemented
+01508 SKIPPED because EventWithDelay not implemented
+01509 SKIPPED because EventWithDelay not implemented
+01510 SKIPPED because EventNoDelay not implemented
+01511 SKIPPED because EventWithDelay not implemented
+01512 SKIPPED because EventNoDelay not implemented
+01513 libSBMLsim doesn't pass this test FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'InitialAssignment', 'Parameter', 'RateRule', 'Species'], 'testTags': ['Amount', 'BoundaryConditio
+n', 'InitialValueReassigned', 'NonConstantCompartment', 'NonConstantParameter', 'NonUnityCompartment', 'VolumeConcentrationRates'], 'levels': ['2.2',
+'2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=669, failed=100, percent=86%
+01514 FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'InitialAssignment', 'Parameter', 'RateRule', 'Species'], 'testTags': ['Amount', 'BoundaryConditio
+n', 'InitialValueReassigned', 'NonConstantCompartment', 'NonConstantParameter', 'NonUnityCompartment', 'VolumeConcentrationRates'], 'levels': ['2.2',
+'2.3', '2.4', '2.5', '3.1', '3.2'], 'packagesPresent': []}
+  passed=669, failed=101, percent=86%
+01515 FAIL
+{'componentTags': ['Parameter', 'RateRule'], 'testTags': ['NonConstantParameter', 'UncommonMathML'], 'levels': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.
+1', '3.2'], 'packagesPresent': []}
+  passed=669, failed=102, percent=86%
+01516 FAIL
+{'componentTags': ['Compartment', 'InitialAssignment', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedConstantStoichiometry', 'InitialValueRe
+assigned', 'NonUnityStoichiometry', 'UncommonMathML'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=669, failed=103, percent=86%
+01517 SKIPPED because v3.2 model not present
+01518 SKIPPED because EventWithDelay not implemented
+01519 SKIPPED because EventWithDelay not implemented
+01520 SKIPPED because EventWithDelay not implemented
+01521 SKIPPED because EventNoDelay not implemented
+01522 SKIPPED because EventNoDelay not implemented
+01523 SKIPPED because EventWithDelay not implemented
+01524 SKIPPED because EventWithDelay not implemented
+01525 SKIPPED because EventWithDelay not implemented
+01526 SKIPPED because EventWithDelay not implemented
+01527 SKIPPED because EventNoDelay not implemented
+01528 SKIPPED because EventWithDelay not implemented
+01529 SKIPPED because EventWithDelay not implemented
+01530 SKIPPED because EventNoDelay not implemented
+01531 SKIPPED because EventNoDelay not implemented
+01532 SKIPPED because EventWithDelay not implemented
+01533 SKIPPED because EventNoDelay not implemented
+01534 SKIPPED because CSymbolDelay not implemented
+01535 SKIPPED because CSymbolDelay not implemented
+01536 SKIPPED because EventNoDelay not implemented
+01537 SKIPPED because CSymbolDelay not implemented
+01538 SKIPPED because CSymbolDelay not implemented
+01539 SKIPPED because v3.2 model not present
+01540 SKIPPED because CSymbolRateOf not implemented
+01541 SKIPPED because CSymbolRateOf not implemented
+01542 SKIPPED because CSymbolRateOf not implemented
+01543 SKIPPED because CSymbolRateOf not implemented
+01544 SKIPPED because v3.2 model not present
+01545 SKIPPED because v3.2 model not present
+01546 SKIPPED because v3.2 model not present
+01547 SKIPPED because v3.2 model not present
+01548 SKIPPED because v3.2 model not present
+01549 SKIPPED because v3.2 model not present
+01550 SKIPPED because v3.2 model not present
+01551 SKIPPED because v3.2 model not present
+01552 libSBMLsim doesn't pass this test FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedConstantStoichiometry', 'InitialValueReass
+igned', 'NoMathML', 'NonUnityStoichiometry'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=669, failed=104, percent=86%
+01553 libSBMLsim doesn't pass this test FAIL
+{'componentTags': ['Compartment', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedVariableStoichiometry', 'NoMathML', 'NonUnitySto
+ichiometry'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=669, failed=105, percent=86%
+01554 libSBMLsim doesn't pass this test FAIL
+{'componentTags': ['Compartment', 'InitialAssignment', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedConstantStoichiometry', 'InitialValueRe
+assigned', 'NoMathML', 'NonUnityStoichiometry'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=669, failed=106, percent=86%
+01555 libSBMLsim doesn't pass this test FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'Reaction', 'Species'], 'testTags': ['Amount', 'BoundaryCondition', 'NoMathML', 'NonUnityStoichiom
+etry'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=669, failed=107, percent=86%
+01556 libSBMLsim doesn't pass this test FAIL
+{'componentTags': ['Compartment', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'BoundaryCondition', 'NoMathML', 'NonUnityStoichiometry']
+, 'levels': ['3.2'], 'packagesPresent': []}
+  passed=669, failed=108, percent=86%
+01557 libSBMLsim doesn't pass this test FAIL
+{'componentTags': ['Compartment', 'InitialAssignment', 'Reaction', 'Species'], 'testTags': ['Amount', 'BoundaryCondition', 'NoMathML', 'NonUnityStoich
+iometry'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=669, failed=109, percent=85%
+01558 SKIPPED because v3.2 model not present
+01559 SKIPPED because v3.2 model not present
+01560 SKIPPED because v3.2 model not present
+01561 FAIL
+{'componentTags': ['Compartment', 'InitialAssignment', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedConstantStoichiometry', 'InitialValueRe
+assigned', 'NonUnityStoichiometry', 'UncommonMathML'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=669, failed=110, percent=85%
+01562 SKIPPED because v3.2 model not present
+01563 FAIL
+{'componentTags': ['Compartment', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedVariableStoichiometry', 'NonUnityStoichiometry',
+ 'UncommonMathML'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=669, failed=111, percent=85%
+01564 FAIL
+{'componentTags': ['Compartment', 'Reaction', 'Species'], 'testTags': ['Amount', 'UncommonMathML'], 'levels': ['2.1', '2.2', '2.3', '2.4', '2.5', '3.1
+', '3.2'], 'packagesPresent': []}
+  passed=669, failed=112, percent=85%
+01565 SKIPPED because v3.2 model not present
+01566 FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'Parameter', 'Reaction', 'Species'], 'testTags': ['Amount', 'InitialValueReassigned', 'NonUnitySto
+ichiometry', 'SpeciesReferenceInMath', 'UncommonMathML'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=669, failed=113, percent=85%
+01567 SKIPPED because v3.2 model not present
+01568 SKIPPED because v3.2 model not present
+01569 SKIPPED because v3.2 model not present
+01570 SKIPPED because v3.2 model not present
+01571 SKIPPED because v3.2 model not present
+01572 SKIPPED because v3.2 model not present
+01573 SKIPPED because v3.2 model not present
+01574 FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedConstantStoichiometry', 'BoundaryCondition
+', 'InitialValueReassigned', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=669, failed=114, percent=85%
+01575 SKIPPED because EventWithDelay not implemented
+01576 SKIPPED because EventWithDelay not implemented
+01577 SKIPPED because EventNoDelay not implemented
+01578 SKIPPED because EventNoDelay not implemented
+01579 SKIPPED because EventWithDelay not implemented
+01580 SKIPPED because EventWithDelay not implemented
+01581 SKIPPED because v3.2 model not present
+01582 SKIPPED because EventWithDelay not implemented
+01583 SKIPPED because EventNoDelay not implemented
+01584 SKIPPED because EventWithDelay not implemented
+01585 SKIPPED because v3.2 model not present
+01586 SKIPPED because EventWithDelay not implemented
+01587 SKIPPED because v3.2 model not present
+01588 SKIPPED because EventNoDelay not implemented
+01589 SKIPPED because EventNoDelay not implemented
+01590 SKIPPED because EventNoDelay not implemented
+01591 SKIPPED because EventNoDelay not implemented
+01592 SKIPPED because EventNoDelay not implemented
+01593 SKIPPED because EventNoDelay not implemented
+01594 SKIPPED because EventWithDelay not implemented
+01595 SKIPPED because EventWithDelay not implemented
+01596 SKIPPED because EventNoDelay not implemented
+01597 SKIPPED because EventWithDelay not implemented
+01598 SKIPPED because EventWithDelay not implemented
+01599 SKIPPED because EventNoDelay not implemented
+01600 SKIPPED because EventWithDelay not implemented
+01601 SKIPPED because EventWithDelay not implemented
+01602 SKIPPED because EventWithDelay not implemented
+01603 SKIPPED because EventWithDelay not implemented
+01604 SKIPPED because EventWithDelay not implemented
+01605 SKIPPED because EventNoDelay not implemented
+01606 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01607 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01608 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01609 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01610 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01611 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01612 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01613 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01614 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01615 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01616 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01617 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01618 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01619 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01620 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01621 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01622 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01623 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01624 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01625 SKIPPED because packages present: ['fbc', 'fbc_v1']
+01626 SKIPPED because EventNoDelay not implemented
+01627 SKIPPED because EventNoDelay not implemented
+01628 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01629 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01630 SKIPPED because packages present: ['fbc', 'fbc_v2']
+01631 FAIL
+{'componentTags': ['Compartment', 'InitialAssignment', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedConstantStoichiometry', 'As
+signedVariableStoichiometry', 'InitialValueReassigned', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=669, failed=115, percent=85%
+01632 SKIPPED because v3.2 model not present
+01633 FAIL
+{'componentTags': ['Compartment', 'InitialAssignment', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedConstantStoichiometry', 'As
+signedVariableStoichiometry', 'InitialValueReassigned', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=669, failed=116, percent=85%
+01634 SKIPPED because v3.2 model not present
+01635 FAIL
+{'componentTags': ['Compartment', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedVariableStoichiometry', 'BoundaryCondition', 'No
+nUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=669, failed=117, percent=85%
+01636 SKIPPED because v3.2 model not present
+01637 SKIPPED because v3.2 model not present
+01638 SKIPPED because v3.2 model not present
+01639 SKIPPED because v3.2 model not present
+01640 SKIPPED because v3.2 model not present
+01641 SKIPPED because CSymbolTime not implemented
+01642 SKIPPED because ConversionFactors not implemented
+01643 SKIPPED because ConversionFactors not implemented
+01644 SKIPPED because ConversionFactors not implemented
+01645 SKIPPED because ConversionFactors not implemented
+01646 SKIPPED because ConversionFactors not implemented
+01647 SKIPPED because ConversionFactors not implemented
+01648 SKIPPED because ConversionFactors not implemented
+01649 SKIPPED because ConversionFactors not implemented
+01650 SKIPPED because ConversionFactors not implemented
+01651 SKIPPED because ConversionFactors not implemented
+01652 SKIPPED because ConversionFactors not implemented
+01653 SKIPPED because ConversionFactors not implemented
+01654 PASS  passed=670, failed=117, percent=85%
+01655 PASS  passed=671, failed=117, percent=85%
+01656 SKIPPED because v3.2 model not present
+01657 libSBMLsim doesn't pass this test FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'InitialAssignment', 'Parameter', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedConstant
+Stoichiometry', 'InitialValueReassigned', 'NoMathML', 'NonUnityStoichiometry', 'SpeciesReferenceInMath'], 'levels': ['3.2'], 'packagesPresent': []}
+  passed=671, failed=118, percent=85%
+01658 SKIPPED because EventNoDelay not implemented
+01659 SKIPPED because EventWithDelay not implemented
+01660 SKIPPED because EventWithDelay not implemented
+01661 SKIPPED because EventWithDelay not implemented
+01662 SKIPPED because EventNoDelay not implemented
+01663 SKIPPED because EventNoDelay not implemented
+01664 SKIPPED because EventNoDelay not implemented
+01665 SKIPPED because CSymbolAvogadro not implemented
+01666 SKIPPED because ConversionFactors not implemented
+01667 SKIPPED because ConversionFactors not implemented
+01668 SKIPPED because ConversionFactors not implemented
+01669 SKIPPED because EventNoDelay not implemented
+01670 SKIPPED because EventNoDelay not implemented
+01671 SKIPPED because EventNoDelay not implemented
+01672 SKIPPED because EventWithDelay not implemented
+01673 SKIPPED because EventWithDelay not implemented
+01674 SKIPPED because EventWithDelay not implemented
+01675 SKIPPED because EventWithDelay not implemented
+01676 SKIPPED because EventWithDelay not implemented
+01677 SKIPPED because EventWithDelay not implemented
+01678 SKIPPED because EventWithDelay not implemented
+01679 SKIPPED because EventWithDelay not implemented
+01680 SKIPPED because EventWithDelay not implemented
+01681 SKIPPED because EventNoDelay not implemented
+01682 SKIPPED because EventNoDelay not implemented
+01683 SKIPPED because EventNoDelay not implemented
+01684 SKIPPED because EventNoDelay not implemented
+01685 SKIPPED because EventNoDelay not implemented
+01686 SKIPPED because EventNoDelay not implemented
+01687 SKIPPED because EventWithDelay not implemented
+01688 SKIPPED because EventWithDelay not implemented
+01689 SKIPPED because EventWithDelay not implemented
+01690 SKIPPED because EventWithDelay not implemented
+01691 SKIPPED because EventWithDelay not implemented
+01692 SKIPPED because EventWithDelay not implemented
+01693 SKIPPED because EventNoDelay not implemented
+01694 SKIPPED because EventNoDelay not implemented
+01695 SKIPPED because EventNoDelay not implemented
+01696 SKIPPED because EventNoDelay not implemented
+01697 SKIPPED because EventNoDelay not implemented
+01698 SKIPPED because EventNoDelay not implemented
+01699 SKIPPED because EventNoDelay not implemented
+01700 SKIPPED because EventNoDelay not implemented
+01701 SKIPPED because EventWithDelay not implemented
+01702 SKIPPED because EventWithDelay not implemented
+01703 SKIPPED because EventWithDelay not implemented
+01704 SKIPPED because EventWithDelay not implemented
+01705 SKIPPED because EventNoDelay not implemented
+01706 SKIPPED because EventWithDelay not implemented
+01707 SKIPPED because EventWithDelay not implemented
+01708 SKIPPED because EventWithDelay not implemented
+01709 SKIPPED because EventWithDelay not implemented
+01710 SKIPPED because EventWithDelay not implemented
+01711 SKIPPED because EventWithDelay not implemented
+01712 SKIPPED because EventWithDelay not implemented
+01713 SKIPPED because EventWithDelay not implemented
+01714 SKIPPED because EventNoDelay not implemented
+01715 SKIPPED because EventWithDelay not implemented
+01716 SKIPPED because EventWithDelay not implemented
+01717 SKIPPED because EventWithDelay not implemented
+01718 SKIPPED because EventWithDelay not implemented
+01719 SKIPPED because EventNoDelay not implemented
+01720 SKIPPED because EventWithDelay not implemented
+01721 SKIPPED because EventWithDelay not implemented
+01722 SKIPPED because CSymbolAvogadro not implemented
+01723 SKIPPED because CSymbolAvogadro not implemented
+01724 SKIPPED because ConversionFactors not implemented
+01725 SKIPPED because ConversionFactors not implemented
+01726 SKIPPED because ConversionFactors not implemented
+01727 SKIPPED because ConversionFactors not implemented
+01728 SKIPPED because ConversionFactors not implemented
+01729 SKIPPED because ConversionFactors not implemented
+01730 SKIPPED because ConversionFactors not implemented
+01731 SKIPPED because ConversionFactors not implemented
+01732 SKIPPED because ConversionFactors not implemented
+01733 SKIPPED because ConversionFactors not implemented
+01734 SKIPPED because ConversionFactors not implemented
+01735 SKIPPED because ConversionFactors not implemented
+01736 SKIPPED because ConversionFactors not implemented
+01737 SKIPPED because ConversionFactors not implemented
+01738 SKIPPED because ConversionFactors not implemented
+01739 SKIPPED because ConversionFactors not implemented
+01740 SKIPPED because ConversionFactors not implemented
+01741 SKIPPED because ConversionFactors not implemented
+01742 FAIL
+{'componentTags': ['Compartment', 'FunctionDefinition', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedVariableStoichiometry', 'N
+onUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=671, failed=119, percent=84%
+01743 SKIPPED because v3.2 model not present
+01744 SKIPPED because CSymbolTime not implemented
+01745 SKIPPED because v3.2 model not present
+01746 FAIL
+{'componentTags': ['Compartment', 'InitialAssignment', 'Reaction', 'Species'], 'testTags': ['Amount', 'AssignedConstantStoichiometry', 'HasOnlySubstan
+ceUnits', 'InitialValueReassigned', 'NonUnityCompartment', 'NonUnityStoichiometry'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=671, failed=120, percent=84%
+01747 SKIPPED because v3.2 model not present
+01748 SKIPPED because CSymbolTime not implemented
+01749 SKIPPED because v3.2 model not present
+01750 SKIPPED because v3.2 model not present
+01751 SKIPPED because v3.2 model not present
+01752 SKIPPED because v3.2 model not present
+01753 SKIPPED because v3.2 model not present
+01754 SKIPPED because EventWithDelay not implemented
+01755 SKIPPED because EventWithDelay not implemented
+01756 SKIPPED because EventWithDelay not implemented
+01757 SKIPPED because EventWithDelay not implemented
+01758 SKIPPED because EventWithDelay not implemented
+01759 SKIPPED because EventNoDelay not implemented
+01760 PASS  passed=672, failed=120, percent=84%
+01761 PASS  passed=673, failed=120, percent=84%
+01762 SKIPPED because CSymbolAvogadro not implemented
+01763 SKIPPED because CSymbolAvogadro not implemented
+01764 SKIPPED because v3.2 model not present
+01765 SKIPPED because v3.2 model not present
+01766 PASS  passed=674, failed=120, percent=84%
+01767 FAIL
+{'componentTags': ['AssignmentRule', 'Compartment', 'Parameter', 'Reaction', 'Species'], 'testTags': ['Amount', 'HasOnlySubstanceUnits', 'InitialValue
+Reassigned', 'LocalParameters', 'NonUnityCompartment', 'NonUnityStoichiometry', 'SpeciesReferenceInMath'], 'levels': ['3.1', '3.2'], 'packagesPresent'
+: []}
+  passed=674, failed=121, percent=84%
+01768 FAIL
+{'componentTags': ['Compartment', 'Parameter', 'RateRule', 'Reaction', 'Species'], 'testTags': ['Amount', 'HasOnlySubstanceUnits', 'LocalParameters',
+'NonConstantParameter', 'NonUnityCompartment', 'NonUnityStoichiometry', 'SpeciesReferenceInMath'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=674, failed=122, percent=84%
+01769 SKIPPED because EventNoDelay not implemented
+01770 SKIPPED because EventNoDelay not implemented
+01771 SKIPPED because EventWithDelay not implemented
+01772 SKIPPED because EventNoDelay not implemented
+01773 FAIL
+{'componentTags': ['Compartment', 'Reaction', 'Species'], 'testTags': ['Amount', 'HasOnlySubstanceUnits', 'LocalParameters', 'NonUnityCompartment', 'N
+onUnityStoichiometry', 'SpeciesReferenceInMath'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=674, failed=123, percent=84%
+01774 FAIL
+{'componentTags': ['Compartment', 'Reaction', 'Species'], 'testTags': ['Amount', 'HasOnlySubstanceUnits', 'LocalParameters', 'NonUnityCompartment', 'N
+onUnityStoichiometry', 'SpeciesReferenceInMath'], 'levels': ['3.1', '3.2'], 'packagesPresent': []}
+  passed=674, failed=124, percent=84%
+01775 SKIPPED because ConversionFactors not implemented
+01776 SKIPPED because ConversionFactors not implemented
+01777 SKIPPED because ConversionFactors not implemented
+01778 SKIPPED because packages present: ['comp']
+01779 SKIPPED because EventNoDelay not implemented
+01780 SKIPPED because EventNoDelay not implemented
+componentTags
+InitialAssignment              143    57      71.5
+RateRule                       154    52  74.75728155339806
+AssignmentRule                 136    44  75.55555555555556
+Parameter                      616    92  87.00564971751412
+Species                        606    87  87.44588744588745
+Compartment                    627    87  87.81512605042016
+Reaction                       592    80  88.09523809523809
+FunctionDefinition             115    15  88.46153846153845
+testTags
+VolumeConcentrationRates         0     6       0.0
+L3v2MathML                       0     5       0.0
+AssignedVariableStoichiometry    1    15      6.25
+AssignedConstantStoichiometry    7    38  15.555555555555555
+NoMathML                         3    11  21.428571428571427
+UncommonMathML                   6    20  23.076923076923077
+SpeciesReferenceInMath           3     8  27.27272727272727
+BoolNumericSwap                  2     4  33.33333333333333
+NonUnityStoichiometry           70    59  54.263565891472865
+NonConstantParameter            47    28  62.66666666666667
+InitialValueReassigned         226    97  69.96904024767801
+HasOnlySubstanceUnits           39    14  73.58490566037736
+NonConstantCompartment          42     9  82.35294117647058
+NonUnityCompartment            151    24  86.28571428571429
+BoundaryCondition              103    16  86.5546218487395
+Amount                         533    82  86.66666666666667
+LocalParameters                 29     4  87.87878787878788
+ReversibleReaction              37     5  88.09523809523809
+Concentration                   73     5  93.58974358974359
+ConstantSpecies                 38     0     100.0
+0D-Compartment                  30     0     100.0
+MultiCompartment                20     0     100.0
+
+~/code/rust-sbml/rust-sbml-test 2m 49s                                                                                                       13:35:48
+rust-sbml-test ❯

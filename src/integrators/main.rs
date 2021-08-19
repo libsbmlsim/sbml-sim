@@ -1,5 +1,7 @@
 use crate::structs::bindings::Bindings;
+use crate::structs::methods::Methods;
 
+use super::runge_kutta::runge_kutta_4;
 use super::runge_kutta_fehlberg::runge_kutta_fehlberg_45;
 use sbml_rs::Model;
 use std::collections::HashMap;
@@ -10,6 +12,7 @@ pub fn integrate(
     duration: f64,
     steps: i32,
     init_step_size: f64,
+    method: Methods,
     rtol: f64,
     atol: f64,
     print_amounts: bool,
@@ -33,6 +36,13 @@ pub fn integrate(
     let mut t_next_result = ((t + result_interval) * 1000000.0).round() / 1000000.0;
 
     let mut current_step_size = init_step_size;
+    let mut next_step_size = init_step_size;
+    if method == Methods::RK4 {
+        current_step_size = current_step_size / 4096.0;
+        next_step_size = next_step_size / 4096.0;
+    }
+
+    let mut deltas;
     // this is used if the step size was adjusted in the previous step to hit a result point
     // used only if the associated boolean value is true
     let mut cached_step_size = None;
@@ -43,34 +53,48 @@ pub fn integrate(
             println!("Integrating from {} to {}", t, t + current_step_size);
             println!("Calling rkf45 with dt = {}", current_step_size);
         }
-        let (deltas, used_step_size, mut next_step_size) =
-            runge_kutta_fehlberg_45(&bindings, current_step_size, rtol, atol, DEBUG, false)?;
-        current_step_size = used_step_size;
-        if DEBUG {
-            if current_step_size != used_step_size {
-                println!("Tried {}, used {}", current_step_size, used_step_size);
-            }
-            println!("Integrated from t = {} to {}", t, t + &current_step_size);
-        }
-        // if the step size wasn't reduced and there's a valid step_size_cache,
-        // try to use that in the next step
-        if next_step_size > current_step_size {
-            if let Some(cached_step_size_value) = cached_step_size {
-                // use cache value only if it is better
-                if next_step_size < cached_step_size_value {
-                    next_step_size = cached_step_size_value;
-                    if DEBUG {
-                        println!(
-                            "Will use cached step size of {} for next step",
-                            next_step_size
-                        );
+        match method {
+            Methods::RKF45 => {
+                let (a, b, c) = runge_kutta_fehlberg_45(
+                    &bindings,
+                    current_step_size,
+                    rtol,
+                    atol,
+                    DEBUG,
+                    false,
+                )?;
+                deltas = a;
+                current_step_size = b;
+                next_step_size = c;
+                if DEBUG {
+                    println!("Integrated from t = {} to {}", t, t + &current_step_size);
+                }
+                // if the step size wasn't reduced and there's a valid step_size_cache,
+                // try to use that in the next step
+                if next_step_size > current_step_size {
+                    if let Some(cached_step_size_value) = cached_step_size {
+                        // use cache value only if it is better
+                        if next_step_size < cached_step_size_value {
+                            next_step_size = cached_step_size_value;
+                            if DEBUG {
+                                println!(
+                                    "Will use cached step size of {} for next step",
+                                    next_step_size
+                                );
+                            }
+                        }
+                        // but reset cache regardless
+                        cached_step_size = None;
                     }
                 }
-                // but reset cache regardless
-                cached_step_size = None;
+            }
+            Methods::RK4 => {
+                deltas = runge_kutta_4(&bindings, current_step_size)?;
+                if DEBUG {
+                    println!("Integrated from t = {} to {}", t, t + &current_step_size);
+                }
             }
         }
-
         for (key, val) in deltas.iter() {
             bindings.update_delta(key, *val);
         }
@@ -100,20 +124,22 @@ pub fn integrate(
 
         // update t
         t += current_step_size;
-        // ensure next step doesn't overtake result points
-        if (t + next_step_size) - t_next_result >= f64::EPSILON {
-            // save this value to use for the step after the result point
-            cached_step_size = Some(next_step_size);
-            next_step_size = t_next_result - t;
-        }
-        current_step_size = next_step_size;
-        if DEBUG {
-            println!(
-                "Next step will be from t = {} to {} with step size {}",
-                t,
-                t + current_step_size,
-                current_step_size
-            );
+        if method == Methods::RKF45 {
+            // ensure next step doesn't overtake result points
+            if (t + next_step_size) - t_next_result >= f64::EPSILON {
+                // save this value to use for the step after the result point
+                cached_step_size = Some(next_step_size);
+                next_step_size = t_next_result - t;
+            }
+            current_step_size = next_step_size;
+            if DEBUG {
+                println!(
+                    "Next step will be from t = {} to {} with step size {}",
+                    t,
+                    t + current_step_size,
+                    current_step_size
+                );
+            }
         }
 
         if DEBUG {

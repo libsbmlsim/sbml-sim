@@ -2,6 +2,7 @@ use std::collections::HashMap;
 
 use crate::structs::bindings::Bindings;
 
+#[allow(non_snake_case)]
 pub fn runge_kutta_fehlberg_45(
     bindings: &Bindings,
     step_size: f64,

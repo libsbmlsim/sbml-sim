@@ -6,6 +6,7 @@ pub use structs::compartment::*;
 pub use structs::derivative::*;
 pub use structs::initial_assignment::*;
 pub use structs::local_parameter::*;
+pub use structs::methods::*;
 pub use structs::parameter::*;
 pub use structs::rate_rule::*;
 pub use structs::reaction::*;
@@ -33,6 +34,13 @@ fn main() {
             Arg::with_name("STEPS")
                 .help("Number of steps for numerical integration")
                 .required(true),
+        )
+        .arg(
+            Arg::with_name("METHOD")
+                .help("Numerical integration algorithm")
+                .required(false)
+                .possible_values(&Methods::variants())
+                .default_value("RKF45"),
         )
         .arg(
             Arg::with_name("RELATIVE_TOLERANCE")
@@ -63,7 +71,7 @@ fn main() {
                 .help("Print debug information"),
         )
         .get_matches();
-
+    //
     // Vary the output based on how many times the user used the "verbose" flag
     // (i.e. 'myprog -v -v -v' or 'myprog -vvv' vs 'myprog -v'
     match matches.occurrences_of("v") {
@@ -78,6 +86,11 @@ fn main() {
     let filename = matches.value_of("INPUT").unwrap();
     let time = matches.value_of("TIME").unwrap().parse::<f64>().unwrap();
     let steps = matches.value_of("STEPS").unwrap().parse::<i32>().unwrap();
+    let method = matches
+        .value_of("METHOD")
+        .unwrap()
+        .parse::<Methods>()
+        .unwrap();
     let rtol = matches
         .value_of("RELATIVE_TOLERANCE")
         .unwrap()
@@ -88,22 +101,20 @@ fn main() {
         .unwrap()
         .parse::<f64>()
         .unwrap();
-    println!("Using input file: {}", filename);
+    println!("Using {} on input file: {}", method, filename);
     println!("{} seconds with {} steps.", time, steps);
-    //println!("atol: {}, rtol: {}", atol, rtol);
 
     let DEBUG = matches.is_present("debug");
     let print_amounts = matches.is_present("amounts");
 
-    //let step_size = time / (steps as f64) / 4096.0;
     let step_size = time / (steps as f64);
-    //let model = sbml_rs::parse(&filename).expect("Couldn't parse model.");
     let model = sbml_rs::parse_with_converted_species(&filename).expect("Couldn't parse model.");
     let result = integrate(
         &model,
         time,
         steps,
         step_size,
+        method,
         rtol,
         atol,
         print_amounts,
@@ -111,7 +122,8 @@ fn main() {
     )
     .unwrap();
 
-    print!("t       \t");
+    print!("t           \t");
+    // print!("t      ");
     let mut headings = Vec::<String>::new();
     for heading in result.iter().nth(1).unwrap().keys() {
         if heading != "t" {
@@ -121,13 +133,16 @@ fn main() {
     headings.sort();
     for heading in &headings {
         print!("{:24}", heading);
+        //print!("{:16}", heading);
     }
     println!();
     for iteration in result.iter().step_by(1) {
         let t = iteration.get("t").unwrap();
-        print!("{:.6}\t", t);
+        print!("{:.10}\t", t);
+        //print!("{:.2}  ", t);
         for heading in &headings {
             print!("{:.20}\t", iteration.get(heading).unwrap());
+            //print!("{:.12}\t", iteration.get(heading).unwrap());
         }
         println!();
     }

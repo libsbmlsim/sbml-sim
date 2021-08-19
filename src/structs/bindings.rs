@@ -56,6 +56,7 @@ impl Bindings {
         bindings.parse_reactions(model);
         bindings.parse_assignment_rules(model);
         bindings.evaluate_assignment_rules();
+        bindings.evaluate_initial_assignments();
         bindings.recheck_species();
         bindings.parse_rate_rules(model);
         bindings.parse_ODEs(model);
@@ -77,6 +78,7 @@ impl Bindings {
             hm.insert(id.clone(), species.amount());
         }
 
+        //dbg!(&hm);
         hm
     }
 
@@ -137,11 +139,9 @@ impl Bindings {
 
     pub fn parse_initial_assignments(&mut self, model: &Model) {
         for initial_assignment in model.initial_assignments() {
-            if let Some(symbol) = &initial_assignment.symbol {
+            if initial_assignment.symbol.is_some() && initial_assignment.math.is_some() {
                 self.initial_assignments
                     .push(InitialAssignment::from(&initial_assignment, model));
-            } else {
-                panic!("InitialAssignments must be associated with a symbol.");
             }
         }
     }
@@ -324,21 +324,17 @@ impl Bindings {
 
     pub fn parse_assignment_rules(&mut self, model: &Model) {
         for assignment_rule in model.assignment_rules() {
-            if let Some(variable) = &assignment_rule.variable {
+            if assignment_rule.variable.is_some() && assignment_rule.math.is_some() {
                 self.assignment_rules
                     .push(AssignmentRule::from(&assignment_rule, model));
-            } else {
-                panic!("AssignmentRule must be associated with a variable.");
             }
         }
     }
 
     pub fn parse_rate_rules(&mut self, model: &Model) {
         for rate_rule in model.rate_rules() {
-            if let Some(variable) = &rate_rule.variable {
+            if rate_rule.variable.is_some() && rate_rule.math.is_some() {
                 self.rate_rules.push(RateRule::from(&rate_rule, model));
-            } else {
-                panic!("RateRule must be associated with a variable.");
             }
         }
     }
@@ -603,7 +599,7 @@ impl Bindings {
 
             //let compartment = &species.compartment;
             //let mut ode = ODE::new(species_id.clone(), Some(compartment.clone()));
-            let mut ode = ODE::new(species_id.clone());
+            let mut ode = ODE::new(species_id.clone(), None);
 
             let mut term_count = 0;
             for (rxn_id, reaction) in &self.reactions {
@@ -639,8 +635,13 @@ impl Bindings {
         // Rate rules
         for rule in &self.rate_rules {
             let ode_term = ODETerm::new(1.0, rule.math.clone(), "None".to_string());
-            let mut ode = ODE::new(rule.variable.clone());
+            let mut compartment: Option<String> = None;
+            if let Some(species) = self.species.get(&rule.variable) {
+                compartment = Some(species.compartment.to_string());
+            }
+            let mut ode = ODE::new(rule.variable.clone(), compartment);
             ode.add_term(ode_term);
+            //dbg!(&ode);
             self.ODEs.push(ode);
         }
     }
