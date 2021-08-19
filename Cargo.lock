@@ -111,7 +111,7 @@ dependencies = [
 
 [[package]]
 name = "mathml-macros"
-version = "0.1.1-alpha.2"
+version = "0.1.1"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -120,7 +120,7 @@ dependencies = [
 
 [[package]]
 name = "mathml-rs"
-version = "0.1.1-alpha.2"
+version = "0.1.2"
 dependencies = [
  "approx",
  "libmath",
@@ -275,7 +275,7 @@ dependencies = [
 
 [[package]]
 name = "sbml-macros"
-version = "0.1.1-alpha.2"
+version = "0.1.1"
 dependencies = [
  "convert_case",
  "proc-macro2",
@@ -285,7 +285,7 @@ dependencies = [
 
 [[package]]
 name = "sbml-rs"
-version = "0.1.1-alpha.3"
+version = "0.1.1"
 dependencies = [
  "mathml-rs",
  "quick-xml",

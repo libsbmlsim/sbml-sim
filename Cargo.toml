@@ -1,6 +1,6 @@
 [package]
 name = "sbml-sim"
-version = "0.1.1-alpha.2"
+version = "0.1.1"
 authors = ["Pranav Ballaney <ballaneypranav@gmail.com>"]
 edition = "2018"
 description = "Simulator for SBML models."
@@ -11,8 +11,8 @@ readme = "README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-sbml-rs = { path = "../sbml-rs/sbml-rs", version = "0.1.1-alpha.3" }#, version = "0.1.1-alpha" }
-mathml-rs = { path = "../mathml-rs/mathml-rs" }#, version = "0.1.1-alpha" }
+sbml-rs = { path = "../sbml-rs/sbml-rs", version = "0.1.1" }
+mathml-rs = { path = "../mathml-rs/mathml-rs" , version = "0.1.2" }
 clap = "2.33.3"
 
 
