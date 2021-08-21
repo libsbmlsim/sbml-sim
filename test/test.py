@@ -1,6 +1,7 @@
 import os
 from rich.console import Console
 from rich.table import Table
+import time
 import subprocess
 import re
 from pprint import pprint
@@ -91,6 +92,8 @@ def main():
     console = Console()
     passed = 0
     failed = 0
+    avg_simulator_time = 0
+    avg_libsbmlsim_time = 0
     total = 1780
     for directory in range(1, total + 1):
         if directory in skipModels:
@@ -127,14 +130,15 @@ def main():
         if skip:
             continue
 
-        simulator_results = get_simulator_results(model_filename, settings)
+        simulator_results, simulator_time = get_simulator_results(
+            model_filename, settings)
         if simulator_results == {}:
             errors_found = True
         else:
             # console.print()
             # try:
             os.chdir('../rust-sbml-test')
-            libsbmlsim_results = get_libsbmlsim_results(
+            libsbmlsim_results, libsbmlsim_time = get_libsbmlsim_results(
                 model_filename, settings)
             standard_results = get_standard_results(
                 standard_results_filename)
@@ -178,10 +182,26 @@ def main():
             # pprint(standard_results)
             # exit()
         tagMetrics = refresh_tag_metrics(
-            tagMetrics, description, not errors_found)
+            tagMetrics, description, not errors_found, simulator_time, libsbmlsim_time)
         percent = int(passed/(passed+failed)*100)
-        print(f"  {passed=}, {failed=}, {percent=}%")
+        avg_simulator_time = (
+            (avg_simulator_time * (passed-1)) + simulator_time) / passed
+        avg_simulator_time = int(avg_simulator_time*1000)/1000
+        avg_libsbmlsim_time = (
+            (avg_libsbmlsim_time * (passed-1)) + libsbmlsim_time) / passed
+        avg_libsbmlsim_time = int(avg_libsbmlsim_time*1000)/1000
+        if simulator_time != 0:
+            factor = libsbmlsim_time / simulator_time
+            factor = int(factor*100)/100
+        else:
+            factor = 0
+        print(
+            f"  {passed=}, {failed=}, {percent=}%, {simulator_time=}ms, {libsbmlsim_time=}ms, {factor=}x")
     printMetrics(tagMetrics)
+    avg_factor = avg_libsbmlsim_time / avg_simulator_time
+    avg_factor = int(avg_factor*100)/100
+    print(
+        f"  {passed=}, {failed=}, {percent=}%, {avg_simulator_time=}ms, {avg_libsbmlsim_time=}ms, {avg_factor=:7}x")
 
 
 def read_settings(filename):
@@ -223,13 +243,16 @@ def get_simulator_results(model_filename, settings):
         command += [amount_flag]
 
     # print(command)
+    start_time = time.time()
     cargo_result = subprocess.Popen(command, stdout=subprocess.PIPE,
                                     stderr=subprocess.STDOUT)
     stdout, stderr = cargo_result.communicate()
+    end_time = time.time()
+    time_taken = int((end_time - start_time) * 1000000) / 1000
     output = str(stdout, encoding="UTF-8")
 
     if 'panicked' in output:
-        return {}
+        return {}, 0
 
     output = output.split('\n')[2:]
 
@@ -238,7 +261,7 @@ def get_simulator_results(model_filename, settings):
     output = [x.split() for x in output[1:-1]]
 
     if len(headings) < len(output[0]):
-        return {}
+        return {}, 0
 
     # print(output)
     result = {}
@@ -253,7 +276,7 @@ def get_simulator_results(model_filename, settings):
             result[t][species] = float(amount)
             col += 1
 
-    return result
+    return result, time_taken
 
 
 def get_libsbmlsim_results(model_filename, settings):
@@ -269,11 +292,14 @@ def get_libsbmlsim_results(model_filename, settings):
         command += [amount_flag]
 
     # print(command)
+    start_time = time.time()
     libsbmlsim_results = subprocess.Popen(command,
                                           stdout=subprocess.PIPE,
                                           stderr=subprocess.STDOUT)
 
     stdout, stderr = libsbmlsim_results.communicate()
+    end_time = time.time()
+    time_taken = int((end_time - start_time) * 1000000) / 1000
     output = str(stdout, encoding="UTF-8")
     # print(output.strip())
 
@@ -288,11 +314,11 @@ def get_libsbmlsim_results(model_filename, settings):
                 for sp in species:
                     result[t][sp] = float(row[sp])
     except:
-        return result
+        return {}, 0
     # print(result)
     os.remove('out.csv')
 
-    return result
+    return result, time_taken
 
 
 def get_standard_results(standard_results_filename):
@@ -404,16 +430,25 @@ def get_model_description(description_filename):
     return description
 
 
-def refresh_tag_metrics(metrics, current_model_desc, current_result):
+def refresh_tag_metrics(metrics, current_model_desc, current_result, simulator_time, libsbmlsim_time):
 
     for tags in ["componentTags", "testTags"]:
         for tag in current_model_desc[tags]:
             if tag not in metrics[tags].keys():
                 metrics[tags][tag] = {
-                    "pass": 0, "fail": 0
+                    "pass": 0, "fail": 0, "simulator_time": 0, "libsbmlsim_time": 0
+
                 }
 
             if current_result:
+                metrics[tags][tag]["simulator_time"] = (
+                    metrics[tags][tag]["simulator_time"] * metrics[tags][tag]["pass"] + simulator_time) / (metrics[tags][tag]["pass"] + 1)
+                metrics[tags][tag]["simulator_time"] = int(
+                    metrics[tags][tag]["simulator_time"] * 1000) / 1000
+                metrics[tags][tag]["libsbmlsim_time"] = (
+                    metrics[tags][tag]["libsbmlsim_time"] * metrics[tags][tag]["pass"] + libsbmlsim_time) / (metrics[tags][tag]["pass"] + 1)
+                metrics[tags][tag]["libsbmlsim_time"] = int(
+                    metrics[tags][tag]["libsbmlsim_time"] * 1000) / 1000
                 metrics[tags][tag]["pass"] += 1
             else:
                 metrics[tags][tag]["fail"] += 1
@@ -430,12 +465,23 @@ def printMetrics(metrics):
         for tag, results in metrics[tags].items():
             pass_percent = results["pass"] / \
                 (results["pass"] + results["fail"]) * 100
+            pass_percent = int(pass_percent * 1000) / 1000
             tags_results.append((tag, results, pass_percent))
             tags_results_pass_percentage.append(pass_percent)
         tags_results.sort(key=lambda x: x[2])
         for tag, results, pass_percent in tags_results:
+            Pass = results['pass']
+            fail = results['fail']
+            simulator_time = results['simulator_time']
+            libsbmlsim_time = results['libsbmlsim_time']
+            if simulator_time != 0:
+                factor = libsbmlsim_time / simulator_time
+                factor = int(factor*100)/100
+            else:
+                factor = 0
+
             console.print(
-                f"{tag:30}[green]{results['pass']:4}  [red]{results['fail']:4}  [yellow]{pass_percent:8}")
+                f"{tag:30}[green]{Pass:4}  [red]{fail:4}  [yellow]{pass_percent:7}, {simulator_time:7}, {libsbmlsim_time:7}, {factor:4}x")
 
 
 if __name__ == "__main__":
