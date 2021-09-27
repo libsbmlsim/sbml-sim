@@ -104,7 +104,7 @@ fn main() {
     println!("Using {} on input file: {}", method, filename);
     println!("{} seconds with {} steps.", time, steps);
 
-    let DEBUG = matches.is_present("debug");
+    let debug = matches.is_present("debug");
     let print_amounts = matches.is_present("amounts");
 
     let step_size = time / (steps as f64);
@@ -118,7 +118,7 @@ fn main() {
         rtol,
         atol,
         print_amounts,
-        DEBUG,
+        debug,
     )
     .unwrap();
 

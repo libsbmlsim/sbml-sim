@@ -3,7 +3,7 @@ use std::collections::HashMap;
 
 use crate::ODE;
 
-#[allow(dead_code)]
+#[allow(dead_code, unused_variables, unused_mut)]
 pub fn euler(
     derivatives: &HashMap<String, ODE>,
     assignments: &HashMap<String, f64>,

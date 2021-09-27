@@ -1,10 +1,10 @@
 use mathml_rs::{evaluate_node, MathNode};
+use sbml_rs;
 use sbml_rs::Model;
-use sbml_rs::{self, SpeciesStatus};
 
 use crate::{
     AssignmentRule, Compartment, InitialAssignment, ODETerm, Parameter, RateRule, Reaction,
-    Species, UnboundCompartment, UnboundParameter, UnboundSpecies, ODE,
+    Species, SpeciesStatus, UnboundCompartment, UnboundParameter, UnboundSpecies, ODE,
 };
 use std::collections::HashMap;
 
@@ -51,15 +51,15 @@ impl Bindings {
         bindings.parse_parameters(model);
         bindings.parse_species(model);
         bindings.functions = model.function_definition_math();
+        bindings.parse_reactions(model);
         bindings.parse_initial_assignments(model);
         bindings.evaluate_initial_assignments();
-        bindings.parse_reactions(model);
         bindings.parse_assignment_rules(model);
         bindings.evaluate_assignment_rules();
         bindings.evaluate_initial_assignments();
         bindings.recheck_species();
         bindings.parse_rate_rules(model);
-        bindings.parse_ODEs(model);
+        bindings.parse_ODEs();
 
         //dbg!(&bindings);
         bindings
@@ -302,6 +302,19 @@ impl Bindings {
                     }
                     self.species.insert(symbol.clone(), species);
                 }
+                // Stoichiometry of a reactant
+                for (_, reaction) in &mut self.reactions {
+                    for (_, reactant_w_id) in &mut reaction.reactants_w_id {
+                        if reactant_w_id.id == symbol {
+                            reactant_w_id.stoichiometry = value;
+                        }
+                    }
+                    for (_, product_w_id) in &mut reaction.products_w_id {
+                        if product_w_id.id == symbol {
+                            product_w_id.stoichiometry = value;
+                        }
+                    }
+                }
             }
         }
     }
@@ -453,16 +466,26 @@ impl Bindings {
                     }
 
                     // SpeciesReferences
-                    for (_, reaction) in &mut self.reactions {
-                        // Bound reactants being reassigned
-                        reaction
-                            .reactants
-                            .entry(variable.clone())
-                            .and_modify(|reactant| reactant.stoichiometry = value);
-                        reaction
-                            .products
-                            .entry(variable.clone())
-                            .and_modify(|product| product.stoichiometry = value);
+                    //println!();
+                    //dbg!(&variable, value);
+                    for (rxn_id, reaction) in &mut self.reactions {
+                        //dbg!(&rxn_id);
+                        // Stoichiometry of a reactant
+                        for (_, reactant_w_id) in &mut reaction.reactants_w_id {
+                            if reactant_w_id.id == variable {
+                                reactant_w_id.stoichiometry = value;
+                            }
+                        }
+                        // Stoichiometry of a product
+                        for (product_species, product_w_id) in &mut reaction.products_w_id {
+                            if product_w_id.id == variable {
+                                product_w_id.stoichiometry = value;
+                            //dbg!(product_species);
+                                //dbg!("changing", product.stoichiometry, value);
+                            } else {
+                                //dbg!("not changing");
+                            }
+                        }
                     }
                 }
                 Err(error) => panic!("{}", error),
@@ -522,7 +545,7 @@ impl Bindings {
 
                     // Species being reassigned
                     if let Some(species) = self.species.get(&variable) {
-                        let compartment = &species.compartment;
+                        //let compartment = &species.compartment;
                         //let compartment_size = self.compartments.get(compartment).unwrap().size();
                         // TODO: THIS IS PROBABLY WRONG
                         //if !species.has_only_substance_units {
@@ -584,13 +607,59 @@ impl Bindings {
         values
     }
 
+    pub fn reaction_matrix(&self) -> HashMap<(String, String), Vec<SpeciesStatus>> {
+        let mut rxn_matrix: HashMap<(String, String), Vec<SpeciesStatus>> = HashMap::new();
+
+        for (sp_id, _) in &self.species {
+            for (rxn_id, reaction) in &self.reactions {
+                rxn_matrix.insert((sp_id.clone(), rxn_id.clone()), Vec::new());
+
+                for (reactant_species, reactant_w_id) in &reaction.reactants_w_id {
+                    if sp_id == reactant_species {
+                        let stoichiometry = reactant_w_id.stoichiometry;
+                        rxn_matrix
+                            .entry((sp_id.clone(), rxn_id.clone()))
+                            .and_modify(|v| v.push(SpeciesStatus::Reactant(stoichiometry)));
+                    }
+                }
+                for (reactant_species, reactant_wo_id) in &reaction.reactants_wo_id {
+                    if sp_id == reactant_species {
+                        let stoichiometry = reactant_wo_id.stoichiometry;
+                        rxn_matrix
+                            .entry((sp_id.clone(), rxn_id.clone()))
+                            .and_modify(|v| v.push(SpeciesStatus::Reactant(stoichiometry)));
+                    }
+                }
+
+                for (product_species, product_w_id) in &reaction.products_w_id {
+                    if sp_id == product_species {
+                        let stoichiometry = product_w_id.stoichiometry;
+                        rxn_matrix
+                            .entry((sp_id.clone(), rxn_id.clone()))
+                            .and_modify(|v| v.push(SpeciesStatus::Product(stoichiometry)));
+                    }
+                }
+                for (product_species, product_wo_id) in &reaction.products_wo_id {
+                    if sp_id == product_species {
+                        let stoichiometry = product_wo_id.stoichiometry;
+                        rxn_matrix
+                            .entry((sp_id.clone(), rxn_id.clone()))
+                            .and_modify(|v| v.push(SpeciesStatus::Product(stoichiometry)));
+                    }
+                }
+            }
+        }
+
+        rxn_matrix
+    }
+
     #[allow(non_snake_case)]
-    pub fn parse_ODEs(&mut self, model: &Model) {
+    pub fn parse_ODEs(&mut self) {
         // stores a matrix where key is (SpeciesID, ReactionID)
         // and value is a SpeciesStates::(Reactant, Product, None)
         // Calculated before running the simulation so that
         // reactants and products don't have to be checked at each iteration
-        let rxn_matrix = model.reaction_matrix();
+        let rxn_matrix = self.reaction_matrix();
 
         for (species_id, species) in &self.species {
             if species.boundary_condition {
@@ -606,7 +675,7 @@ impl Bindings {
                 // simulation step
                 let sp_statuses = rxn_matrix
                     .get(&(species_id.to_string(), rxn_id.to_string()))
-                    .expect("Rxn matric");
+                    .expect("Rxn matrix");
                 for status in sp_statuses {
                     let mut coefficient = None;
                     match status {
@@ -680,3 +749,4 @@ pub enum BindingType {
     LocalParameter,
     Stoichiometry,
 }
+

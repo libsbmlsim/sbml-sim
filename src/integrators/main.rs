@@ -16,7 +16,7 @@ pub fn integrate(
     rtol: f64,
     atol: f64,
     print_amounts: bool,
-    DEBUG: bool,
+    debug: bool,
 ) -> Result<Vec<HashMap<String, f64>>, String> {
     // number of steps let steps = (time / step_size).ceil() as i32;
     // vector to store results
@@ -48,7 +48,7 @@ pub fn integrate(
     let mut cached_step_size = None;
 
     while duration - t > f64::EPSILON {
-        if DEBUG {
+        if debug {
             println!();
             println!("Integrating from {} to {}", t, t + current_step_size);
             println!("Calling rkf45 with dt = {}", current_step_size);
@@ -60,13 +60,13 @@ pub fn integrate(
                     current_step_size,
                     rtol,
                     atol,
-                    DEBUG,
+                    debug,
                     false,
                 )?;
                 deltas = a;
                 current_step_size = b;
                 next_step_size = c;
-                if DEBUG {
+                if debug {
                     println!("Integrated from t = {} to {}", t, t + &current_step_size);
                 }
                 // if the step size wasn't reduced and there's a valid step_size_cache,
@@ -76,7 +76,7 @@ pub fn integrate(
                         // use cache value only if it is better
                         if next_step_size < cached_step_size_value {
                             next_step_size = cached_step_size_value;
-                            if DEBUG {
+                            if debug {
                                 println!(
                                     "Will use cached step size of {} for next step",
                                     next_step_size
@@ -90,7 +90,7 @@ pub fn integrate(
             }
             Methods::RK4 => {
                 deltas = runge_kutta_4(&bindings, current_step_size)?;
-                if DEBUG {
+                if debug {
                     println!("Integrated from t = {} to {}", t, t + &current_step_size);
                 }
             }
@@ -105,7 +105,7 @@ pub fn integrate(
         // see if we reached a result_point in this iteration
         // if we did, increment t_next_result and store results
         if t_next_result - (t + current_step_size) < f64::EPSILON {
-            if DEBUG {
+            if debug {
                 println!("Reached t = {}, storing results", t + current_step_size);
             }
             t_next_result += result_interval;
@@ -132,7 +132,7 @@ pub fn integrate(
                 next_step_size = t_next_result - t;
             }
             current_step_size = next_step_size;
-            if DEBUG {
+            if debug {
                 println!(
                     "Next step will be from t = {} to {} with step size {}",
                     t,
@@ -142,7 +142,7 @@ pub fn integrate(
             }
         }
 
-        if DEBUG {
+        if debug {
             println!("Press return to continue.");
             let mut input_string = String::new();
             stdin()
