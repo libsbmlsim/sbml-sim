@@ -637,7 +637,9 @@ impl Bindings {
             let ode_term = ODETerm::new(1.0, rule.math.clone(), "None".to_string());
             let mut compartment: Option<String> = None;
             if let Some(species) = self.species.get(&rule.variable) {
-                compartment = Some(species.compartment.to_string());
+                if !species.has_only_substance_units {
+                    compartment = Some(species.compartment.to_string());
+                }
             }
             let mut ode = ODE::new(rule.variable.clone(), compartment);
             ode.add_term(ode_term);
