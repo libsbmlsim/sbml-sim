@@ -136,7 +136,7 @@ test_1124_comp ignored
 test_1125_comp ignored
 test_1126_comp ignored
 test_1127_comp ignored
-test_1128 failed
+test_1128_comp ignored
 test_1129_comp ignored
 test_113 ok
 test_1130_comp ignored
@@ -172,7 +172,7 @@ test_1157_comp ignored
 test_1158_comp ignored
 test_1159_comp ignored
 test_116 ok
-test_1160 failed
+test_1160_comp ignored
 test_1161_comp ignored
 test_1162_comp ignored
 test_1163_comp ignored
@@ -214,14 +214,14 @@ test_1195 failed
 test_1196 failed
 test_1197 ok
 test_1198 failed
-test_1199 failed
+test_1199 ok
 test_12 ok
 test_120 ok
-test_1200 failed
-test_1201 failed
-test_1202 failed
-test_1203 failed
-test_1204 failed
+test_1200 ok
+test_1201 ok
+test_1202 ok
+test_1203 ok
+test_1204 ok
 test_1205 ok
 test_1206 ok
 test_1207 ok
@@ -428,7 +428,6 @@ test_1391_comp ignored
 test_1392_comp ignored
 test_1393_comp ignored
 test_1394_comp ignored
-test_1395 failed
 test_14 ok
 test_140 ok
 test_1400_csymbol ignored
@@ -526,8 +525,8 @@ test_1489 failed
 test_149 ok
 test_1490 failed
 test_1491 failed
-test_1492 failed
-test_1493 failed
+test_1492 ok
+test_1493 ok
 test_1494 failed
 test_1495 failed
 test_1496 failed
@@ -833,7 +832,6 @@ test_200 ok
 test_201 ok
 test_202 ok
 test_203 ok
-test_204 ok
 test_205 ok
 test_206 ok
 test_207 ok
@@ -1328,7 +1326,6 @@ test_665_algebraic_rule ignored
 test_666_algebraic_rule ignored
 test_667 ok
 test_668 ok
-test_669 failed
 test_67 ok
 test_670 ok
 test_671 ok
@@ -1395,7 +1392,6 @@ test_735 ok
 test_736_events ignored
 test_737_events ignored
 test_738 failed
-test_739 failed
 test_73_algebraic_rule ignored
 test_740 failed
 test_741 failed

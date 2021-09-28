@@ -1,5 +1,5 @@
 
-running 1664 tests
+running 1660 tests
 test test_1000_csymbol ... ignored
 test test_1001 ... ok
 test test_1 ... ok
@@ -8,66 +8,66 @@ test test_1007 ... ok
 test test_1003 ... ok
 test test_1002 ... ok
 test test_10 ... ok
-test test_1005 ... ok
 test test_1009 ... ok
+test test_1005 ... ok
 test test_1006 ... ok
-test test_1011 ... ok
 test test_1008 ... ok
+test test_1011 ... ok
 test test_100 ... ok
+test test_1012 ... ok
 test test_1015 ... ok
 test test_1014 ... ok
-test test_1012 ... ok
-test test_101 ... ok
 test test_1018 ... ok
+test test_101 ... ok
 test test_1013 ... ok
-test test_1010 ... ok
 test test_1021 ... ok
-test test_1017 ... ok
 test test_1020 ... ok
+test test_1010 ... ok
 test test_1016 ... ok
 test test_1019 ... ok
-test test_102 ... ok
+test test_1017 ... ok
 test test_1022 ... ok
+test test_102 ... ok
 test test_1024 ... ok
 test test_1023 ... ok
-test test_1026 ... ok
-test test_103 ... ok
-test test_1025 ... ok
 test test_1032 ... ok
+test test_103 ... ok
+test test_1026 ... ok
+test test_1025 ... ok
+test test_1031 ... ok
 test test_1030 ... ok
 test test_1033 ... ok
-test test_1031 ... ok
-test test_1034 ... ok
 test test_1035 ... ok
 test test_1036 ... ok
-test test_1038 ... ok
+test test_1034 ... ok
+test test_1037 ... ok
 test test_1044_algebraic_rule ... ignored
 test test_1045_events ... ignored
 test test_1046_events ... ignored
 test test_1047_events ... ignored
 test test_1048_events ... ignored
 test test_1049_events ... ignored
-test test_1037 ... ok
+test test_1038 ... ok
 test test_1050_events ... ignored
 test test_1054_algebraic_rule ... ignored
 test test_104 ... ok
-test test_1055 ... ok
 test test_1039 ... ok
+test test_1055 ... ok
 test test_1040 ... ok
 test test_1041 ... ok
+test test_1059 ... ok
 test test_1042 ... ok
 test test_1043 ... ok
 test test_1058 ... ok
-test test_1059 ... ok
-test test_105 ... ok
 test test_1056 ... ok
 test test_1057 ... ok
+test test_105 ... ok
 test test_1061 ... FAILED
 test test_1065 ... FAILED
 test test_1060 ... ok
-test test_106 ... ok
 test test_1064 ... FAILED
 test test_1062 ... FAILED
+test test_106 ... ok
 test test_1071_events ... ignored
 test test_1072_events ... ignored
 test test_1073_events ... ignored
@@ -75,32 +75,32 @@ test test_1074_events ... ignored
 test test_1075_events ... ignored
 test test_1076_events ... ignored
 test test_1068 ... FAILED
-test test_107 ... ok
 test test_1063 ... FAILED
+test test_107 ... ok
 test test_1069 ... FAILED
-test test_1077 ... FAILED
 test test_1078 ... FAILED
-test test_1067 ... FAILED
+test test_1079 ... FAILED
+test test_1077 ... FAILED
 test test_1083_algebraic_rule ... ignored
 test test_1084_algebraic_rule ... ignored
 test test_1085_algebraic_rule ... ignored
 test test_1086_algebraic_rule ... ignored
-test test_1079 ... FAILED
+test test_1067 ... FAILED
 test test_108 ... ok
-test test_1070 ... FAILED
 test test_1087 ... FAILED
+test test_1070 ... FAILED
 test test_1080 ... FAILED
 test test_1066 ... FAILED
+test test_1082 ... FAILED
 test test_1081 ... ok
-test test_1090 ... FAILED
 test test_1094_events ... ignored
 test test_1095_events ... ignored
-test test_1082 ... FAILED
-test test_1088 ... FAILED
 test test_1089 ... FAILED
-test test_1099_csymbol ... ignored
+test test_1090 ... FAILED
 test test_1096 ... FAILED
+test test_1099_csymbol ... ignored
 test test_1097 ... FAILED
+test test_1088 ... FAILED
 test test_1100_csymbol ... ignored
 test test_1101_csymbol ... ignored
 test test_1102 ... FAILED
@@ -111,27 +111,27 @@ test test_1106_events ... ignored
 test test_1107 ... FAILED
 test test_1108_algebraic_rule ... ignored
 test test_1109_csymbol ... ignored
-test test_1092 ... FAILED
 test test_1093 ... FAILED
-test test_1098 ... FAILED
-test test_1112 ... ok
 test test_1091 ... FAILED
+test test_1092 ... FAILED
+test test_1098 ... FAILED
 test test_1113 ... ok
 test test_1114 ... ok
+test test_1112 ... ok
 test test_1115 ... ok
 test test_1116 ... ok
 test test_1117 ... ok
-test test_1118 ... ok
 test test_1119_events ... ignored
+test test_1118 ... ok
 test test_1120_events ... ignored
 test test_1121_csymbol ... ignored
-test test_1111 ... FAILED
 test test_1104 ... ok
+test test_1111 ... FAILED
 test test_1124_comp ... ignored
 test test_1125_comp ... ignored
 test test_1126_comp ... ignored
 test test_1127_comp ... ignored
-test test_1128 ... FAILED
+test test_1128_comp ... ignored
 test test_1129_comp ... ignored
 test test_1110 ... FAILED
 test test_1130_comp ... ignored
@@ -155,7 +155,7 @@ test test_1146_comp ... ignored
 test test_1147_comp ... ignored
 test test_1148_comp ... ignored
 test test_1149_comp ... ignored
-test test_113 ... ok
+test test_1122 ... FAILED
 test test_1150_comp ... ignored
 test test_1151_comp ... ignored
 test test_1152_comp ... ignored
@@ -166,8 +166,8 @@ test test_1156_comp ... ignored
 test test_1157_comp ... ignored
 test test_1158_comp ... ignored
 test test_1159_comp ... ignored
-test test_1122 ... FAILED
-test test_1123 ... FAILED
+test test_113 ... ok
+test test_1160_comp ... ignored
 test test_1161_comp ... ignored
 test test_1162_comp ... ignored
 test test_1163_comp ... ignored
@@ -177,7 +177,7 @@ test test_1166_comp ... ignored
 test test_1167_comp ... ignored
 test test_1168_comp ... ignored
 test test_1169_comp ... ignored
-test test_1160 ... FAILED
+test test_1123 ... FAILED
 test test_1170_comp ... ignored
 test test_1171_comp ... ignored
 test test_1172_comp ... ignored
@@ -194,12 +194,12 @@ test test_1181_comp ... ignored
 test test_1182_comp ... ignored
 test test_1183_comp ... ignored
 test test_1184 ... ok
-test test_118 ... ok
+test test_1185 ... ok
 test test_1186 ... FAILED
 test test_1187 ... FAILED
 test test_1188 ... FAILED
 test test_1189 ... FAILED
-test test_1185 ... ok
+test test_118 ... ok
 test test_1190 ... FAILED
 test test_1191 ... FAILED
 test test_1192 ... FAILED
@@ -208,65 +208,65 @@ test test_1194 ... FAILED
 test test_1195 ... FAILED
 test test_1196 ... FAILED
 test test_1197 ... ok
-test test_1198 ... FAILED
-test test_1199 ... FAILED
 test test_116 ... ok
+test test_1198 ... FAILED
 test test_110 ... ok
-test test_1200 ... FAILED
-test test_1201 ... FAILED
-test test_1202 ... FAILED
-test test_1203 ... FAILED
-test test_1204 ... FAILED
-test test_117 ... ok
+test test_1199 ... ok
+test test_1200 ... ok
+test test_1201 ... ok
+test test_1202 ... ok
+test test_1203 ... ok
+test test_1204 ... ok
 test test_1205 ... ok
-test test_12 ... ok
 test test_1206 ... ok
-test test_119 ... ok
 test test_1207 ... ok
+test test_117 ... ok
+test test_1208 ... FAILED
 test test_1209 ... ok
+test test_1210 ... ok
 test test_1211_events ... ignored
 test test_1212_events ... ignored
 test test_1213_events ... ignored
 test test_1214_events ... ignored
+test test_1215 ... ok
 test test_115 ... ok
-test test_1208 ... FAILED
-test test_1210 ... ok
+test test_1216 ... ok
 test test_1217 ... FAILED
 test test_1218 ... FAILED
 test test_1219 ... ok
 test test_1220 ... ok
 test test_1221 ... ok
 test test_1222_events ... ignored
-test test_1215 ... ok
 test test_1223_csymbol ... ignored
+test test_119 ... ok
 test test_1225 ... FAILED
-test test_1216 ... ok
+test test_1226 ... FAILED
 test test_1227_events ... ignored
 test test_1228_events ... ignored
 test test_1229_events ... ignored
 test test_1224 ... FAILED
 test test_1230_events ... ignored
-test test_1226 ... FAILED
 test test_1231 ... FAILED
+test test_12 ... ok
 test test_1232 ... FAILED
 test test_1234 ... FAILED
+test test_1233 ... FAILED
 test test_1235 ... FAILED
-test test_1236 ... FAILED
 test test_1237_events ... ignored
 test test_1238_events ... ignored
 test test_1239_events ... ignored
-test test_1233 ... FAILED
+test test_1236 ... FAILED
 test test_1240_events ... ignored
 test test_1241_events ... ignored
 test test_1242_events ... ignored
 test test_1243_events ... ignored
 test test_1244_algebraic_rule ... ignored
+test test_114 ... ok
 test test_1245 ... FAILED
-test test_1246 ... FAILED
 test test_1247_constraints ... ignored
 test test_1248_csymbol ... ignored
 test test_1249_csymbol ... ignored
-test test_114 ... ok
+test test_1246 ... FAILED
 test test_1250_csymbol ... ignored
 test test_1251_csymbol ... ignored
 test test_1252_csymbol ... ignored
@@ -288,18 +288,18 @@ test test_1266_events ... ignored
 test test_1267_events ... ignored
 test test_1268_events ... ignored
 test test_1269_csymbol ... ignored
-test test_125 ... ok
+test test_122 ... ok
 test test_1270_csymbol ... ignored
 test test_1271 ... FAILED
 test test_1272 ... FAILED
 test test_1273 ... FAILED
 test test_1274 ... FAILED
 test test_1275 ... FAILED
-test test_1276 ... FAILED
+test test_125 ... ok
 test test_1277 ... FAILED
 test test_1278 ... FAILED
 test test_1279 ... FAILED
-test test_122 ... ok
+test test_1276 ... FAILED
 test test_1280 ... FAILED
 test test_1281 ... FAILED
 test test_1282 ... FAILED
@@ -328,15 +328,15 @@ test test_1303_events ... ignored
 test test_1304_events ... ignored
 test test_1305_events ... ignored
 test test_1306_csymbol ... ignored
-test test_13 ... ok
 test test_1307 ... FAILED
 test test_1308 ... FAILED
 test test_1309 ... FAILED
-test test_1311 ... ok
 test test_1310 ... ok
+test test_1311 ... ok
+test test_13 ... ok
 test test_1312 ... ok
-test test_1313 ... ok
 test test_1314 ... ok
+test test_1313 ... ok
 test test_1316_csymbol ... ignored
 test test_1317_csymbol ... ignored
 test test_1318_csymbol ... ignored
@@ -417,15 +417,14 @@ test test_1386_comp ... ignored
 test test_1387_comp ... ignored
 test test_1388_comp ... ignored
 test test_1389_comp ... ignored
-test test_137 ... ok
+test test_132 ... ok
 test test_1390_comp ... ignored
 test test_1391_comp ... ignored
 test test_1392_comp ... ignored
 test test_1393_comp ... ignored
 test test_1394_comp ... ignored
 test test_133 ... ok
-test test_132 ... ok
-test test_138 ... ok
+test test_137 ... ok
 test test_1400_csymbol ... ignored
 test test_1401_csymbol ... ignored
 test test_1402_csymbol ... ignored
@@ -436,7 +435,7 @@ test test_1406_csymbol ... ignored
 test test_1407_csymbol ... ignored
 test test_1408_csymbol ... ignored
 test test_1409_csymbol ... ignored
-test test_139 ... ok
+test test_138 ... ok
 test test_1410_csymbol ... ignored
 test test_1411_csymbol ... ignored
 test test_1412_csymbol ... ignored
@@ -447,35 +446,35 @@ test test_1416_csymbol ... ignored
 test test_1417_csymbol ... ignored
 test test_1418_csymbol ... ignored
 test test_1419_csymbol ... ignored
-test test_140 ... ok
+test test_139 ... ok
 test test_1420 ... FAILED
 test test_1421 ... FAILED
 test test_1422 ... FAILED
-test test_111 ... ok
-test test_141 ... ok
 test test_1423 ... ok
-test test_1425 ... ok
 test test_1424 ... ok
+test test_1425 ... ok
 test test_1426 ... ok
+test test_1427 ... ok
+test test_140 ... ok
+test test_141 ... ok
 test test_1428 ... FAILED
 test test_1429 ... FAILED
-test test_1427 ... ok
 test test_1431 ... ok
+test test_111 ... ok
 test test_1430 ... FAILED
 test test_1432 ... ok
 test test_1434 ... FAILED
 test test_1436 ... ok
 test test_1438 ... FAILED
-test test_1433 ... FAILED
 test test_1440 ... FAILED
-test test_1442 ... ok
+test test_1433 ... FAILED
 test test_1444_events ... ignored
 test test_1445_events ... ignored
 test test_1446_events ... ignored
 test test_1447_events ... ignored
 test test_1448_events ... ignored
 test test_1449 ... FAILED
-test test_142 ... ok
+test test_1442 ... ok
 test test_1450 ... FAILED
 test test_1451 ... FAILED
 test test_1452 ... FAILED
@@ -486,7 +485,7 @@ test test_1456_csymbol ... ignored
 test test_1457_csymbol ... ignored
 test test_1458_csymbol ... ignored
 test test_1459_csymbol ... ignored
-test test_14 ... ok
+test test_142 ... ok
 test test_1460_csymbol ... ignored
 test test_1461_csymbol ... ignored
 test test_1462_csymbol ... ignored
@@ -497,7 +496,7 @@ test test_1466_events ... ignored
 test test_1467_comp ... ignored
 test test_1468_comp ... ignored
 test test_1469_comp ... ignored
-test test_143 ... ok
+test test_14 ... ok
 test test_1470_comp ... ignored
 test test_1471_comp ... ignored
 test test_1472_comp ... ignored
@@ -508,7 +507,7 @@ test test_1476_comp ... ignored
 test test_1477_comp ... ignored
 test test_1478 ... FAILED
 test test_1479_algebraic_rule ... ignored
-test test_123 ... ok
+test test_143 ... ok
 test test_1480_csymbol ... ignored
 test test_1482_algebraic_rule ... ignored
 test test_1483_algebraic_rule ... ignored
@@ -518,19 +517,19 @@ test test_1486 ... FAILED
 test test_1487 ... FAILED
 test test_1488 ... FAILED
 test test_1489 ... FAILED
-test test_145 ... ok
-test test_1490 ... FAILED
 test test_144 ... ok
+test test_1490 ... FAILED
 test test_1491 ... FAILED
-test test_1492 ... FAILED
-test test_1493 ... FAILED
-test test_1495 ... FAILED
-test test_1496 ... FAILED
-test test_1497 ... FAILED
+test test_1492 ... ok
+test test_145 ... ok
 test test_1494 ... FAILED
-test test_1499_algebraic_rule ... ignored
-test test_1498 ... FAILED
+test test_1495 ... FAILED
+test test_1493 ... ok
+test test_1497 ... FAILED
 test test_146 ... ok
+test test_1499_algebraic_rule ... ignored
+test test_1496 ... FAILED
+test test_1498 ... FAILED
 test test_1500_algebraic_rule ... ignored
 test test_1501_algebraic_rule ... ignored
 test test_1502_algebraic_rule ... ignored
@@ -551,7 +550,7 @@ test test_1515 ... FAILED
 test test_1516 ... FAILED
 test test_1518_events ... ignored
 test test_1519_events ... ignored
-test test_149 ... ok
+test test_147 ... ok
 test test_1520_events ... ignored
 test test_1521_events ... ignored
 test test_1522_csymbol ... ignored
@@ -562,7 +561,7 @@ test test_1526_csymbol ... ignored
 test test_1527_events ... ignored
 test test_1528_csymbol ... ignored
 test test_1529_csymbol ... ignored
-test test_147 ... ok
+test test_149 ... ok
 test test_1530_events ... ignored
 test test_1531_events ... ignored
 test test_1532_events ... ignored
@@ -572,31 +571,31 @@ test test_1535_csymbol ... ignored
 test test_1536_events ... ignored
 test test_1537_csymbol ... ignored
 test test_1538_csymbol ... ignored
-test test_150 ... ok
+test test_152 ... ok
 test test_1540_csymbol ... ignored
 test test_1541_csymbol ... ignored
 test test_1542_csymbol ... ignored
 test test_1543_csymbol ... ignored
-test test_151 ... ok
+test test_150 ... ok
+test test_154 ... ok
 test test_1552 ... FAILED
 test test_1553 ... FAILED
-test test_1554 ... FAILED
-test test_152 ... ok
 test test_1555 ... FAILED
+test test_151 ... ok
+test test_1554 ... FAILED
 test test_1556 ... FAILED
 test test_1557 ... FAILED
 test test_1561 ... FAILED
 test test_1563 ... FAILED
-test test_154 ... ok
-test test_1566 ... FAILED
 test test_1564 ... FAILED
+test test_1566 ... FAILED
 test test_1574 ... FAILED
 test test_1575_algebraic_rule ... ignored
 test test_1576_algebraic_rule ... ignored
 test test_1577_algebraic_rule ... ignored
 test test_1578_algebraic_rule ... ignored
 test test_1579_algebraic_rule ... ignored
-test test_15 ... ok
+test test_123 ... ok
 test test_1580_events ... ignored
 test test_1582_events ... ignored
 test test_1583_events ... ignored
@@ -615,8 +614,8 @@ test test_1596 ... FAILED
 test test_1597 ... FAILED
 test test_1598 ... FAILED
 test test_1599_events ... ignored
+test test_15 ... ok
 test test_155 ... ok
-test test_156 ... ok
 test test_1600_events ... ignored
 test test_1601_events ... ignored
 test test_1602_events ... ignored
@@ -627,7 +626,7 @@ test test_1606 ... FAILED
 test test_1607 ... FAILED
 test test_1608 ... FAILED
 test test_1609 ... FAILED
-test test_161 ... ok
+test test_156 ... ok
 test test_1610 ... FAILED
 test test_1611 ... FAILED
 test test_1612 ... FAILED
@@ -638,10 +637,10 @@ test test_1616 ... FAILED
 test test_1617 ... FAILED
 test test_1618 ... FAILED
 test test_1619 ... FAILED
-test test_157 ... ok
+test test_161 ... ok
 test test_1620 ... FAILED
+test test_162 ... ok
 test test_1621 ... FAILED
-test test_1622 ... FAILED
 test test_1623 ... FAILED
 test test_1624 ... FAILED
 test test_1625 ... FAILED
@@ -649,32 +648,32 @@ test test_1626_events ... ignored
 test test_1627_events ... ignored
 test test_1628 ... FAILED
 test test_1629 ... FAILED
-test test_158 ... ok
+test test_1622 ... FAILED
 test test_1630 ... FAILED
 test test_1631 ... FAILED
-test test_1633 ... FAILED
-test test_1635 ... FAILED
 test test_159 ... ok
+test test_1635 ... FAILED
+test test_1633 ... FAILED
 test test_1641_csymbol ... ignored
 test test_1642_conversion_factor ... ignored
-test test_16 ... ok
+test test_1643 ... FAILED
 test test_1644_conversion_factor ... ignored
 test test_1645_conversion_factor ... ignored
-test test_1643 ... FAILED
+test test_157 ... ok
 test test_1647_conversion_factor ... ignored
 test test_1648_conversion_factor ... ignored
 test test_1646 ... FAILED
 test test_1649 ... FAILED
 test test_1650_conversion_factor ... ignored
 test test_1651_conversion_factor ... ignored
-test test_162 ... ok
+test test_158 ... ok
 test test_1653_conversion_factor ... ignored
-test test_164 ... ok
-test test_1654 ... FAILED
 test test_1652 ... FAILED
+test test_1655 ... FAILED
+test test_16 ... ok
 test test_1658_events ... ignored
 test test_1659_events ... ignored
-test test_1655 ... FAILED
+test test_164 ... ok
 test test_1660_events ... ignored
 test test_1661_events ... ignored
 test test_1662_events ... ignored
@@ -685,7 +684,7 @@ test test_1666_conversion_factor ... ignored
 test test_1657 ... FAILED
 test test_1668_conversion_factor ... ignored
 test test_1669_events ... ignored
-test test_1667 ... FAILED
+test test_1654 ... FAILED
 test test_1670_events ... ignored
 test test_1671_events ... ignored
 test test_1672_events ... ignored
@@ -696,7 +695,8 @@ test test_1676_events ... ignored
 test test_1677_events ... ignored
 test test_1678_events ... ignored
 test test_1679_events ... ignored
-test test_160 ... ok
+test test_1667 ... FAILED
+test test_163 ... ok
 test test_1680_events ... ignored
 test test_1681_events ... ignored
 test test_1682_events ... ignored
@@ -707,7 +707,6 @@ test test_1686_events ... ignored
 test test_1687_events ... ignored
 test test_1688_events ... ignored
 test test_1689_events ... ignored
-test test_163 ... ok
 test test_1690_events ... ignored
 test test_1691_events ... ignored
 test test_1692_events ... ignored
@@ -718,8 +717,8 @@ test test_1696_events ... ignored
 test test_1697_events ... ignored
 test test_1698_events ... ignored
 test test_1699_events ... ignored
+test test_160 ... ok
 test test_166 ... ok
-test test_165 ... ok
 test test_1700_events ... ignored
 test test_1701_events ... ignored
 test test_1702_events ... ignored
@@ -730,7 +729,7 @@ test test_1706_events ... ignored
 test test_1707_events ... ignored
 test test_1708_events ... ignored
 test test_1709_events ... ignored
-test test_170 ... ok
+test test_165 ... ok
 test test_1710_events ... ignored
 test test_1711_events ... ignored
 test test_1712_events ... ignored
@@ -752,25 +751,25 @@ test test_1727_conversion_factor ... ignored
 test test_1728 ... FAILED
 test test_1729_conversion_factor ... ignored
 test test_172_events ... ignored
-test test_171 ... ok
+test test_170 ... ok
 test test_1730_conversion_factor ... ignored
-test test_173 ... ok
+test test_1731 ... FAILED
 test test_1732_conversion_factor ... ignored
 test test_1733_conversion_factor ... ignored
-test test_1731 ... FAILED
+test test_1734 ... FAILED
 test test_1735_conversion_factor ... ignored
 test test_1736_conversion_factor ... ignored
-test test_1737 ... FAILED
+test test_171 ... ok
 test test_1738_conversion_factor ... ignored
 test test_1739_conversion_factor ... ignored
-test test_1734 ... FAILED
+test test_1737 ... FAILED
 test test_174 ... ok
 test test_1741_conversion_factor ... ignored
 test test_1742 ... FAILED
 test test_1744_csymbol ... ignored
 test test_1746 ... FAILED
 test test_1748_csymbol ... ignored
-test test_1740 ... FAILED
+test test_173 ... ok
 test test_1754_events ... ignored
 test test_1755_events ... ignored
 test test_1756_events ... ignored
@@ -778,15 +777,15 @@ test test_1757_events ... ignored
 test test_1758_events ... ignored
 test test_1759_events ... ignored
 test test_175 ... ok
+test test_1740 ... FAILED
 test test_1760 ... FAILED
-test test_1761 ... FAILED
 test test_1762_csymbol ... ignored
 test test_1763_csymbol ... ignored
+test test_1761 ... FAILED
 test test_1766 ... FAILED
 test test_1767 ... FAILED
-test test_1768 ... FAILED
 test test_1769_events ... ignored
-test test_168 ... ok
+test test_1768 ... FAILED
 test test_1770_events ... ignored
 test test_1771_events ... ignored
 test test_1772_events ... ignored
@@ -797,94 +796,95 @@ test test_1776_csymbol ... ignored
 test test_1777_csymbol ... ignored
 test test_1778_comp ... ignored
 test test_1779_events ... ignored
-test test_167 ... ok
-test test_1780_events ... ignored
 test test_176 ... ok
-test test_169 ... ok
+test test_1780_events ... ignored
 test test_177 ... ok
-test test_180 ... ok
+test test_168 ... ok
+test test_169 ... ok
+test test_167 ... ok
 test test_182_algebraic_rule ... ignored
-test test_178 ... ok
-test test_184_algebraic_rule ... ignored
 test test_181 ... ok
+test test_184_algebraic_rule ... ignored
+test test_180 ... ok
+test test_178 ... ok
 test test_179 ... ok
 test test_183 ... ok
 test test_185 ... ok
 test test_186 ... ok
-test test_187 ... ok
 test test_190 ... ok
-test test_188 ... ok
+test test_187 ... ok
 test test_189 ... ok
-test test_18 ... ok
 test test_191 ... ok
-test test_193 ... ok
-test test_194 ... ok
-test test_195 ... ok
+test test_188 ... ok
 test test_192 ... ok
+test test_193 ... ok
+test test_19 ... ok
+test test_195 ... ok
+test test_194 ... ok
+test test_18 ... ok
 test test_196 ... ok
 test test_197 ... ok
-test test_19 ... ok
-test test_198 ... ok
 test test_2 ... ok
-test test_199 ... ok
+test test_198 ... ok
 test test_202 ... ok
-test test_200 ... ok
+test test_199 ... ok
 test test_203 ... ok
-test test_205 ... ok
 test test_206 ... ok
+test test_200 ... ok
+test test_205 ... ok
 test test_208 ... ok
-test test_201 ... ok
 test test_207 ... ok
-test test_20 ... ok
 test test_211 ... ok
-test test_212 ... ok
 test test_209 ... ok
 test test_213 ... ok
+test test_212 ... ok
 test test_21 ... ok
 test test_215 ... ok
 test test_216 ... ok
+test test_201 ... ok
+test test_20 ... ok
 test test_217 ... ok
 test test_210 ... ok
 test test_214 ... ok
 test test_218 ... ok
-test test_219 ... ok
 test test_220 ... ok
-test test_221 ... ok
+test test_219 ... ok
 test test_223 ... ok
-test test_222 ... ok
 test test_226 ... ok
-test test_227 ... ok
+test test_221 ... ok
 test test_228 ... ok
+test test_227 ... ok
+test test_222 ... ok
 test test_224 ... ok
-test test_229 ... ok
-test test_225 ... ok
 test test_231 ... ok
+test test_229 ... ok
 test test_23 ... ok
-test test_230 ... ok
+test test_225 ... ok
 test test_232 ... ok
-test test_234 ... ok
+test test_230 ... ok
 test test_235 ... ok
-test test_233 ... ok
+test test_234 ... ok
 test test_238 ... ok
-test test_239 ... ok
 test test_236 ... ok
+test test_233 ... ok
 test test_237 ... ok
-test test_240 ... ok
-test test_241 ... ok
+test test_239 ... ok
 test test_242 ... ok
-test test_22 ... ok
+test test_241 ... ok
+test test_240 ... ok
 test test_243 ... ok
-test test_244 ... ok
-test test_24 ... ok
 test test_245 ... ok
+test test_244 ... ok
 test test_246 ... ok
-test test_247 ... ok
 test test_248 ... ok
+test test_247 ... ok
 test test_25 ... ok
+test test_24 ... ok
 test test_249 ... ok
 test test_250 ... ok
 test test_251 ... ok
 test test_252 ... ok
+test test_22 ... ok
 test test_255 ... ok
 test test_253 ... ok
 test test_254 ... ok
@@ -892,25 +892,23 @@ test test_257 ... ok
 test test_256 ... ok
 test test_258 ... ok
 test test_260 ... ok
-test test_259 ... ok
 test test_261 ... ok
 test test_262 ... ok
-test test_264 ... ok
+test test_259 ... ok
 test test_263 ... ok
-test test_128 ... ok
-test test_265 ... ok
+test test_264 ... ok
 test test_26_events ... ignored
+test test_265 ... ok
 test test_269 ... ok
 test test_266 ... ok
-test test_271 ... ok
 test test_27 ... ok
-test test_17 ... ok
-test test_267 ... ok
+test test_271 ... ok
 test test_273 ... ok
+test test_267 ... ok
 test test_274 ... ok
+test test_272 ... ok
 test test_268 ... ok
 test test_270 ... ok
-test test_272 ... ok
 test test_275 ... ok
 test test_280 ... ok
 test test_28 ... ok
@@ -918,78 +916,78 @@ test test_281 ... ok
 test test_276 ... ok
 test test_282 ... ok
 test test_277 ... ok
-test test_278 ... ok
 test test_283 ... ok
-test test_284 ... ok
-test test_288 ... ok
-test test_29 ... ok
+test test_278 ... ok
 test test_285 ... ok
 test test_279 ... ok
-test test_287 ... ok
+test test_284 ... ok
+test test_29 ... ok
+test test_288 ... ok
 test test_286 ... ok
+test test_287 ... ok
 test test_289 ... ok
 test test_294 ... ok
 test test_293 ... ok
 test test_290 ... ok
 test test_298 ... ok
 test test_295 ... ok
+test test_128 ... ok
 test test_296 ... ok
 test test_30 ... ok
 test test_297 ... ok
 test test_3 ... ok
-test test_300 ... ok
-test test_299 ... ok
 test test_301 ... ok
+test test_303 ... ok
+test test_299 ... ok
 test test_302 ... ok
 test test_304 ... ok
-test test_303 ... ok
+test test_300 ... ok
 test test_307 ... ok
-test test_305 ... ok
 test test_31 ... ok
-test test_306 ... ok
+test test_305 ... ok
 test test_309 ... ok
+test test_306 ... ok
 test test_292 ... ok
-test test_308 ... ok
 test test_311 ... ok
-test test_312 ... ok
+test test_17 ... ok
+test test_308 ... ok
 test test_310 ... ok
-test test_291 ... ok
+test test_312 ... ok
 test test_317 ... ok
-test test_316 ... ok
-test test_313 ... ok
 test test_318 ... ok
 test test_319 ... ok
+test test_291 ... ok
 test test_32 ... ok
 test test_320 ... ok
+test test_313 ... ok
+test test_316 ... ok
 test test_321 ... ok
 test test_322 ... ok
 test test_323 ... ok
-test test_315 ... ok
-test test_324 ... ok
 test test_326 ... ok
+test test_324 ... ok
 test test_325 ... ok
-test test_327 ... ok
-test test_329 ... ok
-test test_33 ... ok
 test test_328 ... ok
-test test_330 ... ok
+test test_329 ... ok
+test test_315 ... ok
+test test_327 ... ok
+test test_33 ... ok
 test test_335 ... ok
-test test_332 ... ok
-test test_333 ... ok
-test test_314 ... ok
-test test_334 ... ok
-test test_331 ... ok
 test test_336 ... ok
+test test_330 ... ok
 test test_337 ... ok
+test test_332 ... ok
+test test_331 ... ok
 test test_338 ... ok
+test test_334 ... ok
+test test_333 ... ok
 test test_339 ... ok
 test test_343 ... ok
 test test_340 ... ok
-test test_341 ... ok
-test test_346 ... ok
+test test_342 ... ok
 test test_348_events ... ignored
 test test_349_events ... ignored
-test test_342 ... ok
+test test_341 ... ok
 test test_350_events ... ignored
 test test_351_events ... ignored
 test test_352_events ... ignored
@@ -1000,7 +998,7 @@ test test_356_events ... ignored
 test test_357_events ... ignored
 test test_358_events ... ignored
 test test_359_events ... ignored
-test test_344 ... ok
+test test_346 ... ok
 test test_360_events ... ignored
 test test_361_events ... ignored
 test test_362_events ... ignored
@@ -1011,7 +1009,7 @@ test test_366_events ... ignored
 test test_367_events ... ignored
 test test_368_events ... ignored
 test test_369_events ... ignored
-test test_36 ... ok
+test test_314 ... ok
 test test_370_events ... ignored
 test test_371_events ... ignored
 test test_372_events ... ignored
@@ -1022,7 +1020,7 @@ test test_376_events ... ignored
 test test_377_events ... ignored
 test test_378_events ... ignored
 test test_379_events ... ignored
-test test_34 ... ok
+test test_36 ... ok
 test test_380_events ... ignored
 test test_381_events ... ignored
 test test_382_events ... ignored
@@ -1041,7 +1039,7 @@ test test_397_events ... ignored
 test test_398_events ... ignored
 test test_399_events ... ignored
 test test_39_algebraic_rule ... ignored
-test test_347 ... ok
+test test_37 ... ok
 test test_400_events ... ignored
 test test_401_events ... ignored
 test test_402_events ... ignored
@@ -1075,7 +1073,7 @@ test test_426_events ... ignored
 test test_427_events ... ignored
 test test_428_events ... ignored
 test test_429_events ... ignored
-test test_35 ... ok
+test test_347 ... ok
 test test_430_events ... ignored
 test test_431_events ... ignored
 test test_432_events ... ignored
@@ -1086,7 +1084,7 @@ test test_436_events ... ignored
 test test_437_events ... ignored
 test test_438_events ... ignored
 test test_439_events ... ignored
-test test_37 ... ok
+test test_344 ... ok
 test test_440_events ... ignored
 test test_441_events ... ignored
 test test_442_events ... ignored
@@ -1095,7 +1093,7 @@ test test_444_events ... ignored
 test test_446_events ... ignored
 test test_447_events ... ignored
 test test_449_events ... ignored
-test test_345 ... ok
+test test_34 ... ok
 test test_450_events ... ignored
 test test_452_events ... ignored
 test test_453_events ... ignored
@@ -1105,80 +1103,80 @@ test test_456_events ... ignored
 test test_457_events ... ignored
 test test_458_events ... ignored
 test test_459_events ... ignored
-test test_42 ... ok
+test test_35 ... ok
 test test_460_events ... ignored
 test test_461_events ... ignored
+test test_42 ... ok
 test test_4 ... ok
+test test_345 ... ok
 test test_45 ... ok
-test test_464 ... ok
-test test_463 ... ok
-test test_462 ... ok
 test test_44 ... ok
+test test_463 ... ok
+test test_464 ... ok
+test test_462 ... ok
+test test_469 ... ok
 test test_466 ... ok
 test test_43 ... ok
-test test_46 ... ok
 test test_465 ... ok
-test test_469 ... ok
+test test_46 ... ok
+test test_47 ... ok
 test test_470 ... ok
 test test_471 ... ok
-test test_47 ... ok
-test test_472 ... ok
 test test_473 ... ok
-test test_468 ... ok
+test test_472 ... ok
 test test_474 ... ok
-test test_475 ... ok
-test test_467 ... ok
 test test_476 ... ok
-test test_48 ... ok
+test test_475 ... ok
+test test_468 ... ok
 test test_478 ... ok
+test test_48 ... ok
 test test_477 ... ok
-test test_480 ... ok
+test test_467 ... ok
 test test_479 ... ok
 test test_484 ... ok
+test test_480 ... ok
 test test_483 ... ok
 test test_482 ... ok
-test test_481 ... ok
-test test_485 ... ok
 test test_486 ... ok
-test test_488 ... ok
+test test_485 ... ok
+test test_481 ... ok
 test test_487 ... ok
 test test_492 ... ok
 test test_493 ... ok
-test test_49 ... ok
 test test_494 ... ok
-test test_489 ... ok
+test test_488 ... ok
+test test_49 ... ok
 test test_498 ... ok
 test test_499 ... ok
+test test_489 ... ok
+test test_500 ... ok
 test test_490 ... ok
 test test_491 ... ok
 test test_5 ... ok
-test test_500 ... ok
-test test_50 ... ok
 test test_501 ... ok
-test test_497 ... ok
-test test_496 ... ok
 test test_502 ... ok
+test test_503 ... ok
+test test_50 ... ok
+test test_496 ... ok
 test test_495 ... ok
 test test_507 ... ok
 test test_508 ... ok
-test test_503 ... ok
+test test_497 ... ok
 test test_509 ... ok
-test test_51 ... ok
-test test_511 ... ok
 test test_510 ... ok
-test test_504 ... ok
+test test_51 ... ok
 test test_512 ... ok
+test test_511 ... ok
+test test_504 ... ok
 test test_506 ... ok
-test test_505 ... ok
 test test_513 ... ok
+test test_505 ... ok
 test test_515 ... ok
 test test_514 ... ok
-test test_52 ... ok
-test test_523 ... ok
-test test_522 ... ok
 test test_525 ... ok
-test test_526 ... ok
+test test_523 ... ok
 test test_524 ... ok
+test test_526 ... ok
 test test_531_algebraic_rule ... ignored
 test test_532_algebraic_rule ... ignored
 test test_533_algebraic_rule ... ignored
@@ -1188,7 +1186,7 @@ test test_536_algebraic_rule ... ignored
 test test_537_algebraic_rule ... ignored
 test test_538_algebraic_rule ... ignored
 test test_539_algebraic_rule ... ignored
-test test_527 ... ok
+test test_52 ... ok
 test test_540_algebraic_rule ... ignored
 test test_541_algebraic_rule ... ignored
 test test_542_algebraic_rule ... ignored
@@ -1199,7 +1197,7 @@ test test_546_algebraic_rule ... ignored
 test test_547_algebraic_rule ... ignored
 test test_548_algebraic_rule ... ignored
 test test_549_algebraic_rule ... ignored
-test test_528 ... ok
+test test_522 ... ok
 test test_550_algebraic_rule ... ignored
 test test_551_algebraic_rule ... ignored
 test test_552_algebraic_rule ... ignored
@@ -1210,14 +1208,14 @@ test test_556_algebraic_rule ... ignored
 test test_557_algebraic_rule ... ignored
 test test_558_algebraic_rule ... ignored
 test test_559_algebraic_rule ... ignored
-test test_529 ... ok
+test test_527 ... ok
 test test_560_algebraic_rule ... ignored
 test test_565_algebraic_rule ... ignored
 test test_566_algebraic_rule ... ignored
 test test_567_algebraic_rule ... ignored
 test test_568_algebraic_rule ... ignored
 test test_569_algebraic_rule ... ignored
-test test_530 ... ok
+test test_528 ... ok
 test test_570_algebraic_rule ... ignored
 test test_571_algebraic_rule ... ignored
 test test_572_algebraic_rule ... ignored
@@ -1225,84 +1223,84 @@ test test_573_algebraic_rule ... ignored
 test test_574_algebraic_rule ... ignored
 test test_575_algebraic_rule ... ignored
 test test_576_algebraic_rule ... ignored
-test test_577 ... ok
-test test_53 ... ok
+test test_529 ... ok
+test test_530 ... ok
 test test_579 ... ok
-test test_56 ... ok
+test test_577 ... ok
 test test_578 ... ok
+test test_53 ... ok
+test test_56 ... ok
 test test_57 ... ok
+test test_582 ... ok
 test test_54 ... ok
 test test_581 ... ok
 test test_58 ... ok
-test test_582 ... ok
-test test_580 ... ok
 test test_583 ... ok
 test test_586 ... FAILED
+test test_580 ... ok
 test test_589 ... ok
 test test_587 ... FAILED
-test test_585 ... ok
+test test_591 ... ok
 test test_588 ... FAILED
 test test_592 ... ok
-test test_591 ... ok
-test test_584 ... ok
+test test_585 ... ok
 test test_590 ... ok
-test test_55 ... ok
-test test_593 ... ok
 test test_594 ... ok
-test test_598 ... ok
+test test_584 ... ok
+test test_593 ... ok
 test test_595 ... ok
+test test_598 ... ok
 test test_6 ... ok
-test test_60 ... ok
-test test_599 ... ok
 test test_596 ... ok
+test test_60 ... ok
+test test_55 ... ok
 test test_601 ... FAILED
+test test_599 ... ok
 test test_604 ... FAILED
-test test_602 ... FAILED
-test test_603 ... FAILED
 test test_600 ... ok
+test test_602 ... FAILED
 test test_607 ... FAILED
-test test_605 ... FAILED
 test test_613_algebraic_rule ... ignored
 test test_614_algebraic_rule ... ignored
 test test_615_algebraic_rule ... ignored
+test test_603 ... FAILED
 test test_608 ... FAILED
-test test_611 ... ok
-test test_617 ... ok
+test test_605 ... FAILED
 test test_619_events ... ignored
-test test_616 ... ok
+test test_617 ... ok
 test test_620_events ... ignored
 test test_621_events ... ignored
 test test_622_events ... ignored
 test test_623_events ... ignored
 test test_624_events ... ignored
 test test_61 ... ok
-test test_606 ... FAILED
-test test_612 ... ok
+test test_611 ... ok
+test test_616 ... ok
 test test_628_algebraic_rule ... ignored
 test test_629_algebraic_rule ... ignored
 test test_618 ... ok
 test test_630_algebraic_rule ... ignored
 test test_63 ... ok
+test test_612 ... ok
 test test_62 ... ok
-test test_625 ... ok
 test test_634_events ... ignored
 test test_635_events ... ignored
 test test_636_events ... ignored
 test test_637_events ... ignored
 test test_638_events ... ignored
 test test_639_events ... ignored
+test test_606 ... FAILED
+test test_627 ... ok
+test test_625 ... ok
+test test_632 ... ok
 test test_631 ... ok
 test test_626 ... ok
-test test_632 ... ok
-test test_627 ... ok
 test test_64 ... ok
-test test_633 ... ok
-test test_643 ... ok
 test test_646_events ... ignored
 test test_647_events ... ignored
 test test_648_events ... ignored
 test test_649_events ... ignored
-test test_640 ... ok
+test test_633 ... ok
 test test_650_events ... ignored
 test test_651_events ... ignored
 test test_652_events ... ignored
@@ -1313,7 +1311,7 @@ test test_656_events ... ignored
 test test_657_events ... ignored
 test test_658_algebraic_rule ... ignored
 test test_659_algebraic_rule ... ignored
-test test_644 ... ok
+test test_642 ... ok
 test test_660_algebraic_rule ... ignored
 test test_661_algebraic_rule ... ignored
 test test_662_algebraic_rule ... ignored
@@ -1321,80 +1319,78 @@ test test_663_algebraic_rule ... ignored
 test test_664_algebraic_rule ... ignored
 test test_665_algebraic_rule ... ignored
 test test_666_algebraic_rule ... ignored
-test test_642 ... ok
-test test_641 ... ok
+test test_643 ... ok
+test test_644 ... ok
+test test_65 ... ok
+test test_640 ... ok
 test test_645 ... ok
 test test_667 ... ok
-test test_65 ... ok
-test test_670 ... ok
-test test_668 ... ok
 test test_673_algebraic_rule ... ignored
 test test_674_algebraic_rule ... ignored
 test test_675_algebraic_rule ... ignored
-test test_67 ... ok
-test test_676 ... ok
-test test_672 ... ok
+test test_641 ... ok
+test test_670 ... ok
+test test_677 ... ok
 test test_679_events ... ignored
 test test_680_events ... ignored
 test test_681_events ... ignored
 test test_682_events ... ignored
 test test_683_events ... ignored
 test test_684_events ... ignored
-test test_671 ... ok
 test test_678 ... ok
+test test_676 ... ok
 test test_687_algebraic_rule ... ignored
-test test_677 ... ok
+test test_668 ... ok
 test test_689_events ... ignored
 test test_690_events ... ignored
 test test_688 ... FAILED
+test test_672 ... ok
 test test_691 ... ok
-test test_693 ... ok
-test test_686 ... FAILED
+test test_67 ... ok
 test test_695_algebraic_rule ... ignored
 test test_696_algebraic_rule ... ignored
-test test_685 ... FAILED
-test test_692 ... ok
-test test_699_events ... ignored
+test test_671 ... ok
 test test_697 ... ok
+test test_699_events ... ignored
+test test_698 ... ok
 test test_700_events ... ignored
 test test_701_events ... ignored
 test test_702_events ... ignored
-test test_698 ... ok
 test test_7 ... ok
+test test_693 ... ok
 test test_705_algebraic_rule ... ignored
-test test_66 ... ok
+test test_686 ... FAILED
 test test_707_events ... ignored
 test test_708_events ... ignored
-test test_694 ... ok
+test test_692 ... ok
+test test_685 ... FAILED
 test test_706 ... ok
-test test_703 ... ok
+test test_694 ... ok
+test test_66 ... ok
 test test_704 ... ok
+test test_703 ... ok
 test test_709 ... FAILED
 test test_710 ... FAILED
 test test_711 ... FAILED
 test test_712 ... ok
-test test_715 ... FAILED
-test test_716 ... FAILED
-test test_714 ... ok
 test test_71_algebraic_rule ... ignored
-test test_717 ... ok
+test test_715 ... FAILED
 test test_718 ... ok
-test test_720 ... ok
+test test_716 ... FAILED
 test test_723_events ... ignored
 test test_724_events ... ignored
 test test_72_algebraic_rule ... ignored
 test test_719 ... ok
-test test_721 ... ok
-test test_732 ... ok
-test test_722 ... ok
+test test_714 ... ok
+test test_717 ... ok
+test test_720 ... ok
 test test_736_events ... ignored
 test test_737_events ... ignored
-test test_733 ... ok
-test test_735 ... ok
+test test_732 ... ok
 test test_73_algebraic_rule ... ignored
+test test_733 ... ok
 test test_734 ... ok
-test test_738 ... FAILED
-test test_740 ... FAILED
+test test_721 ... ok
 test test_743_events ... ignored
 test test_744_events ... ignored
 test test_745_events ... ignored
@@ -1403,7 +1399,7 @@ test test_747_events ... ignored
 test test_748_events ... ignored
 test test_749_events ... ignored
 test test_74_algebraic_rule ... ignored
-test test_75 ... ok
+test test_722 ... ok
 test test_750_events ... ignored
 test test_751_events ... ignored
 test test_752_events ... ignored
@@ -1414,7 +1410,7 @@ test test_756_events ... ignored
 test test_757_events ... ignored
 test test_758_events ... ignored
 test test_759_events ... ignored
-test test_742 ... FAILED
+test test_735 ... ok
 test test_760_algebraic_rule ... ignored
 test test_761_algebraic_rule ... ignored
 test test_762_algebraic_rule ... ignored
@@ -1425,7 +1421,7 @@ test test_766_events ... ignored
 test test_767_events ... ignored
 test test_768_events ... ignored
 test test_769_events ... ignored
-test test_76 ... ok
+test test_75 ... ok
 test test_770_events ... ignored
 test test_771_events ... ignored
 test test_772_events ... ignored
@@ -1436,83 +1432,82 @@ test test_776_events ... ignored
 test test_777_algebraic_rule ... ignored
 test test_778_algebraic_rule ... ignored
 test test_779_algebraic_rule ... ignored
-test test_741 ... FAILED
+test test_740 ... FAILED
 test test_780_algebraic_rule ... ignored
+test test_738 ... FAILED
 test test_78 ... ok
-test test_781 ... FAILED
 test test_782 ... FAILED
-test test_77 ... ok
 test test_783 ... FAILED
-test test_713 ... ok
-test test_784 ... FAILED
+test test_781 ... FAILED
+test test_76 ... ok
+test test_77 ... ok
 test test_787 ... FAILED
 test test_789_events ... ignored
-test test_786 ... FAILED
+test test_742 ... FAILED
 test test_790_events ... ignored
 test test_791_events ... ignored
+test test_741 ... FAILED
 test test_785 ... FAILED
+test test_784 ... FAILED
 test test_788 ... FAILED
-test test_792 ... ok
 test test_793 ... ok
-test test_794 ... FAILED
+test test_786 ... FAILED
+test test_792 ... ok
 test test_795 ... ok
-test test_79 ... ok
+test test_794 ... FAILED
 test test_796 ... ok
-test test_797 ... ok
 test test_8 ... ok
-test test_798 ... ok
-test test_799 ... ok
 test test_801 ... ok
-test test_800 ... ok
+test test_79 ... ok
+test test_797 ... ok
+test test_799 ... ok
+test test_798 ... ok
 test test_803 ... ok
-test test_802 ... ok
 test test_804 ... ok
+test test_800 ... ok
+test test_802 ... ok
 test test_806 ... ok
+test test_809 ... ok
 test test_80 ... ok
 test test_805 ... ok
-test test_807 ... ok
-test test_809 ... ok
 test test_808 ... ok
-test test_812 ... ok
-test test_81 ... ok
+test test_807 ... ok
 test test_813 ... ok
-test test_811 ... ok
-test test_1395 has been running for over 60 seconds
 test test_810 ... ok
-test test_815 ... FAILED
+test test_81 ... ok
+test test_812 ... ok
 test test_818 ... ok
-test test_817 ... FAILED
+test test_811 ... ok
+test test_815 ... FAILED
 test test_814 ... ok
-test test_816 ... FAILED
-test test_821 ... ok
+test test_713 ... ok
 test test_819 ... ok
+test test_821 ... ok
+test test_817 ... FAILED
 test test_820 ... ok
 test test_82 ... ok
+test test_816 ... FAILED
 test test_824 ... ok
 test test_822 ... ok
 test test_823 ... ok
 test test_825 ... ok
 test test_826 ... ok
-test test_83 ... ok
-test test_830 ... ok
-test test_831 ... ok
 test test_832 ... ok
+test test_83 ... ok
+test test_831 ... ok
+test test_830 ... ok
 test test_833 ... ok
 test test_835 ... ok
-test test_834 ... ok
 test test_836 ... ok
+test test_834 ... ok
 test test_837 ... ok
-test test_838 ... ok
-test test_839 ... ok
-test test_84 ... ok
-test test_840 ... ok
 test test_844_algebraic_rule ... ignored
 test test_845_events ... ignored
 test test_846_events ... ignored
 test test_847_events ... ignored
 test test_848_events ... ignored
 test test_849_events ... ignored
-test test_85 ... ok
+test test_838 ... ok
 test test_850_events ... ignored
 test test_851_csymbol ... ignored
 test test_852_csymbol ... ignored
@@ -1523,7 +1518,7 @@ test test_856_csymbol ... ignored
 test test_857_csymbol ... ignored
 test test_858_csymbol ... ignored
 test test_859_csymbol ... ignored
-test test_842 ... ok
+test test_84 ... ok
 test test_860_csymbol ... ignored
 test test_861_csymbol ... ignored
 test test_862_csymbol ... ignored
@@ -1534,12 +1529,12 @@ test test_866_csymbol ... ignored
 test test_867_csymbol ... ignored
 test test_868_csymbol ... ignored
 test test_869_csymbol ... ignored
-test test_841 ... ok
+test test_839 ... ok
 test test_876_algebraic_rule ... ignored
 test test_877_csymbol ... ignored
 test test_878_csymbol ... ignored
 test test_879 ... FAILED
-test test_843 ... ok
+test test_85 ... ok
 test test_880_csymbol ... ignored
 test test_881_csymbol ... ignored
 test test_882_csymbol ... ignored
@@ -1559,51 +1554,51 @@ test test_894_csymbol ... ignored
 test test_895_csymbol ... ignored
 test test_896_csymbol ... ignored
 test test_897_csymbol ... ignored
-test test_9 ... ok
 test test_87 ... ok
-test test_89 ... ok
+test test_840 ... ok
+test test_9 ... ok
 test test_901 ... ok
 test test_902 ... ok
+test test_841 ... ok
+test test_842 ... ok
 test test_904 ... ok
-test test_90 ... ok
 test test_905 ... ok
+test test_908 ... ok
 test test_903 ... ok
 test test_906 ... ok
+test test_89 ... ok
 test test_907 ... ok
-test test_908 ... ok
 test test_909 ... ok
-test test_911 ... ok
+test test_843 ... ok
+test test_90 ... ok
 test test_912 ... ok
 test test_910 ... ok
 test test_913 ... ok
-test test_86 ... ok
+test test_911 ... ok
 test test_916 ... ok
-test test_914 ... ok
 test test_918 ... ok
+test test_914 ... ok
 test test_915 ... ok
-test test_917 ... ok
 test test_920 ... ok
 test test_921 ... ok
 test test_922 ... ok
-test test_91 ... ok
-test test_919 ... ok
-test test_923 ... ok
 test test_925 ... ok
-test test_926 ... FAILED
+test test_924 ... ok
+test test_917 ... ok
 test test_928_events ... ignored
 test test_929_events ... ignored
-test test_924 ... ok
+test test_86 ... ok
 test test_930_events ... ignored
 test test_931_events ... ignored
 test test_932_events ... ignored
 test test_933_events ... ignored
 test test_934_events ... ignored
 test test_935_events ... ignored
-test test_927 ... ok
+test test_936 ... FAILED
 test test_937_notes ... ignored
 test test_938_notes ... ignored
 test test_939_notes ... ignored
-test test_936 ... FAILED
+test test_923 ... ok
 test test_940_notes ... ignored
 test test_941_notes ... ignored
 test test_942_notes ... ignored
@@ -1614,7 +1609,7 @@ test test_946_events ... ignored
 test test_947_events ... ignored
 test test_948_events ... ignored
 test test_949_notes ... ignored
-test test_95 ... ok
+test test_919 ... ok
 test test_950_notes ... ignored
 test test_951_notes ... ignored
 test test_952_events ... ignored
@@ -1625,7 +1620,7 @@ test test_956_notes ... ignored
 test test_957_notes ... ignored
 test test_958_notes ... ignored
 test test_959_notes ... ignored
-test test_92 ... ok
+test test_926 ... FAILED
 test test_960_notes ... ignored
 test test_961_csymbol ... ignored
 test test_962_events ... ignored
@@ -1634,18 +1629,18 @@ test test_964_events ... ignored
 test test_965_events ... ignored
 test test_966_events ... ignored
 test test_967_events ... ignored
-test test_96 ... ok
-test test_94 ... ok
+test test_927 ... ok
 test test_969 ... ok
+test test_91 ... ok
 test test_970 ... FAILED
 test test_972_events ... ignored
-test test_971 ... ok
+test test_95 ... ok
 test test_975_conversion_factor ... ignored
 test test_976_conversion_factor ... ignored
-test test_93 ... ok
+test test_96 ... ok
 test test_978_events ... ignored
 test test_979_events ... ignored
-test test_97 ... ok
+test test_971 ... ok
 test test_980_events ... ignored
 test test_981_csymbol ... ignored
 test test_982_csymbol ... ignored
@@ -1656,27 +1651,24 @@ test test_974 ... ok
 test test_995_events ... ignored
 test test_996_events ... ignored
 test test_997_events ... ignored
+test test_97 ... ok
 test test_998 ... ok
 test test_999 ... ok
-test test_204 has been running for over 60 seconds
+test test_92 ... ok
+test test_93 ... ok
+test test_94 ... ok
 test test_977 ... FAILED
-test test_98 ... ok
 test test_99 ... ok
-test test_204 ... ok
-test test_669 has been running for over 60 seconds
-test test_739 has been running for over 60 seconds
-test test_669 ... FAILED
-test test_1395 ... FAILED
-test test_739 ... FAILED
+test test_98 ... ok
 
 failures:
 
 ---- test_1061 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.06666498921463915
-[tests/common/mod.rs:135] b[i] = 0.1333299785647067
-[tests/common/mod.rs:135] abs_diff = 0.06666498935006757
-[tests/common/mod.rs:135] tolerance = 0.0010133329978564707
-S2 doesn't match
+[tests/common/mod.rs:135] a[i] = 0.5
+[tests/common/mod.rs:135] b[i] = 1.0
+[tests/common/mod.rs:135] abs_diff = 0.5
+[tests/common/mod.rs:135] tolerance = 0.0011
+S1 doesn't match
 thread 'test_1061' panicked at 'assertion failed: run_test(1061)', tests/core-semantic.rs:5363:5
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 
@@ -1689,19 +1681,19 @@ S2 doesn't match
 thread 'test_1065' panicked at 'assertion failed: run_test(1065)', tests/core-semantic.rs:5383:5
 
 ---- test_1064 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.0
-[tests/common/mod.rs:135] b[i] = 0.2766545840787671
-[tests/common/mod.rs:135] abs_diff = 0.2766545840787671
-[tests/common/mod.rs:135] tolerance = 0.0010276654584078766
-S3 doesn't match
+[tests/common/mod.rs:135] a[i] = 0.7408182191076025
+[tests/common/mod.rs:135] b[i] = 0.7447919324790182
+[tests/common/mod.rs:135] abs_diff = 0.003973713371415721
+[tests/common/mod.rs:135] tolerance = 0.0010744791932479018
+S1 doesn't match
 thread 'test_1064' panicked at 'assertion failed: run_test(1064)', tests/core-semantic.rs:5378:5
 
 ---- test_1062 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.17746666564595773
-[tests/common/mod.rs:135] b[i] = 0.07715941985629526
-[tests/common/mod.rs:135] abs_diff = 0.10030724578966246
-[tests/common/mod.rs:135] tolerance = 0.0010077159419856296
-S3 doesn't match
+[tests/common/mod.rs:135] a[i] = 1.15
+[tests/common/mod.rs:135] b[i] = 0.5
+[tests/common/mod.rs:135] abs_diff = 0.6499999999999999
+[tests/common/mod.rs:135] tolerance = 0.00105
+S2 doesn't match
 thread 'test_1062' panicked at 'assertion failed: run_test(1062)', tests/core-semantic.rs:5368:5
 
 ---- test_1068 stdout ----
@@ -1721,20 +1713,12 @@ S2 doesn't match
 thread 'test_1063' panicked at 'assertion failed: run_test(1063)', tests/core-semantic.rs:5373:5
 
 ---- test_1069 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.00010070742991230425
-[tests/common/mod.rs:135] b[i] = 0.00008935801342384627
-[tests/common/mod.rs:135] abs_diff = 0.000011349416488457982
-[tests/common/mod.rs:135] tolerance = 0.00000010893580134238462
-S3 doesn't match
+[tests/common/mod.rs:135] a[i] = 0.00010531351719896843
+[tests/common/mod.rs:135] b[i] = 0.0001049678872290109
+[tests/common/mod.rs:135] abs_diff = 0.00000034562996995753125
+[tests/common/mod.rs:135] tolerance = 0.00000011049678872290109
+S1 doesn't match
 thread 'test_1069' panicked at 'assertion failed: run_test(1069)', tests/core-semantic.rs:5403:5
-
----- test_1077 stdout ----
-[tests/common/mod.rs:135] a[i] = 1.5
-[tests/common/mod.rs:135] b[i] = 1.90786
-[tests/common/mod.rs:135] abs_diff = 0.4078599999999999
-[tests/common/mod.rs:135] tolerance = 0.001190786
-S2 doesn't match
-thread 'test_1077' panicked at 'assertion failed: run_test(1077)', tests/core-semantic.rs:5449:5
 
 ---- test_1078 stdout ----
 [tests/common/mod.rs:135] a[i] = 1.5
@@ -1744,14 +1728,6 @@ thread 'test_1077' panicked at 'assertion failed: run_test(1077)', tests/core-se
 S2 doesn't match
 thread 'test_1078' panicked at 'assertion failed: run_test(1078)', tests/core-semantic.rs:5454:5
 
----- test_1067 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.0198653737069486
-[tests/common/mod.rs:135] b[i] = 0.02211992074997756
-[tests/common/mod.rs:135] abs_diff = 0.0022545470430289614
-[tests/common/mod.rs:135] tolerance = 0.000012211992074997757
-S2 doesn't match
-thread 'test_1067' panicked at 'assertion failed: run_test(1067)', tests/core-semantic.rs:5393:5
-
 ---- test_1079 stdout ----
 [tests/common/mod.rs:135] a[i] = 1.5
 [tests/common/mod.rs:135] b[i] = 1.90786
@@ -1760,13 +1736,21 @@ thread 'test_1067' panicked at 'assertion failed: run_test(1067)', tests/core-se
 S2 doesn't match
 thread 'test_1079' panicked at 'assertion failed: run_test(1079)', tests/core-semantic.rs:5459:5
 
----- test_1070 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.0009865373706948598
-[tests/common/mod.rs:135] b[i] = 0.001211992074998905
-[tests/common/mod.rs:135] abs_diff = 0.00022545470430404514
-[tests/common/mod.rs:135] tolerance = 0.0000011211992074998904
+---- test_1077 stdout ----
+[tests/common/mod.rs:135] a[i] = 1.5
+[tests/common/mod.rs:135] b[i] = 1.90786
+[tests/common/mod.rs:135] abs_diff = 0.4078599999999999
+[tests/common/mod.rs:135] tolerance = 0.001190786
+S2 doesn't match
+thread 'test_1077' panicked at 'assertion failed: run_test(1077)', tests/core-semantic.rs:5449:5
+
+---- test_1067 stdout ----
+[tests/common/mod.rs:135] a[i] = 0.009865373706948599
+[tests/common/mod.rs:135] b[i] = 0.01211992074997756
+[tests/common/mod.rs:135] abs_diff = 0.0022545470430289614
+[tests/common/mod.rs:135] tolerance = 0.000011211992074997758
 S1 doesn't match
-thread 'test_1070' panicked at 'assertion failed: run_test(1070)', tests/core-semantic.rs:5408:5
+thread 'test_1067' panicked at 'assertion failed: run_test(1067)', tests/core-semantic.rs:5393:5
 
 ---- test_1087 stdout ----
 [tests/common/mod.rs:135] a[i] = 0.00015
@@ -1775,6 +1759,14 @@ thread 'test_1070' panicked at 'assertion failed: run_test(1070)', tests/core-se
 [tests/common/mod.rs:135] tolerance = 0.00000012043807740867624
 S2 doesn't match
 thread 'test_1087' panicked at 'assertion failed: run_test(1087)', tests/core-semantic.rs:5503:5
+
+---- test_1070 stdout ----
+[tests/common/mod.rs:135] a[i] = 0.0009865373706948598
+[tests/common/mod.rs:135] b[i] = 0.001211992074998905
+[tests/common/mod.rs:135] abs_diff = 0.00022545470430404514
+[tests/common/mod.rs:135] tolerance = 0.0000011211992074998904
+S1 doesn't match
+thread 'test_1070' panicked at 'assertion failed: run_test(1070)', tests/core-semantic.rs:5408:5
 
 ---- test_1080 stdout ----
 [tests/common/mod.rs:135] a[i] = 0.00900631225295122
@@ -1785,12 +1777,28 @@ S1 doesn't match
 thread 'test_1080' panicked at 'assertion failed: run_test(1080)', tests/core-semantic.rs:5464:5
 
 ---- test_1066 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.14698464194149785
-[tests/common/mod.rs:135] b[i] = 0.1325638225527571
-[tests/common/mod.rs:135] abs_diff = 0.014420819388740763
-[tests/common/mod.rs:135] tolerance = 0.00011325638225527572
-S3 doesn't match
+[tests/common/mod.rs:135] a[i] = 0.0605938342537898
+[tests/common/mod.rs:135] b[i] = 0.06026999450447567
+[tests/common/mod.rs:135] abs_diff = 0.00032383974931413095
+[tests/common/mod.rs:135] tolerance = 0.00010602699945044758
+S1 doesn't match
 thread 'test_1066' panicked at 'assertion failed: run_test(1066)', tests/core-semantic.rs:5388:5
+
+---- test_1082 stdout ----
+[tests/common/mod.rs:135] a[i] = 0.05115765662515814
+[tests/common/mod.rs:135] b[i] = 0.05126773373377165
+[tests/common/mod.rs:135] abs_diff = 0.00011007710861350717
+[tests/common/mod.rs:135] tolerance = 0.00010512677337337718
+S1 doesn't match
+thread 'test_1082' panicked at 'assertion failed: run_test(1082)', tests/core-semantic.rs:5474:5
+
+---- test_1089 stdout ----
+[tests/common/mod.rs:135] a[i] = 0.00876244297440821
+[tests/common/mod.rs:135] b[i] = 0.008750714616104011
+[tests/common/mod.rs:135] abs_diff = 0.00001172835830419959
+[tests/common/mod.rs:135] tolerance = 0.000010875071461610402
+S2 doesn't match
+thread 'test_1089' panicked at 'assertion failed: run_test(1089)', tests/core-semantic.rs:5513:5
 
 ---- test_1090 stdout ----
 [tests/common/mod.rs:135] a[i] = 2.0
@@ -1800,45 +1808,29 @@ thread 'test_1066' panicked at 'assertion failed: run_test(1066)', tests/core-se
 S2 doesn't match
 thread 'test_1090' panicked at 'assertion failed: run_test(1090)', tests/core-semantic.rs:5518:5
 
----- test_1082 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.08187307529032364
-[tests/common/mod.rs:135] b[i] = 0.08205848467092014
-[tests/common/mod.rs:135] abs_diff = 0.00018540938059649625
-[tests/common/mod.rs:135] tolerance = 0.00010820584846709202
-S3 doesn't match
-thread 'test_1082' panicked at 'assertion failed: run_test(1082)', tests/core-semantic.rs:5474:5
-
----- test_1088 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.000004191863713560886
-[tests/common/mod.rs:135] b[i] = 0.000004170431215518318
-[tests/common/mod.rs:135] abs_diff = 0.000000021432498042567915
-[tests/common/mod.rs:135] tolerance = 0.000000010417043121551832
-S3 doesn't match
-thread 'test_1088' panicked at 'assertion failed: run_test(1088)', tests/core-semantic.rs:5508:5
-
----- test_1089 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.0039507368327343926
-[tests/common/mod.rs:135] b[i] = 0.003940316938029498
-[tests/common/mod.rs:135] abs_diff = 0.0000104198947048946
-[tests/common/mod.rs:135] tolerance = 0.000010394031693802951
-S1 doesn't match
-thread 'test_1089' panicked at 'assertion failed: run_test(1089)', tests/core-semantic.rs:5513:5
-
 ---- test_1096 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.0
-[tests/common/mod.rs:135] b[i] = 0.2651077122867101
-[tests/common/mod.rs:135] abs_diff = 0.2651077122867101
-[tests/common/mod.rs:135] tolerance = 0.001026510771228671
-S2 doesn't match
+[tests/common/mod.rs:135] a[i] = 0.8658877476597747
+[tests/common/mod.rs:135] b[i] = 0.8674461438566446
+[tests/common/mod.rs:135] abs_diff = 0.0015583961968699267
+[tests/common/mod.rs:135] tolerance = 0.0010867446143856645
+S1 doesn't match
 thread 'test_1096' panicked at 'assertion failed: run_test(1096)', tests/core-semantic.rs:5550:5
 
 ---- test_1097 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.03237443282939887
-[tests/common/mod.rs:135] b[i] = 0.03038205453572927
-[tests/common/mod.rs:135] abs_diff = 0.001992378293669602
-[tests/common/mod.rs:135] tolerance = 0.001003038205453573
-S3 doesn't match
+[tests/common/mod.rs:135] a[i] = 0.9676255671706011
+[tests/common/mod.rs:135] b[i] = 0.969617945464271
+[tests/common/mod.rs:135] abs_diff = 0.0019923782936699386
+[tests/common/mod.rs:135] tolerance = 0.0010969617945464272
+S1 doesn't match
 thread 'test_1097' panicked at 'assertion failed: run_test(1097)', tests/core-semantic.rs:5555:5
+
+---- test_1088 stdout ----
+[tests/common/mod.rs:135] a[i] = 0.000018995520918787208
+[tests/common/mod.rs:135] b[i] = 0.00001838383676732878
+[tests/common/mod.rs:135] abs_diff = 0.000000611684151458428
+[tests/common/mod.rs:135] tolerance = 0.000000011838383676732878
+S2 doesn't match
+thread 'test_1088' panicked at 'assertion failed: run_test(1088)', tests/core-semantic.rs:5508:5
 
 ---- test_1102 stdout ----
 [tests/common/mod.rs:135] a[i] = 0.0
@@ -1862,14 +1854,6 @@ thread 'test_1105' panicked at 'assertion failed: run_test(1105)', tests/core-se
 ---- test_1107 stdout ----
 thread 'test_1107' panicked at 'No value found for Ci p1', src/structs/bindings.rs:508:31
 
----- test_1092 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.000016429686985181434
-[tests/common/mod.rs:135] b[i] = 0.0000163825752775293
-[tests/common/mod.rs:135] abs_diff = 0.00000004711170765213252
-[tests/common/mod.rs:135] tolerance = 0.000000011638257527752931
-S4 doesn't match
-thread 'test_1092' panicked at 'assertion failed: run_test(1092)', tests/core-semantic.rs:5528:5
-
 ---- test_1093 stdout ----
 [tests/common/mod.rs:135] a[i] = 2.0
 [tests/common/mod.rs:135] b[i] = 2.208938035874358
@@ -1877,14 +1861,6 @@ thread 'test_1092' panicked at 'assertion failed: run_test(1092)', tests/core-se
 [tests/common/mod.rs:135] tolerance = 0.010220893803587436
 S2 doesn't match
 thread 'test_1093' panicked at 'assertion failed: run_test(1093)', tests/core-semantic.rs:5533:5
-
----- test_1098 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.7408182191076025
-[tests/common/mod.rs:135] b[i] = 0.7447919324790182
-[tests/common/mod.rs:135] abs_diff = 0.003973713371415721
-[tests/common/mod.rs:135] tolerance = 0.0010744791932479018
-S1 doesn't match
-thread 'test_1098' panicked at 'assertion failed: run_test(1098)', tests/core-semantic.rs:5560:5
 
 ---- test_1091 stdout ----
 [tests/common/mod.rs:135] a[i] = 0.0000016739166727554082
@@ -1894,23 +1870,36 @@ thread 'test_1098' panicked at 'assertion failed: run_test(1098)', tests/core-se
 S3 doesn't match
 thread 'test_1091' panicked at 'assertion failed: run_test(1091)', tests/core-semantic.rs:5523:5
 
----- test_1111 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.03237443282939887
-[tests/common/mod.rs:135] b[i] = 0.03038205453572927
-[tests/common/mod.rs:135] abs_diff = 0.001992378293669602
-[tests/common/mod.rs:135] tolerance = 0.001003038205453573
+---- test_1092 stdout ----
+[tests/common/mod.rs:135] a[i] = 0.000010953124656787622
+[tests/common/mod.rs:135] b[i] = 0.0000109217168516862
+[tests/common/mod.rs:135] abs_diff = 0.00000003140780510142168
+[tests/common/mod.rs:135] tolerance = 0.00000001109217168516862
+S1 doesn't match
+thread 'test_1092' panicked at 'assertion failed: run_test(1092)', tests/core-semantic.rs:5528:5
+
+---- test_1098 stdout ----
+[tests/common/mod.rs:135] a[i] = 0.0
+[tests/common/mod.rs:135] b[i] = 0.2766545840787671
+[tests/common/mod.rs:135] abs_diff = 0.2766545840787671
+[tests/common/mod.rs:135] tolerance = 0.0010276654584078766
 S3 doesn't match
+thread 'test_1098' panicked at 'assertion failed: run_test(1098)', tests/core-semantic.rs:5560:5
+
+---- test_1111 stdout ----
+[tests/common/mod.rs:135] a[i] = 0.9676255671706011
+[tests/common/mod.rs:135] b[i] = 0.969617945464271
+[tests/common/mod.rs:135] abs_diff = 0.0019923782936699386
+[tests/common/mod.rs:135] tolerance = 0.0010969617945464272
+S1 doesn't match
 thread 'test_1111' panicked at 'assertion failed: run_test(1111)', tests/core-semantic.rs:5631:5
 
----- test_1128 stdout ----
-thread 'test_1128' panicked at 'Attribute 'metaid' not parsed for 'Parameter'', /home/pranav/code/rust-sbml/sbml-rs/sbml-rs/src/lib.rs:90:37
-
 ---- test_1110 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.0
-[tests/common/mod.rs:135] b[i] = 0.2651077122867101
-[tests/common/mod.rs:135] abs_diff = 0.2651077122867101
-[tests/common/mod.rs:135] tolerance = 0.001026510771228671
-S2 doesn't match
+[tests/common/mod.rs:135] a[i] = 0.8658877476597747
+[tests/common/mod.rs:135] b[i] = 0.8674461438566446
+[tests/common/mod.rs:135] abs_diff = 0.0015583961968699267
+[tests/common/mod.rs:135] tolerance = 0.0010867446143856645
+S1 doesn't match
 thread 'test_1110' panicked at 'assertion failed: run_test(1110)', tests/core-semantic.rs:5626:5
 
 ---- test_1122 stdout ----
@@ -1922,9 +1911,6 @@ thread 'test_1122' panicked at 'assertion failed: `(left == right)`
 thread 'test_1123' panicked at 'assertion failed: `(left == right)`
   left: `307`,
  right: `306`', tests/common/mod.rs:128:5
-
----- test_1160 stdout ----
-thread 'test_1160' panicked at 'Attribute 'metaid' not parsed for 'Parameter'', /home/pranav/code/rust-sbml/sbml-rs/sbml-rs/src/lib.rs:90:37
 
 ---- test_1186 stdout ----
 thread 'test_1186' panicked at 'called `Result::unwrap()` on an `Err` value: ParseFloatError { kind: Empty }', tests/common/mod.rs:71:70
@@ -1960,38 +1946,20 @@ thread 'test_1195' panicked at 'called `Result::unwrap()` on an `Err` value: Par
 thread 'test_1196' panicked at 'called `Result::unwrap()` on an `Err` value: ParseFloatError { kind: Empty }', tests/common/mod.rs:71:70
 
 ---- test_1198 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.03923076923076923
-[tests/common/mod.rs:135] b[i] = 0.04
-[tests/common/mod.rs:135] abs_diff = 0.000769230769230772
-[tests/common/mod.rs:135] tolerance = 0.00010400000000000001
-x doesn't match
-thread 'test_1198' panicked at 'assertion failed: run_test(1198)', tests/core-semantic.rs:6127:5
-
----- test_1199 stdout ----
-thread 'test_1199' panicked at 'Tag "Piecewise" not parsed under parent Piece(Piece { children: [3], expr: Some(3), condition: None, parent: None })', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:70:37
-
----- test_1200 stdout ----
-thread 'test_1200' panicked at 'Tag "Piecewise" not parsed under parent Piece(Piece { children: [], expr: None, condition: None, parent: None })', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:70:37
-
----- test_1201 stdout ----
-thread 'test_1201' panicked at 'Tag "Piecewise" not parsed under parent Piece(Piece { children: [], expr: None, condition: None, parent: None })', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:70:37
-
----- test_1202 stdout ----
-thread 'test_1202' panicked at 'Tag "Piecewise" not parsed under parent Otherwise(Otherwise { children: [], expr: None, parent: None })', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:70:37
-
----- test_1203 stdout ----
-thread 'test_1203' panicked at 'Tag "Piecewise" not parsed under parent Piece(Piece { children: [], expr: None, condition: None, parent: None })', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:70:37
-
----- test_1204 stdout ----
-thread 'test_1204' panicked at 'Tag "Piecewise" not parsed under parent Piece(Piece { children: [], expr: None, condition: None, parent: None })', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:70:37
+[tests/common/mod.rs:135] a[i] = 0.020399999999999998
+[tests/common/mod.rs:135] b[i] = 0.0208
+[tests/common/mod.rs:135] abs_diff = 0.00040000000000000105
+[tests/common/mod.rs:135] tolerance = 0.00010208
+S1 doesn't match
+thread 'test_1198' panicked at 'assertion failed: run_test(1198)', tests/core-semantic.rs:6129:5
 
 ---- test_1208 stdout ----
-[tests/common/mod.rs:135] a[i] = 5.547337278106508
-[tests/common/mod.rs:135] b[i] = 5.769230769
-[tests/common/mod.rs:135] abs_diff = 0.22189349089349175
-[tests/common/mod.rs:135] tolerance = 0.0006769230769000001
-x doesn't match
-thread 'test_1208' panicked at 'assertion failed: run_test(1208)', tests/core-semantic.rs:6177:5
+[tests/common/mod.rs:135] a[i] = 2.8846153846153846
+[tests/common/mod.rs:135] b[i] = 3.0
+[tests/common/mod.rs:135] abs_diff = 0.11538461538461542
+[tests/common/mod.rs:135] tolerance = 0.0004
+S1 doesn't match
+thread 'test_1208' panicked at 'assertion failed: run_test(1208)', tests/core-semantic.rs:6179:5
 
 ---- test_1217 stdout ----
 thread 'test_1217' panicked at 'No value found for Ci c', src/structs/bindings.rs:508:31
@@ -2002,13 +1970,13 @@ thread 'test_1218' panicked at 'No value found for Ci c', src/structs/bindings.r
 ---- test_1225 stdout ----
 thread 'test_1225' panicked at 'No value found for Ci J0', src/structs/bindings.rs:508:31
 
+---- test_1226 stdout ----
+thread 'test_1226' panicked at 'called `Result::unwrap()` on an `Err` value: "No value found for Ci J0"', src/lib.rs:43:6
+
 ---- test_1224 stdout ----
 p1 not found in b_hm
 p1 doesn't match
-thread 'test_1224' panicked at 'assertion failed: run_test(1224)', tests/core-semantic.rs:6263:5
-
----- test_1226 stdout ----
-thread 'test_1226' panicked at 'called `Result::unwrap()` on an `Err` value: "No value found for Ci J0"', src/lib.rs:43:6
+thread 'test_1224' panicked at 'assertion failed: run_test(1224)', tests/core-semantic.rs:6265:5
 
 ---- test_1231 stdout ----
 thread 'test_1231' panicked at 'called `Result::unwrap()` on an `Err` value: "No value found for Ci J0"', src/lib.rs:43:6
@@ -2016,37 +1984,37 @@ thread 'test_1231' panicked at 'called `Result::unwrap()` on an `Err` value: "No
 ---- test_1232 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1232' panicked at 'assertion failed: run_test(1232)', tests/core-semantic.rs:6307:5
+thread 'test_1232' panicked at 'assertion failed: run_test(1232)', tests/core-semantic.rs:6309:5
 
 ---- test_1234 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1234' panicked at 'assertion failed: run_test(1234)', tests/core-semantic.rs:6317:5
-
----- test_1235 stdout ----
-Time not found in b_hm
-Time doesn't match
-thread 'test_1235' panicked at 'assertion failed: run_test(1235)', tests/core-semantic.rs:6322:5
-
----- test_1236 stdout ----
-Time not found in b_hm
-Time doesn't match
-thread 'test_1236' panicked at 'assertion failed: run_test(1236)', tests/core-semantic.rs:6327:5
+thread 'test_1234' panicked at 'assertion failed: run_test(1234)', tests/core-semantic.rs:6319:5
 
 ---- test_1233 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1233' panicked at 'assertion failed: run_test(1233)', tests/core-semantic.rs:6312:5
+thread 'test_1233' panicked at 'assertion failed: run_test(1233)', tests/core-semantic.rs:6314:5
+
+---- test_1235 stdout ----
+Time not found in b_hm
+Time doesn't match
+thread 'test_1235' panicked at 'assertion failed: run_test(1235)', tests/core-semantic.rs:6324:5
+
+---- test_1236 stdout ----
+Time not found in b_hm
+Time doesn't match
+thread 'test_1236' panicked at 'assertion failed: run_test(1236)', tests/core-semantic.rs:6329:5
 
 ---- test_1245 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1245' panicked at 'assertion failed: run_test(1245)', tests/core-semantic.rs:6380:5
+thread 'test_1245' panicked at 'assertion failed: run_test(1245)', tests/core-semantic.rs:6382:5
 
 ---- test_1246 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1246' panicked at 'assertion failed: run_test(1246)', tests/core-semantic.rs:6385:5
+thread 'test_1246' panicked at 'assertion failed: run_test(1246)', tests/core-semantic.rs:6387:5
 
 ---- test_1271 stdout ----
 thread 'test_1271' panicked at 'called `Option::unwrap()` on a `None` value', /home/pranav/code/rust-sbml/sbml-rs/sbml-rs/src/structs/model.rs:113:64
@@ -2063,9 +2031,6 @@ thread 'test_1274' panicked at 'Tag not parsed: implies', /home/pranav/code/rust
 ---- test_1275 stdout ----
 thread 'test_1275' panicked at 'Tag not parsed: max', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
 
----- test_1276 stdout ----
-thread 'test_1276' panicked at 'Tag not parsed: min', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
-
 ---- test_1277 stdout ----
 thread 'test_1277' panicked at 'Tag not parsed: quotient', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
 
@@ -2074,6 +2039,9 @@ thread 'test_1278' panicked at 'Tag not parsed: rem', /home/pranav/code/rust-sbm
 
 ---- test_1279 stdout ----
 thread 'test_1279' panicked at 'Tag not parsed: implies', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
+
+---- test_1276 stdout ----
+thread 'test_1276' panicked at 'Tag not parsed: min', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
 
 ---- test_1280 stdout ----
 thread 'test_1280' panicked at 'Tag not parsed: max', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
@@ -2084,7 +2052,7 @@ thread 'test_1281' panicked at 'Tag not parsed: min', /home/pranav/code/rust-sbm
 ---- test_1282 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1282' panicked at 'assertion failed: run_test(1282)', tests/core-semantic.rs:6589:5
+thread 'test_1282' panicked at 'assertion failed: run_test(1282)', tests/core-semantic.rs:6591:5
 
 ---- test_1283 stdout ----
 thread 'test_1283' panicked at 'Tag "Constant::True" not parsed under parent Otherwise(Otherwise { children: [], expr: None, parent: None })', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:62:32
@@ -2095,7 +2063,7 @@ thread 'test_1288' panicked at 'Tag "Constant::False" not parsed under parent Ro
 ---- test_1289 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1289' panicked at 'assertion failed: run_test(1289)', tests/core-semantic.rs:6628:5
+thread 'test_1289' panicked at 'assertion failed: run_test(1289)', tests/core-semantic.rs:6630:5
 
 ---- test_1290 stdout ----
 thread 'test_1290' panicked at 'Tag "Constant::True" not parsed under parent Root(Root { children: [], parent: None })', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:62:32
@@ -2104,9 +2072,9 @@ thread 'test_1290' panicked at 'Tag "Constant::True" not parsed under parent Roo
 thread 'test_1291' panicked at 'Tag "Constant::True" not parsed under parent Root(Root { children: [], parent: None })', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:62:32
 
 ---- test_1300 stdout ----
-Time not found in b_hm
-Time doesn't match
-thread 'test_1300' panicked at 'assertion failed: run_test(1300)', tests/core-semantic.rs:6691:5
+p1 not found in b_hm
+p1 doesn't match
+thread 'test_1300' panicked at 'assertion failed: run_test(1300)', tests/core-semantic.rs:6693:5
 
 ---- test_1301 stdout ----
 thread 'test_1301' panicked at 'No value found for Ci J0', src/structs/bindings.rs:508:31
@@ -2120,17 +2088,17 @@ thread 'test_1302' panicked at 'called `Result::unwrap()` on an `Err` value: "No
 [tests/common/mod.rs:135] abs_diff = 1.3333333330000001
 [tests/common/mod.rs:135] tolerance = 0.0001666666667
 S1 doesn't match
-thread 'test_1307' panicked at 'assertion failed: run_test(1307)', tests/core-semantic.rs:6730:5
+thread 'test_1307' panicked at 'assertion failed: run_test(1307)', tests/core-semantic.rs:6732:5
 
 ---- test_1308 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1308' panicked at 'assertion failed: run_test(1308)', tests/core-semantic.rs:6735:5
+thread 'test_1308' panicked at 'assertion failed: run_test(1308)', tests/core-semantic.rs:6737:5
 
 ---- test_1309 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1309' panicked at 'assertion failed: run_test(1309)', tests/core-semantic.rs:6740:5
+thread 'test_1309' panicked at 'assertion failed: run_test(1309)', tests/core-semantic.rs:6742:5
 
 ---- test_1323 stdout ----
 thread 'test_1323' panicked at 'Incorrect type: ParseIntError { kind: InvalidDigit }', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:143:58
@@ -2144,7 +2112,7 @@ thread 'test_1343' panicked at 'Tag not parsed: tanh', /home/pranav/code/rust-sb
 [tests/common/mod.rs:135] abs_diff = 1.0
 [tests/common/mod.rs:135] tolerance = 0.0004
 A doesn't match
-thread 'test_1420' panicked at 'assertion failed: run_test(1420)', tests/core-semantic.rs:7368:5
+thread 'test_1420' panicked at 'assertion failed: run_test(1420)', tests/core-semantic.rs:7370:5
 
 ---- test_1421 stdout ----
 [tests/common/mod.rs:135] a[i] = 3.0
@@ -2152,7 +2120,7 @@ thread 'test_1420' panicked at 'assertion failed: run_test(1420)', tests/core-se
 [tests/common/mod.rs:135] abs_diff = 1.0
 [tests/common/mod.rs:135] tolerance = 0.0005
 A doesn't match
-thread 'test_1421' panicked at 'assertion failed: run_test(1421)', tests/core-semantic.rs:7373:5
+thread 'test_1421' panicked at 'assertion failed: run_test(1421)', tests/core-semantic.rs:7375:5
 
 ---- test_1422 stdout ----
 [tests/common/mod.rs:135] a[i] = 0.0
@@ -2160,7 +2128,7 @@ thread 'test_1421' panicked at 'assertion failed: run_test(1421)', tests/core-se
 [tests/common/mod.rs:135] abs_diff = 1.0
 [tests/common/mod.rs:135] tolerance = 0.0002
 A doesn't match
-thread 'test_1422' panicked at 'assertion failed: run_test(1422)', tests/core-semantic.rs:7378:5
+thread 'test_1422' panicked at 'assertion failed: run_test(1422)', tests/core-semantic.rs:7380:5
 
 ---- test_1428 stdout ----
 [tests/common/mod.rs:135] a[i] = 2.0
@@ -2168,7 +2136,7 @@ thread 'test_1422' panicked at 'assertion failed: run_test(1422)', tests/core-se
 [tests/common/mod.rs:135] abs_diff = 1.0
 [tests/common/mod.rs:135] tolerance = 0.0004
 A doesn't match
-thread 'test_1428' panicked at 'assertion failed: run_test(1428)', tests/core-semantic.rs:7408:5
+thread 'test_1428' panicked at 'assertion failed: run_test(1428)', tests/core-semantic.rs:7410:5
 
 ---- test_1429 stdout ----
 [tests/common/mod.rs:135] a[i] = 3.0
@@ -2176,15 +2144,15 @@ thread 'test_1428' panicked at 'assertion failed: run_test(1428)', tests/core-se
 [tests/common/mod.rs:135] abs_diff = 1.0
 [tests/common/mod.rs:135] tolerance = 0.0005
 A doesn't match
-thread 'test_1429' panicked at 'assertion failed: run_test(1429)', tests/core-semantic.rs:7413:5
+thread 'test_1429' panicked at 'assertion failed: run_test(1429)', tests/core-semantic.rs:7415:5
 
 ---- test_1430 stdout ----
-[tests/common/mod.rs:135] a[i] = 19.0
-[tests/common/mod.rs:135] b[i] = 18.0
+[tests/common/mod.rs:135] a[i] = 2.0
+[tests/common/mod.rs:135] b[i] = 3.0
 [tests/common/mod.rs:135] abs_diff = 1.0
-[tests/common/mod.rs:135] tolerance = 0.0019000000000000002
-A doesn't match
-thread 'test_1430' panicked at 'assertion failed: run_test(1430)', tests/core-semantic.rs:7418:5
+[tests/common/mod.rs:135] tolerance = 0.0004
+B doesn't match
+thread 'test_1430' panicked at 'assertion failed: run_test(1430)', tests/core-semantic.rs:7420:5
 
 ---- test_1434 stdout ----
 [tests/common/mod.rs:135] a[i] = 2.0
@@ -2192,7 +2160,7 @@ thread 'test_1430' panicked at 'assertion failed: run_test(1430)', tests/core-se
 [tests/common/mod.rs:135] abs_diff = 2.0
 [tests/common/mod.rs:135] tolerance = 0.0005
 A doesn't match
-thread 'test_1434' panicked at 'assertion failed: run_test(1434)', tests/core-semantic.rs:7438:5
+thread 'test_1434' panicked at 'assertion failed: run_test(1434)', tests/core-semantic.rs:7440:5
 
 ---- test_1438 stdout ----
 [tests/common/mod.rs:135] a[i] = 2.0
@@ -2200,15 +2168,7 @@ thread 'test_1434' panicked at 'assertion failed: run_test(1434)', tests/core-se
 [tests/common/mod.rs:135] abs_diff = 2.0
 [tests/common/mod.rs:135] tolerance = 0.0005
 A doesn't match
-thread 'test_1438' panicked at 'assertion failed: run_test(1438)', tests/core-semantic.rs:7448:5
-
----- test_1433 stdout ----
-[tests/common/mod.rs:135] a[i] = 3.9999999999999996
-[tests/common/mod.rs:135] b[i] = 5.0
-[tests/common/mod.rs:135] abs_diff = 1.0000000000000004
-[tests/common/mod.rs:135] tolerance = 0.0006000000000000001
-A doesn't match
-thread 'test_1433' panicked at 'assertion failed: run_test(1433)', tests/core-semantic.rs:7433:5
+thread 'test_1438' panicked at 'assertion failed: run_test(1438)', tests/core-semantic.rs:7450:5
 
 ---- test_1440 stdout ----
 [tests/common/mod.rs:135] a[i] = 2.0
@@ -2216,30 +2176,38 @@ thread 'test_1433' panicked at 'assertion failed: run_test(1433)', tests/core-se
 [tests/common/mod.rs:135] abs_diff = 2.0
 [tests/common/mod.rs:135] tolerance = 0.0005
 B doesn't match
-thread 'test_1440' panicked at 'assertion failed: run_test(1440)', tests/core-semantic.rs:7453:5
+thread 'test_1440' panicked at 'assertion failed: run_test(1440)', tests/core-semantic.rs:7455:5
+
+---- test_1433 stdout ----
+[tests/common/mod.rs:135] a[i] = 3.9999999999999996
+[tests/common/mod.rs:135] b[i] = 5.0
+[tests/common/mod.rs:135] abs_diff = 1.0000000000000004
+[tests/common/mod.rs:135] tolerance = 0.0006000000000000001
+A doesn't match
+thread 'test_1433' panicked at 'assertion failed: run_test(1433)', tests/core-semantic.rs:7435:5
 
 ---- test_1449 stdout ----
 thread 'test_1449' panicked at 'Invalid key A1_sr', src/structs/bindings.rs:744:13
 
 ---- test_1450 stdout ----
-thread 'test_1450' panicked at 'Invalid key A1_sr2', src/structs/bindings.rs:744:13
+thread 'test_1450' panicked at 'Invalid key A1_sr', src/structs/bindings.rs:744:13
 
 ---- test_1451 stdout ----
-thread 'test_1451' panicked at 'Invalid key A1_sr', src/structs/bindings.rs:744:13
+thread 'test_1451' panicked at 'Invalid key A1_sr2', src/structs/bindings.rs:744:13
 
 ---- test_1452 stdout ----
-thread 'test_1452' panicked at 'Invalid key B_sr2', src/structs/bindings.rs:744:13
+thread 'test_1452' panicked at 'Invalid key A_sr1', src/structs/bindings.rs:744:13
 
 ---- test_1453 stdout ----
-thread 'test_1453' panicked at 'Invalid key A_sr1', src/structs/bindings.rs:744:13
+thread 'test_1453' panicked at 'Invalid key B_sr2', src/structs/bindings.rs:744:13
 
 ---- test_1478 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.020399999999999998
-[tests/common/mod.rs:135] b[i] = 0.0208
-[tests/common/mod.rs:135] abs_diff = 0.00040000000000000105
-[tests/common/mod.rs:135] tolerance = 0.00010208
-S1 doesn't match
-thread 'test_1478' panicked at 'assertion failed: run_test(1478)', tests/core-semantic.rs:7660:5
+[tests/common/mod.rs:135] a[i] = 0.03923076923076923
+[tests/common/mod.rs:135] b[i] = 0.04
+[tests/common/mod.rs:135] abs_diff = 0.000769230769230772
+[tests/common/mod.rs:135] tolerance = 0.00010400000000000001
+x doesn't match
+thread 'test_1478' panicked at 'assertion failed: run_test(1478)', tests/core-semantic.rs:7662:5
 
 ---- test_1485 stdout ----
 thread 'test_1485' panicked at 'Tag not parsed: abs', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
@@ -2254,51 +2222,41 @@ thread 'test_1487' panicked at 'Tag not parsed: abs', /home/pranav/code/rust-sbm
 thread 'test_1488' panicked at 'Tag not parsed: sec', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
 
 ---- test_1489 stdout ----
-e not found in b_hm
-e doesn't match
-thread 'test_1489' panicked at 'assertion failed: run_test(1489)', tests/core-semantic.rs:7715:5
+thread 'test_1489' panicked at 'Condition not supported', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/methods/evaluate.rs:451:17
 
 ---- test_1490 stdout ----
-thread 'test_1490' panicked at 'Condition not supported', src/structs/bindings.rs:508:31
+thread 'test_1490' panicked at 'Condition not supported', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/methods/evaluate.rs:451:17
 
 ---- test_1491 stdout ----
-thread 'test_1491' panicked at 'Condition not supported', src/structs/bindings.rs:508:31
+thread 'test_1491' panicked at 'Condition not supported', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/methods/evaluate.rs:451:17
 
----- test_1492 stdout ----
-thread 'test_1492' panicked at 'Couldn't evaluate operator Ci: text: Some("y"), parent: Some(9)', src/structs/bindings.rs:508:31
-
----- test_1493 stdout ----
-thread 'test_1493' panicked at 'Couldn't evaluate operator Ci: text: Some("y"), parent: Some(9)', src/structs/bindings.rs:508:31
+---- test_1494 stdout ----
+thread 'test_1494' panicked at 'Condition not supported', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/methods/evaluate.rs:451:17
 
 ---- test_1495 stdout ----
 thread 'test_1495' panicked at 'Tag not parsed: quotient', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
 
----- test_1496 stdout ----
-thread 'test_1496' panicked at 'Tag not parsed: rem', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
-
 ---- test_1497 stdout ----
 thread 'test_1497' panicked at 'Tag not parsed: implies', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
 
----- test_1494 stdout ----
-P3 not found in b_hm
-P3 doesn't match
-thread 'test_1494' panicked at 'assertion failed: run_test(1494)', tests/core-semantic.rs:7740:5
+---- test_1496 stdout ----
+thread 'test_1496' panicked at 'Tag not parsed: rem', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
 
 ---- test_1498 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.020399999999999998
-[tests/common/mod.rs:135] b[i] = 0.0208
-[tests/common/mod.rs:135] abs_diff = 0.00040000000000000105
-[tests/common/mod.rs:135] tolerance = 0.00010208
-S1 doesn't match
-thread 'test_1498' panicked at 'assertion failed: run_test(1498)', tests/core-semantic.rs:7760:5
+[tests/common/mod.rs:135] a[i] = 0.03923076923076923
+[tests/common/mod.rs:135] b[i] = 0.04
+[tests/common/mod.rs:135] abs_diff = 0.000769230769230772
+[tests/common/mod.rs:135] tolerance = 0.00010400000000000001
+x doesn't match
+thread 'test_1498' panicked at 'assertion failed: run_test(1498)', tests/core-semantic.rs:7762:5
 
 ---- test_1513 stdout ----
-[tests/common/mod.rs:135] a[i] = 1.4815384615384615
-[tests/common/mod.rs:135] b[i] = 1.54
-[tests/common/mod.rs:135] abs_diff = 0.058461538461538565
-[tests/common/mod.rs:135] tolerance = 0.000254
-x doesn't match
-thread 'test_1513' panicked at 'assertion failed: run_test(1513)', tests/core-semantic.rs:7849:5
+[tests/common/mod.rs:135] a[i] = 0.7704
+[tests/common/mod.rs:135] b[i] = 0.8008
+[tests/common/mod.rs:135] abs_diff = 0.030399999999999983
+[tests/common/mod.rs:135] tolerance = 0.00018008
+S1 doesn't match
+thread 'test_1513' panicked at 'assertion failed: run_test(1513)', tests/core-semantic.rs:7851:5
 
 ---- test_1514 stdout ----
 thread 'test_1514' panicked at 'Compartment size not found.', src/structs/bindings.rs:302:30
@@ -2312,32 +2270,32 @@ thread 'test_1516' panicked at 'Tag not parsed: abs', /home/pranav/code/rust-sbm
 ---- test_1552 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1552' panicked at 'assertion failed: run_test(1552)', tests/core-semantic.rs:8019:5
+thread 'test_1552' panicked at 'assertion failed: run_test(1552)', tests/core-semantic.rs:8021:5
 
 ---- test_1553 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1553' panicked at 'assertion failed: run_test(1553)', tests/core-semantic.rs:8024:5
-
----- test_1554 stdout ----
-Time not found in b_hm
-Time doesn't match
-thread 'test_1554' panicked at 'assertion failed: run_test(1554)', tests/core-semantic.rs:8029:5
+thread 'test_1553' panicked at 'assertion failed: run_test(1553)', tests/core-semantic.rs:8026:5
 
 ---- test_1555 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1555' panicked at 'assertion failed: run_test(1555)', tests/core-semantic.rs:8034:5
+thread 'test_1555' panicked at 'assertion failed: run_test(1555)', tests/core-semantic.rs:8036:5
+
+---- test_1554 stdout ----
+Time not found in b_hm
+Time doesn't match
+thread 'test_1554' panicked at 'assertion failed: run_test(1554)', tests/core-semantic.rs:8031:5
 
 ---- test_1556 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1556' panicked at 'assertion failed: run_test(1556)', tests/core-semantic.rs:8039:5
+thread 'test_1556' panicked at 'assertion failed: run_test(1556)', tests/core-semantic.rs:8041:5
 
 ---- test_1557 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1557' panicked at 'assertion failed: run_test(1557)', tests/core-semantic.rs:8044:5
+thread 'test_1557' panicked at 'assertion failed: run_test(1557)', tests/core-semantic.rs:8046:5
 
 ---- test_1561 stdout ----
 thread 'test_1561' panicked at 'Tag not parsed: exponentiale', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
@@ -2345,16 +2303,16 @@ thread 'test_1561' panicked at 'Tag not parsed: exponentiale', /home/pranav/code
 ---- test_1563 stdout ----
 thread 'test_1563' panicked at 'Tag not parsed: exponentiale', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
 
----- test_1566 stdout ----
-thread 'test_1566' panicked at 'Tag not parsed: exp', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
-
 ---- test_1564 stdout ----
 thread 'test_1564' panicked at 'Tag not parsed: exponentiale', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
+
+---- test_1566 stdout ----
+thread 'test_1566' panicked at 'Tag not parsed: exp', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
 
 ---- test_1574 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1574' panicked at 'assertion failed: run_test(1574)', tests/core-semantic.rs:8069:5
+thread 'test_1574' panicked at 'assertion failed: run_test(1574)', tests/core-semantic.rs:8071:5
 
 ---- test_1594 stdout ----
 thread 'test_1594' panicked at 'Tag not parsed: cosh', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
@@ -2419,9 +2377,6 @@ thread 'test_1620' panicked at 'called `Result::unwrap()` on an `Err` value: Par
 ---- test_1621 stdout ----
 thread 'test_1621' panicked at 'called `Result::unwrap()` on an `Err` value: ParseFloatError { kind: Empty }', tests/common/mod.rs:71:70
 
----- test_1622 stdout ----
-thread 'test_1622' panicked at 'called `Result::unwrap()` on an `Err` value: ParseFloatError { kind: Empty }', tests/common/mod.rs:71:70
-
 ---- test_1623 stdout ----
 thread 'test_1623' panicked at 'called `Result::unwrap()` on an `Err` value: ParseFloatError { kind: Empty }', tests/common/mod.rs:71:70
 
@@ -2437,27 +2392,33 @@ thread 'test_1628' panicked at 'called `Result::unwrap()` on an `Err` value: Par
 ---- test_1629 stdout ----
 thread 'test_1629' panicked at 'called `Result::unwrap()` on an `Err` value: ParseFloatError { kind: Empty }', tests/common/mod.rs:71:70
 
+---- test_1622 stdout ----
+thread 'test_1622' panicked at 'called `Result::unwrap()` on an `Err` value: ParseFloatError { kind: Empty }', tests/common/mod.rs:71:70
+
 ---- test_1630 stdout ----
 thread 'test_1630' panicked at 'called `Result::unwrap()` on an `Err` value: ParseFloatError { kind: Empty }', tests/common/mod.rs:71:70
 
 ---- test_1631 stdout ----
 thread 'test_1631' panicked at 'Invalid key S1_create', src/structs/bindings.rs:744:13
 
----- test_1633 stdout ----
-thread 'test_1633' panicked at 'Invalid key S2_create', src/structs/bindings.rs:744:13
-
 ---- test_1635 stdout ----
 thread 'test_1635' panicked at 'Invalid key S1_stoich', src/structs/bindings.rs:744:13
+
+---- test_1633 stdout ----
+thread 'test_1633' panicked at 'Invalid key S2_create', src/structs/bindings.rs:744:13
 
 ---- test_1643 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1643' panicked at 'assertion failed: run_test(1643)', tests/core-semantic.rs:8391:5
+thread 'test_1643' panicked at 'assertion failed: run_test(1643)', tests/core-semantic.rs:8393:5
 
 ---- test_1646 stdout ----
-Time not found in b_hm
-Time doesn't match
-thread 'test_1646' panicked at 'assertion failed: run_test(1646)', tests/core-semantic.rs:8408:5
+[tests/common/mod.rs:135] a[i] = 1.99
+[tests/common/mod.rs:135] b[i] = 1.95
+[tests/common/mod.rs:135] abs_diff = 0.040000000000000036
+[tests/common/mod.rs:135] tolerance = 0.000295
+S1 doesn't match
+thread 'test_1646' panicked at 'assertion failed: run_test(1646)', tests/core-semantic.rs:8410:5
 
 ---- test_1649 stdout ----
 [tests/common/mod.rs:135] a[i] = 1.99
@@ -2465,37 +2426,43 @@ thread 'test_1646' panicked at 'assertion failed: run_test(1646)', tests/core-se
 [tests/common/mod.rs:135] abs_diff = 0.040000000000000036
 [tests/common/mod.rs:135] tolerance = 0.000295
 S1 doesn't match
-thread 'test_1649' panicked at 'assertion failed: run_test(1649)', tests/core-semantic.rs:8425:5
-
----- test_1654 stdout ----
-Time not found in b_hm
-Time doesn't match
-thread 'test_1654' panicked at 'assertion failed: run_test(1654)', tests/core-semantic.rs:8453:5
+thread 'test_1649' panicked at 'assertion failed: run_test(1649)', tests/core-semantic.rs:8427:5
 
 ---- test_1652 stdout ----
-Time not found in b_hm
-Time doesn't match
-thread 'test_1652' panicked at 'assertion failed: run_test(1652)', tests/core-semantic.rs:8442:5
+[tests/common/mod.rs:135] a[i] = 1.98
+[tests/common/mod.rs:135] b[i] = 1.8
+[tests/common/mod.rs:135] abs_diff = 0.17999999999999994
+[tests/common/mod.rs:135] tolerance = 0.00028000000000000003
+S1 doesn't match
+thread 'test_1652' panicked at 'assertion failed: run_test(1652)', tests/core-semantic.rs:8444:5
 
 ---- test_1655 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1655' panicked at 'assertion failed: run_test(1655)', tests/core-semantic.rs:8458:5
+thread 'test_1655' panicked at 'assertion failed: run_test(1655)', tests/core-semantic.rs:8460:5
 
 ---- test_1657 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1657' panicked at 'assertion failed: run_test(1657)', tests/core-semantic.rs:8463:5
+thread 'test_1657' panicked at 'assertion failed: run_test(1657)', tests/core-semantic.rs:8465:5
+
+---- test_1654 stdout ----
+Time not found in b_hm
+Time doesn't match
+thread 'test_1654' panicked at 'assertion failed: run_test(1654)', tests/core-semantic.rs:8455:5
 
 ---- test_1667 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1667' panicked at 'assertion failed: run_test(1667)', tests/core-semantic.rs:8522:5
+thread 'test_1667' panicked at 'assertion failed: run_test(1667)', tests/core-semantic.rs:8524:5
 
 ---- test_1725 stdout ----
-Time not found in b_hm
-Time doesn't match
-thread 'test_1725' panicked at 'assertion failed: run_test(1725)', tests/core-semantic.rs:8869:5
+[tests/common/mod.rs:135] a[i] = 1.985
+[tests/common/mod.rs:135] b[i] = 1.925
+[tests/common/mod.rs:135] abs_diff = 0.06000000000000005
+[tests/common/mod.rs:135] tolerance = 0.0002925
+S1 doesn't match
+thread 'test_1725' panicked at 'assertion failed: run_test(1725)', tests/core-semantic.rs:8871:5
 
 ---- test_1728 stdout ----
 thread 'test_1728' panicked at 'Invalid key S1_stoich', src/structs/bindings.rs:744:13
@@ -2506,15 +2473,15 @@ thread 'test_1728' panicked at 'Invalid key S1_stoich', src/structs/bindings.rs:
 [tests/common/mod.rs:135] abs_diff = 0.040000000000000036
 [tests/common/mod.rs:135] tolerance = 0.000295
 S1 doesn't match
-thread 'test_1731' panicked at 'assertion failed: run_test(1731)', tests/core-semantic.rs:8903:5
-
----- test_1737 stdout ----
-thread 'test_1737' panicked at 'Invalid key S3_stoich', src/structs/bindings.rs:744:13
+thread 'test_1731' panicked at 'assertion failed: run_test(1731)', tests/core-semantic.rs:8905:5
 
 ---- test_1734 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1734' panicked at 'assertion failed: run_test(1734)', tests/core-semantic.rs:8920:5
+thread 'test_1734' panicked at 'assertion failed: run_test(1734)', tests/core-semantic.rs:8922:5
+
+---- test_1737 stdout ----
+thread 'test_1737' panicked at 'Invalid key S3_stoich', src/structs/bindings.rs:744:13
 
 ---- test_1742 stdout ----
 thread 'test_1742' panicked at 'Invalid key S1_stoich', src/structs/bindings.rs:744:13
@@ -2522,70 +2489,70 @@ thread 'test_1742' panicked at 'Invalid key S1_stoich', src/structs/bindings.rs:
 ---- test_1746 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1746' panicked at 'assertion failed: run_test(1746)', tests/core-semantic.rs:8976:5
+thread 'test_1746' panicked at 'assertion failed: run_test(1746)', tests/core-semantic.rs:8978:5
 
 ---- test_1740 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1740' panicked at 'assertion failed: run_test(1740)', tests/core-semantic.rs:8954:5
+thread 'test_1740' panicked at 'assertion failed: run_test(1740)', tests/core-semantic.rs:8956:5
 
 ---- test_1760 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1760' panicked at 'assertion failed: run_test(1760)', tests/core-semantic.rs:9023:5
+thread 'test_1760' panicked at 'assertion failed: run_test(1760)', tests/core-semantic.rs:9025:5
 
 ---- test_1761 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1761' panicked at 'assertion failed: run_test(1761)', tests/core-semantic.rs:9028:5
+thread 'test_1761' panicked at 'assertion failed: run_test(1761)', tests/core-semantic.rs:9030:5
 
 ---- test_1766 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1766' panicked at 'assertion failed: run_test(1766)', tests/core-semantic.rs:9045:5
+thread 'test_1766' panicked at 'assertion failed: run_test(1766)', tests/core-semantic.rs:9047:5
 
 ---- test_1767 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1767' panicked at 'assertion failed: run_test(1767)', tests/core-semantic.rs:9050:5
+thread 'test_1767' panicked at 'assertion failed: run_test(1767)', tests/core-semantic.rs:9052:5
 
 ---- test_1768 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1768' panicked at 'assertion failed: run_test(1768)', tests/core-semantic.rs:9055:5
+thread 'test_1768' panicked at 'assertion failed: run_test(1768)', tests/core-semantic.rs:9057:5
 
 ---- test_1773 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1773' panicked at 'assertion failed: run_test(1773)', tests/core-semantic.rs:9084:5
+thread 'test_1773' panicked at 'assertion failed: run_test(1773)', tests/core-semantic.rs:9086:5
 
 ---- test_1774 stdout ----
 Time not found in b_hm
 Time doesn't match
-thread 'test_1774' panicked at 'assertion failed: run_test(1774)', tests/core-semantic.rs:9089:5
+thread 'test_1774' panicked at 'assertion failed: run_test(1774)', tests/core-semantic.rs:9091:5
 
 ---- test_586 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.16257715584758625
-[tests/common/mod.rs:135] b[i] = 0.1083847705643731
-[tests/common/mod.rs:135] abs_diff = 0.05419238528321316
-[tests/common/mod.rs:135] tolerance = 0.0010108384770564373
-S2 doesn't match
+[tests/common/mod.rs:135] a[i] = 2.25
+[tests/common/mod.rs:135] b[i] = 1.5
+[tests/common/mod.rs:135] abs_diff = 0.75
+[tests/common/mod.rs:135] tolerance = 0.00115
+S1 doesn't match
 thread 'test_586' panicked at 'assertion failed: run_test(586)', tests/core-semantic.rs:2972:5
 
 ---- test_587 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.00007
-[tests/common/mod.rs:135] b[i] = 0.0001
-[tests/common/mod.rs:135] abs_diff = 0.00003000000000000001
-[tests/common/mod.rs:135] tolerance = 0.00000010999999999999999
-S1 doesn't match
+[tests/common/mod.rs:135] a[i] = 0.00010499999999999999
+[tests/common/mod.rs:135] b[i] = 0.00015
+[tests/common/mod.rs:135] abs_diff = 0.000044999999999999996
+[tests/common/mod.rs:135] tolerance = 0.000000115
+S3 doesn't match
 thread 'test_587' panicked at 'assertion failed: run_test(587)', tests/core-semantic.rs:2977:5
 
 ---- test_588 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.6
-[tests/common/mod.rs:135] b[i] = 2.0
-[tests/common/mod.rs:135] abs_diff = 1.4
-[tests/common/mod.rs:135] tolerance = 0.0012000000000000001
-S3 doesn't match
+[tests/common/mod.rs:135] a[i] = 0.51
+[tests/common/mod.rs:135] b[i] = 1.7
+[tests/common/mod.rs:135] abs_diff = 1.19
+[tests/common/mod.rs:135] tolerance = 0.00117
+S2 doesn't match
 thread 'test_588' panicked at 'assertion failed: run_test(588)', tests/core-semantic.rs:2982:5
 
 ---- test_601 stdout ----
@@ -2605,12 +2572,20 @@ S2 doesn't match
 thread 'test_604' panicked at 'assertion failed: run_test(604)', tests/core-semantic.rs:3057:5
 
 ---- test_602 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.006999999999999999
-[tests/common/mod.rs:135] b[i] = 0.01
-[tests/common/mod.rs:135] abs_diff = 0.003000000000000001
-[tests/common/mod.rs:135] tolerance = 0.000011000000000000001
-S1 doesn't match
+[tests/common/mod.rs:135] a[i] = 0.013999999999999999
+[tests/common/mod.rs:135] b[i] = 0.02
+[tests/common/mod.rs:135] abs_diff = 0.006000000000000002
+[tests/common/mod.rs:135] tolerance = 0.000012
+S2 doesn't match
 thread 'test_602' panicked at 'assertion failed: run_test(602)', tests/core-semantic.rs:3047:5
+
+---- test_607 stdout ----
+[tests/common/mod.rs:135] a[i] = 0.0000015
+[tests/common/mod.rs:135] b[i] = 0.000015
+[tests/common/mod.rs:135] abs_diff = 0.0000135
+[tests/common/mod.rs:135] tolerance = 0.0000000115
+S2 doesn't match
+thread 'test_607' panicked at 'assertion failed: run_test(607)', tests/core-semantic.rs:3072:5
 
 ---- test_603 stdout ----
 [tests/common/mod.rs:135] a[i] = 0.44999999999999996
@@ -2620,13 +2595,13 @@ thread 'test_602' panicked at 'assertion failed: run_test(602)', tests/core-sema
 S1 doesn't match
 thread 'test_603' panicked at 'assertion failed: run_test(603)', tests/core-semantic.rs:3052:5
 
----- test_607 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.00000225
-[tests/common/mod.rs:135] b[i] = 0.0000225
-[tests/common/mod.rs:135] abs_diff = 0.00002025
-[tests/common/mod.rs:135] tolerance = 0.00000001225
-S4 doesn't match
-thread 'test_607' panicked at 'assertion failed: run_test(607)', tests/core-semantic.rs:3072:5
+---- test_608 stdout ----
+[tests/common/mod.rs:135] a[i] = 0.010885154893822697
+[tests/common/mod.rs:135] b[i] = 0.1360644352381828
+[tests/common/mod.rs:135] abs_diff = 0.1251792803443601
+[tests/common/mod.rs:135] tolerance = 0.0010136064435238184
+S3 doesn't match
+thread 'test_608' panicked at 'assertion failed: run_test(608)', tests/core-semantic.rs:3077:5
 
 ---- test_605 stdout ----
 [tests/common/mod.rs:135] a[i] = 0.45999999999999996
@@ -2636,28 +2611,20 @@ thread 'test_607' panicked at 'assertion failed: run_test(607)', tests/core-sema
 S2 doesn't match
 thread 'test_605' panicked at 'assertion failed: run_test(605)', tests/core-semantic.rs:3062:5
 
----- test_608 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.014513539858430262
-[tests/common/mod.rs:135] b[i] = 0.1814192469842437
-[tests/common/mod.rs:135] abs_diff = 0.16690570712581343
-[tests/common/mod.rs:135] tolerance = 0.0010181419246984244
-S2 doesn't match
-thread 'test_608' panicked at 'assertion failed: run_test(608)', tests/core-semantic.rs:3077:5
-
 ---- test_606 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.0125
-[tests/common/mod.rs:135] b[i] = 0.001
-[tests/common/mod.rs:135] abs_diff = 0.0115
-[tests/common/mod.rs:135] tolerance = 0.0000011
-S2 doesn't match
+[tests/common/mod.rs:135] a[i] = 0.00625
+[tests/common/mod.rs:135] b[i] = 0.0005
+[tests/common/mod.rs:135] abs_diff = 0.00575
+[tests/common/mod.rs:135] tolerance = 0.00000105
+S1 doesn't match
 thread 'test_606' panicked at 'assertion failed: run_test(606)', tests/core-semantic.rs:3067:5
 
 ---- test_688 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.375
-[tests/common/mod.rs:135] b[i] = 0.15
-[tests/common/mod.rs:135] abs_diff = 0.225
-[tests/common/mod.rs:135] tolerance = 0.000115
-S2 doesn't match
+[tests/common/mod.rs:135] a[i] = 0.2499999999999994
+[tests/common/mod.rs:135] b[i] = 0.1
+[tests/common/mod.rs:135] abs_diff = 0.14999999999999938
+[tests/common/mod.rs:135] tolerance = 0.00011
+S1 doesn't match
 thread 'test_688' panicked at 'assertion failed: run_test(688)', tests/core-semantic.rs:3516:5
 
 ---- test_686 stdout ----
@@ -2665,23 +2632,23 @@ thread 'test_688' panicked at 'assertion failed: run_test(688)', tests/core-sema
 [tests/common/mod.rs:135] b[i] = 0.000015
 [tests/common/mod.rs:135] abs_diff = 0.000022500000000000005
 [tests/common/mod.rs:135] tolerance = 0.0000000115
-S2 doesn't match
+S4 doesn't match
 thread 'test_686' panicked at 'assertion failed: run_test(686)', tests/core-semantic.rs:3505:5
 
 ---- test_685 stdout ----
-[tests/common/mod.rs:135] a[i] = 2.5
-[tests/common/mod.rs:135] b[i] = 1.0
-[tests/common/mod.rs:135] abs_diff = 1.5
-[tests/common/mod.rs:135] tolerance = 0.0011
-S1 doesn't match
+[tests/common/mod.rs:135] a[i] = 1.875
+[tests/common/mod.rs:135] b[i] = 0.75
+[tests/common/mod.rs:135] abs_diff = 1.125
+[tests/common/mod.rs:135] tolerance = 0.001075
+S3 doesn't match
 thread 'test_685' panicked at 'assertion failed: run_test(685)', tests/core-semantic.rs:3500:5
 
 ---- test_709 stdout ----
-[tests/common/mod.rs:135] a[i] = 1.0
-[tests/common/mod.rs:135] b[i] = 2.0
-[tests/common/mod.rs:135] abs_diff = 1.0
-[tests/common/mod.rs:135] tolerance = 0.0102
-S2 doesn't match
+[tests/common/mod.rs:135] a[i] = 2.0
+[tests/common/mod.rs:135] b[i] = 4.0
+[tests/common/mod.rs:135] abs_diff = 2.0
+[tests/common/mod.rs:135] tolerance = 0.0104
+S4 doesn't match
 thread 'test_709' panicked at 'assertion failed: run_test(709)', tests/core-semantic.rs:3632:5
 
 ---- test_710 stdout ----
@@ -2693,11 +2660,11 @@ S3 doesn't match
 thread 'test_710' panicked at 'assertion failed: run_test(710)', tests/core-semantic.rs:3637:5
 
 ---- test_711 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.0001395
-[tests/common/mod.rs:135] b[i] = 0.00015
-[tests/common/mod.rs:135] abs_diff = 0.000010499999999999984
-[tests/common/mod.rs:135] tolerance = 0.000000115
-S3 doesn't match
+[tests/common/mod.rs:135] a[i] = 0.00018600000000000002
+[tests/common/mod.rs:135] b[i] = 0.0002
+[tests/common/mod.rs:135] abs_diff = 0.000013999999999999988
+[tests/common/mod.rs:135] tolerance = 0.00000012
+S2 doesn't match
 thread 'test_711' panicked at 'assertion failed: run_test(711)', tests/core-semantic.rs:3642:5
 
 ---- test_715 stdout ----
@@ -2713,48 +2680,24 @@ thread 'test_715' panicked at 'assertion failed: run_test(715)', tests/core-sema
 [tests/common/mod.rs:135] b[i] = 0.00001
 [tests/common/mod.rs:135] abs_diff = 0.000003999999999999999
 [tests/common/mod.rs:135] tolerance = 0.000000011000000000000001
-S3 doesn't match
+S1 doesn't match
 thread 'test_716' panicked at 'assertion failed: run_test(716)', tests/core-semantic.rs:3667:5
 
----- test_738 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.0172
-[tests/common/mod.rs:135] b[i] = 0.02
-[tests/common/mod.rs:135] abs_diff = 0.0028000000000000004
-[tests/common/mod.rs:135] tolerance = 0.000012
-S2 doesn't match
-thread 'test_738' panicked at 'assertion failed: run_test(738)', tests/core-semantic.rs:3746:5
-
 ---- test_740 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.00375
-[tests/common/mod.rs:135] b[i] = 0.0015
-[tests/common/mod.rs:135] abs_diff = 0.00225
-[tests/common/mod.rs:135] tolerance = 0.00000115
-S1 doesn't match
+[tests/common/mod.rs:135] a[i] = 0.0003653319389375804
+[tests/common/mod.rs:135] b[i] = 0.0001461327753230338
+[tests/common/mod.rs:135] abs_diff = 0.0002191991636145466
+[tests/common/mod.rs:135] tolerance = 0.0000010146132775323034
+S2 doesn't match
 thread 'test_740' panicked at 'assertion failed: run_test(740)', tests/core-semantic.rs:3756:5
 
----- test_742 stdout ----
-[tests/common/mod.rs:135] a[i] = 1.25
-[tests/common/mod.rs:135] b[i] = 1.0
-[tests/common/mod.rs:135] abs_diff = 0.25
-[tests/common/mod.rs:135] tolerance = 0.0011
+---- test_738 stdout ----
+[tests/common/mod.rs:135] a[i] = 0.0129
+[tests/common/mod.rs:135] b[i] = 0.01499999999999999
+[tests/common/mod.rs:135] abs_diff = 0.0020999999999999908
+[tests/common/mod.rs:135] tolerance = 0.0000115
 S3 doesn't match
-thread 'test_742' panicked at 'assertion failed: run_test(742)', tests/core-semantic.rs:3766:5
-
----- test_741 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.0000003
-[tests/common/mod.rs:135] b[i] = 0.000002
-[tests/common/mod.rs:135] abs_diff = 0.0000016999999999999998
-[tests/common/mod.rs:135] tolerance = 0.0000000012
-S3 doesn't match
-thread 'test_741' panicked at 'assertion failed: run_test(741)', tests/core-semantic.rs:3761:5
-
----- test_781 stdout ----
-[tests/common/mod.rs:135] a[i] = 8.100000000000001
-[tests/common/mod.rs:135] b[i] = 1.5
-[tests/common/mod.rs:135] abs_diff = 6.600000000000001
-[tests/common/mod.rs:135] tolerance = 0.00115
-S2 doesn't match
-thread 'test_781' panicked at 'assertion failed: run_test(781)', tests/core-semantic.rs:3999:5
+thread 'test_738' panicked at 'assertion failed: run_test(738)', tests/core-semantic.rs:3746:5
 
 ---- test_782 stdout ----
 [tests/common/mod.rs:135] a[i] = 5.0
@@ -2772,13 +2715,13 @@ thread 'test_782' panicked at 'assertion failed: run_test(782)', tests/core-sema
 S2 doesn't match
 thread 'test_783' panicked at 'assertion failed: run_test(783)', tests/core-semantic.rs:4009:5
 
----- test_784 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.01
-[tests/common/mod.rs:135] b[i] = 0.02
-[tests/common/mod.rs:135] abs_diff = 0.01
-[tests/common/mod.rs:135] tolerance = 0.000012
+---- test_781 stdout ----
+[tests/common/mod.rs:135] a[i] = 8.100000000000001
+[tests/common/mod.rs:135] b[i] = 1.5
+[tests/common/mod.rs:135] abs_diff = 6.600000000000001
+[tests/common/mod.rs:135] tolerance = 0.00115
 S2 doesn't match
-thread 'test_784' panicked at 'assertion failed: run_test(784)', tests/core-semantic.rs:4014:5
+thread 'test_781' panicked at 'assertion failed: run_test(781)', tests/core-semantic.rs:3999:5
 
 ---- test_787 stdout ----
 [tests/common/mod.rs:135] a[i] = 0.04699999999999988
@@ -2788,21 +2731,37 @@ thread 'test_784' panicked at 'assertion failed: run_test(784)', tests/core-sema
 S1 doesn't match
 thread 'test_787' panicked at 'assertion failed: run_test(787)', tests/core-semantic.rs:4029:5
 
----- test_786 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.05
-[tests/common/mod.rs:135] b[i] = 0.1
-[tests/common/mod.rs:135] abs_diff = 0.05
-[tests/common/mod.rs:135] tolerance = 0.00011
-S3 doesn't match
-thread 'test_786' panicked at 'assertion failed: run_test(786)', tests/core-semantic.rs:4024:5
+---- test_742 stdout ----
+[tests/common/mod.rs:135] a[i] = 1.25
+[tests/common/mod.rs:135] b[i] = 1.0
+[tests/common/mod.rs:135] abs_diff = 0.25
+[tests/common/mod.rs:135] tolerance = 0.0011
+S1 doesn't match
+thread 'test_742' panicked at 'assertion failed: run_test(742)', tests/core-semantic.rs:3766:5
+
+---- test_741 stdout ----
+[tests/common/mod.rs:135] a[i] = 0.000000225
+[tests/common/mod.rs:135] b[i] = 0.0000015
+[tests/common/mod.rs:135] abs_diff = 0.000001275
+[tests/common/mod.rs:135] tolerance = 0.00000000115
+S2 doesn't match
+thread 'test_741' panicked at 'assertion failed: run_test(741)', tests/core-semantic.rs:3761:5
 
 ---- test_785 stdout ----
 [tests/common/mod.rs:135] a[i] = 0.0035
 [tests/common/mod.rs:135] b[i] = 0.001
 [tests/common/mod.rs:135] abs_diff = 0.0025
 [tests/common/mod.rs:135] tolerance = 0.0000011
-S1 doesn't match
+S3 doesn't match
 thread 'test_785' panicked at 'assertion failed: run_test(785)', tests/core-semantic.rs:4019:5
+
+---- test_784 stdout ----
+[tests/common/mod.rs:135] a[i] = 0.005
+[tests/common/mod.rs:135] b[i] = 0.01
+[tests/common/mod.rs:135] abs_diff = 0.005
+[tests/common/mod.rs:135] tolerance = 0.000011000000000000001
+S1 doesn't match
+thread 'test_784' panicked at 'assertion failed: run_test(784)', tests/core-semantic.rs:4014:5
 
 ---- test_788 stdout ----
 [tests/common/mod.rs:135] a[i] = 0.6599999999999984
@@ -2812,36 +2771,44 @@ thread 'test_785' panicked at 'assertion failed: run_test(785)', tests/core-sema
 S1 doesn't match
 thread 'test_788' panicked at 'assertion failed: run_test(788)', tests/core-semantic.rs:4034:5
 
----- test_794 stdout ----
-[tests/common/mod.rs:135] a[i] = 5.4
-[tests/common/mod.rs:135] b[i] = 1.0
-[tests/common/mod.rs:135] abs_diff = 4.4
-[tests/common/mod.rs:135] tolerance = 0.0011
+---- test_786 stdout ----
+[tests/common/mod.rs:135] a[i] = 0.05
+[tests/common/mod.rs:135] b[i] = 0.1
+[tests/common/mod.rs:135] abs_diff = 0.05
+[tests/common/mod.rs:135] tolerance = 0.00011
 S1 doesn't match
+thread 'test_786' panicked at 'assertion failed: run_test(786)', tests/core-semantic.rs:4024:5
+
+---- test_794 stdout ----
+[tests/common/mod.rs:135] a[i] = 8.100000000000001
+[tests/common/mod.rs:135] b[i] = 1.5
+[tests/common/mod.rs:135] abs_diff = 6.600000000000001
+[tests/common/mod.rs:135] tolerance = 0.00115
+S2 doesn't match
 thread 'test_794' panicked at 'assertion failed: run_test(794)', tests/core-semantic.rs:4067:5
 
 ---- test_815 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.5
-[tests/common/mod.rs:135] b[i] = 1.0
-[tests/common/mod.rs:135] abs_diff = 0.5
-[tests/common/mod.rs:135] tolerance = 0.0011
-S1 doesn't match
+[tests/common/mod.rs:135] a[i] = 0.06666498921463915
+[tests/common/mod.rs:135] b[i] = 0.1333299785647067
+[tests/common/mod.rs:135] abs_diff = 0.06666498935006757
+[tests/common/mod.rs:135] tolerance = 0.0010133329978564707
+S2 doesn't match
 thread 'test_815' panicked at 'assertion failed: run_test(815)', tests/core-semantic.rs:4172:5
 
 ---- test_817 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.1318679348142887
-[tests/common/mod.rs:135] b[i] = 0.1388083518580136
-[tests/common/mod.rs:135] abs_diff = 0.006940417043724889
-[tests/common/mod.rs:135] tolerance = 0.0010138808351858014
-S3 doesn't match
+[tests/common/mod.rs:135] a[i] = 0.95
+[tests/common/mod.rs:135] b[i] = 1.0
+[tests/common/mod.rs:135] abs_diff = 0.050000000000000044
+[tests/common/mod.rs:135] tolerance = 0.0011
+S1 doesn't match
 thread 'test_817' panicked at 'assertion failed: run_test(817)', tests/core-semantic.rs:4182:5
 
 ---- test_816 stdout ----
-[tests/common/mod.rs:135] a[i] = 2.3
-[tests/common/mod.rs:135] b[i] = 1.0
-[tests/common/mod.rs:135] abs_diff = 1.2999999999999998
-[tests/common/mod.rs:135] tolerance = 0.0011
-S1 doesn't match
+[tests/common/mod.rs:135] a[i] = 0.17746666564595773
+[tests/common/mod.rs:135] b[i] = 0.07715941985629526
+[tests/common/mod.rs:135] abs_diff = 0.10030724578966246
+[tests/common/mod.rs:135] tolerance = 0.0010077159419856296
+S3 doesn't match
 thread 'test_816' panicked at 'assertion failed: run_test(816)', tests/core-semantic.rs:4177:5
 
 ---- test_879 stdout ----
@@ -2856,6 +2823,9 @@ thread 'test_890' panicked at 'Tag not parsed: abs', /home/pranav/code/rust-sbml
 ---- test_892 stdout ----
 thread 'test_892' panicked at 'Tag not parsed: exponentiale', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
 
+---- test_936 stdout ----
+thread 'test_936' panicked at 'Tag not parsed: sin', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
+
 ---- test_926 stdout ----
 [tests/common/mod.rs:135] a[i] = 2.0
 [tests/common/mod.rs:135] b[i] = 1.940891067
@@ -2863,9 +2833,6 @@ thread 'test_892' panicked at 'Tag not parsed: exponentiale', /home/pranav/code/
 [tests/common/mod.rs:135] tolerance = 0.0011940891067000001
 s doesn't match
 thread 'test_926' panicked at 'assertion failed: run_test(926)', tests/core-semantic.rs:4711:5
-
----- test_936 stdout ----
-thread 'test_936' panicked at 'Tag not parsed: sin', /home/pranav/code/rust-sbml/mathml-rs/mathml-rs/src/lib.rs:75:25
 
 ---- test_970 stdout ----
 [tests/common/mod.rs:135] a[i] = 0.0
@@ -2882,30 +2849,6 @@ thread 'test_970' panicked at 'assertion failed: run_test(970)', tests/core-sema
 [tests/common/mod.rs:135] tolerance = 0.0001131302767
 S2 doesn't match
 thread 'test_977' panicked at 'assertion failed: run_test(977)', tests/core-semantic.rs:4998:5
-
----- test_669 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.0056462554513321914
-[tests/common/mod.rs:135] b[i] = 0.01399284096792356
-[tests/common/mod.rs:135] abs_diff = 0.008346585516591369
-[tests/common/mod.rs:135] tolerance = 0.0010013992840967924
-S5 doesn't match
-thread 'test_669' panicked at 'assertion failed: run_test(669)', tests/core-semantic.rs:3411:5
-
----- test_1395 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.09538322772689752
-[tests/common/mod.rs:135] b[i] = 0.095492785
-[tests/common/mod.rs:135] abs_diff = 0.00010955727310248131
-[tests/common/mod.rs:135] tolerance = 0.0001095492785
-p5 doesn't match
-thread 'test_1395' panicked at 'assertion failed: run_test(1395)', tests/core-semantic.rs:7243:5
-
----- test_739 stdout ----
-[tests/common/mod.rs:135] a[i] = 0.0024155587203976356
-[tests/common/mod.rs:135] b[i] = 0.005001228332896835
-[tests/common/mod.rs:135] abs_diff = 0.0025856696124991994
-[tests/common/mod.rs:135] tolerance = 0.0010005001228332896
-S2 doesn't match
-thread 'test_739' panicked at 'assertion failed: run_test(739)', tests/core-semantic.rs:3751:5
 
 
 failures:
@@ -2942,8 +2885,6 @@ failures:
     test_1111
     test_1122
     test_1123
-    test_1128
-    test_1160
     test_1186
     test_1187
     test_1188
@@ -2956,12 +2897,6 @@ failures:
     test_1195
     test_1196
     test_1198
-    test_1199
-    test_1200
-    test_1201
-    test_1202
-    test_1203
-    test_1204
     test_1208
     test_1217
     test_1218
@@ -3001,7 +2936,6 @@ failures:
     test_1309
     test_1323
     test_1343
-    test_1395
     test_1420
     test_1421
     test_1422
@@ -3025,8 +2959,6 @@ failures:
     test_1489
     test_1490
     test_1491
-    test_1492
-    test_1493
     test_1494
     test_1495
     test_1496
@@ -3112,7 +3044,6 @@ failures:
     test_606
     test_607
     test_608
-    test_669
     test_685
     test_686
     test_688
@@ -3122,7 +3053,6 @@ failures:
     test_715
     test_716
     test_738
-    test_739
     test_740
     test_741
     test_742
@@ -3147,5 +3077,5 @@ failures:
     test_970
     test_977
 
-test result: FAILED. 623 passed; 237 failed; 804 ignored; 0 measured; 0 filtered out; finished in 411.75s
+test result: FAILED. 630 passed; 224 failed; 806 ignored; 0 measured; 4 filtered out; finished in 52.16s
 
