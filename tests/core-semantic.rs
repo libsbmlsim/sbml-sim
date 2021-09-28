@@ -5718,8 +5718,9 @@ fn test_1127_comp() {
     assert!(run_test(1127));
 }
 
+#[ignore]
 #[test]
-fn test_1128() {
+fn test_1128_comp() {
     assert!(run_test(1128));
 }
 
@@ -5909,8 +5910,9 @@ fn test_1159_comp() {
     assert!(run_test(1159));
 }
 
+#[ignore]
 #[test]
-fn test_1160() {
+fn test_1160_comp() {
     assert!(run_test(1160));
 }
 
