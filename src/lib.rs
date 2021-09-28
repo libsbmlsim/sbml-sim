@@ -12,6 +12,8 @@ pub use structs::rate_rule::*;
 pub use structs::reaction::*;
 pub use structs::species::*;
 
+use std::collections::HashMap;
+
 pub fn simulate(
     model_filename: String,
     time: f64,
@@ -21,10 +23,12 @@ pub fn simulate(
     atol: f64,
     print_amounts: bool,
     debug: bool,
-) {
+) -> HashMap<String, Vec<f64>> {
     let step_size = time / (steps as f64);
+
     let model =
         sbml_rs::parse_with_converted_species(&model_filename).expect("Couldn't parse model.");
+
     let result = integrate(
         &model,
         time,
@@ -37,29 +41,24 @@ pub fn simulate(
         debug,
     )
     .unwrap();
+    flatten(result)
+}
 
-    print!("t           \t");
-    // print!("t      ");
-    let mut headings = Vec::<String>::new();
-    for heading in result.iter().nth(1).unwrap().keys() {
-        if heading != "t" {
-            headings.push(heading.clone());
+// Flattens a vector of hashmaps to a hashmap of vectors
+fn flatten(input: Vec<HashMap<String, f64>>) -> HashMap<String, Vec<f64>> {
+    if input.len() == 0 {
+        return HashMap::new();
+    }
+
+    let mut result = HashMap::<String, Vec<f64>>::new();
+    for row in input {
+        for (mut key, value) in row {
+            if key == "t" {
+                key = "time".to_string();
+            }
+            result.entry(key).or_insert(Vec::<f64>::new()).push(value);
         }
     }
-    headings.sort();
-    for heading in &headings {
-        print!("{:24}", heading);
-        //print!("{:16}", heading);
-    }
-    println!();
-    for iteration in result.iter().step_by(1) {
-        let t = iteration.get("t").unwrap();
-        print!("{:.10}\t", t);
-        //print!("{:.2}  ", t);
-        for heading in &headings {
-            print!("{:.20}\t", iteration.get(heading).unwrap());
-            //print!("{:.12}\t", iteration.get(heading).unwrap());
-        }
-        println!();
-    }
+
+    result
 }
