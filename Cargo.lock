@@ -296,6 +296,7 @@ dependencies = [
 name = "sbml-sim"
 version = "0.1.2"
 dependencies = [
+ "approx",
  "clap",
  "mathml-rs",
  "sbml-rs",
