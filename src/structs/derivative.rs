@@ -36,13 +36,25 @@ impl ODE {
         }
         for term in &self.terms {
             let mut rxn_assignments = assignments.clone();
-            if let Some(reaction) = bindings.reactions.get(&term.rxn_id) {
-                for (key, value) in reaction.local_parameter_values() {
-                    rxn_assignments.insert(key, value);
+            if let Some(rxn_id) = &term.rxn_id {
+                if let Some(reaction) = bindings.reactions.get(rxn_id) {
+                    for (key, value) in reaction.local_parameter_values() {
+                        rxn_assignments.insert(key, value);
+                    }
                 }
             }
-            result += term.coefficient
-                * evaluate_node(&term.math, 0, &rxn_assignments, &bindings.functions)?;
+            let evaluation_result =
+                evaluate_node(&term.math, 0, &rxn_assignments, &bindings.functions)?;
+            if let Some(coefficient_id) = &term.coefficient_id {
+                if let Some(value) = rxn_assignments.get(coefficient_id) {
+                    //dbg!(term.coefficient_factor, value);
+                    result += term.coefficient_factor * value * evaluation_result;
+                } else {
+                    panic!("coefficient id {} not found", coefficient_id);
+                }
+            } else {
+                result += term.coefficient_factor * evaluation_result;
+            }
         }
         if let Some(compartment_var) = &self.compartment {
             let compartment = assignments.get(compartment_var).expect("Factor not found.");
@@ -55,15 +67,22 @@ impl ODE {
 
 #[derive(Debug, Clone)]
 pub struct ODETerm {
-    coefficient: f64,
+    coefficient_factor: f64,
+    coefficient_id: Option<String>,
     math: Vec<MathNode>,
-    rxn_id: String,
+    rxn_id: Option<String>,
 }
 
 impl ODETerm {
-    pub fn new(coefficient: f64, math: Vec<MathNode>, rxn_id: String) -> Self {
+    pub fn new(
+        coefficient_factor: f64,
+        coefficient_id: Option<String>,
+        math: Vec<MathNode>,
+        rxn_id: Option<String>,
+    ) -> Self {
         ODETerm {
-            coefficient,
+            coefficient_factor,
+            coefficient_id,
             math,
             rxn_id,
         }

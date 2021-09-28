@@ -1,4 +1,7 @@
 use mathml_rs::{evaluate_node, MathNode};
+use rand::distributions::Alphanumeric;
+use rand::{thread_rng, Rng};
+
 use sbml_rs;
 use sbml_rs::Model;
 
@@ -76,6 +79,15 @@ impl Bindings {
         }
         for (id, species) in &self.species {
             hm.insert(id.clone(), species.amount());
+        }
+        for (_, reaction) in &self.reactions {
+            for (_, reactant) in &reaction.reactants {
+                hm.insert(reactant.id.clone(), reactant.stoichiometry);
+            }
+
+            for (_, product) in &reaction.products {
+                hm.insert(product.id.clone(), product.stoichiometry);
+            }
         }
 
         //dbg!(&hm);
@@ -223,97 +235,102 @@ impl Bindings {
         for initial_assignment in initial_assignments {
             let symbol = initial_assignment.symbol;
             let mut values = self.values();
-            if let Ok(value) = evaluate_node(&initial_assignment.math, 0, &values, &self.functions)
-            {
-                // Update value
-                values.insert(symbol.clone(), value);
+            match evaluate_node(&initial_assignment.math, 0, &values, &self.functions) {
+                Ok(value) => {
+                    // Update value
+                    values.insert(symbol.clone(), value);
 
-                // Bound compartment being reassigned
-                if self.compartments.get(&symbol).is_some() {
-                    self.update_compartment_size(&symbol, value);
-                }
+                    // Bound compartment being reassigned
+                    if self.compartments.get(&symbol).is_some() {
+                        self.update_compartment_size(&symbol, value);
+                    }
 
-                // Unbound compartment
-                if let Some(unbound_compartment) = self.unbound_compartments.get(&symbol) {
-                    let bound_compartment = unbound_compartment.to_bound(value);
-                    self.compartments.insert(symbol.clone(), bound_compartment);
-                    self.unbound_compartments.remove(&symbol);
-                    // It might be possible to assign values to some unbound species now
-                    let mut bound_species_ids = Vec::new();
-                    for (id, species) in &self.unbound_species {
-                        if species.compartment == symbol {
-                            if let Ok(bound_species) = species.to_bound_with_size(value) {
-                                values.insert(id.clone(), bound_species.concentration());
-                                self.species.insert(id.clone(), bound_species);
-                                bound_species_ids.push(id.clone());
+                    // Unbound compartment
+                    if let Some(unbound_compartment) = self.unbound_compartments.get(&symbol) {
+                        let bound_compartment = unbound_compartment.to_bound(value);
+                        self.compartments.insert(symbol.clone(), bound_compartment);
+                        self.unbound_compartments.remove(&symbol);
+                        // It might be possible to assign values to some unbound species now
+                        let mut bound_species_ids = Vec::new();
+                        for (id, species) in &self.unbound_species {
+                            if species.compartment == symbol {
+                                if let Ok(bound_species) = species.to_bound_with_size(value) {
+                                    values.insert(id.clone(), bound_species.concentration());
+                                    self.species.insert(id.clone(), bound_species);
+                                    bound_species_ids.push(id.clone());
+                                }
+                            }
+                        }
+                        for id in bound_species_ids {
+                            self.unbound_species.remove(&id);
+                        }
+                    }
+
+                    // Parameter
+                    if self.parameters.get(&symbol).is_some() {
+                        self.parameters
+                            .entry(symbol.clone())
+                            .and_modify(|c| c.value = value);
+                    }
+
+                    // Unbound parameter
+                    if let Some(unbound_parameter) = self.unbound_parameters.get(&symbol) {
+                        let bound_parameter = unbound_parameter.to_bound(value);
+                        self.parameters.insert(symbol.clone(), bound_parameter);
+                        self.unbound_parameters.remove(&symbol);
+                    }
+
+                    // Species being reassigned
+                    if let Some(species) = self.species.get_mut(&symbol) {
+                        let compartment = &species.compartment;
+                        let compartment_size = self.compartments.get(compartment).unwrap().size();
+                        if !species.has_only_substance_units {
+                            species.update_concentration(value, compartment_size);
+                        } else {
+                            species.update_amount(value, compartment_size);
+                            values.insert(symbol.clone(), species.concentration());
+                        }
+                    }
+
+                    // For now, assuming that the compartment size is known by now
+                    // This will have to change later because compartments can also be
+                    // assigned by algebraic rules etc. which are not supported right now
+                    if let Some(unbound_species) = self.unbound_species.get(&symbol) {
+                        let size = self
+                            .compartments
+                            .get(&unbound_species.compartment)
+                            .expect("Compartment size not found.")
+                            .size();
+                        let species;
+                        if !unbound_species.has_only_substance_units {
+                            let concentration = value;
+                            let amount = concentration * size;
+                            species = unbound_species.to_bound(amount, concentration);
+                        } else {
+                            let amount = value;
+                            let concentration = amount / size;
+                            species = unbound_species.to_bound(amount, concentration);
+                            values.insert(symbol.clone(), species.concentration());
+                        }
+                        self.species.insert(symbol.clone(), species);
+                    }
+
+                    // Stoichiometry of a reactant
+                    for (_, reaction) in &mut self.reactions {
+                        for (_, reactant) in &mut reaction.reactants {
+                            if reactant.id == symbol {
+                                reactant.stoichiometry = value;
+                            }
+                        }
+                        for (_, product) in &mut reaction.products {
+                            if product.id == symbol {
+                                product.stoichiometry = value;
                             }
                         }
                     }
-                    for id in bound_species_ids {
-                        self.unbound_species.remove(&id);
-                    }
                 }
-
-                // Parameter
-                if self.parameters.get(&symbol).is_some() {
-                    self.parameters
-                        .entry(symbol.clone())
-                        .and_modify(|c| c.value = value);
-                }
-
-                // Unbound parameter
-                if let Some(unbound_parameter) = self.unbound_parameters.get(&symbol) {
-                    let bound_parameter = unbound_parameter.to_bound(value);
-                    self.parameters.insert(symbol.clone(), bound_parameter);
-                    self.unbound_parameters.remove(&symbol);
-                }
-
-                // Species being reassigned
-                if let Some(species) = self.species.get_mut(&symbol) {
-                    let compartment = &species.compartment;
-                    let compartment_size = self.compartments.get(compartment).unwrap().size();
-                    if !species.has_only_substance_units {
-                        species.update_concentration(value, compartment_size);
-                    } else {
-                        species.update_amount(value, compartment_size);
-                        values.insert(symbol.clone(), species.concentration());
-                    }
-                }
-
-                // For now, assuming that the compartment size is known by now
-                // This will have to change later because compartments can also be
-                // assigned by algebraic rules etc. which are not supported right now
-                if let Some(unbound_species) = self.unbound_species.get(&symbol) {
-                    let size = self
-                        .compartments
-                        .get(&unbound_species.compartment)
-                        .expect("Compartment size not found.")
-                        .size();
-                    let species;
-                    if !unbound_species.has_only_substance_units {
-                        let concentration = value;
-                        let amount = concentration * size;
-                        species = unbound_species.to_bound(amount, concentration);
-                    } else {
-                        let amount = value;
-                        let concentration = amount / size;
-                        species = unbound_species.to_bound(amount, concentration);
-                        values.insert(symbol.clone(), species.concentration());
-                    }
-                    self.species.insert(symbol.clone(), species);
-                }
-                // Stoichiometry of a reactant
-                for (_, reaction) in &mut self.reactions {
-                    for (_, reactant_w_id) in &mut reaction.reactants_w_id {
-                        if reactant_w_id.id == symbol {
-                            reactant_w_id.stoichiometry = value;
-                        }
-                    }
-                    for (_, product_w_id) in &mut reaction.products_w_id {
-                        if product_w_id.id == symbol {
-                            product_w_id.stoichiometry = value;
-                        }
-                    }
+                Err(error) => {
+                    //panic!("Evaluation of {} failed: {}", symbol, error);
                 }
             }
         }
@@ -468,20 +485,20 @@ impl Bindings {
                     // SpeciesReferences
                     //println!();
                     //dbg!(&variable, value);
-                    for (rxn_id, reaction) in &mut self.reactions {
+                    for (_, reaction) in &mut self.reactions {
                         //dbg!(&rxn_id);
                         // Stoichiometry of a reactant
-                        for (_, reactant_w_id) in &mut reaction.reactants_w_id {
-                            if reactant_w_id.id == variable {
-                                reactant_w_id.stoichiometry = value;
+                        for (_, reactant) in &mut reaction.reactants {
+                            if reactant.id == variable {
+                                reactant.stoichiometry = value;
                             }
                         }
                         // Stoichiometry of a product
-                        for (product_species, product_w_id) in &mut reaction.products_w_id {
-                            if product_w_id.id == variable {
-                                product_w_id.stoichiometry = value;
+                        for (_, product) in &mut reaction.products {
                             //dbg!(product_species);
+                            if product.id == variable {
                                 //dbg!("changing", product.stoichiometry, value);
+                                product.stoichiometry = value;
                             } else {
                                 //dbg!("not changing");
                             }
@@ -614,37 +631,18 @@ impl Bindings {
             for (rxn_id, reaction) in &self.reactions {
                 rxn_matrix.insert((sp_id.clone(), rxn_id.clone()), Vec::new());
 
-                for (reactant_species, reactant_w_id) in &reaction.reactants_w_id {
+                for (reactant_species, reactant) in &reaction.reactants {
                     if sp_id == reactant_species {
-                        let stoichiometry = reactant_w_id.stoichiometry;
                         rxn_matrix
                             .entry((sp_id.clone(), rxn_id.clone()))
-                            .and_modify(|v| v.push(SpeciesStatus::Reactant(stoichiometry)));
+                            .and_modify(|v| v.push(SpeciesStatus::Reactant(reactant.id.clone())));
                     }
                 }
-                for (reactant_species, reactant_wo_id) in &reaction.reactants_wo_id {
-                    if sp_id == reactant_species {
-                        let stoichiometry = reactant_wo_id.stoichiometry;
-                        rxn_matrix
-                            .entry((sp_id.clone(), rxn_id.clone()))
-                            .and_modify(|v| v.push(SpeciesStatus::Reactant(stoichiometry)));
-                    }
-                }
-
-                for (product_species, product_w_id) in &reaction.products_w_id {
+                for (product_species, product) in &reaction.products {
                     if sp_id == product_species {
-                        let stoichiometry = product_w_id.stoichiometry;
                         rxn_matrix
                             .entry((sp_id.clone(), rxn_id.clone()))
-                            .and_modify(|v| v.push(SpeciesStatus::Product(stoichiometry)));
-                    }
-                }
-                for (product_species, product_wo_id) in &reaction.products_wo_id {
-                    if sp_id == product_species {
-                        let stoichiometry = product_wo_id.stoichiometry;
-                        rxn_matrix
-                            .entry((sp_id.clone(), rxn_id.clone()))
-                            .and_modify(|v| v.push(SpeciesStatus::Product(stoichiometry)));
+                            .and_modify(|v| v.push(SpeciesStatus::Product(product.id.clone())));
                     }
                 }
             }
@@ -677,20 +675,27 @@ impl Bindings {
                     .get(&(species_id.to_string(), rxn_id.to_string()))
                     .expect("Rxn matrix");
                 for status in sp_statuses {
-                    let mut coefficient = None;
+                    let mut coefficient_id = None;
+                    let mut coefficient_factor = 1.0;
                     match status {
-                        SpeciesStatus::Reactant(stoich) => {
-                            coefficient = Some(-stoich);
+                        SpeciesStatus::Reactant(reactant_id) => {
+                            coefficient_id = Some(reactant_id);
+                            coefficient_factor = -1.0;
                         }
-                        SpeciesStatus::Product(stoich) => {
-                            coefficient = Some(*stoich);
+                        SpeciesStatus::Product(product_id) => {
+                            coefficient_id = Some(product_id);
+                            coefficient_factor = 1.0;
                         }
                         _ => {}
                     }
 
-                    if let Some(value) = coefficient {
-                        let ode_term =
-                            ODETerm::new(value, reaction.kinetic_law.clone(), rxn_id.to_string());
+                    if let Some(x) = coefficient_id {
+                        let ode_term = ODETerm::new(
+                            coefficient_factor,
+                            Some(x.to_string()),
+                            reaction.kinetic_law.clone(),
+                            Some(rxn_id.to_string()),
+                        );
                         ode.add_term(ode_term);
                         term_count += 1;
                     }
@@ -703,7 +708,7 @@ impl Bindings {
         }
         // Rate rules
         for rule in &self.rate_rules {
-            let ode_term = ODETerm::new(1.0, rule.math.clone(), "None".to_string());
+            let ode_term = ODETerm::new(1.0, None, rule.math.clone(), None);
             let mut compartment: Option<String> = None;
             if let Some(species) = self.species.get(&rule.variable) {
                 if !species.has_only_substance_units {
@@ -750,3 +755,11 @@ pub enum BindingType {
     Stoichiometry,
 }
 
+pub fn random_string() -> String {
+    let rand_string: String = thread_rng()
+        .sample_iter(&Alphanumeric)
+        .take(16)
+        .map(char::from)
+        .collect();
+    return rand_string;
+}
