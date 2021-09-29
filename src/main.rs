@@ -144,7 +144,7 @@ fn write_csv(
 ) -> Result<(), Box<dyn Error>> {
     let mut headings: Vec<String> = Vec::new();
     for key in result.keys() {
-        if key != "t" {
+        if key != "time" {
             headings.push(key.to_string());
         }
     }
