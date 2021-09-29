@@ -96,7 +96,12 @@ pub fn get_parameters(mut testsuite_root: String, n: i32) -> Result<Parameters, 
 pub fn get_standard_results(filename: String) -> Result<HashMap<String, Vec<f64>>, Box<dyn Error>> {
     let file = File::open(filename)?;
     let mut rdr = csv::Reader::from_reader(file);
-    let headers: Vec<String> = rdr.headers()?.iter().map(|s| s.to_string()).collect();
+    let mut headers: Vec<String> = rdr.headers()?.iter().map(|s| s.to_string()).collect();
+    for i in 0..headers.len() {
+        if headers[i] == "Time" {
+            headers[i] = "time".to_string();
+        }
+    }
     let mut result = HashMap::<String, Vec<f64>>::new();
 
     for record_result in rdr.records() {
@@ -113,22 +118,22 @@ pub fn get_standard_results(filename: String) -> Result<HashMap<String, Vec<f64>
 }
 
 pub fn compare(
-    a_hm: HashMap<String, Vec<f64>>,
-    b_hm: HashMap<String, Vec<f64>>,
+    simulator_results: HashMap<String, Vec<f64>>,
+    standard_results: HashMap<String, Vec<f64>>,
     rtol: f64,
     atol: f64,
 ) -> bool {
     let mut result = true;
-    for col in b_hm.keys() {
-        if let Some(a) = a_hm.get(col) {
-            if let Some(b) = b_hm.get(col) {
+    for col in standard_results.keys() {
+        if let Some(a) = standard_results.get(col) {
+            if let Some(b) = simulator_results.get(col) {
                 result = result && all_close(a, b, rtol, atol);
             } else {
-                println!("{} not found in a_hm", col);
+                println!("{} not found in simulator_results", col);
                 result = false;
             }
         } else {
-            println!("{} not found in b_hm", col);
+            println!("{} not found in standard_results", col);
             result = false;
         }
         if !result {

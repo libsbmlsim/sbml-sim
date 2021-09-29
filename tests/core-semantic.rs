@@ -4474,8 +4474,9 @@ fn test_878_csymbol() {
     assert!(run_test(878));
 }
 
+#[ignore]
 #[test]
-fn test_879() {
+fn test_879_csymbol() {
     assert!(run_test(879));
 }
 
@@ -4527,8 +4528,9 @@ fn test_887_events() {
     assert!(run_test(887));
 }
 
+#[ignore]
 #[test]
-fn test_888() {
+fn test_888_csymbol() {
     assert!(run_test(888));
 }
 
@@ -4538,8 +4540,9 @@ fn test_889_csymbol() {
     assert!(run_test(889));
 }
 
+#[ignore]
 #[test]
-fn test_890() {
+fn test_890_csymbol() {
     assert!(run_test(890));
 }
 
@@ -4549,8 +4552,9 @@ fn test_891_csymbol() {
     assert!(run_test(891));
 }
 
+#[ignore]
 #[test]
-fn test_892() {
+fn test_892_csymbol() {
     assert!(run_test(892));
 }
 
@@ -4767,8 +4771,9 @@ fn test_935_events() {
     assert!(run_test(935));
 }
 
+#[ignore]
 #[test]
-fn test_936() {
+fn test_936_csymbol() {
     assert!(run_test(936));
 }
 
@@ -6576,28 +6581,33 @@ fn test_1276() {
     assert!(run_test(1276));
 }
 
+#[ignore]
 #[test]
-fn test_1277() {
+fn test_1277_csymbol() {
     assert!(run_test(1277));
 }
 
+#[ignore]
 #[test]
-fn test_1278() {
+fn test_1278_csymbol() {
     assert!(run_test(1278));
 }
 
+#[ignore]
 #[test]
-fn test_1279() {
+fn test_1279_csymbol() {
     assert!(run_test(1279));
 }
 
+#[ignore]
 #[test]
-fn test_1280() {
+fn test_1280_csymbol() {
     assert!(run_test(1280));
 }
 
+#[ignore]
 #[test]
-fn test_1281() {
+fn test_1281_csymbol() {
     assert!(run_test(1281));
 }
 
@@ -6829,8 +6839,9 @@ fn test_1322_csymbol() {
     assert!(run_test(1322));
 }
 
+#[ignore]
 #[test]
-fn test_1323() {
+fn test_1323_csymbol() {
     assert!(run_test(1323));
 }
 
@@ -6944,8 +6955,9 @@ fn test_1342() {
     assert!(run_test(1342));
 }
 
+#[ignore]
 #[test]
-fn test_1343() {
+fn test_1343_csymbol() {
     assert!(run_test(1343));
 }
 
@@ -7758,18 +7770,21 @@ fn test_1494() {
     assert!(run_test(1494));
 }
 
+#[ignore]
 #[test]
-fn test_1495() {
+fn test_1495_csymbol() {
     assert!(run_test(1495));
 }
 
+#[ignore]
 #[test]
-fn test_1496() {
+fn test_1496_csymbol() {
     assert!(run_test(1496));
 }
 
+#[ignore]
 #[test]
-fn test_1497() {
+fn test_1497_csymbol() {
     assert!(run_test(1497));
 }
 
@@ -8183,28 +8198,33 @@ fn test_1593_csymbol() {
     assert!(run_test(1593));
 }
 
+#[ignore]
 #[test]
-fn test_1594() {
+fn test_1594_csymbol() {
     assert!(run_test(1594));
 }
 
+#[ignore]
 #[test]
-fn test_1595() {
+fn test_1595_csymbol() {
     assert!(run_test(1595));
 }
 
+#[ignore]
 #[test]
-fn test_1596() {
+fn test_1596_csymbol() {
     assert!(run_test(1596));
 }
 
+#[ignore]
 #[test]
-fn test_1597() {
+fn test_1597_csymbol() {
     assert!(run_test(1597));
 }
 
+#[ignore]
 #[test]
-fn test_1598() {
+fn test_1598_csymbol() {
     assert!(run_test(1598));
 }
 

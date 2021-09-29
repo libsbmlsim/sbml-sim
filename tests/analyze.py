@@ -67,8 +67,8 @@ def refresh_tag_metrics(metrics, current_model_desc, current_result):
                 print(current_model_desc, current_result)
                 exit()
 
-            if "CSymbol" in tag:
-                print(current_model_desc, current_result)
+            # if "UncommonMathML" in tag and current_result == "failed":
+                # print(current_model_desc, current_result)
 
     return metrics
 
