@@ -987,8 +987,9 @@ fn test_203() {
     assert!(run_test(203));
 }
 
+#[ignore]
 #[test]
-fn test_204() {
+fn test_204_long() {
     assert!(run_test(204));
 }
 
@@ -3406,8 +3407,9 @@ fn test_668() {
     assert!(run_test(668));
 }
 
+#[ignore]
 #[test]
-fn test_669() {
+fn test_669_long() {
     assert!(run_test(669));
 }
 
@@ -3746,8 +3748,9 @@ fn test_738() {
     assert!(run_test(738));
 }
 
+#[ignore]
 #[test]
-fn test_739() {
+fn test_739_long() {
     assert!(run_test(739));
 }
 
@@ -4993,8 +4996,9 @@ fn test_976_conversion_factor() {
     assert!(run_test(976));
 }
 
+#[ignore]
 #[test]
-fn test_977() {
+fn test_977_conversion_factor() {
     assert!(run_test(977));
 }
 
@@ -6064,58 +6068,69 @@ fn test_1185() {
     assert!(run_test(1185));
 }
 
+#[ignore]
 #[test]
-fn test_1186() {
+fn test_1186_invalid_desc() {
     assert!(run_test(1186));
 }
 
+#[ignore]
 #[test]
-fn test_1187() {
+fn test_1187_invalid_desc() {
     assert!(run_test(1187));
 }
 
+#[ignore]
 #[test]
-fn test_1188() {
+fn test_1188_invalid_desc() {
     assert!(run_test(1188));
 }
 
+#[ignore]
 #[test]
-fn test_1189() {
+fn test_1189_invalid_desc() {
     assert!(run_test(1189));
 }
 
+#[ignore]
 #[test]
-fn test_1190() {
+fn test_1190_invalid_desc() {
     assert!(run_test(1190));
 }
 
+#[ignore]
 #[test]
-fn test_1191() {
+fn test_1191_invalid_desc() {
     assert!(run_test(1191));
 }
 
+#[ignore]
 #[test]
-fn test_1192() {
+fn test_1192_invalid_desc() {
     assert!(run_test(1192));
 }
 
+#[ignore]
 #[test]
-fn test_1193() {
+fn test_1193_invalid_desc() {
     assert!(run_test(1193));
 }
 
+#[ignore]
 #[test]
-fn test_1194() {
+fn test_1194_invalid_desc() {
     assert!(run_test(1194));
 }
 
+#[ignore]
 #[test]
-fn test_1195() {
+fn test_1195_invalid_desc() {
     assert!(run_test(1195));
 }
 
+#[ignore]
 #[test]
-fn test_1196() {
+fn test_1196_invalid_desc() {
     assert!(run_test(1196));
 }
 
@@ -7240,8 +7255,9 @@ fn test_1394_comp() {
     assert!(run_test(1394));
 }
 
+#[ignore]
 #[test]
-fn test_1395() {
+fn test_1395_long() {
     assert!(run_test(1395));
 }
 
@@ -8234,103 +8250,123 @@ fn test_1605_events() {
     assert!(run_test(1605));
 }
 
+#[ignore]
 #[test]
-fn test_1606() {
+fn test_1606_invalid_desc() {
     assert!(run_test(1606));
 }
 
+#[ignore]
 #[test]
-fn test_1607() {
+fn test_1607_invalid_desc() {
     assert!(run_test(1607));
 }
 
+#[ignore]
 #[test]
-fn test_1608() {
+fn test_1608_invalid_desc() {
     assert!(run_test(1608));
 }
 
+#[ignore]
 #[test]
-fn test_1609() {
+fn test_1609_invalid_desc() {
     assert!(run_test(1609));
 }
 
+#[ignore]
 #[test]
-fn test_1610() {
+fn test_1610_invalid_desc() {
     assert!(run_test(1610));
 }
 
+#[ignore]
 #[test]
-fn test_1611() {
+fn test_1611_invalid_desc() {
     assert!(run_test(1611));
 }
 
+#[ignore]
 #[test]
-fn test_1612() {
+fn test_1612_invalid_desc() {
     assert!(run_test(1612));
 }
 
+#[ignore]
 #[test]
-fn test_1613() {
+fn test_1613_invalid_desc() {
     assert!(run_test(1613));
 }
 
+#[ignore]
 #[test]
-fn test_1614() {
+fn test_1614_invalid_desc() {
     assert!(run_test(1614));
 }
 
+#[ignore]
 #[test]
-fn test_1615() {
+fn test_1615_invalid_desc() {
     assert!(run_test(1615));
 }
 
+#[ignore]
 #[test]
-fn test_1616() {
+fn test_1616_invalid_desc() {
     assert!(run_test(1616));
 }
 
+#[ignore]
 #[test]
-fn test_1617() {
+fn test_1617_invalid_desc() {
     assert!(run_test(1617));
 }
 
+#[ignore]
 #[test]
-fn test_1618() {
+fn test_1618_invalid_desc() {
     assert!(run_test(1618));
 }
 
+#[ignore]
 #[test]
-fn test_1619() {
+fn test_1619_invalid_desc() {
     assert!(run_test(1619));
 }
 
+#[ignore]
 #[test]
-fn test_1620() {
+fn test_1620_invalid_desc() {
     assert!(run_test(1620));
 }
 
+#[ignore]
 #[test]
-fn test_1621() {
+fn test_1621_invalid_desc() {
     assert!(run_test(1621));
 }
 
+#[ignore]
 #[test]
-fn test_1622() {
+fn test_1622_invalid_desc() {
     assert!(run_test(1622));
 }
 
+#[ignore]
 #[test]
-fn test_1623() {
+fn test_1623_invalid_desc() {
     assert!(run_test(1623));
 }
 
+#[ignore]
 #[test]
-fn test_1624() {
+fn test_1624_invalid_desc() {
     assert!(run_test(1624));
 }
 
+#[ignore]
 #[test]
-fn test_1625() {
+fn test_1625_invalid_desc() {
     assert!(run_test(1625));
 }
 
@@ -8346,18 +8382,21 @@ fn test_1627_events() {
     assert!(run_test(1627));
 }
 
+#[ignore]
 #[test]
-fn test_1628() {
+fn test_1628_invalid_desc() {
     assert!(run_test(1628));
 }
 
+#[ignore]
 #[test]
-fn test_1629() {
+fn test_1629_invalid_desc() {
     assert!(run_test(1629));
 }
 
+#[ignore]
 #[test]
-fn test_1630() {
+fn test_1630_invalid_desc() {
     assert!(run_test(1630));
 }
 
@@ -8388,8 +8427,9 @@ fn test_1642_conversion_factor() {
     assert!(run_test(1642));
 }
 
+#[ignore]
 #[test]
-fn test_1643() {
+fn test_1643_conversion_factor() {
     assert!(run_test(1643));
 }
 
@@ -8405,8 +8445,9 @@ fn test_1645_conversion_factor() {
     assert!(run_test(1645));
 }
 
+#[ignore]
 #[test]
-fn test_1646() {
+fn test_1646_conversion_factor() {
     assert!(run_test(1646));
 }
 
@@ -8422,8 +8463,9 @@ fn test_1648_conversion_factor() {
     assert!(run_test(1648));
 }
 
+#[ignore]
 #[test]
-fn test_1649() {
+fn test_1649_conversion_factor() {
     assert!(run_test(1649));
 }
 
@@ -8439,8 +8481,9 @@ fn test_1651_conversion_factor() {
     assert!(run_test(1651));
 }
 
+#[ignore]
 #[test]
-fn test_1652() {
+fn test_1652_conversion_factor() {
     assert!(run_test(1652));
 }
 
@@ -8519,8 +8562,9 @@ fn test_1666_conversion_factor() {
     assert!(run_test(1666));
 }
 
+#[ignore]
 #[test]
-fn test_1667() {
+fn test_1667_conversion_factor() {
     assert!(run_test(1667));
 }
 
@@ -8866,8 +8910,9 @@ fn test_1724_csymbol() {
     assert!(run_test(1724));
 }
 
+#[ignore]
 #[test]
-fn test_1725() {
+fn test_1725_conversion_factor() {
     assert!(run_test(1725));
 }
 
@@ -8883,8 +8928,9 @@ fn test_1727_conversion_factor() {
     assert!(run_test(1727));
 }
 
+#[ignore]
 #[test]
-fn test_1728() {
+fn test_1728_conversion_factor() {
     assert!(run_test(1728));
 }
 
@@ -8900,8 +8946,9 @@ fn test_1730_conversion_factor() {
     assert!(run_test(1730));
 }
 
+#[ignore]
 #[test]
-fn test_1731() {
+fn test_1731_conversion_factor() {
     assert!(run_test(1731));
 }
 
@@ -8917,8 +8964,9 @@ fn test_1733_conversion_factor() {
     assert!(run_test(1733));
 }
 
+#[ignore]
 #[test]
-fn test_1734() {
+fn test_1734_conversion_factor() {
     assert!(run_test(1734));
 }
 
@@ -8934,8 +8982,9 @@ fn test_1736_conversion_factor() {
     assert!(run_test(1736));
 }
 
+#[ignore]
 #[test]
-fn test_1737() {
+fn test_1737_conversion_factor() {
     assert!(run_test(1737));
 }
 
@@ -8951,8 +9000,9 @@ fn test_1739_conversion_factor() {
     assert!(run_test(1739));
 }
 
+#[ignore]
 #[test]
-fn test_1740() {
+fn test_1740_conversion_factor() {
     assert!(run_test(1740));
 }
 

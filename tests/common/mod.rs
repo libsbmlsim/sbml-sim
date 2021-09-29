@@ -68,10 +68,26 @@ pub fn get_parameters(mut testsuite_root: String, n: i32) -> Result<Parameters, 
     }
 
     Ok(Parameters {
-        duration: parameters.get("duration").unwrap().parse::<f64>().unwrap(),
-        steps: parameters.get("steps").unwrap().parse::<i32>().unwrap(),
-        rtol: parameters.get("relative").unwrap().parse::<f64>().unwrap(),
-        atol: parameters.get("absolute").unwrap().parse::<f64>().unwrap(),
+        duration: parameters
+            .get("duration")
+            .expect("Incomplete description.")
+            .parse::<f64>()
+            .expect("Invalid description."),
+        steps: parameters
+            .get("steps")
+            .expect("Incomplete description.")
+            .parse::<i32>()
+            .expect("Invalid description."),
+        rtol: parameters
+            .get("relative")
+            .expect("Incomplete description.")
+            .parse::<f64>()
+            .expect("Invalid description."),
+        atol: parameters
+            .get("absolute")
+            .expect("Incomplete description.")
+            .parse::<f64>()
+            .expect("Invalid description."),
         model_filename,
         result_filename,
     })
