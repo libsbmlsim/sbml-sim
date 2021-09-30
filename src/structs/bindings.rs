@@ -217,14 +217,7 @@ impl Bindings {
             let size = compartment.size();
             for (_, species) in &mut self.species {
                 if species.compartment == compartment_id.to_owned() {
-                    //let conc = species.concentration();
                     species.update_compartment_size(size);
-                    //println!(
-                    //"changed conc of {} from {} to {}",
-                    //species.id,
-                    //conc,
-                    //species.concentration()
-                    //);
                 }
             }
         }
@@ -444,12 +437,6 @@ impl Bindings {
                         let compartment_size = self.compartments.get(compartment).unwrap().size();
                         // TODO: THIS IS PROBABLY WRONG
                         if !species.has_only_substance_units {
-                            //println!(
-                            //"Updated {} from {} to {}",
-                            //&species.id,
-                            //species.concentration(),
-                            //value
-                            //);
                             species.update_concentration(value, compartment_size);
                             values.insert(species.id.clone(), species.concentration());
                         } else {
@@ -664,9 +651,7 @@ impl Bindings {
                 continue;
             }
 
-            //let compartment = &species.compartment;
-            //let mut ode = ODE::new(species_id.clone(), Some(compartment.clone()));
-            let mut ode = ODE::new(species_id.clone(), None);
+            let mut ode = ODE::new(species_id.clone());
 
             let mut term_count = 0;
             for (rxn_id, reaction) in &self.reactions {
@@ -709,15 +694,8 @@ impl Bindings {
         // Rate rules
         for rule in &self.rate_rules {
             let ode_term = ODETerm::new(1.0, None, rule.math.clone(), None);
-            let mut compartment: Option<String> = None;
-            if let Some(species) = self.species.get(&rule.variable) {
-                if !species.has_only_substance_units {
-                    compartment = Some(species.compartment.to_string());
-                }
-            }
-            let mut ode = ODE::new(rule.variable.clone(), compartment);
+            let mut ode = ODE::new(rule.variable.clone());
             ode.add_term(ode_term);
-            //dbg!(&ode);
             self.ODEs.push(ode);
         }
     }
@@ -726,15 +704,8 @@ impl Bindings {
         if let Some(species) = self.species.get_mut(key) {
             let compartment = &species.compartment;
             let compartment_size = self.compartments.get(compartment).unwrap().size();
-            //if species.has_only_substance_units {
             let amount = species.amount();
             species.update_amount(amount + delta, compartment_size);
-            //println!(
-            //"Updated {} from {} to {}",
-            //species.id,
-            //amount,
-            //species.amount()
-            //);
         } else if let Some(parameter) = self.parameters.get_mut(key) {
             parameter.value += delta;
         } else if self.compartments.get(key).is_some() {

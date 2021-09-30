@@ -7,15 +7,13 @@ use super::bindings::Bindings;
 pub struct ODE {
     pub id: String,
     terms: Vec<ODETerm>,
-    compartment: Option<String>,
 }
 
 impl ODE {
-    pub fn new(id: String, compartment: Option<String>) -> Self {
+    pub fn new(id: String) -> Self {
         ODE {
             id,
             terms: Vec::new(),
-            compartment,
         }
     }
 
@@ -32,7 +30,6 @@ impl ODE {
         let mut assignments: HashMap<String, f64> = bindings.values();
         for (key, value) in updated_assignments {
             assignments.insert(key.clone(), *value);
-            //println!("{}: {}", key, value);
         }
         for term in &self.terms {
             let mut rxn_assignments = assignments.clone();
@@ -43,6 +40,7 @@ impl ODE {
                     }
                 }
             }
+
             let evaluation_result =
                 evaluate_node(&term.math, 0, &rxn_assignments, &bindings.functions)?;
             if let Some(coefficient_id) = &term.coefficient_id {
@@ -55,11 +53,6 @@ impl ODE {
             } else {
                 result += term.coefficient_factor * evaluation_result;
             }
-        }
-        if let Some(compartment_var) = &self.compartment {
-            let compartment = assignments.get(compartment_var).expect("Factor not found.");
-            result = result * compartment;
-            //println!("divided by compartment {}", compartment);
         }
         Ok(result)
     }

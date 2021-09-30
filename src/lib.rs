@@ -26,8 +26,7 @@ pub fn simulate(
 ) -> HashMap<String, Vec<f64>> {
     let step_size = time / (steps as f64);
 
-    let model =
-        sbml_rs::parse_with_converted_species(&model_filename).expect("Couldn't parse model.");
+    let model = sbml_rs::parse_and_transform(&model_filename).expect("Couldn't parse model.");
 
     let result = integrate(
         &model,
