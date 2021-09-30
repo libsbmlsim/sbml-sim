@@ -8,7 +8,7 @@ def main(test_results: str):
     # read result file
     with open(test_results, 'r') as f:
         for line in f.readlines():
-            result, test_name = line.strip().split(' ')
+            test_name, result = line.strip().split(' ')
             test_n = [int(s) for s in test_name.split('_') if s.isdigit()][0]
             results[test_n] = result
 

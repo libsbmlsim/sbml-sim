@@ -1132,7 +1132,7 @@ test_01194_invalid_desc ignored
 test_01195_invalid_desc ignored
 test_01196_invalid_desc ignored
 test_01197 ok
-test_01198 failed
+test_01198 ok
 test_01199 ok
 test_01200 ok
 test_01201 ok
@@ -1142,7 +1142,7 @@ test_01204 ok
 test_01205 ok
 test_01206 ok
 test_01207 ok
-test_01208 failed
+test_01208 ok
 test_01209 ok
 test_01210 ok
 test_01211_events ignored
@@ -1403,7 +1403,7 @@ test_01474_comp ignored
 test_01475_comp ignored
 test_01476_comp ignored
 test_01477_comp ignored
-test_01478 failed
+test_01478 ok
 test_01479_algebraic_rule ignored
 test_01480_csymbol ignored
 test_01482_algebraic_rule ignored
@@ -1422,7 +1422,7 @@ test_01494 failed
 test_01495_csymbol ignored
 test_01496_csymbol ignored
 test_01497_csymbol ignored
-test_01498 failed
+test_01498 ok
 test_01499_algebraic_rule ignored
 test_01500_algebraic_rule ignored
 test_01501_algebraic_rule ignored
@@ -1437,7 +1437,7 @@ test_01509_events ignored
 test_01510_events ignored
 test_01511_events ignored
 test_01512_events ignored
-test_01513 failed
+test_01513 ok
 test_01514 failed
 test_01515 failed
 test_01516 failed
