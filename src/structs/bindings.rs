@@ -80,17 +80,16 @@ impl Bindings {
         for (id, species) in &self.species {
             hm.insert(id.clone(), species.amount());
         }
-        for (_, reaction) in &self.reactions {
-            for (_, reactant) in &reaction.reactants {
+        for (_reaction_id, reaction) in &self.reactions {
+            for (_reactant_species_id, reactant) in &reaction.reactants {
                 hm.insert(reactant.id.clone(), reactant.stoichiometry);
             }
 
-            for (_, product) in &reaction.products {
+            for (_product_species_id, product) in &reaction.products {
                 hm.insert(product.id.clone(), product.stoichiometry);
             }
         }
 
-        //dbg!(&hm);
         hm
     }
 
@@ -322,8 +321,8 @@ impl Bindings {
                         }
                     }
                 }
-                Err(error) => {
-                    //panic!("Evaluation of {} failed: {}", symbol, error);
+                Err(_error) => {
+                    //panic!("Evaluation of {} failed: {}", symbol, _error);
                 }
             }
         }
@@ -701,19 +700,56 @@ impl Bindings {
     }
 
     pub fn update_delta(&mut self, key: &String, delta: f64) {
-        if let Some(species) = self.species.get_mut(key) {
-            let compartment = &species.compartment;
-            let compartment_size = self.compartments.get(compartment).unwrap().size();
-            let amount = species.amount();
-            species.update_amount(amount + delta, compartment_size);
-        } else if let Some(parameter) = self.parameters.get_mut(key) {
-            parameter.value += delta;
-        } else if self.compartments.get(key).is_some() {
-            // this function also updates species concentrations
-            self.update_compartment_size_by(key, delta);
-        } else {
+        let mut updated = false;
+        if !updated {
+            if let Some(species) = self.species.get_mut(key) {
+                let compartment = &species.compartment;
+                let compartment_size = self.compartments.get(compartment).unwrap().size();
+                let amount = species.amount();
+                species.update_amount(amount + delta, compartment_size);
+                updated = true;
+            }
+        }
+        if !updated {
+            if let Some(parameter) = self.parameters.get_mut(key) {
+                parameter.value += delta;
+                updated = true;
+            }
+        }
+        if !updated {
+            if self.compartments.get(key).is_some() {
+                // this function also updates species concentrations
+                self.update_compartment_size_by(key, delta);
+                updated = true;
+            }
+        }
+        if !updated {
+            for (_reaction_id, reaction) in &mut self.reactions {
+                for (_reactant_species_id, reactant) in &mut reaction.reactants {
+                    if key.to_string() == reactant.id {
+                        reactant.stoichiometry += delta;
+                        updated = true;
+                        break;
+                    }
+                }
+            }
+        }
+        if !updated {
+            for (_reaction_id, reaction) in &mut self.reactions {
+                for (_product_species_id, product) in &mut reaction.products {
+                    if key.to_string() == product.id {
+                        product.stoichiometry += delta;
+                        updated = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if !updated {
             panic!("Invalid key {}", key);
         }
+
         // TODO for other types
     }
 }

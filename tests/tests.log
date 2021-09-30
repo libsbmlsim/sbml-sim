@@ -1037,7 +1037,7 @@ test_01099_csymbol ignored
 test_01100_csymbol ignored
 test_01101_csymbol ignored
 test_01102 failed
-test_01103 failed
+test_01103 ok
 test_01104 ok
 test_01105 failed
 test_01106_events ignored
@@ -1375,10 +1375,10 @@ test_01446_events ignored
 test_01447_events ignored
 test_01448_events ignored
 test_01449 failed
-test_01450 failed
+test_01450 ok
 test_01451 failed
 test_01452 failed
-test_01453 failed
+test_01453 ok
 test_01454_csymbol ignored
 test_01455_csymbol ignored
 test_01456_csymbol ignored
@@ -1530,9 +1530,9 @@ test_01627_events ignored
 test_01628_invalid_desc ignored
 test_01629_invalid_desc ignored
 test_01630_invalid_desc ignored
-test_01631 failed
-test_01633 failed
-test_01635 failed
+test_01631 ok
+test_01633 ok
+test_01635 ok
 test_01641_csymbol ignored
 test_01642_conversion_factor ignored
 test_01643_conversion_factor ignored
@@ -1633,7 +1633,7 @@ test_01738_conversion_factor ignored
 test_01739_conversion_factor ignored
 test_01740_conversion_factor ignored
 test_01741_conversion_factor ignored
-test_01742 failed
+test_01742 ok
 test_01744_csymbol ignored
 test_01746 ok
 test_01748_csymbol ignored
