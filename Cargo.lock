@@ -360,6 +360,7 @@ dependencies = [
  "mathml-rs",
  "rand 0.8.4",
  "sbml-rs",
+ "toposort-scc",
 ]
 
 [[package]]
@@ -393,6 +394,12 @@ checksum = "d326610f408c7a4eb6f51c37c330e496b08506c9457c9d34287ecc38809fb060"
 dependencies = [
  "unicode-width",
 ]
+
+[[package]]
+name = "toposort-scc"
+version = "0.5.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3c4db64c78ed1b303e5820f74bae56ff7a94b7f10ba8231d9ddaa484d80118c7"
 
 [[package]]
 name = "unicode-width"
