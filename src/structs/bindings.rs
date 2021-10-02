@@ -1,6 +1,7 @@
 use mathml_rs::{evaluate_node, MathNode};
 use rand::distributions::Alphanumeric;
 use rand::{thread_rng, Rng};
+use toposort_scc::IndexGraph;
 
 use sbml_rs;
 use sbml_rs::Model;
@@ -9,7 +10,7 @@ use crate::{
     AssignmentRule, Compartment, InitialAssignment, ODETerm, Parameter, RateRule, Reaction,
     Species, SpeciesStatus, UnboundCompartment, UnboundParameter, UnboundSpecies, ODE,
 };
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 
 #[derive(Debug, Clone)]
 #[allow(non_snake_case)]
@@ -56,10 +57,12 @@ impl Bindings {
         bindings.functions = model.function_definition_math();
         bindings.parse_reactions(model);
         bindings.parse_initial_assignments(model);
-        bindings.evaluate_initial_assignments();
         bindings.parse_assignment_rules(model);
-        bindings.evaluate_assignment_rules();
+        dbg!(&bindings);
+        dbg!(&bindings.values());
+        bindings.sort_initial_assignments();
         bindings.evaluate_initial_assignments();
+        bindings.evaluate_assignment_rules();
         bindings.recheck_species();
         bindings.parse_rate_rules(model);
         bindings.parse_ODEs();
@@ -222,6 +225,53 @@ impl Bindings {
         }
     }
 
+    pub fn sort_initial_assignments(&mut self) {
+        let mut dependencies = HashMap::<String, Vec<String>>::new();
+        let mut symbols_set = HashSet::<String>::new();
+        //decide an order for initial assignments by performing a topological sort
+        for assignment in &self.initial_assignments {
+            dependencies.insert(assignment.symbol.clone(), Vec::<String>::new());
+            symbols_set.insert(assignment.symbol.clone());
+
+            for dep in &assignment.dependent_variables {
+                dependencies
+                    .entry(assignment.symbol.clone())
+                    .or_insert(Vec::<String>::new())
+                    .push(dep.clone());
+                symbols_set.insert(dep.clone());
+            }
+        }
+        let mut symbols: Vec<String> = symbols_set.into_iter().collect();
+        symbols.sort();
+        dbg!(&dependencies);
+
+        let mut g = IndexGraph::with_vertices(symbols.len());
+        for (symbol, symbol_deps) in &dependencies {
+            let symbol_idx = symbols.iter().position(|r| r == symbol).unwrap();
+            for dep in symbol_deps {
+                let dep_idx = symbols.iter().position(|r| r == dep).unwrap();
+                g.add_edge(symbol_idx, dep_idx);
+            }
+        }
+
+        let mut assignment_order: Vec<String> = g
+            .toposort()
+            .unwrap()
+            .into_iter()
+            .map(|x| symbols[x].clone())
+            .collect();
+        assignment_order.reverse();
+
+        for initial_assignment in &mut self.initial_assignments {
+            initial_assignment.topological_order = assignment_order
+                .iter()
+                .position(|x| x == &initial_assignment.symbol)
+                .unwrap();
+        }
+
+        self.initial_assignments.sort();
+    }
+
     pub fn evaluate_initial_assignments(&mut self) {
         let initial_assignments = self.initial_assignments.clone();
         for initial_assignment in initial_assignments {
@@ -349,6 +399,12 @@ impl Bindings {
             if assignment_rule.variable.is_some() && assignment_rule.math.is_some() {
                 self.assignment_rules
                     .push(AssignmentRule::from(&assignment_rule, model));
+                // also create an initial assignment from assignment rule
+                self.initial_assignments
+                    .push(InitialAssignment::from_assignment_rule(
+                        &assignment_rule,
+                        model,
+                    ));
             }
         }
     }
@@ -469,24 +525,17 @@ impl Bindings {
                     }
 
                     // SpeciesReferences
-                    //println!();
-                    //dbg!(&variable, value);
-                    for (_, reaction) in &mut self.reactions {
-                        //dbg!(&rxn_id);
+                    for (_rxn_id, reaction) in &mut self.reactions {
                         // Stoichiometry of a reactant
-                        for (_, reactant) in &mut reaction.reactants {
+                        for (_reactant_species_id, reactant) in &mut reaction.reactants {
                             if reactant.id == variable {
                                 reactant.stoichiometry = value;
                             }
                         }
                         // Stoichiometry of a product
-                        for (_, product) in &mut reaction.products {
-                            //dbg!(product_species);
+                        for (_reactant_species_id, product) in &mut reaction.products {
                             if product.id == variable {
-                                //dbg!("changing", product.stoichiometry, value);
                                 product.stoichiometry = value;
-                            } else {
-                                //dbg!("not changing");
                             }
                         }
                     }
@@ -517,92 +566,6 @@ impl Bindings {
                 Ok(value) => {
                     // Update value
                     values.insert(variable.clone(), value);
-
-                    // Bound compartment being reassigned
-                    //if self.compartments.get(&variable).is_some() {
-                    //// Update value
-                    //self.update_compartment_size(&variable, value);
-                    //}
-
-                    // Unbound compartment
-                    //if let Some(unbound_compartment) = self.unbound_compartments.get(&variable) {
-                    //let bound_compartment = unbound_compartment.to_bound(value);
-                    //self.compartments
-                    //.insert(variable.clone(), bound_compartment);
-                    //self.unbound_compartments.remove(&variable);
-                    //}
-
-                    // Parameter
-                    //if self.parameters.get(&variable).is_some() {
-                    //self.parameters
-                    //.entry(variable.clone())
-                    //.and_modify(|c| c.value = value);
-                    //}
-
-                    // Unbound parameter
-                    //if let Some(unbound_parameter) = self.unbound_parameters.get(&variable) {
-                    //let bound_parameter = unbound_parameter.to_bound(value);
-                    //self.parameters.insert(variable.clone(), bound_parameter);
-                    //self.unbound_parameters.remove(&variable);
-                    //}
-
-                    // Species being reassigned
-                    if let Some(species) = self.species.get(&variable) {
-                        //let compartment = &species.compartment;
-                        //let compartment_size = self.compartments.get(compartment).unwrap().size();
-                        // TODO: THIS IS PROBABLY WRONG
-                        //if !species.has_only_substance_units {
-                        //println!(
-                        //"Updated {} from {} to {}",
-                        //&species.id,
-                        //species.concentration(),
-                        //value
-                        //);
-                        //species.update_concentration(value, compartment_size);
-                        //values.insert(species.id.clone(), species.concentration());
-                        //} else {
-                        //species.update_amount(value, compartment_size);
-                        //values.insert(species.id.clone(), species.concentration());
-                        //}
-                        values.insert(species.id.clone(), value);
-                    }
-
-                    // For now, assuming that the compartment size is known by now
-                    // This will have to change later because compartments can also be
-                    // assigned by algebraic rules etc. which are not supported right now
-                    //if let Some(unbound_species) = self.unbound_species.get(&variable) {
-                    //let size = self
-                    //.compartments
-                    //.get(&unbound_species.compartment)
-                    //.expect("Compartment size not found.")
-                    //.size();
-                    //let species;
-                    //if !unbound_species.has_only_substance_units {
-                    //let concentration = value;
-                    //let amount = concentration * size;
-                    //species = unbound_species.to_bound(amount, concentration);
-                    //} else {
-                    //let amount = value;
-                    //let concentration = amount / size;
-                    //species = unbound_species.to_bound(amount, concentration);
-                    //values.insert(variable.clone(), species.concentration());
-                    //}
-                    //println!("Set {} to {}", &species.id, species.amount());
-                    //self.species.insert(variable.clone(), species);
-                    //}
-
-                    // SpeciesReferences
-                    //for (_, reaction) in &mut self.reactions {
-                    //// Bound reactants being reassigned
-                    //reaction
-                    //.reactants
-                    //.entry(variable.clone())
-                    //.and_modify(|reactant| reactant.stoichiometry = value);
-                    //reaction
-                    //.products
-                    //.entry(variable.clone())
-                    //.and_modify(|product| product.stoichiometry = value);
-                    //}
                 }
                 Err(error) => panic!("{}", error),
             }
@@ -765,7 +728,7 @@ pub enum BindingType {
 pub fn random_string() -> String {
     let rand_string: String = thread_rng()
         .sample_iter(&Alphanumeric)
-        .take(16)
+        .take(10)
         .map(char::from)
         .collect();
     return rand_string;

@@ -135,20 +135,20 @@ pub struct UnboundSpeciesReference {
 
 impl UnboundSpeciesReference {
     pub fn from(sp_ref: &sbml_rs::SpeciesReference) -> Self {
+        let species = sp_ref
+            .species
+            .clone()
+            .expect("Species attribute is mandatory on SpeciesReferences.");
         let id;
         if let Some(value) = &sp_ref.id {
             id = value.to_owned();
         } else {
-            id = random_string();
+            id = species.clone() + "_stoich_" + &random_string();
             //dbg!(&id);
         }
         let constant = sp_ref
             .constant
             .expect("Constant attribute is mandatory on SpeciesReferences.");
-        let species = sp_ref
-            .species
-            .clone()
-            .expect("Species attribute is mandatory on SpeciesReferences.");
         let mut sbo_term = None;
         if let Some(value) = &sp_ref.sbo_term {
             sbo_term = Some(value.to_owned());
