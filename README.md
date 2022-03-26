@@ -11,11 +11,18 @@ cd sbml-sim
 cargo run [path to model]
 ```
 
-As of now, only Euler method has been implemented.
+As of now, only Euler, RK45 and RKF methods have been implemented.
 To try it out, run 
 ```
-cargo run [path to model]
+cargo run -- -i {path to model} -t 10 -s 100 -o out.csv -a
 ```
+This runs the RKF45 integrator for 10 seconds over 100 integration steps.
 
-This runs the Euler integrator for 5 seconds with a step size of 0.05.
+To test, run:
+```
+cargo test --test core-semantic -- --test-threads=8 --logfile tests/tests.log > tests/tests.full.log
+awk '{ print $2" "$1 }' tests/tests.log | sort -u > tests/tests.log.awked; mv tests/tests.log.awked tests/tests.log
+source tests/venv/bin/activate
+python3 tests/analyze.py tests/tests.log
+```
 

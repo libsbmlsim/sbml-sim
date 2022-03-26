@@ -462,6 +462,7 @@ impl Bindings {
                     if self.compartments.get(&variable).is_some() {
                         // Update value
                         self.update_compartment_size(&variable, value);
+                        continue;
                     }
 
                     // Unbound compartment
@@ -470,6 +471,7 @@ impl Bindings {
                         self.compartments
                             .insert(variable.clone(), bound_compartment);
                         self.unbound_compartments.remove(&variable);
+                        continue;
                     }
 
                     // Parameter
@@ -477,6 +479,7 @@ impl Bindings {
                         self.parameters
                             .entry(variable.clone())
                             .and_modify(|c| c.value = value);
+                        continue;
                     }
 
                     // Unbound parameter
@@ -484,6 +487,7 @@ impl Bindings {
                         let bound_parameter = unbound_parameter.to_bound(value);
                         self.parameters.insert(variable.clone(), bound_parameter);
                         self.unbound_parameters.remove(&variable);
+                        continue;
                     }
 
                     // Species being reassigned
@@ -494,9 +498,11 @@ impl Bindings {
                         if !species.has_only_substance_units {
                             species.update_concentration(value, compartment_size);
                             values.insert(species.id.clone(), species.concentration());
+                            continue;
                         } else {
                             species.update_amount(value, compartment_size);
                             values.insert(species.id.clone(), species.concentration());
+                            continue;
                         }
                     }
 
@@ -526,16 +532,39 @@ impl Bindings {
 
                     // SpeciesReferences
                     for (_rxn_id, reaction) in &mut self.reactions {
-                        // Stoichiometry of a reactant
+                        // Stoichiometry of a reactant being reassigned
                         for (_reactant_species_id, reactant) in &mut reaction.reactants {
                             if reactant.id == variable {
                                 reactant.stoichiometry = value;
+                                dbg!("{} assigned {}", &reactant.id, value);
+                                continue;
+                            }
+                        }
+                        // Unbound stoichiometry of a reactant
+                        for (reactant_species_id, reactant) in &mut reaction.unbound_reactants {
+                            if reactant.id == variable {
+                                let bound_reactant = reactant.to_bound(value);
+                                reaction
+                                    .reactants
+                                    .insert(reactant_species_id.clone(), bound_reactant);
+                                continue;
                             }
                         }
                         // Stoichiometry of a product
-                        for (_reactant_species_id, product) in &mut reaction.products {
+                        for (_product_species_id, product) in &mut reaction.products {
                             if product.id == variable {
                                 product.stoichiometry = value;
+                                continue;
+                            }
+                        }
+                        // Unbound stoichiometry of a product
+                        for (product_species_id, product) in &mut reaction.unbound_products {
+                            if product.id == variable {
+                                let bound_product = product.to_bound(value);
+                                reaction
+                                    .products
+                                    .insert(product_species_id.clone(), bound_product);
+                                continue;
                             }
                         }
                     }
